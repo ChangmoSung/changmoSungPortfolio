@@ -7,6 +7,10 @@ portfolio.init = function() {
     const $skills = $('.skills');
     let selectedProject;
     let list;
+    const $firstProject = $('.firstProject');
+    const $seoncdProject = $('.secondProject');
+    const $thirdProject = $('.thirdProject');
+    const $fourthProject = $('.fourthProject');
 
     
     // ------------------------------- //
@@ -16,9 +20,10 @@ portfolio.init = function() {
         $header.fadeOut('slow');
         $skills.children().removeClass('selected');
 
+
         // -------previously selected project ---------- //
         if(selectedProject) {
-            selectedProject.children().removeClass('selected');
+            selectedProject.children().addClass('notSelected');
 
             selectedProject.children().children()[1].children[0].pause();
             selectedProject.children().children()[1].children[0].currentTime = 0;
@@ -31,17 +36,18 @@ portfolio.init = function() {
         const project = $(this).attr('data-selected');
         
         selectedProject = $(project);
-        selectedProject.fadeIn();
-        
-        const children = selectedProject.children();
+        selectedProject.fadeIn(function() {
+            selectedProject.children().removeClass('notSelected');
+            selectedProject.children().removeClass('selected');
 
+            setTimeout(function () {
+                selectedProject.children().addClass('selected');
+            }, 400)
+        })
+        
         // ---------to show it after the previous project is completely gone------- //
 
-        setTimeout(function() {
-            children.addClass('selected');
-        }, 550)
-
-        children.children()[1].children[0].play();
+        selectedProject.children().children()[1].children[0].play();
 
         // ----------current clickedList item selected here----------- //
         list = $(this);
@@ -67,12 +73,14 @@ portfolio.init = function() {
         if(selectedList === '.header') {
             setTimeout(() => {
                 $header.fadeIn();
-            }, 550)
+            }, 400)
 
             $skills.children().removeClass('selected');
 
         } else if(selectedList === '.skills') {
-            $skills.children().addClass('selected')
+            setTimeout(function() {
+                $skills.children().addClass('selected')
+            }, 400)
 
             $header.fadeOut()
         }

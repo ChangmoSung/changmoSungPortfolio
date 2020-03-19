@@ -308,7 +308,7 @@ main .fourthProject .projectImage {
   align-items: center;
   opacity: 0;
   z-index: -1;
-  transition: all 1s;
+  transition: all 0.8s;
   transform: translateY(100vh);
 }
 main .firstProject .projectImage.selected,
@@ -318,6 +318,13 @@ main .fourthProject .projectImage.selected {
   z-index: 1;
   transform: translateY(0);
   opacity: 1;
+}
+main .firstProject .projectImage.notSelected,
+main .secondProject .projectImage.notSelected,
+main .thirdProject .projectImage.notSelected,
+main .fourthProject .projectImage.notSelected {
+  transform: translateY(-100vh);
+  opacity: 0;
 }
 main .firstProject .projectImage div,
 main .secondProject .projectImage div,
@@ -335,7 +342,7 @@ main .fourthProject .projectDescription {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transition: all 1s;
+  transition: all 0.8s;
   opacity: 0;
   transform: translateY(-100vh);
 }
@@ -345,6 +352,13 @@ main .thirdProject .projectDescription.selected,
 main .fourthProject .projectDescription.selected {
   opacity: 1;
   transform: translateY(0);
+}
+main .firstProject .projectDescription.notSelected,
+main .secondProject .projectDescription.notSelected,
+main .thirdProject .projectDescription.notSelected,
+main .fourthProject .projectDescription.notSelected {
+  transform: translateY(100vh);
+  opacity: 0;
 }
 main .firstProject .projectDescription .projectVideo,
 main .secondProject .projectDescription .projectVideo,
