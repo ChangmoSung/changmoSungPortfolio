@@ -1,0 +1,125 @@
+nav {
+    z-index: 999;
+}
+
+main {
+
+    .firstProject,
+    .secondProject,
+    .thirdProject,
+    .fourthProject {
+        display: flex;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+
+        .projectImage {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            opacity: 0;
+            z-index: -1;
+            transition: all 1s;
+            transform: translateY(100vh);
+
+            &.selected {
+                z-index: 1;
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            div {
+                width: 90%;
+                height: 45%;
+                margin: 0 auto;
+            }
+        }
+
+        .projectDescription {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: all 1s;
+            opacity: 0;
+            transform: translateY(-100vh);
+
+            &.selected {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .projectVideo {
+                width: 90%;
+                margin: 0 auto;
+                overflow: hidden;
+                position: relative;
+            }
+
+            .skill {
+                display: flex;
+                justify-content: space-around;
+                font-size: 4rem;
+                list-style: none;
+                margin: 10rem 0;
+            }
+
+            .aboutProject {
+                font-size: 2rem;
+                line-height: 2.7rem;
+            }
+        }
+    }
+
+    .skills {
+        display: flex;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+
+        .skillListContainer {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            transition: all 1s;
+            transform: translateY(100vh);
+
+            &.selected {
+                transform: translateY(0);
+            }
+
+            .skillList {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                align-items: center;
+                width: 90%;
+                height: 45%;
+                margin: 0 auto;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                font-size: 5rem;
+                text-align: center;
+
+                li {
+                    min-width: 21%;
+                    width: 10rem;
+                }
+            }
+        }
+
+        .aboutMe {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: all 1s;
+            transform: translateY(-100vh);
+
+            &.selected {
+                transform: translateY(0);
+            }
+        }
+    }
+}
