@@ -2,9 +2,11 @@ const portfolio = {};
 
 portfolio.init = function() {
     const $title = $('.title')
-    const titleList = ['Developer', 'Athlete', 'Food lover'];
-    let titleIndex = 1;
-
+    const titleList = ['.developer', '.athlete', '.foodLover'];
+    let titleIndex = 0;
+    let visibleTitle;
+    let previouslyVisibleTitle;
+    let hiddenTitle;
     const $info = $('.info');
     const $projects = $('.projects');
     const $header = $('header');
@@ -12,17 +14,35 @@ portfolio.init = function() {
     let selectedProject;
     let list;
 
+    setTimeout(() => {
+        $title.children().first().addClass('notVisible');
+    },2500)
+
     setInterval(() => {
-        $title.css('top', '10rem');
+        if(hiddenTitle) {
+            hiddenTitle.removeClass('visible');
+            hiddenTitle.removeClass('notVisible');
+        }
 
-        $title.text(titleList[titleIndex])
+        if(previouslyVisibleTitle) {
+            previouslyVisibleTitle.addClass('notVisible');
 
-        titleIndex++
+            hiddenTitle = previouslyVisibleTitle;
+        }
+
+        titleIndex++;
 
         if(titleIndex > 2) {
             titleIndex = 0;
         }
-    },3000)
+
+        visibleTitle = $title.find(titleList[titleIndex]);
+
+        visibleTitle.addClass('visible');
+
+        previouslyVisibleTitle = $title.find(titleList[titleIndex]);
+    },2500)
+
 
     
     // ------------------------------- //
