@@ -1,7 +1,3 @@
-nav {
-    z-index: 999;
-}
-
 main {
 
     .firstProject,
@@ -159,18 +155,22 @@ main {
         height: 100vh;
 
         form {
-            height: 50vh;
+            height: 55vh;
+            width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
             align-items: center;
             z-index: 999;
+            background: linear-gradient(to right, #0072ff, #00c6ff); 
 
-            .name {
-                width: 100%;
+            .name,
+            .email {
+                width: 50%;
 
                 label {
                     font-size: 2.5rem;
+                    color: white;
                 }
 
                 input {
@@ -180,17 +180,36 @@ main {
                 }
             }
 
-            .email {
-                width: 100%;
+            .textarea {
+                width: 50%;
 
                 label {
                     font-size: 2.5rem;
+                    color: white;
                 }
 
-                input {
+                textarea {
                     width: 100%;
-                    height: 3.5rem;
+                    height: 10rem;
                     font-size: 1.8rem;
+                }
+            }
+
+            button {
+                position: relative;
+                background: linear-gradient(to right, #0072ff, #00c6ff); 
+                width: 20rem;
+                height: 5rem;
+                border-radius: 1rem;
+                border: none;
+                color: white;
+                font-size: 2rem;
+                box-shadow: 7px 7px skyblue;
+
+                &:hover {
+                    top: 3.5px;
+                    left: 3.7px;
+                    box-shadow: 3.5px 3.5px skyblue;
                 }
             }
         }

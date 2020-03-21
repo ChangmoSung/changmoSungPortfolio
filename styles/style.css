@@ -247,19 +247,37 @@ html video {
 }
 
 nav {
+  z-index: 999;
   position: fixed;
-  left: 3rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 nav ul {
+  display: flex;
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 3rem 0 0 3rem;
   font-size: 2.5rem;
   text-align: center;
-  line-height: 5rem;
 }
-nav ul li {
+nav ul.info li, nav ul.projects li {
+  position: relative;
   cursor: pointer;
+  text-transform: uppercase;
+  font-size: 2rem;
+  box-shadow: 7px 7px skyblue;
+  margin-right: 3rem;
+  background: blue;
+  border-radius: 1rem;
+  width: 13rem;
+  line-height: 5rem;
+  color: white;
+}
+nav ul.info li:hover, nav ul.info li:focus, nav ul.projects li:hover, nav ul.projects li:focus {
+  top: 3.5px;
+  left: 3.5px;
+  box-shadow: 3.5px 3.5px skyblue;
 }
 
 header {
@@ -317,10 +335,6 @@ header .headerFlexContainer .title p.visible {
 }
 header .headerFlexContainer .title p.notVisible {
   display: none;
-}
-
-nav {
-  z-index: 999;
 }
 
 main .firstProject,
@@ -486,32 +500,55 @@ main .contact {
   height: 100vh;
 }
 main .contact form {
-  height: 50vh;
+  height: 55vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   z-index: 999;
+  background: linear-gradient(to right, #0072ff, #00c6ff);
 }
-main .contact form .name {
-  width: 100%;
-}
-main .contact form .name label {
-  font-size: 2.5rem;
-}
-main .contact form .name input {
-  width: 100%;
-  height: 3.5rem;
-  font-size: 1.8rem;
-}
+main .contact form .name,
 main .contact form .email {
-  width: 100%;
+  width: 50%;
 }
+main .contact form .name label,
 main .contact form .email label {
   font-size: 2.5rem;
+  color: white;
 }
+main .contact form .name input,
 main .contact form .email input {
   width: 100%;
   height: 3.5rem;
   font-size: 1.8rem;
+}
+main .contact form .textarea {
+  width: 50%;
+}
+main .contact form .textarea label {
+  font-size: 2.5rem;
+  color: white;
+}
+main .contact form .textarea textarea {
+  width: 100%;
+  height: 10rem;
+  font-size: 1.8rem;
+}
+main .contact form button {
+  position: relative;
+  background: linear-gradient(to right, #0072ff, #00c6ff);
+  width: 20rem;
+  height: 5rem;
+  border-radius: 1rem;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  box-shadow: 7px 7px skyblue;
+}
+main .contact form button:hover {
+  top: 3.5px;
+  left: 3.7px;
+  box-shadow: 3.5px 3.5px skyblue;
 }
