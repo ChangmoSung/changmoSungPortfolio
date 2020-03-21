@@ -64,13 +64,6 @@ portfolio.init = function () {
             }, 500);
         }, 1);
 
-        // if(previouslySelectedProject) {
-        //     console.log(previouslySelectedProject)
-        //     setTimeout(function() {
-        //         console.log(previouslySelectedProject)
-        //         previouslySelectedProject.children().removeClass('notSelected');
-        //     }, 400)
-        // }
 
         // ---------- previously selected project ---------- //
         if (selectedProject) {
@@ -95,12 +88,6 @@ portfolio.init = function () {
         selectedProject = $(project);
 
         selectedProject.children().addClass('selected');
-
-        setTimeout(function () {
-            $about.children().removeClass('notSelected');
-            $about.children().removeClass('selected');
-        }, 400);
-        //------------ maybe i can write a code for it like if($about.children().hasClass('notSelected))----------------//
 
         selectedProject.children().children()[1].children[0].play();
 
