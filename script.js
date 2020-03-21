@@ -14,6 +14,7 @@ portfolio.init = function () {
     const $header = $('header');
     const $about = $('.about');
     let selectedProject;
+    let previouslySelectedProject;
     let list;
 
 
@@ -53,8 +54,6 @@ portfolio.init = function () {
     // ------------------------------- //
     $projects.on('click', 'li', function () {
         $header.fadeOut();
-
-
         $about.fadeOut();
 
         setTimeout(function () {
@@ -65,11 +64,24 @@ portfolio.init = function () {
             }, 500);
         }, 1);
 
-        
+        // if(previouslySelectedProject) {
+        //     console.log(previouslySelectedProject)
+        //     setTimeout(function() {
+        //         console.log(previouslySelectedProject)
+        //         previouslySelectedProject.children().removeClass('notSelected');
+        //     }, 400)
+        // }
 
-        // -------previously selected project ---------- //
+        // ---------- previously selected project ---------- //
         if (selectedProject) {
+            previouslySelectedProject = selectedProject;
+
             selectedProject.children().addClass('notSelected');
+            selectedProject.children().removeClass('selected');
+
+            setTimeout(function() {
+                previouslySelectedProject.children().removeClass('notSelected');
+            }, 400)
 
             selectedProject.children().children()[1].children[0].pause();
             selectedProject.children().children()[1].children[0].currentTime = 0;
@@ -78,24 +90,17 @@ portfolio.init = function () {
         }
 
 
-        // --------current project selected here------- //
+        // -------- current project selected here ------- //
         const project = $(this).attr('data-selected');
-
         selectedProject = $(project);
-        selectedProject.fadeIn(function () {
-            selectedProject.children().removeClass('notSelected');
-            selectedProject.children().removeClass('selected');
 
-            // ---------to show it after the previous project is completely gone------- //
-            setTimeout(function () {
-                selectedProject.children().addClass('selected');
-            }, 250)
+        selectedProject.children().addClass('selected');
 
-            setTimeout(function () {
-                $about.children().removeClass('notSelected');
-                $about.children().removeClass('selected');
-            }, 400)
-        })
+        setTimeout(function () {
+            $about.children().removeClass('notSelected');
+            $about.children().removeClass('selected');
+        }, 400);
+        //------------ maybe i can write a code for it like if($about.children().hasClass('notSelected))----------------//
 
         selectedProject.children().children()[1].children[0].play();
 
