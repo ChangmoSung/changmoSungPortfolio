@@ -3,6 +3,8 @@ const portfolio = {};
 portfolio.init = function () {
     const $me = $('.me');
     const $description = $('.description');
+    const $skillList = $('.skillList');
+    const $skill = $('.skill');
     const $title = $('.title')
     const titleList = ['.developer', '.athlete', '.foodLover'];
     let titleIndex = 0;
@@ -63,6 +65,8 @@ portfolio.init = function () {
             $about.fadeOut();
             $me.removeClass('imageShown');
             $description.removeClass('descriptionShown');
+            $skillList.removeClass('skillListShown');
+            $skill.removeClass('skillShown');
     
             $contact.fadeOut();
     
@@ -133,7 +137,9 @@ portfolio.init = function () {
                 $me.removeClass('imageShown');
     
                 $description.removeClass('descriptionShown');
-                
+                $skillList.removeClass('skillListShown');
+                $skill.removeClass('skillShown');
+
                 $about.fadeOut(function() {
                     $header.fadeIn('slow');
                 });
@@ -144,12 +150,17 @@ portfolio.init = function () {
                 $header.fadeOut();
                 
                 $about.css('display', 'flex');
-    
                 setTimeout(function() {
                     $me.addClass('imageShown');
     
                     setTimeout(function () {
                         $description.addClass('descriptionShown');
+
+                        $skillList.addClass('skillListShown');
+
+                        setTimeout(function() {
+                            $skill.addClass('skillShown');
+                        }, 500)
                     }, 500);
                 },300);
     
@@ -161,6 +172,8 @@ portfolio.init = function () {
                 $about.fadeOut();
                 $me.removeClass('imageShown');
                 $description.removeClass('descriptionShown');
+                $skillList.removeClass('skillListShown');
+                $skill.removeClass('skillShown');
               
                 $contact.fadeIn();
             }

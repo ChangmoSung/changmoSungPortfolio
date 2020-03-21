@@ -455,11 +455,16 @@ main .about .skillList {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  opacity: 0;
   height: 30%;
   list-style: none;
   padding: 0;
   margin: 0;
-  background: salmon;
+  transition: all 1s;
+  background: linear-gradient(to right, #0072ff, #00c6ff);
+}
+main .about .skillList.skillListShown {
+  opacity: 1;
 }
 main .about .skillList li {
   display: flex;
@@ -468,6 +473,11 @@ main .about .skillList li {
   width: 20%;
   text-align: center;
   font-size: 5rem;
+  opacity: 0;
+  transition: all 1s;
+}
+main .about .skillList li.skillShown {
+  opacity: 1;
 }
 main .contact {
   display: flex;

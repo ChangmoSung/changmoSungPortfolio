@@ -123,11 +123,17 @@ main {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+            opacity: 0;
             height: 30%;
             list-style: none;
             padding: 0;
             margin: 0;
-            background: salmon;
+            transition: all 1s;
+            background: linear-gradient(to right, #0072ff, #00c6ff); 
+
+            &.skillListShown {
+                opacity: 1;
+            }
 
             li {
                 display: flex;
@@ -136,6 +142,12 @@ main {
                 width: 20%;
                 text-align: center;
                 font-size: 5rem;
+                opacity: 0;
+                transition: all 1s;
+
+                &.skillShown {
+                    opacity: 1;
+                }
             }
         }
     }
