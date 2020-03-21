@@ -4,146 +4,215 @@ nav {
 
 main {
 
-    .firstProject,
-    .secondProject,
-    .thirdProject,
-    .fourthProject {
+    // .firstProject,
+    // .secondProject,
+    // .thirdProject,
+    // .fourthProject {
+    //     display: flex;
+    //     height: 100vh;
+    //     position: fixed;
+    //     top: 0;
+
+    //     .projectImage {
+    //         width: 50%;
+    //         display: flex;
+    //         align-items: center;
+    //         opacity: 0;
+    //         z-index: -1;
+    //         transition: all 0.6s;
+    //         transform: translateY(100vh);
+
+    //         &.selected {
+    //             z-index: 1;
+    //             transform: translateY(0);
+    //             opacity: 1;
+    //         }
+
+    //         &.notSelected {
+    //             transform: translateY(-100vh);
+    //             opacity: 0;
+    //         }
+
+    //         div {
+    //             width: 90%;
+    //             height: 45%;
+    //             margin: 0 auto;
+    //         }
+    //     }
+
+    //     .projectDescription {
+    //         width: 50%;
+    //         display: flex;
+    //         flex-direction: column;
+    //         justify-content: center;
+    //         transition: all 0.6s;
+    //         opacity: 0;
+    //         transform: translateY(-100vh);
+
+    //         &.selected {
+    //             opacity: 1;
+    //             transform: translateY(0);
+    //         }
+
+    //         &.notSelected {
+    //             transform: translateY(100vh);
+    //             opacity: 0;
+    //         }
+
+    //         .projectVideo {
+    //             width: 90%;
+    //             margin: 0 auto;
+    //             overflow: hidden;
+    //             position: relative;
+    //         }
+
+    //         .skill {
+    //             display: flex;
+    //             justify-content: space-around;
+    //             font-size: 4rem;
+    //             list-style: none;
+    //             margin: 10rem 0;
+    //         }
+
+    //         .aboutProject {
+    //             font-size: 2rem;
+    //             line-height: 2.7rem;
+    //         }
+    //     }
+    // }
+
+    .about {
         display: flex;
+        flex-direction: column;
         height: 100vh;
-        position: fixed;
-        top: 0;
-
-        .projectImage {
+        
+        
+        .me {
+            height: 25%;
             width: 50%;
-            display: flex;
-            align-items: center;
-            opacity: 0;
-            z-index: -1;
-            transition: all 0.6s;
-            transform: translateY(100vh);
-
-            &.selected {
-                z-index: 1;
-                transform: translateY(0);
-                opacity: 1;
+            margin: 3rem auto;
+            transition: all 1s;
+            transform-origin: 100% 100%;
+            transform: perspective(800px) rotateX(90deg);
+            
+            img {
+                border-radius: 1rem;
             }
 
-            &.notSelected {
-                transform: translateY(-100vh);
-                opacity: 0;
-            }
-
-            div {
-                width: 90%;
-                height: 45%;
-                margin: 0 auto;
+            &.imageShown {
+                transform: rotateX(0);
             }
         }
 
-        .projectDescription {
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            transition: all 0.6s;
-            opacity: 0;
-            transform: translateY(-100vh);
-
-            &.selected {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-            &.notSelected {
-                transform: translateY(100vh);
-                opacity: 0;
-            }
-
-            .projectVideo {
-                width: 90%;
-                margin: 0 auto;
-                overflow: hidden;
-                position: relative;
-            }
-
-            .skill {
-                display: flex;
-                justify-content: space-around;
-                font-size: 4rem;
-                list-style: none;
-                margin: 10rem 0;
-            }
-
-            .aboutProject {
-                font-size: 2rem;
-                line-height: 2.7rem;
-            }
+        .description {
+            height: 45%;
+            font-size: 1.6rem;
+            text-align: center;
+            line-height: 2.2rem;
+            width: 80%;
+            margin: 0 auto;
         }
-    }
 
-    .skills {
-        display: flex;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-
-        .skillListContainer {
-            width: 50%;
+        .skillList {
             display: flex;
-            align-items: center;
-            transition: all 0.6s;
-            opacity: 0;
-            transform: translateY(100vh);
+            flex-wrap: wrap;
+            justify-content: space-between;
+            height: 30%;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background: salmon;
 
-            &.selected {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-            &.notSelected {
-                transform: translateY(-100vh);
-                opacity: 0;
-            }
-
-            .skillList {
+            li {
                 display: flex;
-                flex-wrap: wrap;
-                justify-content: space-evenly;
+                justify-content: center;
                 align-items: center;
-                width: 90%;
-                height: 45%;
-                margin: 0 auto;
-                list-style: none;
-                padding: 0;
-                margin: 0;
-                font-size: 5rem;
+                width: 25%;
                 text-align: center;
-
-                li {
-                    min-width: 21%;
-                    width: 10rem;
-                }
-            }
-        }
-
-        .aboutMe {
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            transition: all 0.6s;
-            opacity: 0;
-            transform: translateY(-100vh);
-
-            &.selected {
-                transform: translateY(0);
-                opacity: 1
-            }
-
-            &.notSelected {
-                transform: translateY(100vh);
-                opacity: 0;
+                font-size: 5rem;
             }
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // .about {
+    //     display: flex;
+    //     height: 100vh;
+    //     position: fixed;
+    //     top: 0;
+
+    //     .me {
+    //         width: 50%;
+    //         display: flex;
+    //         align-items: center;
+    //         transition: all 0.6s;
+    //         opacity: 0;
+    //         transform: translateX(100vh);
+
+    //         &.selected {
+    //             opacity: 1;
+    //             transform: translateX(0);
+    //         }
+
+    //         &.notSelected {
+    //             transform: translateX(-100vh);
+    //             opacity: 0;
+    //         }
+
+    //         .skillList {
+    //             display: flex;
+    //             flex-wrap: wrap;
+    //             justify-content: space-evenly;
+    //             align-items: center;
+    //             width: 90%;
+    //             height: 45%;
+    //             margin: 0 auto;
+    //             list-style: none;
+    //             padding: 0;
+    //             margin: 0;
+    //             font-size: 5rem;
+    //             text-align: center;
+
+    //             li {
+    //                 min-width: 21%;
+    //                 width: 10rem;
+    //             }
+    //         }
+    //     }
+
+    //     .skillList {
+    //         width: 50%;
+    //         display: flex;
+    //         flex-direction: column;
+    //         justify-content: center;
+    //         transition: all 0.6s;
+    //         opacity: 0;
+    //         transform: translateX(-100vh);
+
+    //         &.selected {
+    //             transform: translateX(0);
+    //             opacity: 1
+    //         }
+
+    //         &.notSelected {
+    //             transform: translateX(100vh);
+    //             opacity: 0;
+    //         }
+    //     }
+    // }
 }

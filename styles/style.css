@@ -276,6 +276,7 @@ header .headerFlexContainer {
   justify-content: center;
 }
 header .headerFlexContainer h1 {
+  font-weight: 400;
   font-size: 15rem;
   color: #fff;
   margin: 0;
@@ -285,15 +286,31 @@ header .headerFlexContainer .title {
 }
 header .headerFlexContainer .title p {
   position: absolute;
-  left: 18%;
+  left: 12%;
   font-size: 4.5rem;
-  width: 25rem;
+  width: 22rem;
   text-align: center;
   color: white;
   margin: 0;
   opacity: 0;
   transition: all 0.5s;
   transform: translateY(-5rem);
+  background: blue;
+  border-radius: 1rem 0 1rem 1rem;
+}
+header .headerFlexContainer .title p:before {
+  content: "";
+  transform: rotate(269deg);
+  border-color: blue;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 0 20px;
+  clip: rect(17px, 35px, 42px, 0px);
+  height: 43px;
+  position: absolute;
+  top: -84%;
+  right: -17%;
+  width: 85px;
 }
 header .headerFlexContainer .title p.visible {
   opacity: 1;
@@ -307,156 +324,48 @@ nav {
   z-index: 999;
 }
 
-main .firstProject,
-main .secondProject,
-main .thirdProject,
-main .fourthProject {
-  display: flex;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-}
-main .firstProject .projectImage,
-main .secondProject .projectImage,
-main .thirdProject .projectImage,
-main .fourthProject .projectImage {
-  width: 50%;
-  display: flex;
-  align-items: center;
-  opacity: 0;
-  z-index: -1;
-  transition: all 0.6s;
-  transform: translateY(100vh);
-}
-main .firstProject .projectImage.selected,
-main .secondProject .projectImage.selected,
-main .thirdProject .projectImage.selected,
-main .fourthProject .projectImage.selected {
-  z-index: 1;
-  transform: translateY(0);
-  opacity: 1;
-}
-main .firstProject .projectImage.notSelected,
-main .secondProject .projectImage.notSelected,
-main .thirdProject .projectImage.notSelected,
-main .fourthProject .projectImage.notSelected {
-  transform: translateY(-100vh);
-  opacity: 0;
-}
-main .firstProject .projectImage div,
-main .secondProject .projectImage div,
-main .thirdProject .projectImage div,
-main .fourthProject .projectImage div {
-  width: 90%;
-  height: 45%;
-  margin: 0 auto;
-}
-main .firstProject .projectDescription,
-main .secondProject .projectDescription,
-main .thirdProject .projectDescription,
-main .fourthProject .projectDescription {
-  width: 50%;
+main .about {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  transition: all 0.6s;
-  opacity: 0;
-  transform: translateY(-100vh);
-}
-main .firstProject .projectDescription.selected,
-main .secondProject .projectDescription.selected,
-main .thirdProject .projectDescription.selected,
-main .fourthProject .projectDescription.selected {
-  opacity: 1;
-  transform: translateY(0);
-}
-main .firstProject .projectDescription.notSelected,
-main .secondProject .projectDescription.notSelected,
-main .thirdProject .projectDescription.notSelected,
-main .fourthProject .projectDescription.notSelected {
-  transform: translateY(100vh);
-  opacity: 0;
-}
-main .firstProject .projectDescription .projectVideo,
-main .secondProject .projectDescription .projectVideo,
-main .thirdProject .projectDescription .projectVideo,
-main .fourthProject .projectDescription .projectVideo {
-  width: 90%;
-  margin: 0 auto;
-  overflow: hidden;
-  position: relative;
-}
-main .firstProject .projectDescription .skill,
-main .secondProject .projectDescription .skill,
-main .thirdProject .projectDescription .skill,
-main .fourthProject .projectDescription .skill {
-  display: flex;
-  justify-content: space-around;
-  font-size: 4rem;
-  list-style: none;
-  margin: 10rem 0;
-}
-main .firstProject .projectDescription .aboutProject,
-main .secondProject .projectDescription .aboutProject,
-main .thirdProject .projectDescription .aboutProject,
-main .fourthProject .projectDescription .aboutProject {
-  font-size: 2rem;
-  line-height: 2.7rem;
-}
-main .skills {
-  display: flex;
   height: 100vh;
-  position: fixed;
-  top: 0;
 }
-main .skills .skillListContainer {
+main .about .me {
+  height: 25%;
   width: 50%;
-  display: flex;
-  align-items: center;
-  transition: all 0.6s;
-  opacity: 0;
-  transform: translateY(100vh);
+  margin: 3rem auto;
+  transition: all 1s;
+  transform-origin: 100% 100%;
+  transform: perspective(800px) rotateX(90deg);
 }
-main .skills .skillListContainer.selected {
-  opacity: 1;
-  transform: translateY(0);
+main .about .me img {
+  border-radius: 1rem;
 }
-main .skills .skillListContainer.notSelected {
-  transform: translateY(-100vh);
-  opacity: 0;
+main .about .me.imageShown {
+  transform: rotateX(0);
 }
-main .skills .skillListContainer .skillList {
+main .about .description {
+  height: 45%;
+  font-size: 1.6rem;
+  text-align: center;
+  line-height: 2.2rem;
+  width: 80%;
+  margin: 0 auto;
+}
+main .about .skillList {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 90%;
-  height: 45%;
-  margin: 0 auto;
+  justify-content: space-between;
+  height: 30%;
   list-style: none;
   padding: 0;
   margin: 0;
-  font-size: 5rem;
-  text-align: center;
+  background: salmon;
 }
-main .skills .skillListContainer .skillList li {
-  min-width: 21%;
-  width: 10rem;
-}
-main .skills .aboutMe {
-  width: 50%;
+main .about .skillList li {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  transition: all 0.6s;
-  opacity: 0;
-  transform: translateY(-100vh);
-}
-main .skills .aboutMe.selected {
-  transform: translateY(0);
-  opacity: 1;
-}
-main .skills .aboutMe.notSelected {
-  transform: translateY(100vh);
-  opacity: 0;
+  align-items: center;
+  width: 25%;
+  text-align: center;
+  font-size: 5rem;
 }
