@@ -141,7 +141,46 @@ main {
     }
 
     .contact {
-        display: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: 100vh;
+
+        form {
+            height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 999;
+
+            .name {
+                width: 100%;
+
+                label {
+                    font-size: 2.5rem;
+                }
+
+                input {
+                    width: 100%;
+                    height: 3.5rem;
+                    font-size: 1.8rem;
+                }
+            }
+
+            .email {
+                width: 100%;
+
+                label {
+                    font-size: 2.5rem;
+                }
+
+                input {
+                    width: 100%;
+                    height: 3.5rem;
+                    font-size: 1.8rem;
+                }
+            }
+        }
     }
 }

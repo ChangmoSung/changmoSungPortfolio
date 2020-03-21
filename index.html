@@ -10,16 +10,16 @@
 <body>
     <nav>
         <ul class='info'>
-            <li data-selected='.header'>home</li>
-            <li data-selected='.about'>about</li>
-            <li data-selected='.contact'>contact</li>
+            <li tabindex="0"  data-selected='.header'>home</li>
+            <li tabindex="0"  data-selected='.about'>about</li>
+            <li tabindex="0"  data-selected='.contact'>contact</li>
         </ul>
 
         <ul class='projects'>
-            <li data-selected='.firstProject'>project1</li>
-            <li data-selected='.secondProject'>project2</li>
-            <li data-selected='.thirdProject'>project3</li>
-            <li data-selected='.fourthProject'>project4</li>
+            <li tabindex="0" data-selected='.firstProject'>project1</li>
+            <li tabindex="0" data-selected='.secondProject'>project2</li>
+            <li tabindex="0" data-selected='.thirdProject'>project3</li>
+            <li tabindex="0" data-selected='.fourthProject'>project4</li>
         </ul>
     </nav>
 
@@ -31,7 +31,7 @@
                 <p class='visible' aria-hidden="true">developer</p>
                 <p class='developer'>developer</p>
                 <p class='athlete'>athlete</p>
-                <p class='foodLover'>food lover</p>
+                <p class='foodLover'>pizza lover</p>
             </div>
         </div>
     </header>
@@ -72,8 +72,19 @@
 
         <div class='contact'>
             <form action="">
-                <label for="email"></label>
-                <input id='email' type="email">
+                <div class='name'>
+                    <label for="name">name</label>
+                    <input id='name' type="text">
+                </div>
+
+                <div class='email'>
+                    <label for="email">email</label>
+                    <input id='email' type="email">
+                </div>
+
+                <textarea name="" id="" cols="100" rows="20"></textarea>
+
+                <button>submit</button>
             </form>
         </div>
 
