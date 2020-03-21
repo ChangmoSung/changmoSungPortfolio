@@ -1,6 +1,8 @@
 const portfolio = {};
 
 portfolio.init = function () {
+    const $me = $('.me');
+    const $description = $('.description');
     const $title = $('.title')
     const titleList = ['.developer', '.athlete', '.foodLover'];
     let titleIndex = 0;
@@ -13,6 +15,7 @@ portfolio.init = function () {
     const $about = $('.about');
     let selectedProject;
     let list;
+
 
     setTimeout(() => {
         $title.children().first().addClass('notVisible');
@@ -50,9 +53,19 @@ portfolio.init = function () {
     // ------------------------------- //
     $projects.on('click', 'li', function () {
         $header.fadeOut();
-        if ($about.children().hasClass('selected')) {
-            $about.children().addClass('notSelected');
-        }
+
+
+        $about.fadeOut();
+
+        setTimeout(function () {
+            $me.removeClass('imageShown');
+
+            setTimeout(function () {
+                $description.removeClass('descriptionShown');
+            }, 500);
+        }, 1);
+
+        
 
         // -------previously selected project ---------- //
         if (selectedProject) {
@@ -108,14 +121,27 @@ portfolio.init = function () {
         const selectedList = $(this).attr('data-selected');
 
         if (selectedList === '.header') {
-            $header.fadeIn();
+            
+            $me.removeClass('imageShown');
 
+            $description.removeClass('descriptionShown');
+            
+            $about.fadeOut(function() {
+                $header.fadeIn('slow');
+            });
 
         } else if (selectedList === '.about') {
-            $header.fadeOut(function() {
-                $('.me').addClass('imageShown')
+            $header.fadeOut();
+            
+            $about.css('display', 'flex');
 
-            })
+            setTimeout(function() {
+                $me.addClass('imageShown');
+
+                setTimeout(function () {
+                    $description.addClass('descriptionShown');
+                }, 500);
+            },100);
         }
     })
 }

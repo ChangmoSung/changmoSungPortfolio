@@ -4,93 +4,93 @@ nav {
 
 main {
 
-    // .firstProject,
-    // .secondProject,
-    // .thirdProject,
-    // .fourthProject {
-    //     display: flex;
-    //     height: 100vh;
-    //     position: fixed;
-    //     top: 0;
+    .firstProject,
+    .secondProject,
+    .thirdProject,
+    .fourthProject {
+        display: flex;
+        height: 100vh;
+        position: fixed;
+        top: 0;
 
-    //     .projectImage {
-    //         width: 50%;
-    //         display: flex;
-    //         align-items: center;
-    //         opacity: 0;
-    //         z-index: -1;
-    //         transition: all 0.6s;
-    //         transform: translateY(100vh);
+        .projectImage {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            opacity: 0;
+            z-index: -1;
+            transition: all 0.6s;
+            transform: translateY(100vh);
 
-    //         &.selected {
-    //             z-index: 1;
-    //             transform: translateY(0);
-    //             opacity: 1;
-    //         }
+            &.selected {
+                z-index: 1;
+                transform: translateY(0);
+                opacity: 1;
+            }
 
-    //         &.notSelected {
-    //             transform: translateY(-100vh);
-    //             opacity: 0;
-    //         }
+            &.notSelected {
+                transform: translateY(-100vh);
+                opacity: 0;
+            }
 
-    //         div {
-    //             width: 90%;
-    //             height: 45%;
-    //             margin: 0 auto;
-    //         }
-    //     }
+            div {
+                width: 90%;
+                height: 45%;
+                margin: 0 auto;
+            }
+        }
 
-    //     .projectDescription {
-    //         width: 50%;
-    //         display: flex;
-    //         flex-direction: column;
-    //         justify-content: center;
-    //         transition: all 0.6s;
-    //         opacity: 0;
-    //         transform: translateY(-100vh);
+        .projectDescription {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: all 0.6s;
+            opacity: 0;
+            transform: translateY(-100vh);
 
-    //         &.selected {
-    //             opacity: 1;
-    //             transform: translateY(0);
-    //         }
+            &.selected {
+                opacity: 1;
+                transform: translateY(0);
+            }
 
-    //         &.notSelected {
-    //             transform: translateY(100vh);
-    //             opacity: 0;
-    //         }
+            &.notSelected {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
 
-    //         .projectVideo {
-    //             width: 90%;
-    //             margin: 0 auto;
-    //             overflow: hidden;
-    //             position: relative;
-    //         }
+            .projectVideo {
+                width: 90%;
+                margin: 0 auto;
+                overflow: hidden;
+                position: relative;
+            }
 
-    //         .skill {
-    //             display: flex;
-    //             justify-content: space-around;
-    //             font-size: 4rem;
-    //             list-style: none;
-    //             margin: 10rem 0;
-    //         }
+            .skill {
+                display: flex;
+                justify-content: space-around;
+                font-size: 4rem;
+                list-style: none;
+                margin: 10rem 0;
+            }
 
-    //         .aboutProject {
-    //             font-size: 2rem;
-    //             line-height: 2.7rem;
-    //         }
-    //     }
-    // }
+            .aboutProject {
+                font-size: 2rem;
+                line-height: 2.7rem;
+            }
+        }
+    }
 
     .about {
-        display: flex;
+        display: none;
         flex-direction: column;
         height: 100vh;
         
         
         .me {
-            height: 25%;
-            width: 50%;
-            margin: 3rem auto;
+            height: 25rem;
+            width: 25rem;
+            margin: 3rem auto 1rem;
             transition: all 1s;
             transform-origin: 100% 100%;
             transform: perspective(800px) rotateX(90deg);
@@ -105,12 +105,18 @@ main {
         }
 
         .description {
-            height: 45%;
+            opacity: 0;
+            height: 37.5%;
             font-size: 1.6rem;
             text-align: center;
             line-height: 2.2rem;
             width: 80%;
             margin: 0 auto;
+            transition: all 1s;
+
+            &.descriptionShown {
+                opacity: 1;
+            }
         }
 
         .skillList {
@@ -127,92 +133,10 @@ main {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                width: 25%;
+                width: 20%;
                 text-align: center;
                 font-size: 5rem;
             }
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // .about {
-    //     display: flex;
-    //     height: 100vh;
-    //     position: fixed;
-    //     top: 0;
-
-    //     .me {
-    //         width: 50%;
-    //         display: flex;
-    //         align-items: center;
-    //         transition: all 0.6s;
-    //         opacity: 0;
-    //         transform: translateX(100vh);
-
-    //         &.selected {
-    //             opacity: 1;
-    //             transform: translateX(0);
-    //         }
-
-    //         &.notSelected {
-    //             transform: translateX(-100vh);
-    //             opacity: 0;
-    //         }
-
-    //         .skillList {
-    //             display: flex;
-    //             flex-wrap: wrap;
-    //             justify-content: space-evenly;
-    //             align-items: center;
-    //             width: 90%;
-    //             height: 45%;
-    //             margin: 0 auto;
-    //             list-style: none;
-    //             padding: 0;
-    //             margin: 0;
-    //             font-size: 5rem;
-    //             text-align: center;
-
-    //             li {
-    //                 min-width: 21%;
-    //                 width: 10rem;
-    //             }
-    //         }
-    //     }
-
-    //     .skillList {
-    //         width: 50%;
-    //         display: flex;
-    //         flex-direction: column;
-    //         justify-content: center;
-    //         transition: all 0.6s;
-    //         opacity: 0;
-    //         transform: translateX(-100vh);
-
-    //         &.selected {
-    //             transform: translateX(0);
-    //             opacity: 1
-    //         }
-
-    //         &.notSelected {
-    //             transform: translateX(100vh);
-    //             opacity: 0;
-    //         }
-    //     }
-    // }
 }

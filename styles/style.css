@@ -324,15 +324,111 @@ nav {
   z-index: 999;
 }
 
-main .about {
+main .firstProject,
+main .secondProject,
+main .thirdProject,
+main .fourthProject {
   display: flex;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+}
+main .firstProject .projectImage,
+main .secondProject .projectImage,
+main .thirdProject .projectImage,
+main .fourthProject .projectImage {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.6s;
+  transform: translateY(100vh);
+}
+main .firstProject .projectImage.selected,
+main .secondProject .projectImage.selected,
+main .thirdProject .projectImage.selected,
+main .fourthProject .projectImage.selected {
+  z-index: 1;
+  transform: translateY(0);
+  opacity: 1;
+}
+main .firstProject .projectImage.notSelected,
+main .secondProject .projectImage.notSelected,
+main .thirdProject .projectImage.notSelected,
+main .fourthProject .projectImage.notSelected {
+  transform: translateY(-100vh);
+  opacity: 0;
+}
+main .firstProject .projectImage div,
+main .secondProject .projectImage div,
+main .thirdProject .projectImage div,
+main .fourthProject .projectImage div {
+  width: 90%;
+  height: 45%;
+  margin: 0 auto;
+}
+main .firstProject .projectDescription,
+main .secondProject .projectDescription,
+main .thirdProject .projectDescription,
+main .fourthProject .projectDescription {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.6s;
+  opacity: 0;
+  transform: translateY(-100vh);
+}
+main .firstProject .projectDescription.selected,
+main .secondProject .projectDescription.selected,
+main .thirdProject .projectDescription.selected,
+main .fourthProject .projectDescription.selected {
+  opacity: 1;
+  transform: translateY(0);
+}
+main .firstProject .projectDescription.notSelected,
+main .secondProject .projectDescription.notSelected,
+main .thirdProject .projectDescription.notSelected,
+main .fourthProject .projectDescription.notSelected {
+  transform: translateY(100vh);
+  opacity: 0;
+}
+main .firstProject .projectDescription .projectVideo,
+main .secondProject .projectDescription .projectVideo,
+main .thirdProject .projectDescription .projectVideo,
+main .fourthProject .projectDescription .projectVideo {
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+main .firstProject .projectDescription .skill,
+main .secondProject .projectDescription .skill,
+main .thirdProject .projectDescription .skill,
+main .fourthProject .projectDescription .skill {
+  display: flex;
+  justify-content: space-around;
+  font-size: 4rem;
+  list-style: none;
+  margin: 10rem 0;
+}
+main .firstProject .projectDescription .aboutProject,
+main .secondProject .projectDescription .aboutProject,
+main .thirdProject .projectDescription .aboutProject,
+main .fourthProject .projectDescription .aboutProject {
+  font-size: 2rem;
+  line-height: 2.7rem;
+}
+main .about {
+  display: none;
   flex-direction: column;
   height: 100vh;
 }
 main .about .me {
-  height: 25%;
-  width: 50%;
-  margin: 3rem auto;
+  height: 25rem;
+  width: 25rem;
+  margin: 3rem auto 1rem;
   transition: all 1s;
   transform-origin: 100% 100%;
   transform: perspective(800px) rotateX(90deg);
@@ -344,12 +440,17 @@ main .about .me.imageShown {
   transform: rotateX(0);
 }
 main .about .description {
-  height: 45%;
+  opacity: 0;
+  height: 37.5%;
   font-size: 1.6rem;
   text-align: center;
   line-height: 2.2rem;
   width: 80%;
   margin: 0 auto;
+  transition: all 1s;
+}
+main .about .description.descriptionShown {
+  opacity: 1;
 }
 main .about .skillList {
   display: flex;
@@ -365,7 +466,7 @@ main .about .skillList li {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25%;
+  width: 20%;
   text-align: center;
   font-size: 5rem;
 }
