@@ -93,7 +93,7 @@ main {
             margin: 3rem auto 1rem;
             transition: all 1s;
             transform-origin: 100% 100%;
-            transform: perspective(800px) rotateX(90deg);
+            transform: perspective(800px) rotateX(-90deg);
             
             img {
                 border-radius: 1rem;
@@ -138,5 +138,10 @@ main {
                 font-size: 5rem;
             }
         }
+    }
+
+    .contact {
+        display: none;
+        height: 100vh;
     }
 }

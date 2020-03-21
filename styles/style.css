@@ -431,7 +431,7 @@ main .about .me {
   margin: 3rem auto 1rem;
   transition: all 1s;
   transform-origin: 100% 100%;
-  transform: perspective(800px) rotateX(90deg);
+  transform: perspective(800px) rotateX(-90deg);
 }
 main .about .me img {
   border-radius: 1rem;
@@ -469,4 +469,8 @@ main .about .skillList li {
   width: 20%;
   text-align: center;
   font-size: 5rem;
+}
+main .contact {
+  display: none;
+  height: 100vh;
 }

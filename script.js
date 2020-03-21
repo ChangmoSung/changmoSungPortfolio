@@ -13,21 +13,24 @@ portfolio.init = function () {
     const $projects = $('.projects');
     const $header = $('header');
     const $about = $('.about');
+    const $contact = $('.contact');
     let selectedProject;
     let previouslySelectedProject;
     let list;
 
-
+// ---------the title shown on load (because the interval runs after 2.5 seconds)---------- //
     setTimeout(() => {
         $title.children().first().addClass('notVisible');
     }, 2500)
 
     setInterval(() => {
+// -----------third title shown----------- //
         if (hiddenTitle) {
             hiddenTitle.removeClass('visible');
             hiddenTitle.removeClass('notVisible');
         }
 
+// ----------second title shown-------------- //
         if (previouslyVisibleTitle) {
             previouslyVisibleTitle.addClass('notVisible');
 
@@ -39,7 +42,7 @@ portfolio.init = function () {
         if (titleIndex > 2) {
             titleIndex = 0;
         }
-
+// --------first title shown----------- //
         visibleTitle = $title.find(titleList[titleIndex]);
 
         visibleTitle.addClass('visible');
@@ -54,15 +57,12 @@ portfolio.init = function () {
     // ------------------------------- //
     $projects.on('click', 'li', function () {
         $header.fadeOut();
+
         $about.fadeOut();
+        $me.removeClass('imageShown');
+        $description.removeClass('descriptionShown');
 
-        setTimeout(function () {
-            $me.removeClass('imageShown');
-
-            setTimeout(function () {
-                $description.removeClass('descriptionShown');
-            }, 500);
-        }, 1);
+        $contact.fadeOut();
 
 
         // ---------- previously selected project ---------- //
@@ -72,6 +72,7 @@ portfolio.init = function () {
             selectedProject.children().addClass('notSelected');
             selectedProject.children().removeClass('selected');
 
+//--------- push it up first and then once it's not shown, push it down--------//
             setTimeout(function() {
                 previouslySelectedProject.children().removeClass('notSelected');
             }, 400)
@@ -104,6 +105,16 @@ portfolio.init = function () {
         if (selectedProject) {
             selectedProject.children().addClass('notSelected');
 
+//--------- push it up first and then once it's not shown, push it down--------//
+            previouslySelectedProject = selectedProject;
+            setTimeout(function() {
+                previouslySelectedProject.children().removeClass('selected');
+                previouslySelectedProject.children().removeClass('notSelected');
+
+// --------to prevent selectedProject from getting class again in the above code-------- //
+                selectedProject = '';
+            }, 400)
+
             selectedProject.children().children()[1].children[0].pause();
             selectedProject.children().children()[1].children[0].currentTime = 0;
 
@@ -122,6 +133,8 @@ portfolio.init = function () {
                 $header.fadeIn('slow');
             });
 
+            $contact.fadeOut();
+
         } else if (selectedList === '.about') {
             $header.fadeOut();
             
@@ -133,7 +146,18 @@ portfolio.init = function () {
                 setTimeout(function () {
                     $description.addClass('descriptionShown');
                 }, 500);
-            },100);
+            },300);
+
+            $contact.fadeOut();
+
+        } else if(selectedList === '.contact'){
+            $header.fadeOut();
+
+            $about.fadeOut();
+            $me.removeClass('imageShown');
+            $description.removeClass('descriptionShown');
+          
+            $contact.fadeIn();
         }
     })
 }
