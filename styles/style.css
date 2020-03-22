@@ -234,13 +234,10 @@ html {
   font-size: 62.5%;
 }
 html .wrapper {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
 }
-html img {
-  width: 100%;
-  height: 100%;
-}
+html img,
 html video {
   width: 100%;
   height: 100%;
@@ -345,46 +342,59 @@ main .fourthProject {
   height: 100vh;
   position: fixed;
   top: 0;
+  width: 100%;
 }
-main .firstProject .projectImage,
-main .secondProject .projectImage,
-main .thirdProject .projectImage,
-main .fourthProject .projectImage {
+main .firstProject.selectedProject,
+main .secondProject.selectedProject,
+main .thirdProject.selectedProject,
+main .fourthProject.selectedProject {
+  z-index: 998;
+}
+main .firstProject .imageAndSkills,
+main .secondProject .imageAndSkills,
+main .thirdProject .imageAndSkills,
+main .fourthProject .imageAndSkills {
   width: 50%;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   opacity: 0;
-  z-index: -1;
   transition: all 0.6s;
   transform: translateY(100vh);
 }
-main .firstProject .projectImage.selected,
-main .secondProject .projectImage.selected,
-main .thirdProject .projectImage.selected,
-main .fourthProject .projectImage.selected {
-  z-index: 1;
+main .firstProject .imageAndSkills.selected,
+main .secondProject .imageAndSkills.selected,
+main .thirdProject .imageAndSkills.selected,
+main .fourthProject .imageAndSkills.selected {
   transform: translateY(0);
   opacity: 1;
 }
-main .firstProject .projectImage.notSelected,
-main .secondProject .projectImage.notSelected,
-main .thirdProject .projectImage.notSelected,
-main .fourthProject .projectImage.notSelected {
+main .firstProject .imageAndSkills.notSelected,
+main .secondProject .imageAndSkills.notSelected,
+main .thirdProject .imageAndSkills.notSelected,
+main .fourthProject .imageAndSkills.notSelected {
   transform: translateY(-100vh);
   opacity: 0;
 }
-main .firstProject .projectImage div,
-main .secondProject .projectImage div,
-main .thirdProject .projectImage div,
-main .fourthProject .projectImage div {
-  width: 90%;
-  height: 45%;
+main .firstProject .imageAndSkills div,
+main .secondProject .imageAndSkills div,
+main .thirdProject .imageAndSkills div,
+main .fourthProject .imageAndSkills div {
+  width: 65rem;
   margin: 0 auto;
 }
-main .firstProject .projectDescription,
-main .secondProject .projectDescription,
-main .thirdProject .projectDescription,
-main .fourthProject .projectDescription {
+main .firstProject .imageAndSkills .aboutProject,
+main .secondProject .imageAndSkills .aboutProject,
+main .thirdProject .imageAndSkills .aboutProject,
+main .fourthProject .imageAndSkills .aboutProject {
+  font-size: 2rem;
+  line-height: 2.7rem;
+  margin: 2.3rem auto;
+}
+main .firstProject .videoAndDescription,
+main .secondProject .videoAndDescription,
+main .thirdProject .videoAndDescription,
+main .fourthProject .videoAndDescription {
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -393,45 +403,45 @@ main .fourthProject .projectDescription {
   opacity: 0;
   transform: translateY(-100vh);
 }
-main .firstProject .projectDescription.selected,
-main .secondProject .projectDescription.selected,
-main .thirdProject .projectDescription.selected,
-main .fourthProject .projectDescription.selected {
+main .firstProject .videoAndDescription.selected,
+main .secondProject .videoAndDescription.selected,
+main .thirdProject .videoAndDescription.selected,
+main .fourthProject .videoAndDescription.selected {
   opacity: 1;
   transform: translateY(0);
 }
-main .firstProject .projectDescription.notSelected,
-main .secondProject .projectDescription.notSelected,
-main .thirdProject .projectDescription.notSelected,
-main .fourthProject .projectDescription.notSelected {
+main .firstProject .videoAndDescription.notSelected,
+main .secondProject .videoAndDescription.notSelected,
+main .thirdProject .videoAndDescription.notSelected,
+main .fourthProject .videoAndDescription.notSelected {
   transform: translateY(100vh);
   opacity: 0;
 }
-main .firstProject .projectDescription .projectVideo,
-main .secondProject .projectDescription .projectVideo,
-main .thirdProject .projectDescription .projectVideo,
-main .fourthProject .projectDescription .projectVideo {
-  width: 90%;
+main .firstProject .videoAndDescription .projectVideo,
+main .secondProject .videoAndDescription .projectVideo,
+main .thirdProject .videoAndDescription .projectVideo,
+main .fourthProject .videoAndDescription .projectVideo {
+  width: 65rem;
   margin: 0 auto;
-  overflow: hidden;
-  position: relative;
 }
-main .firstProject .projectDescription .skill,
-main .secondProject .projectDescription .skill,
-main .thirdProject .projectDescription .skill,
-main .fourthProject .projectDescription .skill {
+main .firstProject .videoAndDescription .skill,
+main .secondProject .videoAndDescription .skill,
+main .thirdProject .videoAndDescription .skill,
+main .fourthProject .videoAndDescription .skill {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   font-size: 4rem;
   list-style: none;
-  margin: 10rem 0;
+  margin: 5rem auto;
+  padding: 0;
+  width: 90%;
 }
-main .firstProject .projectDescription .aboutProject,
-main .secondProject .projectDescription .aboutProject,
-main .thirdProject .projectDescription .aboutProject,
-main .fourthProject .projectDescription .aboutProject {
-  font-size: 2rem;
-  line-height: 2.7rem;
+main .firstProject .videoAndDescription a,
+main .secondProject .videoAndDescription a,
+main .thirdProject .videoAndDescription a,
+main .fourthProject .videoAndDescription a {
+  font-size: 2.5rem;
+  cursor: pointer;
 }
 main .about {
   display: none;

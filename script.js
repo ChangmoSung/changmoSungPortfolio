@@ -74,17 +74,18 @@ portfolio.init = function () {
             // ---------- previously selected project ---------- //
             if (selectedProject) {
                 previouslySelectedProject = selectedProject;
-    
-                selectedProject.children().addClass('notSelected');
+                
+                selectedProject.removeClass('selectedProject');
                 selectedProject.children().removeClass('selected');
+                selectedProject.children().addClass('notSelected');
     
     //--------- push it up first and then once it's not shown, push it down--------//
                 setTimeout(function() {
                     previouslySelectedProject.children().removeClass('notSelected');
                 }, 400)
     
-                selectedProject.children().children()[1].children[0].pause();
-                selectedProject.children().children()[1].children[0].currentTime = 0;
+                selectedProject.children().children()[2].children[0].pause();
+                selectedProject.children().children()[2].children[0].currentTime = 0;
     
                 $(list).css('pointer-events', 'auto');
             }
@@ -92,11 +93,11 @@ portfolio.init = function () {
     
             // -------- current project selected here ------- //
             const project = $(this).attr('data-selected');
-            selectedProject = $(project);
+            selectedProject = $(project).addClass('selectedProject');
     
             selectedProject.children().addClass('selected');
     
-            selectedProject.children().children()[1].children[0].play();
+            selectedProject.children().children()[2].children[0].play();
     
             // ----------current nav list item selected here----------- //
             list = $(this);
@@ -112,7 +113,9 @@ portfolio.init = function () {
         if(e.keyCode === 13 || typeof e.keyCode !== 'number') {
 
             if (selectedProject) {
+                selectedProject.removeClass('selectedProject');
                 selectedProject.children().addClass('notSelected');
+
     
     //--------- push it up first and then once it's not shown, push it down--------//
                 previouslySelectedProject = selectedProject;
@@ -124,8 +127,8 @@ portfolio.init = function () {
                     selectedProject = '';
                 }, 400)
     
-                selectedProject.children().children()[1].children[0].pause();
-                selectedProject.children().children()[1].children[0].currentTime = 0;
+                selectedProject.children().children()[2].children[0].pause();
+                selectedProject.children().children()[2].children[0].currentTime = 0;
     
                 $(list).css('pointer-events', 'auto');
             }
