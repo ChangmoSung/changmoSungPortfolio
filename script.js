@@ -97,8 +97,6 @@ portfolio.init = function () {
             console.log(selectedProject.children().children())
             selectedProject.children().addClass('selected');
     
-            selectedProject.children().children()[1].children[0].play();
-    
             // ----------current nav list item selected here----------- //
             list = $(this);
             list.css('pointer-events', 'none');
