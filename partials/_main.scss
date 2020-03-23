@@ -11,6 +11,10 @@ main {
         top: 0;
         width: 100%;
 
+        @include mq980 {
+            flex-direction: column;
+        }
+
         &.selectedProject {
             z-index: 998;
         }
@@ -25,6 +29,14 @@ main {
             transition: all 0.6s;
             transform: translateY(100vh);
 
+            @include mq980 {
+                width: 95%;
+                height: calc(400px + (500 - 400) * ((100vw - 768px) / (980 - 768)));
+                flex-direction: row;
+                justify-content: space-between;
+                margin: 0 auto;
+            }
+
             &.selected {
                 transform: translateY(0);
                 opacity: 1;
@@ -35,12 +47,15 @@ main {
                 opacity: 0;
             }
 
-            .projectImage {
-                max-width: 60rem;
-            }
-
+            .projectImage,
             .projectVideo {
                 max-width: 60rem;
+
+                @include mq980 {
+                    width: 48.75%;
+                    height: 90%;
+                    // height: calc(330px + (380 - 330) * ((100vw - 768px) / (980 - 768)));
+                }
             }
         }
 
@@ -54,6 +69,13 @@ main {
             opacity: 0;
             transform: translateY(-100vh);
 
+            @include mq980 {
+                width: 90%;
+                height: 50%;
+                align-items: space-evenly;
+                margin: 0 auto;
+            }
+
             &.selected {
                 opacity: 1;
                 transform: translateY(0);
@@ -65,12 +87,36 @@ main {
             }
 
             h3 {
-                font-size: 4.5rem;
+                font-size: 6rem;
+
+                @include mq1304 {
+                    font-size: 5rem;
+                }
+
+                @include mq1088 {
+                    font-size: 4.5rem;
+                }
+
+                @include mq980 {
+                    margin: 0 0 3rem 0;
+                }
             }
 
             .aboutProject {
-                font-size: 1.8rem;
+                font-size: 2rem;
                 line-height: 2.5rem;
+
+                @include mq1304 {
+                    font-size: 1.8rem;
+                }
+
+                @include mq1088 {
+                    font-size: 1.7rem;
+                }
+
+                @include mq980 {
+                    margin: 0;
+                }
             }
 
             .skill {
@@ -80,6 +126,10 @@ main {
                 font-size: 4.5rem;
                 list-style: none;
                 padding: 0;
+
+                @include mq980 {
+                    margin: 3rem 0;
+                }
             }
 
             .links  {
@@ -101,7 +151,6 @@ main {
                     border-radius: 1rem;
                 }
             }
-            
         }
     }
 
@@ -109,7 +158,6 @@ main {
         display: none;
         flex-direction: column;
         height: 100vh;
-        
         
         .me {
             height: 25rem;

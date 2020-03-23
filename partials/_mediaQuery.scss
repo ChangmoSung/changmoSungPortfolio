@@ -1,0 +1,17 @@
+@mixin mq1304 {
+    @media(max-width: 1304px) {
+        @content;
+    }
+}
+
+@mixin mq1088 {
+    @media(max-width: 1088px) {
+        @content;
+    }
+}
+
+@mixin mq980 {
+    @media(max-width: 980px) {
+        @content;
+    }
+}
