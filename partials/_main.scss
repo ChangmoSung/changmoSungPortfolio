@@ -245,6 +245,8 @@ main {
             transition: all 1s;
             transform-origin: 100% 100%;
             transform: perspective(800px) rotateX(-90deg);
+            -webkit-transform: perspective(800px) rotateX(-90deg);
+            -moz-transform: perspective(800px) rotateX(-90deg);
             
             img {
                 border-radius: 1rem;
@@ -304,7 +306,7 @@ main {
     }
 
     .contact {
-        display: flex;
+        display: none;
         justify-content: center;
         align-items: center;
         height: 100vh;

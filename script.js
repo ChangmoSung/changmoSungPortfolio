@@ -131,6 +131,7 @@ portfolio.init = function () {
                 $(list).css('pointer-events', 'auto');
             }
     
+// ----------- non project list starts here -------------- //
             const selectedList = $(this).attr('data-selected');
     
             if (selectedList === '.header') {
@@ -149,7 +150,8 @@ portfolio.init = function () {
     
             } else if (selectedList === '.about') {
                 $header.fadeOut();
-                
+                $contact.fadeOut();
+
                 $about.css('display', 'flex');
                 setTimeout(function() {
                     $me.addClass('imageShown');
@@ -164,8 +166,6 @@ portfolio.init = function () {
                         }, 500)
                     }, 500);
                 },300);
-    
-                $contact.fadeOut();
     
             } else if(selectedList === '.contact'){
                 $header.fadeOut();
