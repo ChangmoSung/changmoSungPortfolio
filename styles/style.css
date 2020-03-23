@@ -275,6 +275,26 @@ header .headerFlexContainer h1 {
   color: #fff;
   margin: 0;
 }
+@media (max-width: 768px) {
+  header .headerFlexContainer h1 {
+    font-size: 12rem;
+  }
+}
+@media (max-width: 545px) {
+  header .headerFlexContainer h1 {
+    font-size: 9rem;
+  }
+}
+@media (max-width: 435px) {
+  header .headerFlexContainer h1 {
+    font-size: 8rem;
+  }
+}
+@media (max-width: 375px) {
+  header .headerFlexContainer h1 {
+    font-size: 7rem;
+  }
+}
 header .headerFlexContainer .title {
   position: relative;
 }
@@ -292,6 +312,20 @@ header .headerFlexContainer .title p {
   background: blue;
   border-radius: 1rem 0 1rem 1rem;
 }
+@media (max-width: 768px) {
+  header .headerFlexContainer .title p {
+    left: 6%;
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 545px) {
+  header .headerFlexContainer .title p {
+    font-size: 3rem;
+    width: 17rem;
+    left: 3%;
+    top: 2rem;
+  }
+}
 header .headerFlexContainer .title p:before {
   content: "";
   transform: rotate(269deg);
@@ -305,6 +339,12 @@ header .headerFlexContainer .title p:before {
   top: -84%;
   right: -17%;
   width: 85px;
+}
+@media (max-width: 545px) {
+  header .headerFlexContainer .title p:before {
+    right: -26%;
+    top: -127%;
+  }
 }
 header .headerFlexContainer .title p.visible {
   opacity: 1;

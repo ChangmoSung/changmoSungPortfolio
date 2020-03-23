@@ -54,6 +54,22 @@ header {
             font-size: 15rem;
             color: #fff;
             margin: 0;
+
+            @include mq768 {
+                font-size: 12rem;
+            }
+
+            @include mq545 {
+                font-size: 9rem;
+            }
+
+            @include mq435 {
+                font-size: 8rem;
+            }
+
+            @include mq375 {
+                font-size: 7rem;
+            }
         }
 
         .title {
@@ -73,6 +89,18 @@ header {
                 background: blue;
                 border-radius: 1rem 0 1rem 1rem;
 
+                @include mq768 {
+                    left: 6%;
+                    font-size: 3.5rem;
+                }
+
+                @include mq545 {
+                    font-size: 3rem;
+                    width: 17rem;
+                    left: 3%;
+                    top: 2rem;
+                }
+
                 &:before {
                     content: "";
                     transform: rotate(269deg);
@@ -86,6 +114,11 @@ header {
                     top: -84%;
                     right: -17%;
                     width: 85px;
+
+                    @include mq545 {
+                        right: -26%;
+                        top: -127%;
+                    }
                 }
 
                 &.visible {
