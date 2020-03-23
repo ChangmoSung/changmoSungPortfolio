@@ -84,8 +84,8 @@ portfolio.init = function () {
                     previouslySelectedProject.children().removeClass('notSelected');
                 }, 400)
     
-                selectedProject.children().children()[2].children[0].pause();
-                selectedProject.children().children()[2].children[0].currentTime = 0;
+                selectedProject.children().children()[3].children[0].pause();
+                selectedProject.children().children()[3].children[0].currentTime = 0;
     
                 $(list).css('pointer-events', 'auto');
             }
@@ -94,10 +94,10 @@ portfolio.init = function () {
             // -------- current project selected here ------- //
             const project = $(this).attr('data-selected');
             selectedProject = $(project).addClass('selectedProject');
-    
+
             selectedProject.children().addClass('selected');
     
-            selectedProject.children().children()[2].children[0].play();
+            selectedProject.children().children()[3].children[0].play();
     
             // ----------current nav list item selected here----------- //
             list = $(this);
@@ -127,8 +127,8 @@ portfolio.init = function () {
                     selectedProject = '';
                 }, 400)
     
-                selectedProject.children().children()[2].children[0].pause();
-                selectedProject.children().children()[2].children[0].currentTime = 0;
+                selectedProject.children().children()[3].children[0].pause();
+                selectedProject.children().children()[3].children[0].currentTime = 0;
     
                 $(list).css('pointer-events', 'auto');
             }

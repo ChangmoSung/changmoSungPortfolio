@@ -254,27 +254,8 @@ nav ul {
   display: flex;
   list-style: none;
   padding: 0;
-  margin: 3rem 0 0 3rem;
   font-size: 2.5rem;
   text-align: center;
-}
-nav ul.info li, nav ul.projects li {
-  position: relative;
-  cursor: pointer;
-  text-transform: uppercase;
-  font-size: 2rem;
-  box-shadow: 7px 7px skyblue;
-  margin-right: 3rem;
-  background: blue;
-  border-radius: 1rem;
-  width: 13rem;
-  line-height: 5rem;
-  color: white;
-}
-nav ul.info li:hover, nav ul.info li:focus, nav ul.projects li:hover, nav ul.projects li:focus {
-  top: 3.5px;
-  left: 3.5px;
-  box-shadow: 3.5px 3.5px skyblue;
 }
 
 header {
@@ -358,6 +339,7 @@ main .fourthProject .imageAndSkills {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   opacity: 0;
   transition: all 0.6s;
   transform: translateY(100vh);
@@ -376,20 +358,26 @@ main .fourthProject .imageAndSkills.notSelected {
   transform: translateY(-100vh);
   opacity: 0;
 }
+main .firstProject .imageAndSkills h3,
+main .secondProject .imageAndSkills h3,
+main .thirdProject .imageAndSkills h3,
+main .fourthProject .imageAndSkills h3 {
+  font-size: 4.5rem;
+  margin: 0 0 2rem 0;
+}
 main .firstProject .imageAndSkills div,
 main .secondProject .imageAndSkills div,
 main .thirdProject .imageAndSkills div,
 main .fourthProject .imageAndSkills div {
-  width: 65rem;
-  margin: 0 auto;
+  width: 90%;
+  max-width: 60rem;
 }
 main .firstProject .imageAndSkills .aboutProject,
 main .secondProject .imageAndSkills .aboutProject,
 main .thirdProject .imageAndSkills .aboutProject,
 main .fourthProject .imageAndSkills .aboutProject {
-  font-size: 2rem;
-  line-height: 2.7rem;
-  margin: 2.3rem auto;
+  font-size: 1.8rem;
+  line-height: 2.5rem;
 }
 main .firstProject .videoAndDescription,
 main .secondProject .videoAndDescription,
@@ -399,6 +387,7 @@ main .fourthProject .videoAndDescription {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   transition: all 0.6s;
   opacity: 0;
   transform: translateY(-100vh);
@@ -421,8 +410,8 @@ main .firstProject .videoAndDescription .projectVideo,
 main .secondProject .videoAndDescription .projectVideo,
 main .thirdProject .videoAndDescription .projectVideo,
 main .fourthProject .videoAndDescription .projectVideo {
-  width: 65rem;
-  margin: 0 auto;
+  width: 90%;
+  max-width: 60rem;
 }
 main .firstProject .videoAndDescription .skill,
 main .secondProject .videoAndDescription .skill,
@@ -432,16 +421,32 @@ main .fourthProject .videoAndDescription .skill {
   justify-content: space-between;
   font-size: 4rem;
   list-style: none;
-  margin: 5rem auto;
   padding: 0;
   width: 90%;
 }
-main .firstProject .videoAndDescription a,
-main .secondProject .videoAndDescription a,
-main .thirdProject .videoAndDescription a,
-main .fourthProject .videoAndDescription a {
+main .firstProject .videoAndDescription .links,
+main .secondProject .videoAndDescription .links,
+main .thirdProject .videoAndDescription .links,
+main .fourthProject .videoAndDescription .links {
+  display: flex;
+  justify-content: space-evenly;
+  width: 90%;
+}
+main .firstProject .videoAndDescription .links a,
+main .secondProject .videoAndDescription .links a,
+main .thirdProject .videoAndDescription .links a,
+main .fourthProject .videoAndDescription .links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 2.5rem;
   cursor: pointer;
+  text-decoration: none;
+  color: white;
+  width: 15rem;
+  height: 5rem;
+  background: linear-gradient(to right, #0072ff, #00c6ff);
+  border-radius: 1rem;
 }
 main .about {
   display: none;
