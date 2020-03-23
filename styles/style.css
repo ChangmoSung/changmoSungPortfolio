@@ -234,8 +234,7 @@ html {
   font-size: 62.5%;
 }
 html .wrapper {
-  width: 90%;
-  margin: 0 auto;
+  width: 95%;
 }
 html img,
 html video {
@@ -320,6 +319,7 @@ main .secondProject,
 main .thirdProject,
 main .fourthProject {
   display: flex;
+  justify-content: space-evenly;
   height: 100vh;
   position: fixed;
   top: 0;
@@ -331,120 +331,117 @@ main .thirdProject.selectedProject,
 main .fourthProject.selectedProject {
   z-index: 998;
 }
-main .firstProject .imageAndSkills,
-main .secondProject .imageAndSkills,
-main .thirdProject .imageAndSkills,
-main .fourthProject .imageAndSkills {
-  width: 50%;
+main .firstProject .imageAndVideo,
+main .secondProject .imageAndVideo,
+main .thirdProject .imageAndVideo,
+main .fourthProject .imageAndVideo {
+  width: 45%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   opacity: 0;
   transition: all 0.6s;
   transform: translateY(100vh);
 }
-main .firstProject .imageAndSkills.selected,
-main .secondProject .imageAndSkills.selected,
-main .thirdProject .imageAndSkills.selected,
-main .fourthProject .imageAndSkills.selected {
+main .firstProject .imageAndVideo.selected,
+main .secondProject .imageAndVideo.selected,
+main .thirdProject .imageAndVideo.selected,
+main .fourthProject .imageAndVideo.selected {
   transform: translateY(0);
   opacity: 1;
 }
-main .firstProject .imageAndSkills.notSelected,
-main .secondProject .imageAndSkills.notSelected,
-main .thirdProject .imageAndSkills.notSelected,
-main .fourthProject .imageAndSkills.notSelected {
+main .firstProject .imageAndVideo.notSelected,
+main .secondProject .imageAndVideo.notSelected,
+main .thirdProject .imageAndVideo.notSelected,
+main .fourthProject .imageAndVideo.notSelected {
   transform: translateY(-100vh);
   opacity: 0;
 }
-main .firstProject .imageAndSkills h3,
-main .secondProject .imageAndSkills h3,
-main .thirdProject .imageAndSkills h3,
-main .fourthProject .imageAndSkills h3 {
-  font-size: 4.5rem;
-  margin: 0 0 2rem 0;
-}
-main .firstProject .imageAndSkills div,
-main .secondProject .imageAndSkills div,
-main .thirdProject .imageAndSkills div,
-main .fourthProject .imageAndSkills div {
-  width: 90%;
+main .firstProject .imageAndVideo .projectImage,
+main .secondProject .imageAndVideo .projectImage,
+main .thirdProject .imageAndVideo .projectImage,
+main .fourthProject .imageAndVideo .projectImage {
   max-width: 60rem;
 }
-main .firstProject .imageAndSkills .aboutProject,
-main .secondProject .imageAndSkills .aboutProject,
-main .thirdProject .imageAndSkills .aboutProject,
-main .fourthProject .imageAndSkills .aboutProject {
+main .firstProject .imageAndVideo .projectVideo,
+main .secondProject .imageAndVideo .projectVideo,
+main .thirdProject .imageAndVideo .projectVideo,
+main .fourthProject .imageAndVideo .projectVideo {
+  max-width: 60rem;
+}
+main .firstProject .description,
+main .secondProject .description,
+main .thirdProject .description,
+main .fourthProject .description {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.6s;
+  opacity: 0;
+  transform: translateY(-100vh);
+}
+main .firstProject .description.selected,
+main .secondProject .description.selected,
+main .thirdProject .description.selected,
+main .fourthProject .description.selected {
+  opacity: 1;
+  transform: translateY(0);
+}
+main .firstProject .description.notSelected,
+main .secondProject .description.notSelected,
+main .thirdProject .description.notSelected,
+main .fourthProject .description.notSelected {
+  transform: translateY(100vh);
+  opacity: 0;
+}
+main .firstProject .description h3,
+main .secondProject .description h3,
+main .thirdProject .description h3,
+main .fourthProject .description h3 {
+  font-size: 4.5rem;
+}
+main .firstProject .description .aboutProject,
+main .secondProject .description .aboutProject,
+main .thirdProject .description .aboutProject,
+main .fourthProject .description .aboutProject {
   font-size: 1.8rem;
   line-height: 2.5rem;
 }
-main .firstProject .videoAndDescription,
-main .secondProject .videoAndDescription,
-main .thirdProject .videoAndDescription,
-main .fourthProject .videoAndDescription {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.6s;
-  opacity: 0;
-  transform: translateY(-100vh);
-}
-main .firstProject .videoAndDescription.selected,
-main .secondProject .videoAndDescription.selected,
-main .thirdProject .videoAndDescription.selected,
-main .fourthProject .videoAndDescription.selected {
-  opacity: 1;
-  transform: translateY(0);
-}
-main .firstProject .videoAndDescription.notSelected,
-main .secondProject .videoAndDescription.notSelected,
-main .thirdProject .videoAndDescription.notSelected,
-main .fourthProject .videoAndDescription.notSelected {
-  transform: translateY(100vh);
-  opacity: 0;
-}
-main .firstProject .videoAndDescription .projectVideo,
-main .secondProject .videoAndDescription .projectVideo,
-main .thirdProject .videoAndDescription .projectVideo,
-main .fourthProject .videoAndDescription .projectVideo {
-  width: 90%;
-  max-width: 60rem;
-}
-main .firstProject .videoAndDescription .skill,
-main .secondProject .videoAndDescription .skill,
-main .thirdProject .videoAndDescription .skill,
-main .fourthProject .videoAndDescription .skill {
+main .firstProject .description .skill,
+main .secondProject .description .skill,
+main .thirdProject .description .skill,
+main .fourthProject .description .skill {
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  font-size: 4rem;
+  font-size: 4.5rem;
   list-style: none;
   padding: 0;
-  width: 90%;
 }
-main .firstProject .videoAndDescription .links,
-main .secondProject .videoAndDescription .links,
-main .thirdProject .videoAndDescription .links,
-main .fourthProject .videoAndDescription .links {
+main .firstProject .description .links,
+main .secondProject .description .links,
+main .thirdProject .description .links,
+main .fourthProject .description .links {
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
-  width: 90%;
 }
-main .firstProject .videoAndDescription .links a,
-main .secondProject .videoAndDescription .links a,
-main .thirdProject .videoAndDescription .links a,
-main .fourthProject .videoAndDescription .links a {
+main .firstProject .description .links a,
+main .secondProject .description .links a,
+main .thirdProject .description .links a,
+main .fourthProject .description .links a {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 2.5rem;
-  cursor: pointer;
+  text-transform: uppercase;
   text-decoration: none;
   color: white;
-  width: 15rem;
-  height: 5rem;
+  width: 14rem;
+  height: 4.5rem;
   background: linear-gradient(to right, #0072ff, #00c6ff);
   border-radius: 1rem;
 }
