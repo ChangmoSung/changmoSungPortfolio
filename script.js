@@ -144,10 +144,14 @@ portfolio.init = function () {
                 $contact.fadeOut();
 
                 $about.css('display', 'flex');
+
                 setTimeout(function() {
-                    $aboutContainer.addClass('aboutContainerShown')
                     $me.addClass('imageShown');
-                },300);
+
+                    setTimeout(function() {
+                        $aboutContainer.addClass('aboutContainerShown')
+                    },600)
+                },50);
     
             } else if(selectedList === '.contact'){
                 $contact.css('display', 'flex')

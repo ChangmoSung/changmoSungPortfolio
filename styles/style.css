@@ -741,39 +741,75 @@ main .fourthProject .description .links a {
 main .about {
   display: none;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   height: 100vh;
   position: fixed;
   top: 0;
   z-index: 998;
 }
 main .about .me {
-  height: 24rem;
+  height: 26rem;
   width: 40rem;
-  margin: 0 auto;
+  margin: 6rem auto;
   transition: all 1s;
-  transform-origin: 100% 100%;
-  transform: perspective(800px) rotateX(90deg);
-  -webkit-transform: perspective(800px) rotateX(90deg);
-  -moz-transform: perspective(800px) rotateX(90deg);
+  position: relative;
+  top: -100%;
+}
+@media (max-width: 1088px) {
+  main .about .me {
+    width: 30rem;
+    height: 22rem;
+    margin: 2.5rem auto;
+  }
+}
+@media (max-width: 768px) {
+  main .about .me {
+    width: 27rem;
+    height: 18rem;
+  }
+}
+@media (max-width: 590px) {
+  main .about .me {
+    width: 23rem;
+    height: 15rem;
+  }
+}
+@media (max-width: 435px) {
+  main .about .me {
+    margin: 2rem auto;
+  }
+}
+@media (max-height: 670px) {
+  main .about .me {
+    width: 20rem;
+    height: 10rem;
+  }
 }
 main .about .me img {
   border-radius: 1rem;
 }
 main .about .me.imageShown {
-  transform: rotateX(0);
+  top: 0;
 }
 main .about .aboutContainer {
   display: flex;
   justify-content: space-evenly;
-  height: 50%;
-  transition: all 1s;
-  transform-origin: 100% 100%;
-  transform: perspective(500px) rotateX(90deg);
-  -webkit-transform: perspective(500px) rotateX(90deg);
-  -moz-transform: perspective(500px) rotateX(90deg);
+  align-items: center;
+  height: 40%;
 }
-main .about .aboutContainer.aboutContainerShown {
+@media (max-width: 1088px) {
+  main .about .aboutContainer {
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 65%;
+  }
+}
+@media (max-width: 590px) {
+  main .about .aboutContainer {
+    height: 100%;
+  }
+}
+main .about .aboutContainer.aboutContainerShown .skillList, main .about .aboutContainer.aboutContainerShown .description {
   transform: rotateX(0);
 }
 main .about .aboutContainer .skillList {
@@ -781,16 +817,30 @@ main .about .aboutContainer .skillList {
   flex-wrap: wrap;
   justify-content: space-around;
   width: 45%;
-  height: 75%;
+  height: 80%;
   list-style: none;
   padding: 0;
   margin: 0;
   border-radius: 1rem;
-  transition: all 1s;
   background: linear-gradient(to right, #0072ff, #00c6ff);
+  transition: all 1s;
+  transform-origin: 100% 100%;
+  transform: perspective(500px) rotateX(90deg);
+  -webkit-transform: perspective(500px) rotateX(90deg);
+  -moz-transform: perspective(500px) rotateX(90deg);
 }
-main .about .aboutContainer .skillList.skillListShown {
-  opacity: 1;
+@media (max-width: 1088px) {
+  main .about .aboutContainer .skillList {
+    order: 1;
+    width: 80%;
+    height: 35%;
+  }
+}
+@media (max-width: 590px) {
+  main .about .aboutContainer .skillList {
+    width: 100%;
+    border-radius: 0;
+  }
 }
 main .about .aboutContainer .skillList li {
   display: flex;
@@ -802,8 +852,20 @@ main .about .aboutContainer .skillList li {
   font-size: 6rem;
   transition: all 1s;
 }
-main .about .aboutContainer .skillList li.skillShown {
-  opacity: 1;
+@media (max-width: 1088px) {
+  main .about .aboutContainer .skillList li {
+    font-size: 4.5rem;
+  }
+}
+@media (max-width: 375px) {
+  main .about .aboutContainer .skillList li {
+    font-size: 4rem;
+  }
+}
+@media (max-height: 670px) {
+  main .about .aboutContainer .skillList li {
+    font-size: 3.5rem;
+  }
 }
 main .about .aboutContainer .description {
   width: 40%;
@@ -811,6 +873,36 @@ main .about .aboutContainer .description {
   text-align: center;
   line-height: 2.4rem;
   transition: all 1s;
+  transform-origin: 100% 100%;
+  transform: perspective(500px) rotateX(90deg);
+  -webkit-transform: perspective(500px) rotateX(90deg);
+  -moz-transform: perspective(500px) rotateX(90deg);
+}
+@media (max-width: 1088px) {
+  main .about .aboutContainer .description {
+    width: 80%;
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 768px) {
+  main .about .aboutContainer .description {
+    line-height: 2.2rem;
+  }
+}
+@media (max-width: 590px) {
+  main .about .aboutContainer .description {
+    width: 90%;
+  }
+}
+@media (max-height: 670px) {
+  main .about .aboutContainer .description {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    margin: 1rem 0;
+  }
+}
+main .about .aboutContainer .description p:first-child {
+  margin-top: 0;
 }
 main .about .aboutContainer .description span {
   color: blue;
@@ -828,6 +920,30 @@ main .about .aboutContainer .description a span {
   font-size: 2.6rem;
   text-transform: uppercase;
   color: white;
+}
+@media (max-width: 1088px) {
+  main .about .aboutContainer .description a span {
+    font-size: 2.2rem;
+    height: 4rem;
+    width: 17rem;
+  }
+}
+@media (max-width: 768px) {
+  main .about .aboutContainer .description a span {
+    margin-bottom: 3rem;
+  }
+}
+@media (max-width: 435px) {
+  main .about .aboutContainer .description a span {
+    margin-bottom: 2rem;
+  }
+}
+@media (max-height: 670px) {
+  main .about .aboutContainer .description a span {
+    font-size: 2rem;
+    width: 15rem;
+    line-height: 4rem;
+  }
 }
 main .contact {
   display: none;

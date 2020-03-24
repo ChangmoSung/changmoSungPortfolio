@@ -39,3 +39,9 @@
         @content;
     }
 }
+
+@mixin mq375height {
+    @media(max-height: 670px) {
+        @content;
+    }
+}
