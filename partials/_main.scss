@@ -75,10 +75,13 @@ main {
             .projectImage,
             .projectVideo {
                 max-width: 60rem;
+                border: 4px solid blue;
+                border-radius: 1rem;
+                overflow: hidden;
 
                 @include mq980 {
                     width: 48.75%;
-                    height: 90%;
+                    height: 75%;
                 }
 
                 @include mq768 {
@@ -129,18 +132,18 @@ main {
             }
 
             h3 {
-                font-size: 6rem;
+                font-size: 5.5rem;
 
                 @include mq1304 {
                     font-size: 5rem;
                 }
 
                 @include mq1088 {
-                    font-size: 4.5rem;
+                    font-size: 4rem;
                 }
 
                 @include mq980 {
-                    font-size: 6rem;
+                    font-size: 5.5rem;
                     margin: 0 0 3rem 0;
                 }
 
@@ -149,7 +152,7 @@ main {
                     margin: 0 0 2rem 0;
                 }
 
-                @include mq545 {
+                @include mq590 {
                     font-size: 4rem;
                 }
 
@@ -179,7 +182,7 @@ main {
                     font-size: 1.7rem;
                 }
 
-                @include mq545 {
+                @include mq590 {
                     font-size: 1.6rem;
                 }
             }
@@ -196,7 +199,7 @@ main {
                     margin: 3rem 0;
                 }
 
-                @include mq545 {
+                @include mq590 {
                     font-size: 4.2rem;
                 }
             }
@@ -224,7 +227,7 @@ main {
                         font-size: 2.1rem;
                     }
 
-                    @include mq545 {
+                    @include mq590 {
                         font-size: 2rem;
                         height: 4rem;
                     }
@@ -237,10 +240,13 @@ main {
         display: none;
         flex-direction: column;
         height: 100vh;
+        position: fixed;
+        top: 0;
+        z-index: 998;
         
         .me {
-            height: 25rem;
-            width: 25rem;
+            height: 24rem;
+            width: 24rem;
             margin: 3rem auto 1rem;
             transition: all 1s;
             transform-origin: 100% 100%;
@@ -259,13 +265,17 @@ main {
 
         .description {
             opacity: 0;
-            height: 37.5%;
-            font-size: 1.6rem;
+            height: 40%;
+            width: 70%;
+            font-size: 1.7rem;
             text-align: center;
-            line-height: 2.2rem;
-            width: 80%;
+            line-height: 2.4rem;
             margin: 0 auto;
             transition: all 1s;
+
+            span {
+                color: blue;
+            }
 
             &.descriptionShown {
                 opacity: 1;
@@ -292,6 +302,7 @@ main {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                color: white;
                 width: 20%;
                 text-align: center;
                 font-size: 5rem;
@@ -310,16 +321,28 @@ main {
         justify-content: center;
         align-items: center;
         height: 100vh;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 998;
 
         form {
-            height: 55vh;
-            width: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
+            justify-content: space-evenly;
             align-items: center;
-            z-index: 999;
+            height: 70vh;
+            max-width: 85rem;
+            width: 80%;
+            border-radius: 1rem;
+            opacity: 0;
+            transition: all 1s;
             background: linear-gradient(to right, #0072ff, #00c6ff); 
+
+            &.formShown {
+                opacity: 1;
+            }
 
             .name,
             .email {

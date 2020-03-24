@@ -94,7 +94,6 @@ portfolio.init = function () {
             // -------- current project selected here ------- //
             const project = $(this).attr('data-selected');
             selectedProject = $(project).addClass('selectedProject');
-            console.log(selectedProject.children().children())
             selectedProject.children().addClass('selected');
     
             // ----------current nav list item selected here----------- //
@@ -168,6 +167,12 @@ portfolio.init = function () {
                 },300);
     
             } else if(selectedList === '.contact'){
+                $contact.css('display', 'flex')
+
+                setTimeout(function() {
+                    $contact.children()[0].classList.add('formShown')
+                },300)
+
                 $header.fadeOut();
     
                 $about.fadeOut();
@@ -175,8 +180,6 @@ portfolio.init = function () {
                 $description.removeClass('descriptionShown');
                 $skillList.removeClass('skillListShown');
                 $skill.removeClass('skillShown');
-              
-                $contact.fadeIn();
             }
         }
     })

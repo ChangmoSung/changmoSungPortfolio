@@ -42,7 +42,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right, #0072ff, #00c6ff); 
+    background-image: url(../assets/example7.gif);
     background-size: 100% 100%;
 
     .headerFlexContainer {
@@ -52,14 +52,14 @@ header {
 
         h1 {
             font-size: 15rem;
-            color: #fff;
+            color: blue;
             margin: 0;
 
             @include mq768 {
                 font-size: 12rem;
             }
 
-            @include mq545 {
+            @include mq590 {
                 font-size: 9rem;
             }
 
@@ -94,7 +94,7 @@ header {
                     font-size: 3.5rem;
                 }
 
-                @include mq545 {
+                @include mq590 {
                     font-size: 3rem;
                     width: 17rem;
                     left: 3%;
@@ -115,7 +115,7 @@ header {
                     right: -17%;
                     width: 85px;
 
-                    @include mq545 {
+                    @include mq590 {
                         right: -26%;
                         top: -127%;
                     }
