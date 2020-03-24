@@ -870,7 +870,8 @@ header .headerFlexContainer .title p.notVisible {
 }
 @media (max-width: 435px) {
   .about .aboutContainer .skillList {
-    margin-bottom: 20%;
+    margin-bottom: 25%;
+    height: 20%;
   }
 }
 .about .aboutContainer .skillList li {
@@ -888,14 +889,9 @@ header .headerFlexContainer .title p.notVisible {
     font-size: 4.5rem;
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 435px) {
   .about .aboutContainer .skillList li {
-    font-size: 4rem;
-  }
-}
-@media (max-height: 670px) {
-  .about .aboutContainer .skillList li {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 }
 .about .aboutContainer .description {
@@ -946,7 +942,14 @@ header .headerFlexContainer .title p.notVisible {
 .about .aboutContainer .description.descriptionShown {
   opacity: 1;
 }
-.about .aboutContainer .description a span {
+@media (max-width: 435px) {
+  .about .aboutContainer .description .resumeContactButton {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+.about .aboutContainer .description .resumeContactButton a span,
+.about .aboutContainer .description .resumeContactButton button {
   display: inline-block;
   text-decoration: none;
   background: linear-gradient(to right, #0072ff, #00c6ff);
@@ -956,29 +959,31 @@ header .headerFlexContainer .title p.notVisible {
   font-size: 2.6rem;
   text-transform: uppercase;
   color: white;
+  border: none;
+  padding: 0;
 }
 @media (max-width: 1088px) {
-  .about .aboutContainer .description a span {
+  .about .aboutContainer .description .resumeContactButton a span,
+.about .aboutContainer .description .resumeContactButton button {
     font-size: 2.2rem;
     height: 4rem;
     width: 17rem;
   }
 }
 @media (max-width: 768px) {
-  .about .aboutContainer .description a span {
+  .about .aboutContainer .description .resumeContactButton a span,
+.about .aboutContainer .description .resumeContactButton button {
     margin-bottom: 3rem;
   }
 }
 @media (max-width: 435px) {
-  .about .aboutContainer .description a span {
+  .about .aboutContainer .description .resumeContactButton a span,
+.about .aboutContainer .description .resumeContactButton button {
     margin-bottom: 2rem;
-  }
-}
-@media (max-height: 670px) {
-  .about .aboutContainer .description a span {
-    font-size: 2rem;
-    width: 15rem;
+    font-size: 1.6rem;
+    width: 12rem;
     line-height: 4rem;
+    height: 3.5rem;
   }
 }
 
