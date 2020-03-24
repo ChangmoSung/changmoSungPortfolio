@@ -1,25 +1,42 @@
 const portfolio = {};
 
 portfolio.init = function () {
+    const $greeting = $('.greeting');
+    const $navOpener = $('.navOpener');
+    const $nav = $('nav');
     const $me = $('.me');
     const $aboutContainer = $('.aboutContainer');
-    const $description = $('.description');
-    const $skillList = $('.skillList');
-    const $skill = $('.skill');
-    const $title = $('.title')
+    const $title = $('.title');
     const titleList = ['.developer', '.athlete', '.foodLover'];
     let titleIndex = 0;
     let visibleTitle;
     let previouslyVisibleTitle;
     let hiddenTitle;
-    const $info = $('.info');
-    const $projects = $('.projects');
+    const $info = $('li[data-category=info]');
+    const $projects = $('li[data-category=project');
     const $header = $('header');
     const $about = $('.about');
     const $contact = $('.contact');
     let selectedProject;
     let previouslySelectedProject;
     let list;
+
+    setTimeout(function() {
+        $greeting.fadeOut(function() {
+            $nav.css('top', '0');
+            $header.css('opacity', '1');
+        })
+    })
+
+    $nav.on('click', function() {
+        $nav.toggleClass('navOpened');
+        $navOpener.toggleClass('navClosed');
+    })
+
+    $navOpener.on('click', function() {
+        $nav.toggleClass('navOpened');
+        $navOpener.toggleClass('navClosed');
+    })
 
 // ---------the title shown on load (because the interval runs after 2.5 seconds)---------- //
     setTimeout(() => {
@@ -57,7 +74,7 @@ portfolio.init = function () {
     // ------------------------------- //
     // ------------project------------ //
     // ------------------------------- //
-    $projects.on('click keypress', 'li', function(e) {
+    $projects.on('click keypress', function(e) {
         if(e.keyCode === 13 || typeof e.keyCode !== 'number') {
             $header.fadeOut();
     
@@ -110,7 +127,7 @@ portfolio.init = function () {
     // ---------------------------- //
     // ------------Info------------ //
     // ---------------------------- //
-    $info.on('click keypress', 'li', function (e) {
+    $info.on('click keypress', function (e) {
         if(e.keyCode === 13 || typeof e.keyCode !== 'number') {
 
             if (selectedProject) {

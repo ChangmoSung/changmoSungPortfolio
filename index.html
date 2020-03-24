@@ -9,18 +9,19 @@
     <title>Changmo Sung</title>
 </head>
 <body>
-    <nav>
-        <ul class='info'>
-            <li tabindex="0"  data-selected='.header'>home</li>
-            <li tabindex="0"  data-selected='.about'>about</li>
-            <li tabindex="0"  data-selected='.contact'>contact</li>
-        </ul>
+    <p class='greeting'>Hi, I'm Changmo, Front-End Developer</p>
 
-        <ul class='projects'>
-            <li tabindex="0" data-selected='.firstProject'>project1</li>
-            <li tabindex="0" data-selected='.secondProject'>project2</li>
-            <li tabindex="0" data-selected='.thirdProject'>project3</li>
-            <li tabindex="0" data-selected='.fourthProject'>project4</li>
+    <span class='navOpener'>X</span>
+
+    <nav class='navOpened'>
+        <ul>
+            <li tabindex="0" data-category='info' data-selected='.header'>home</li>
+            <li tabindex="0" data-category='info' data-selected='.about'>about</li>
+            <li tabindex="0" data-category='info' data-selected='.contact'>contact</li>
+            <li tabindex="0" data-category='project' data-selected='.firstProject'>project1</li>
+            <li tabindex="0" data-category='project' data-selected='.secondProject'>project2</li>
+            <li tabindex="0" data-category='project' data-selected='.thirdProject'>project3</li>
+            <li tabindex="0" data-category='project' data-selected='.fourthProject'>project4</li>
         </ul>
     </nav>
 
