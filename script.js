@@ -54,7 +54,6 @@ portfolio.init = function () {
     }, 2500)
 
 
-
     // ------------------------------- //
     // ------------project------------ //
     // ------------------------------- //
@@ -70,13 +69,17 @@ portfolio.init = function () {
     
             // ---------- previously selected project ---------- //
             if (selectedProject) {
-                previouslySelectedProject = selectedProject;
+                selectedProject.children()[0].children[1].children[0].setAttribute('tabIndex', '-1');
+
+                selectedProject.children()[1].children[3].children[0].children[0].setAttribute('tabIndex', '-1');
+                selectedProject.children()[1].children[3].children[1].children[0].setAttribute('tabIndex', '-1');
                 
                 selectedProject.removeClass('selectedProject');
                 selectedProject.children().removeClass('selected');
                 selectedProject.children().addClass('notSelected');
     
     //--------- push it up first and then once it's not shown, push it down--------//
+                previouslySelectedProject = selectedProject;
                 setTimeout(function() {
                     previouslySelectedProject.children().removeClass('notSelected');
                 }, 400)
@@ -90,8 +93,13 @@ portfolio.init = function () {
             // -------- current project selected here ------- //
             const project = $(this).attr('data-selected');
             selectedProject = $(project).addClass('selectedProject');
+            selectedProject.children()[0].children[1].children[0].setAttribute('tabIndex', '0');
+            
+            selectedProject.children()[1].children[3].children[0].children[0].setAttribute('tabIndex', '0');
+            selectedProject.children()[1].children[3].children[1].children[0].setAttribute('tabIndex', '0');
+
             selectedProject.children().addClass('selected');
-    
+
             // ----------current nav list item selected here----------- //
             list = $(this);
             list.css('pointer-events', 'none');

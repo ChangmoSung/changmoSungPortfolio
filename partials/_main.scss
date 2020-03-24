@@ -1,516 +1,233 @@
-main {
+.firstProject,
+.secondProject,
+.thirdProject,
+.fourthProject {
+    display: flex;
+    justify-content: space-evenly;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
 
-    .firstProject,
-    .secondProject,
-    .thirdProject,
-    .fourthProject {
+    &.selectedProject {
+        z-index: 998;
+    }
+
+    @include mq980 {
+        flex-direction: column;
+    }
+
+    @include mq435 {
+        justify-content: flex-start;
+    }
+
+    .imageAndVideo {
+        width: 45%;
         display: flex;
+        flex-direction: column;
         justify-content: space-evenly;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        width: 100%;
+        align-items: center;
+        opacity: 0;
+        transition: all 0.6s;
+        transform: translateY(100vh);
+
+        &.selected {
+            transform: translateY(0);
+            opacity: 1;
+
+            @include mq980 {
+                transform: translateX(0);
+            }
+        }
+
+        &.notSelected {
+            transform: translateY(-100vh);
+            opacity: 0;
+
+            @include mq980 {
+                transform: translateX(100vh);
+            }
+        }
 
         @include mq980 {
+            width: 95%;
+            height: calc(395.2px + (500 - 395.2) * ((100vw - 768px) / (980 - 768)));
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 0 auto;
+            transform: translateX(-100vh);
+        }
+
+        @include mq768 {
             flex-direction: column;
+            justify-content: space-evenly;
+            width: 100%;
+            height: 55%;
         }
 
         @include mq435 {
-            justify-content: flex-start;
+            height: 40%;
+            margin: 3rem 0;
         }
 
-        &.selectedProject {
-            z-index: 998;
-        }
-
-        .imageAndVideo {
-            width: 45%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-            align-items: center;
-            opacity: 0;
-            transition: all 0.6s;
-            transform: translateY(100vh);
+        .projectImage,
+        .projectVideo {
+            max-width: 60rem;
+            border: 4px solid blue;
+            border-radius: 1rem;
+            overflow: hidden;
 
             @include mq980 {
-                width: 95%;
-                height: calc(395.2px + (500 - 395.2) * ((100vw - 768px) / (980 - 768)));
-                flex-direction: row;
-                justify-content: space-between;
-                margin: 0 auto;
-                transform: translateX(-100vh);
+                width: 48.75%;
+                height: 75%;
             }
 
             @include mq768 {
-                flex-direction: column;
-                justify-content: space-evenly;
-                width: 100%;
-                height: 55%;
+                width: 70%;
+                height: 47.5%;
+            }
+        }
+    }
+
+    .description {
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.6s;
+        opacity: 0;
+        transform: translateY(-100vh);
+
+        &.selected {
+            opacity: 1;
+            transform: translateY(0);
+
+            @include mq980 {
+                transform: translateX(0);
+            }
+        }
+
+        &.notSelected {
+            transform: translateY(100vh);
+            opacity: 0;
+
+            @include mq980 {
+                transform: translateX(-100vh);
+            }
+        }
+
+        @include mq980 {
+            width: 90%;
+            height: 50%;
+            justify-content: flex-start;
+            margin: 0 auto;
+            transform: translateX(100vh);
+        }
+
+        @include mq768 {
+            height: 40%;
+        }
+
+        h3 {
+            font-size: 5.5rem;
+
+            @include mq1304 {
+                font-size: 5rem;
+            }
+
+            @include mq1088 {
+                font-size: 4rem;
+            }
+
+            @include mq980 {
+                font-size: 5.5rem;
+                margin: 0 0 3rem 0;
+            }
+
+            @include mq768 {
+                font-size: 5rem;
+                margin: 0 0 2rem 0;
+            }
+
+            @include mq590 {
+                font-size: 4rem;
             }
 
             @include mq435 {
-                height: 40%;
+                font-size: 3rem;
+            }
+        }
+
+        .aboutProject {
+            font-size: 2rem;
+            line-height: 2.5rem;
+
+            @include mq1304 {
+                font-size: 1.8rem;
+            }
+
+            @include mq1088 {
+                font-size: 1.7rem;
+            }
+
+            @include mq980 {
+                margin: 0;
+                font-size: 2rem;
+            }
+
+            @include mq768 {
+                font-size: 1.7rem;
+            }
+
+            @include mq590 {
+                font-size: 1.6rem;
+            }
+        }
+
+        .skill {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            font-size: 5rem;
+            list-style: none;
+            padding: 0;
+
+            @include mq980 {
                 margin: 3rem 0;
             }
 
-            &.selected {
-                transform: translateY(0);
-                opacity: 1;
-
-                @include mq980 {
-                    transform: translateX(0);
-                }
-            }
-
-            &.notSelected {
-                transform: translateY(-100vh);
-                opacity: 0;
-
-                @include mq980 {
-                    transform: translateX(100vh);
-                }
-            }
-
-            .projectImage,
-            .projectVideo {
-                max-width: 60rem;
-                border: 4px solid blue;
-                border-radius: 1rem;
-                overflow: hidden;
-
-                @include mq980 {
-                    width: 48.75%;
-                    height: 75%;
-                }
-
-                @include mq768 {
-                    width: 70%;
-                    height: 47.5%;
-                }
-            }
-        }
-
-        .description {
-            width: 45%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            transition: all 0.6s;
-            opacity: 0;
-            transform: translateY(-100vh);
-
-            @include mq980 {
-                width: 90%;
-                height: 50%;
-                justify-content: flex-start;
-                margin: 0 auto;
-                transform: translateX(100vh);
-            }
-
-            @include mq768 {
-                height: 40%;
-            }
-
-            &.selected {
-                opacity: 1;
-                transform: translateY(0);
-
-                @include mq980 {
-                    transform: translateX(0);
-                }
-            }
-
-            &.notSelected {
-                transform: translateY(100vh);
-                opacity: 0;
-
-                @include mq980 {
-                    transform: translateX(-100vh);
-                }
-            }
-
-            h3 {
-                font-size: 5.5rem;
-
-                @include mq1304 {
-                    font-size: 5rem;
-                }
-
-                @include mq1088 {
-                    font-size: 4rem;
-                }
-
-                @include mq980 {
-                    font-size: 5.5rem;
-                    margin: 0 0 3rem 0;
-                }
-
-                @include mq768 {
-                    font-size: 5rem;
-                    margin: 0 0 2rem 0;
-                }
-
-                @include mq590 {
-                    font-size: 4rem;
-                }
-
-                @include mq435 {
-                    font-size: 3rem;
-                }
-            }
-
-            .aboutProject {
-                font-size: 2rem;
-                line-height: 2.5rem;
-
-                @include mq1304 {
-                    font-size: 1.8rem;
-                }
-
-                @include mq1088 {
-                    font-size: 1.7rem;
-                }
-
-                @include mq980 {
-                    margin: 0;
-                    font-size: 2rem;
-                }
-
-                @include mq768 {
-                    font-size: 1.7rem;
-                }
-
-                @include mq590 {
-                    font-size: 1.6rem;
-                }
-            }
-
-            .skill {
-                width: 100%;
-                display: flex;
-                justify-content: space-between;
-                font-size: 4.5rem;
-                list-style: none;
-                padding: 0;
-
-                @include mq980 {
-                    margin: 3rem 0;
-                }
-
-                @include mq590 {
-                    font-size: 4.2rem;
-                }
-            }
-
-            .links  {
-                width: 100%;
-                display: flex;
-                justify-content: space-evenly;  
-
-                a {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    font-size: 2.5rem;
-                    text-transform: uppercase;
-                    text-decoration: none;
-                    color: white;
-                    width: 14rem;
-                    height: 4.5rem;
-                    background: linear-gradient(to right, #0072ff, #00c6ff); 
-                    border-radius: 1rem;
-
-                    @include mq768 {
-                        height: 4.1rem;
-                        font-size: 2.1rem;
-                    }
-
-                    @include mq590 {
-                        font-size: 2rem;
-                        height: 4rem;
-                    }
-                }
-            }
-        }
-    }
-
-    .about {
-        display: none;
-        flex-direction: column;
-        justify-content: flex-start;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        z-index: 998;
-        
-        .me {
-            height: 26rem;
-            width: 40rem;
-            margin: 6rem auto;
-            transition: all 1s;
-            position: relative;
-            top: -100%;
-
-            @include mq1088 {
-                width: 30rem;
-                height: 22rem;
-                margin: 2.5rem auto;
-            }
-
-            @include mq768 {
-                width: 27rem;
-                height: 18rem;
-            }
-
             @include mq590 {
-                width: 23rem;
-                height: 15rem;
-            }
-
-            @include mq435 {
-                margin: 2rem auto;
-            }
-
-            @include mq375height {
-                width: 20rem;
-                height: 10rem;
-            }
-            
-            img {
-                border-radius: 1rem;
-            }
-
-            &.imageShown {
-                top: 0;
+                font-size: 4.2rem;
             }
         }
 
-        .aboutContainer {
+        .links  {
+            width: 100%;
             display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            height: 40%;
+            justify-content: space-evenly;  
 
-            @include mq1088 {
-                flex-direction: column;
-                justify-content: space-evenly;
-                height: 65%;
-            }
-
-            @include mq590 {
-                height: 100%;
-            }
-
-            &.aboutContainerShown .skillList,
-            &.aboutContainerShown .description {
-                transform: rotateX(0);
-            }
-
-             .skillList {
+            a {
                 display: flex;
-                flex-wrap: wrap;
-                justify-content: space-around;
-                width: 45%;
-                height: 80%;
-                list-style: none;
-                padding: 0;
-                margin: 0;
-                border-radius: 1rem;
-                background: linear-gradient(to right, #0072ff, #00c6ff); 
-                transition: all 1s;
-                transform-origin: 100% 100%;
-                transform: perspective(500px) rotateX(90deg);
-                -webkit-transform: perspective(500px) rotateX(90deg);
-                -moz-transform: perspective(500px) rotateX(90deg);
-
-                @include mq1088 {
-                    order: 1;
-                    width: 80%;
-                    height: 35%;
-                }
-
-                @include mq590 {
-                    width: 100%;
-                    border-radius: 0;
-                }
-
-                li {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    color: white;
-                    width: 20%;
-                    text-align: center;
-                    font-size: 6rem;
-                    transition: all 1s;
-
-                    @include mq1088 {
-                        font-size: 4.5rem;
-                    }
-
-                    @include mq375 {
-                        font-size: 4rem;
-                    }
-
-                    @include mq375height {
-                        font-size: 3.5rem;
-                    }
-                }
-            }
-
-            .description {
-                width: 40%;
-                font-size: 1.7rem;
-                text-align: center;
-                line-height: 2.4rem;
-                transition: all 1s;
-                transform-origin: 100% 100%;
-                transform: perspective(500px) rotateX(90deg);
-                -webkit-transform: perspective(500px) rotateX(90deg);
-                -moz-transform: perspective(500px) rotateX(90deg);
-
-                @include mq1088 {
-                    width: 80%;
-                    font-size: 1.6rem;
-                }
-
-                @include mq768 {
-                    line-height: 2.2rem;
-                }
-
-                @include mq590 {
-                    width: 90%;
-                }
-
-                @include mq375height {
-                    font-size: 1.4rem;
-                    line-height: 2rem;
-                    margin: 1rem 0;
-                }
-
-                p:first-child {
-                    margin-top: 0;
-                }
-    
-                span {
-                    color: blue;
-                }
-    
-                &.descriptionShown {
-                    opacity: 1;
-                }
-    
-                a span{
-                    display: inline-block;
-                    text-decoration: none;
-                    background: linear-gradient(to right, #0072ff, #00c6ff);
-                    border-radius: 1rem;
-                    width: 18rem;
-                    line-height: 4.5rem;
-                    font-size: 2.6rem;
-                    text-transform: uppercase;
-                    color: white;
-
-                    @include mq1088 {
-                        font-size: 2.2rem;
-                        height: 4rem;
-                        width: 17rem;
-                    }
-
-                    @include mq768 {
-                        margin-bottom: 3rem;
-                    }
-
-                    @include mq435 {
-                        margin-bottom: 2rem;
-                    }
-
-                    @include mq375height {
-                        font-size: 2rem;
-                        width: 15rem;
-                        line-height: 4rem;
-                    }
-                }
-            }
-        }
-    }
-
-    .contact {
-        display: none;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        width: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 998;
-
-        form {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-            align-items: center;
-            height: 70vh;
-            max-width: 85rem;
-            width: 80%;
-            border-radius: 1rem;
-            opacity: 0;
-            transition: all 1s;
-            background: linear-gradient(to right, #0072ff, #00c6ff); 
-
-            &.formShown {
-                opacity: 1;
-            }
-
-            .name,
-            .email {
-                width: 50%;
-
-                label {
-                    font-size: 2.5rem;
-                    color: white;
-                }
-
-                input {
-                    width: 100%;
-                    height: 3.5rem;
-                    font-size: 1.8rem;
-                }
-            }
-
-            .textarea {
-                width: 50%;
-
-                label {
-                    font-size: 2.5rem;
-                    color: white;
-                }
-
-                textarea {
-                    width: 100%;
-                    height: 10rem;
-                    font-size: 1.8rem;
-                }
-            }
-
-            button {
-                position: relative;
-                background: linear-gradient(to right, #0072ff, #00c6ff); 
-                width: 20rem;
-                height: 5rem;
-                border-radius: 1rem;
-                border: none;
+                justify-content: center;
+                align-items: center;
+                font-size: 2.5rem;
+                text-transform: uppercase;
+                text-decoration: none;
                 color: white;
-                font-size: 2rem;
-                box-shadow: 7px 7px skyblue;
+                width: 14rem;
+                height: 4.5rem;
+                background: linear-gradient(to right, #0072ff, #00c6ff); 
+                border-radius: 1rem;
 
-                &:hover {
-                    top: 3.5px;
-                    left: 3.7px;
-                    box-shadow: 3.5px 3.5px skyblue;
+                @include mq768 {
+                    height: 4.1rem;
+                    font-size: 2.1rem;
+                }
+
+                @include mq590 {
+                    font-size: 2rem;
+                    height: 4rem;
                 }
             }
         }
