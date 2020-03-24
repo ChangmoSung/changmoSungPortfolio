@@ -362,7 +362,6 @@ header .headerFlexContainer .title p.notVisible {
   justify-content: space-evenly;
   height: 100vh;
   position: fixed;
-  top: 0;
   width: 100%;
 }
 .firstProject.selectedProject,
