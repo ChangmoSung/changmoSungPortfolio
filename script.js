@@ -25,9 +25,10 @@ portfolio.init = function () {
 
     setTimeout(function() {
         $greeting.fadeOut(function() {
-            navOpened = !navOpened;
             $header.css('opacity', '1');
             $nav.css('top', '0');
+
+            navOpened = !navOpened;
             if(navOpened) {
                 $navLists.attr('tabindex', '0');
             } else {
@@ -37,11 +38,10 @@ portfolio.init = function () {
     })
 
     $navOpener.on('click', function() {
-        navOpened = !navOpened;
-        
         $nav.toggleClass('navOpened');
         $navOpener.toggleClass('navClosed');
 
+        navOpened = !navOpened;
         if (navOpened) {
             $navLists.attr('tabindex', '0');
         } else {
