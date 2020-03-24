@@ -12,24 +12,24 @@ header {
         justify-content: center;
 
         h1 {
-            font-size: 15rem;
+            font-size: 14rem;
             color: blue;
             margin: 0;
 
             @include mq768 {
-                font-size: 12rem;
+                font-size: 13rem;
             }
 
             @include mq590 {
-                font-size: 9rem;
-            }
-
-            @include mq435 {
                 font-size: 8rem;
             }
 
-            @include mq375 {
+            @include mq435 {
                 font-size: 7rem;
+            }
+
+            @include mq375 {
+                font-size: 6rem;
             }
         }
 
@@ -39,7 +39,7 @@ header {
             p {
                 position: absolute;
                 left: 12%;
-                font-size: 4.5rem;
+                font-size: 4rem;
                 width: 22rem;
                 text-align: center;
                 color: white;
@@ -52,11 +52,11 @@ header {
 
                 @include mq768 {
                     left: 6%;
-                    font-size: 3.5rem;
+                    font-size: 3rem;
                 }
 
                 @include mq590 {
-                    font-size: 3rem;
+                    font-size: 2.5rem;
                     width: 17rem;
                     left: 3%;
                     top: 2rem;

@@ -232,6 +232,7 @@ html {
 
 html {
   font-size: 62.5%;
+  font-family: "Open Sans", sans-serif;
 }
 html .wrapper {
   width: 95%;
@@ -271,28 +272,28 @@ header .headerFlexContainer {
   justify-content: center;
 }
 header .headerFlexContainer h1 {
-  font-size: 15rem;
+  font-size: 14rem;
   color: blue;
   margin: 0;
 }
 @media (max-width: 768px) {
   header .headerFlexContainer h1 {
-    font-size: 12rem;
+    font-size: 13rem;
   }
 }
 @media (max-width: 590px) {
   header .headerFlexContainer h1 {
-    font-size: 9rem;
+    font-size: 8rem;
   }
 }
 @media (max-width: 435px) {
   header .headerFlexContainer h1 {
-    font-size: 8rem;
+    font-size: 7rem;
   }
 }
 @media (max-width: 375px) {
   header .headerFlexContainer h1 {
-    font-size: 7rem;
+    font-size: 6rem;
   }
 }
 header .headerFlexContainer .title {
@@ -301,7 +302,7 @@ header .headerFlexContainer .title {
 header .headerFlexContainer .title p {
   position: absolute;
   left: 12%;
-  font-size: 4.5rem;
+  font-size: 4rem;
   width: 22rem;
   text-align: center;
   color: white;
@@ -315,12 +316,12 @@ header .headerFlexContainer .title p {
 @media (max-width: 768px) {
   header .headerFlexContainer .title p {
     left: 6%;
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 }
 @media (max-width: 590px) {
   header .headerFlexContainer .title p {
-    font-size: 3rem;
+    font-size: 2.5rem;
     width: 17rem;
     left: 3%;
     top: 2rem;
@@ -771,7 +772,7 @@ header .headerFlexContainer .title p.notVisible {
   height: 100vh;
   position: fixed;
   top: 0;
-  z-index: 998;
+  z-index: 2;
 }
 .about .me {
   height: 26rem;
@@ -865,6 +866,8 @@ header .headerFlexContainer .title p.notVisible {
 @media (max-width: 590px) {
   .about .aboutContainer .skillList {
     width: 100%;
+    height: 25%;
+    margin-bottom: 15%;
     border-radius: 0;
   }
 }
@@ -896,7 +899,7 @@ header .headerFlexContainer .title p.notVisible {
 }
 .about .aboutContainer .description {
   width: 40%;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   text-align: center;
   line-height: 2.4rem;
   transition: all 1s;
@@ -908,7 +911,7 @@ header .headerFlexContainer .title p.notVisible {
 @media (max-width: 1088px) {
   .about .aboutContainer .description {
     width: 80%;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 }
 @media (max-width: 768px) {
@@ -928,7 +931,7 @@ header .headerFlexContainer .title p.notVisible {
 }
 @media (max-height: 670px) {
   .about .aboutContainer .description {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     line-height: 2rem;
     margin: 0;
   }
@@ -942,11 +945,9 @@ header .headerFlexContainer .title p.notVisible {
 .about .aboutContainer .description.descriptionShown {
   opacity: 1;
 }
-@media (max-width: 435px) {
-  .about .aboutContainer .description .resumeContactButton {
-    display: flex;
-    justify-content: space-around;
-  }
+.about .aboutContainer .description .resumeContactButton {
+  display: flex;
+  justify-content: space-around;
 }
 .about .aboutContainer .description .resumeContactButton a span,
 .about .aboutContainer .description .resumeContactButton button {
@@ -956,7 +957,7 @@ header .headerFlexContainer .title p.notVisible {
   border-radius: 1rem;
   width: 18rem;
   line-height: 4.5rem;
-  font-size: 2.6rem;
+  font-size: 2.4rem;
   text-transform: uppercase;
   color: white;
   border: none;
@@ -965,7 +966,7 @@ header .headerFlexContainer .title p.notVisible {
 @media (max-width: 1088px) {
   .about .aboutContainer .description .resumeContactButton a span,
 .about .aboutContainer .description .resumeContactButton button {
-    font-size: 2.2rem;
+    font-size: 2rem;
     height: 4rem;
     width: 17rem;
   }
@@ -980,7 +981,7 @@ header .headerFlexContainer .title p.notVisible {
   .about .aboutContainer .description .resumeContactButton a span,
 .about .aboutContainer .description .resumeContactButton button {
     margin-bottom: 2rem;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     width: 12rem;
     line-height: 4rem;
     height: 3.5rem;
@@ -995,8 +996,7 @@ header .headerFlexContainer .title p.notVisible {
   width: 100%;
   position: fixed;
   top: 0;
-  left: 0;
-  z-index: 998;
+  z-index: 2;
 }
 .contact form {
   display: flex;
