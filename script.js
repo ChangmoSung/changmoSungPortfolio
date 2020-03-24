@@ -2,6 +2,7 @@ const portfolio = {};
 
 portfolio.init = function () {
     const $me = $('.me');
+    const $aboutContainer = $('.aboutContainer');
     const $description = $('.description');
     const $skillList = $('.skillList');
     const $skill = $('.skill');
@@ -59,17 +60,13 @@ portfolio.init = function () {
     // ------------------------------- //
     $projects.on('click keypress', 'li', function(e) {
         if(e.keyCode === 13 || typeof e.keyCode !== 'number') {
-
             $header.fadeOut();
     
             $about.fadeOut();
             $me.removeClass('imageShown');
-            $description.removeClass('descriptionShown');
-            $skillList.removeClass('skillListShown');
-            $skill.removeClass('skillShown');
+            $aboutContainer.removeClass('aboutContainerShown');
     
             $contact.fadeOut();
-    
     
             // ---------- previously selected project ---------- //
             if (selectedProject) {
@@ -89,7 +86,6 @@ portfolio.init = function () {
     
                 $(list).css('pointer-events', 'auto');
             }
-    
     
             // -------- current project selected here ------- //
             const project = $(this).attr('data-selected');
@@ -134,12 +130,8 @@ portfolio.init = function () {
             const selectedList = $(this).attr('data-selected');
     
             if (selectedList === '.header') {
-                
                 $me.removeClass('imageShown');
-    
-                $description.removeClass('descriptionShown');
-                $skillList.removeClass('skillListShown');
-                $skill.removeClass('skillShown');
+                $aboutContainer.removeClass('aboutContainerShown');
 
                 $about.fadeOut(function() {
                     $header.fadeIn('slow');
@@ -153,17 +145,8 @@ portfolio.init = function () {
 
                 $about.css('display', 'flex');
                 setTimeout(function() {
+                    $aboutContainer.addClass('aboutContainerShown')
                     $me.addClass('imageShown');
-    
-                    setTimeout(function () {
-                        $description.addClass('descriptionShown');
-
-                        $skillList.addClass('skillListShown');
-
-                        setTimeout(function() {
-                            $skill.addClass('skillShown');
-                        }, 500)
-                    }, 500);
                 },300);
     
             } else if(selectedList === '.contact'){
@@ -177,9 +160,7 @@ portfolio.init = function () {
     
                 $about.fadeOut();
                 $me.removeClass('imageShown');
-                $description.removeClass('descriptionShown');
-                $skillList.removeClass('skillListShown');
-                $skill.removeClass('skillShown');
+                $aboutContainer.removeClass('aboutContainerShown');
             }
         }
     })
