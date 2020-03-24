@@ -4,6 +4,8 @@ portfolio.init = function () {
     const $greeting = $('.greeting');
     const $navOpener = $('.navOpener');
     const $nav = $('nav');
+    const $navLists = $('nav li');
+    let navOpened = false;
     const $me = $('.me');
     const $aboutContainer = $('.aboutContainer');
     const $title = $('.title');
@@ -23,19 +25,28 @@ portfolio.init = function () {
 
     setTimeout(function() {
         $greeting.fadeOut(function() {
-            $nav.css('top', '0');
+            navOpened = !navOpened;
             $header.css('opacity', '1');
+            $nav.css('top', '0');
+            if(navOpened) {
+                $navLists.attr('tabindex', '0');
+            } else {
+                $navLists.attr('tabindex', '-1');
+            }
         })
     })
 
-    $nav.on('click', function() {
-        $nav.toggleClass('navOpened');
-        $navOpener.toggleClass('navClosed');
-    })
-
     $navOpener.on('click', function() {
+        navOpened = !navOpened;
+        
         $nav.toggleClass('navOpened');
         $navOpener.toggleClass('navClosed');
+
+        if (navOpened) {
+            $navLists.attr('tabindex', '0');
+        } else {
+            $navLists.attr('tabindex', '-1');
+        }
     })
 
 // ---------the title shown on load (because the interval runs after 2.5 seconds)---------- //
