@@ -258,6 +258,7 @@ html video {
   border-radius: 50%;
   border: none;
   transition: all 0.4s;
+  cursor: pointer;
 }
 .navOpener.navClosed {
   top: 1rem;
@@ -274,7 +275,7 @@ html video {
   }
 }
 .navOpener:hover, .navOpener:focus {
-  background: black;
+  transform: scale(1.2);
 }
 @media (max-width: 590px) {
   .navOpener {
@@ -320,8 +321,8 @@ nav ul li {
   border: 1.5px solid white;
   font-size: 2.5rem;
   line-height: 10rem;
-  cursor: pointer;
   width: calc(100% / 7);
+  cursor: pointer;
 }
 @media (max-width: 980px) {
   nav ul li {
@@ -817,6 +818,7 @@ header .headerFlexContainer h1 {
   width: 14rem;
   height: 4.5rem;
   background: linear-gradient(to right, #0072ff, #00c6ff);
+  color: white;
   border-radius: 1rem;
 }
 @media (max-width: 768px) {
@@ -955,7 +957,7 @@ header .headerFlexContainer h1 {
 }
 @media (max-height: 736px) and (max-width: 414px) {
   .about .aboutContainer .skillList {
-    height: 30%;
+    margin-bottom: 5%;
   }
 }
 .about .aboutContainer .skillList li {
@@ -1017,9 +1019,9 @@ header .headerFlexContainer h1 {
 }
 .about .aboutContainer .description {
   width: 40%;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   text-align: center;
-  line-height: 2.4rem;
+  line-height: 2.5rem;
   transition: all 1s;
   transform-origin: 100% 100%;
   transform: perspective(500px) rotateX(90deg);
@@ -1029,12 +1031,11 @@ header .headerFlexContainer h1 {
 @media (max-width: 1088px) {
   .about .aboutContainer .description {
     width: 80%;
-    font-size: 1.4rem;
   }
 }
 @media (max-width: 768px) {
   .about .aboutContainer .description {
-    line-height: 2.2rem;
+    line-height: 2.4rem;
   }
 }
 @media (max-width: 590px) {
@@ -1049,7 +1050,7 @@ header .headerFlexContainer h1 {
 }
 @media (max-height: 736px) and (max-width: 414px) {
   .about .aboutContainer .description {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     line-height: 2rem;
     margin: 0;
   }
@@ -1080,6 +1081,7 @@ header .headerFlexContainer h1 {
   color: white;
   border: none;
   padding: 0;
+  cursor: pointer;
 }
 @media (max-width: 1088px) {
   .about .aboutContainer .description .resumeContactButton a span,
@@ -1099,10 +1101,10 @@ header .headerFlexContainer h1 {
   .about .aboutContainer .description .resumeContactButton a span,
 .about .aboutContainer .description .resumeContactButton button {
     margin-bottom: 2rem;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     width: 12rem;
-    line-height: 4rem;
-    height: 3.5rem;
+    line-height: 3rem;
+    height: 3rem;
   }
 }
 
@@ -1124,7 +1126,7 @@ header .headerFlexContainer h1 {
   background: linear-gradient(to right, #0072ff, #00c6ff);
   border-radius: 1rem;
   transition: all 1s;
-  transform: perspective(500px) rotateX(120deg);
+  transform: rotateX(120deg);
 }
 @media (max-width: 435px) {
   .contact .contactFlexContainer {
@@ -1273,11 +1275,12 @@ header .headerFlexContainer h1 {
   width: 15rem;
   height: 4.5rem;
   border-radius: 1rem;
-  background: pink;
+  background: #fce8ad;
   border: none;
-  font-size: 2rem;
+  font-size: 2.1rem;
   transition: all 0.4s;
-  color: blue;
+  color: #0072ff;
+  cursor: pointer;
 }
 .contact .contactFlexContainer form button:hover {
   transform: scale(1.2);

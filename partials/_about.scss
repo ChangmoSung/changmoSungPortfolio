@@ -100,7 +100,7 @@
             }
 
             @include mq414height {
-                height: 30%;
+                margin-bottom: 5%;
             }
 
             li {
@@ -160,9 +160,9 @@
 
         .description {
             width: 40%;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             text-align: center;
-            line-height: 2.4rem;
+            line-height: 2.5rem;
             transition: all 1s;
             transform-origin: 100% 100%;
             transform: perspective(500px) rotateX(90deg);
@@ -171,11 +171,10 @@
 
             @include mq1088 {
                 width: 80%;
-                font-size: 1.4rem;
             }
 
             @include mq768 {
-                line-height: 2.2rem;
+                line-height: 2.4rem;
             }
 
             @include mq590 {
@@ -189,7 +188,7 @@
             }
 
             @include mq414height {
-                font-size: 1.2rem;
+                font-size: 1.3rem;
                 line-height: 2rem;
                 margin: 0;
             }
@@ -223,6 +222,7 @@
                     color: white;
                     border: none;
                     padding: 0;
+                    cursor: pointer;
     
                     @include mq1088 {
                         font-size: 2rem;
@@ -236,10 +236,10 @@
     
                     @include mq435 {
                         margin-bottom: 2rem;
-                        font-size: 1.5rem;
+                        font-size: 1.4rem;
                         width: 12rem;
-                        line-height: 4rem;
-                        height: 3.5rem;
+                        line-height: 3rem;
+                        height: 3rem;
                     }
                 }
             }

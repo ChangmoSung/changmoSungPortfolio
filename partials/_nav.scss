@@ -13,6 +13,7 @@
     border-radius: 50%;
     border: none;
     transition: all 0.4s;
+    cursor: pointer;
 
     &.navClosed {
         top: 1rem;
@@ -30,7 +31,7 @@
 
     &:hover,
     &:focus {
-        background: black;
+        transform: scale(1.2);
     }
 
     @include mq590 {
@@ -76,8 +77,8 @@ nav {
             border: 1.5px solid white;
             font-size: 2.5rem;
             line-height: 10rem;
-            cursor: pointer;
             width: calc(100% / 7);
+            cursor: pointer;
 
             @include mq980 {
                 font-size: 2rem;
