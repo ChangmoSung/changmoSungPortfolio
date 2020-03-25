@@ -954,12 +954,6 @@ header .headerFlexContainer h1 {
     border-radius: 0;
   }
 }
-@media (max-width: 435px) {
-  .about .aboutContainer .skillList {
-    margin-bottom: 25%;
-    height: 20%;
-  }
-}
 .about .aboutContainer .skillList li {
   display: flex;
   justify-content: center;

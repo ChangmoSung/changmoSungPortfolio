@@ -70,7 +70,7 @@
             transform: rotateX(0);
         }
 
-            .skillList {
+        .skillList {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
@@ -98,11 +98,6 @@
                 height: 25%;
                 margin-bottom: 15%;
                 border-radius: 0;
-            }
-
-            @include mq435 {
-                margin-bottom: 25%;
-                height: 20%;
             }
 
             li {
