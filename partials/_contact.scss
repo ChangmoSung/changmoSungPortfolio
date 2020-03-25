@@ -52,9 +52,10 @@
             }
 
             @include mq590 {
-                width: 25rem;
-                height: 25rem;
+                width: 20.5rem;
+                height: 20.5rem;
                 top: -9rem;
+                left: -3rem;
             }
 
             @include mq435 {
