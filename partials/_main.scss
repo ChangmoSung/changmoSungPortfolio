@@ -28,7 +28,7 @@
         justify-content: space-evenly;
         align-items: center;
         transition: all 0.6s;
-        transform: translateY(100vh);
+        transform: translateY(110vh);
 
         &.selected {
             transform: translateY(0);
@@ -52,7 +52,7 @@
             flex-direction: row;
             justify-content: space-between;
             margin: 0 auto;
-            transform: translateX(-100vh);
+            transform: translateX(-110vh);
         }
 
         @include mq768 {
@@ -233,6 +233,7 @@
                 }
 
                 @include mq435 {
+                    height: 3.5rem;
                     width: 12rem;
                     font-size: 1.8rem;
                 }

@@ -32,8 +32,10 @@ portfolio.init = function () {
         navOpened = !navOpened;
         if (navOpened) {
             $navLists.attr('tabindex', '0');
+            $navOpener.text('hide');
         } else {
             $navLists.attr('tabindex', '-1');
+            $navOpener.text('show');
         }
     })
 

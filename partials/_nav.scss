@@ -1,51 +1,65 @@
 .navOpener {
     position: absolute;
-    margin-top: 1.5rem;
     right: 2rem;
-    top: 9rem;
+    top: 12rem;
     z-index: 3;
-    font-size: 5rem;
+    font-size: 2.5rem;
     background: #26de81;
     color: white;
     text-align: center;
-    width: 6rem;
+    width: 14rem;
     line-height: 6rem;
-    border-radius: 50%;
-    border: none;
+    border-radius: 1rem;
+    border: 3px solid white;
+    text-transform: uppercase;
     transition: all 0.4s;
     cursor: pointer;
 
     &.navClosed {
-        top: 1rem;
-        right: 3rem;
-        width: 5rem;
-        line-height: 5rem;
-        border-radius: 50%;
-        border: none;
+        top: 2rem;
+        right: 2rem;
 
         @include mq590 {
-            width: 5rem;
-            height: 5rem;
+            top: 2rem;
+            right: 1rem;
         }
     }
 
     &:hover,
     &:focus {
-        transform: scale(1.2);
+        transform: rotate(35deg);
+    }
+
+    @include mq1304 {
+        width: 12rem;
+        line-height: 5rem;
+    }
+
+    @include mq980 {
+        top: 11rem;
+    }
+
+    @include mq768 {
+        top: 9.5rem;
+        width: 10.5rem;
+        line-height: 4.5rem;
+        font-size: 2.2rem;
     }
 
     @include mq590 {
-        top: 6.18rem;
-        right: 0;
-        width: 25%;
-        height: 7.85rem;
-        border-radius: 0;
-        border: 1.5px solid white;
+        top: 16rem;
+        right: 1rem;
+        width: 9.5rem;
+        line-height: 4rem;
+        font-size: 2rem;
     }
 
     @include mq435 {
-        top: 4.3rem;
-        height: 5.8rem;
+        top: 13rem;
+        right: 1rem;
+        width: 9rem;
+        line-height: 3.7rem;
+        font-size: 1.8rem;
     }
 }
 
