@@ -7,12 +7,6 @@ portfolio.init = function () {
     let navOpened = true;
     const $me = $('.me');
     const $aboutContainer = $('.aboutContainer');
-    const $title = $('.title');
-    const titleList = ['.developer', '.athlete', '.foodLover'];
-    let titleIndex = 0;
-    let visibleTitle;
-    let previouslyVisibleTitle;
-    let hiddenTitle;
     const $info = $('li[data-category=info]');
     const $projects = $('li[data-category=project');
     const $header = $('header');
@@ -22,7 +16,6 @@ portfolio.init = function () {
     let previouslySelectedProject;
     let list;
 
-    $header.css('opacity', '1');
     $nav.css('top', '0');
 
     if(navOpened) {
@@ -42,39 +35,6 @@ portfolio.init = function () {
             $navLists.attr('tabindex', '-1');
         }
     })
-
-// ---------the title shown on load (because the interval runs after 2.5 seconds)---------- //
-    setTimeout(() => {
-        $title.children().first().addClass('notVisible');
-    }, 2500)
-
-    setInterval(() => {
-// -----------third title shown----------- //
-        if (hiddenTitle) {
-            hiddenTitle.removeClass('visible');
-            hiddenTitle.removeClass('notVisible');
-        }
-
-// ----------second title shown-------------- //
-        if (previouslyVisibleTitle) {
-            previouslyVisibleTitle.addClass('notVisible');
-
-            hiddenTitle = previouslyVisibleTitle;
-        }
-
-        titleIndex++;
-
-        if (titleIndex > 2) {
-            titleIndex = 0;
-        }
-// --------first title shown----------- //
-        visibleTitle = $title.find(titleList[titleIndex]);
-
-        visibleTitle.addClass('visible');
-
-        previouslyVisibleTitle = $title.find(titleList[titleIndex]);
-    }, 2500)
-
 
     // ------------------------------- //
     // ------------project------------ //

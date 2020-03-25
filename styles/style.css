@@ -294,8 +294,8 @@ html video {
 }
 
 nav {
-  z-index: 3;
   position: fixed;
+  z-index: 3;
   right: 0;
   top: -100%;
   width: 100%;
@@ -377,12 +377,9 @@ header {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  background-image: url(../assets/tumblr_ojmez2Krcp1twkrf5o1_500.webp);
+  background-image: url(../assets/headerBackground.gif);
   background-size: 100% 115%;
   background-position: 0 15%;
-  position: fixed;
-  top: 0;
-  z-index: 2;
 }
 @media (max-width: 1088px) {
   header {
@@ -439,61 +436,6 @@ header .headerFlexContainer h1 {
   header .headerFlexContainer h1 {
     font-size: 7rem;
   }
-}
-header .headerFlexContainer .title p {
-  position: absolute;
-  left: 12%;
-  font-size: 4rem;
-  width: 22rem;
-  text-align: center;
-  color: white;
-  margin: 0;
-  opacity: 0;
-  transition: all 0.5s;
-  transform: translateY(-5rem);
-  background: blue;
-  border-radius: 1rem 0 1rem 1rem;
-}
-@media (max-width: 768px) {
-  header .headerFlexContainer .title p {
-    left: 6%;
-    font-size: 3rem;
-  }
-}
-@media (max-width: 590px) {
-  header .headerFlexContainer .title p {
-    font-size: 2.5rem;
-    width: 17rem;
-    left: 3%;
-    top: 2rem;
-  }
-}
-header .headerFlexContainer .title p:before {
-  content: "";
-  transform: rotate(269deg);
-  border-color: blue;
-  border-radius: 50%;
-  border-style: solid;
-  border-width: 0 20px;
-  clip: rect(17px, 35px, 42px, 0px);
-  height: 43px;
-  position: absolute;
-  top: -84%;
-  right: -17%;
-  width: 85px;
-}
-@media (max-width: 590px) {
-  header .headerFlexContainer .title p:before {
-    right: -26%;
-    top: -127%;
-  }
-}
-header .headerFlexContainer .title p.visible {
-  opacity: 1;
-  transform: translateY(-2rem);
-}
-header .headerFlexContainer .title p.notVisible {
-  display: none;
 }
 
 .firstProject,
@@ -1137,7 +1079,7 @@ header .headerFlexContainer .title p.notVisible {
   position: fixed;
   top: 0;
   z-index: 2;
-  background: #ff6b6b;
+  background: #fce8ad;
 }
 .contact form {
   display: flex;
