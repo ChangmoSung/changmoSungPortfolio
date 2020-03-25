@@ -35,7 +35,7 @@
             margin: 1rem auto;
         }
 
-        @include mq375height {
+        @include mq414height {
             width: 20rem;
             height: 10rem;
         }
@@ -95,9 +95,12 @@
 
             @include mq590 {
                 width: 100%;
-                height: 25%;
                 margin-bottom: 15%;
                 border-radius: 0;
+            }
+
+            @include mq414height {
+                height: 30%;
             }
 
             li {
@@ -124,11 +127,16 @@
                     }
 
                     @include mq590 {
-                        font-size: 3.5rem;
+                        font-size: 4rem;
+                        height: 65%;
                     }
 
                     @include mq435 {
                         height: 75%;
+                    }
+
+                    @include mq414height {
+                        font-size: 3.5rem;
                     }
 
                     span {
@@ -142,7 +150,7 @@
                             font-size: 1.8rem;
                         }
 
-                        @include mq590 {
+                        @include mq414height {
                             font-size: 1.6rem;
                         }
                     }
@@ -180,7 +188,7 @@
                 }
             }
 
-            @include mq375height {
+            @include mq414height {
                 font-size: 1.2rem;
                 line-height: 2rem;
                 margin: 0;

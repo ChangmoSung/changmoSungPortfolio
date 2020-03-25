@@ -889,7 +889,7 @@ header .headerFlexContainer h1 {
     margin: 1rem auto;
   }
 }
-@media (max-height: 736px) {
+@media (max-height: 736px) and (max-width: 414px) {
   .about .me {
     width: 20rem;
     height: 10rem;
@@ -949,9 +949,13 @@ header .headerFlexContainer h1 {
 @media (max-width: 590px) {
   .about .aboutContainer .skillList {
     width: 100%;
-    height: 25%;
     margin-bottom: 15%;
     border-radius: 0;
+  }
+}
+@media (max-height: 736px) and (max-width: 414px) {
+  .about .aboutContainer .skillList {
+    height: 30%;
   }
 }
 .about .aboutContainer .skillList li {
@@ -980,12 +984,18 @@ header .headerFlexContainer h1 {
 }
 @media (max-width: 590px) {
   .about .aboutContainer .skillList li i {
-    font-size: 3.5rem;
+    font-size: 4rem;
+    height: 65%;
   }
 }
 @media (max-width: 435px) {
   .about .aboutContainer .skillList li i {
     height: 75%;
+  }
+}
+@media (max-height: 736px) and (max-width: 414px) {
+  .about .aboutContainer .skillList li i {
+    font-size: 3.5rem;
   }
 }
 .about .aboutContainer .skillList li i span {
@@ -1000,7 +1010,7 @@ header .headerFlexContainer h1 {
     font-size: 1.8rem;
   }
 }
-@media (max-width: 590px) {
+@media (max-height: 736px) and (max-width: 414px) {
   .about .aboutContainer .skillList li i span {
     font-size: 1.6rem;
   }
@@ -1037,7 +1047,7 @@ header .headerFlexContainer h1 {
     margin: 1rem 0;
   }
 }
-@media (max-height: 736px) {
+@media (max-height: 736px) and (max-width: 414px) {
   .about .aboutContainer .description {
     font-size: 1.2rem;
     line-height: 2rem;
