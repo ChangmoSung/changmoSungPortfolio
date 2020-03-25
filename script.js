@@ -37,6 +37,79 @@ portfolio.init = function () {
         }
     })
 
+    // ---------------------------- //
+    // ------------Info------------ //
+    // ---------------------------- //
+    $info.on('click keypress', function (e) {
+        if (e.keyCode === 13 || typeof e.keyCode !== 'number') {
+            if (selectedProject) {
+                // --------- push it up first and then once it's not shown, push it down--------//
+                previouslySelectedProject = selectedProject;
+
+                previouslySelectedProject.children().addClass('notSelected');
+
+                setTimeout(function () {
+                    previouslySelectedProject.children().removeClass('selected');
+                    previouslySelectedProject.children().removeClass('notSelected');
+                    previouslySelectedProject.removeClass('selectedProject');
+
+                    // // --------to prevent selectedProject from getting class again in the above code-------- //
+                    selectedProject = '';
+                }, 250);
+
+                previouslySelectedProject.children()[0].children[1].children[0].setAttribute('tabIndex', '-1');
+
+                previouslySelectedProject.children()[1].children[3].children[0].children[0].setAttribute('tabIndex', '-1');
+                previouslySelectedProject.children()[1].children[3].children[1].children[0].setAttribute('tabIndex', '-1');
+
+                previouslySelectedProject.children().children()[1].children[0].pause();
+                previouslySelectedProject.children().children()[1].children[0].currentTime = 0;
+                $(list).css('pointer-events', 'auto');
+            }
+
+            // ----------- non project list starts here -------------- //
+            const selectedList = $(this).attr('data-selected');
+            if (selectedList === '.header') {
+                $header.fadeIn();
+
+                $me.removeClass('imageShown');
+                $aboutContainer.removeClass('aboutContainerShown');
+                $about.fadeOut();
+
+                $contact.fadeOut();
+                $contactContainer.removeClass('contactShown');
+
+
+            } else if (selectedList === '.about') {
+                $header.fadeOut();
+
+                $about.css('display', 'flex');
+
+                setTimeout(function () {
+                    $me.addClass('imageShown');
+
+                    $aboutContainer.addClass('aboutContainerShown')
+                }, 50);
+
+                $contact.fadeOut();
+                $contactContainer.removeClass('contactShown');
+
+            } else if (selectedList === '.contact') {
+                $contact.css('display', 'flex').css('z-index', '2');
+
+                setTimeout(function () {
+                    $contactContainer.addClass('contactShown');
+                }, 50)
+
+                $header.fadeOut();
+
+                $about.fadeOut();
+                $me.removeClass('imageShown');
+                $aboutContainer.removeClass('aboutContainerShown');
+            }
+        }
+    })
+
     // ------------------------------- //
     // ------------project------------ //
     // ------------------------------- //
@@ -92,80 +165,6 @@ portfolio.init = function () {
             // ----------current nav list item selected here----------- //
             list = $(this);
             list.css('pointer-events', 'none');
-        }
-    })
-
-
-    // ---------------------------- //
-    // ------------Info------------ //
-    // ---------------------------- //
-    $info.on('click keypress', function (e) {
-        if(e.keyCode === 13 || typeof e.keyCode !== 'number') {
-            if (selectedProject) {
-    // --------- push it up first and then once it's not shown, push it down--------//
-                previouslySelectedProject = selectedProject;
-
-                previouslySelectedProject.children().addClass('notSelected');
-
-                setTimeout(function () {
-                    previouslySelectedProject.children().removeClass('selected');
-                    previouslySelectedProject.children().removeClass('notSelected');
-                    previouslySelectedProject.removeClass('selectedProject');
-
-    // // --------to prevent selectedProject from getting class again in the above code-------- //
-                    selectedProject = '';
-                }, 250);
-
-                previouslySelectedProject.children()[0].children[1].children[0].setAttribute('tabIndex', '-1');
-
-                previouslySelectedProject.children()[1].children[3].children[0].children[0].setAttribute('tabIndex', '-1');
-                previouslySelectedProject.children()[1].children[3].children[1].children[0].setAttribute('tabIndex', '-1');
-
-                previouslySelectedProject.children().children()[1].children[0].pause();
-                previouslySelectedProject.children().children()[1].children[0].currentTime = 0;
-                $(list).css('pointer-events', 'auto');
-            }
-    
-// ----------- non project list starts here -------------- //
-            const selectedList = $(this).attr('data-selected');
-            if (selectedList === '.header') {
-                $header.fadeIn();
-
-                $me.removeClass('imageShown');
-                $aboutContainer.removeClass('aboutContainerShown');
-                $about.fadeOut();
-
-                $contact.fadeOut();
-                $contactContainer.removeClass('contactShown');
-
-    
-            } else if (selectedList === '.about') {
-                $header.fadeOut();
-
-                $about.css('display', 'flex');
-
-                setTimeout(function() {
-                    $me.addClass('imageShown');
-
-                    $aboutContainer.addClass('aboutContainerShown')
-                },50);
-
-                $contact.fadeOut();
-                $contactContainer.removeClass('contactShown');
-    
-            } else if(selectedList === '.contact'){
-                $contact.css('display', 'flex').css('z-index', '2');
-
-                setTimeout(function() {
-                    $contactContainer.addClass('contactShown');
-                },300)
-
-                $header.fadeOut();
-    
-                $about.fadeOut();
-                $me.removeClass('imageShown');
-                $aboutContainer.removeClass('aboutContainerShown');
-            }
         }
     })
 }

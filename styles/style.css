@@ -244,7 +244,7 @@ html video {
 }
 
 .navOpener {
-  position: fixed;
+  position: absolute;
   margin-top: 1.5rem;
   right: 2rem;
   top: 9rem;
@@ -377,6 +377,8 @@ header {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  position: absolute;
+  z-index: 2;
   background-image: url(../assets/headerBackground.gif);
   background-size: 100% 115%;
   background-position: 0 15%;
@@ -444,9 +446,9 @@ header .headerFlexContainer h1 {
 .fourthProject {
   display: flex;
   justify-content: space-evenly;
+  position: fixed;
   height: 100vh;
   width: 100%;
-  position: fixed;
   background: #fce8ad;
 }
 .firstProject.selectedProject,
@@ -850,10 +852,9 @@ header .headerFlexContainer h1 {
   display: none;
   flex-direction: column;
   justify-content: flex-start;
-  height: 100vh;
-  position: fixed;
-  top: 0;
+  position: absolute;
   z-index: 2;
+  height: 100vh;
   background: #fce8ad;
 }
 .about .me {
@@ -1074,21 +1075,22 @@ header .headerFlexContainer h1 {
   display: none;
   justify-content: center;
   align-items: center;
+  position: absolute;
   height: 100vh;
   width: 100%;
-  position: fixed;
-  top: 0;
   background: #fce8ad;
 }
 .contact .contactFlexContainer {
   display: flex;
-  width: 90%;
-  height: 70%;
+  width: 0;
+  height: 0;
   background: linear-gradient(to right, #0072ff, #00c6ff);
-  transition: all 0.4s;
-  transform: perspective(500px) rotateY(90deg);
+  transition: all 1s;
+  transform: perspective(500px) rotateY(110deg);
 }
 .contact .contactFlexContainer.contactShown {
+  width: 90%;
+  height: 70%;
   transform: rotateY(0);
 }
 .contact .contactFlexContainer .emailImage {

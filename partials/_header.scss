@@ -4,6 +4,8 @@ header {
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    position: absolute;
+    z-index: 2;
     background-image: url(../assets/headerBackground.gif);
     background-size: 100% 115%;
     background-position: 0 15%;

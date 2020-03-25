@@ -4,9 +4,9 @@
 .fourthProject {
     display: flex;
     justify-content: space-evenly;
+    position: fixed;
     height: 100vh;
     width: 100%;
-    position: fixed;
     background: rgb(252, 232, 173);
 
     &.selectedProject {
