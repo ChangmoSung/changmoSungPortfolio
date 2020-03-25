@@ -9,20 +9,96 @@
 
     .contactFlexContainer {
         display: flex;
+        align-items: center;
+        position: relative;
         width: 0;
         height: 0;
         background: linear-gradient(to right, #0072ff, #00c6ff); 
+        border-radius: 1rem;
         transition: all 1s;
-        transform: perspective(500px) rotateY(110deg);
+        transform: perspective(500px) rotateX(120deg);
 
         &.contactShown {
-            width: 90%;
+            width: 80%;
             height: 70%;
-            transform: rotateY(0);
+            transform: rotateX(0);
+
+            @include mq768 {
+                flex-direction: column;
+                justify-content: space-around;
+                height: 80%;
+                padding-bottom: 5%;
+            }
+
+            @include mq590 {
+                width: 90%;
+            }
+
+            @include mq435 {
+                height: 90%;
+            }
         }
 
         .emailImage {
+            position: absolute;
+            width: 30rem;
+            height: 30rem;
+            top: -10rem;
+            left: -10rem;
+
+            @include mq768 {
+                top: -7rem;
+                left: -7rem;
+            }
+
+            @include mq590 {
+                width: 25rem;
+                height: 25rem;
+                top: -9rem;
+            }
+
+            @include mq435 {
+                width: 12rem;
+                height: 12rem;
+                top: -5rem;
+                left: -3rem;
+            }
+
+            @include mq375 {
+                width: 9rem;
+                height: 9rem;
+                top: -4.5rem;
+                left: -2rem;
+            }
+        }
+
+        .contactText {
             width: 50%;
+            font-size: 2.5rem;
+            line-height: 3.7rem;
+            padding: 0 5%;
+            color: white;
+
+            @include mq1088 {
+                font-size: 2.3rem;
+                line-height: 3.1rem;
+                width: 45%;
+            }
+
+            @include mq768 {
+                align-self: flex-end;
+                width: 55%;
+                font-size: 1.9rem;
+                line-height: 2.8rem;
+            }
+
+            @include mq590 {
+                width: 60%;
+            }
+
+            @include mq435 {
+                width: 90%;
+            }
         }
 
         form {
@@ -31,22 +107,41 @@
             justify-content: center;
             align-items: center;
             width: 50%;
-    
-            input {
+            padding-right: 5%;
+
+            @include mq1088 {
+                width: 55%;
+            }
+
+            @include mq768 {
                 width: 85%;
+                padding-right: 0;
+            }
+
+            input {
+                width: 100%;
                 height: 4rem;
                 font-size: 1.7rem;
                 margin-bottom: 4rem;
                 border-radius: 1rem;
+
+                @include mq768 {
+                    margin-bottom: 2.5rem;
+                }
             }
     
             textarea {
-                width: 85%;
-                height: 15rem;
+                width: 100%;
+                height: 22rem;
                 font-size: 1.7rem;
                 padding-top: 1rem;
                 margin-bottom: 4rem;
                 border-radius: 1rem;
+
+                @include mq768 {
+                    height: 15rem;
+                    margin-bottom: 2.5rem;
+                }
             }
     
             button {
