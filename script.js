@@ -7,6 +7,7 @@ portfolio.init = function () {
     let navOpened = true;
     const $me = $('.me');
     const $aboutContainer = $('.aboutContainer');
+    const $contactContainer = $('.contactFlexContainer');
     const $info = $('li[data-category=info]');
     const $projects = $('li[data-category=project');
     const $header = $('header');
@@ -48,6 +49,7 @@ portfolio.init = function () {
             $aboutContainer.removeClass('aboutContainerShown');
     
             $contact.fadeOut();
+            $contactContainer.removeClass('contactShown');
     
             // ---------- previously selected project ---------- //
             if (selectedProject) {
@@ -131,13 +133,14 @@ portfolio.init = function () {
 
                 $me.removeClass('imageShown');
                 $aboutContainer.removeClass('aboutContainerShown');
-
                 $about.fadeOut();
+
                 $contact.fadeOut();
+                $contactContainer.removeClass('contactShown');
+
     
             } else if (selectedList === '.about') {
                 $header.fadeOut();
-                $contact.fadeOut();
 
                 $about.css('display', 'flex');
 
@@ -146,12 +149,15 @@ portfolio.init = function () {
 
                     $aboutContainer.addClass('aboutContainerShown')
                 },50);
+
+                $contact.fadeOut();
+                $contactContainer.removeClass('contactShown');
     
             } else if(selectedList === '.contact'){
-                $contact.css('display', 'flex')
+                $contact.css('display', 'flex').css('z-index', '2');
 
                 setTimeout(function() {
-                    $contact.children()[0].classList.add('formShown')
+                    $contactContainer.addClass('contactShown');
                 },300)
 
                 $header.fadeOut();

@@ -6,73 +6,61 @@
     width: 100%;
     position: fixed;
     top: 0;
-    z-index: 2;
     background: rgb(252, 232, 173);
-    
 
-    form {
+    .contactFlexContainer {
         display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        height: 70vh;
-        max-width: 85rem;
-        width: 80%;
-        border-radius: 1rem;
-        opacity: 0;
-        transition: all 1s;
+        width: 90%;
+        height: 70%;
         background: linear-gradient(to right, #0072ff, #00c6ff); 
+        transition: all 0.4s;
+        transform: perspective(500px) rotateY(90deg);
 
-        &.formShown {
-            opacity: 1;
+        &.contactShown {
+            transform: rotateY(0);
         }
 
-        .name,
-        .email {
+        .emailImage {
             width: 50%;
+        }
 
-            label {
-                font-size: 2.5rem;
-                color: white;
-            }
-
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+    
             input {
-                width: 100%;
-                height: 3.5rem;
-                font-size: 1.8rem;
+                width: 85%;
+                height: 4rem;
+                font-size: 1.7rem;
+                margin-bottom: 4rem;
+                border-radius: 1rem;
             }
-        }
-
-        .textarea {
-            width: 50%;
-
-            label {
-                font-size: 2.5rem;
-                color: white;
-            }
-
+    
             textarea {
-                width: 100%;
-                height: 10rem;
-                font-size: 1.8rem;
+                width: 85%;
+                height: 15rem;
+                font-size: 1.7rem;
+                padding-top: 1rem;
+                margin-bottom: 4rem;
+                border-radius: 1rem;
             }
-        }
+    
+            button {
+                width: 15rem;
+                height: 4.5rem;
+                border-radius: 1rem;
+                background: pink;
+                border: none;
+                font-size: 2rem;
+                transition: all 0.4s;
+                color: blue;
 
-        button {
-            position: relative;
-            background: linear-gradient(to right, #0072ff, #00c6ff); 
-            width: 20rem;
-            height: 5rem;
-            border-radius: 1rem;
-            border: none;
-            color: white;
-            font-size: 2rem;
-            box-shadow: 7px 7px skyblue;
-
-            &:hover {
-                top: 3.5px;
-                left: 3.7px;
-                box-shadow: 3.5px 3.5px skyblue;
+                &:hover {
+                    transform: scale(1.2);
+                }
             }
         }
     }

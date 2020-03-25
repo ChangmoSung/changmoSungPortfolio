@@ -1078,65 +1078,54 @@ header .headerFlexContainer h1 {
   width: 100%;
   position: fixed;
   top: 0;
-  z-index: 2;
   background: #fce8ad;
 }
-.contact form {
+.contact .contactFlexContainer {
+  display: flex;
+  width: 90%;
+  height: 70%;
+  background: linear-gradient(to right, #0072ff, #00c6ff);
+  transition: all 0.4s;
+  transform: perspective(500px) rotateY(90deg);
+}
+.contact .contactFlexContainer.contactShown {
+  transform: rotateY(0);
+}
+.contact .contactFlexContainer .emailImage {
+  width: 50%;
+}
+.contact .contactFlexContainer form {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  height: 70vh;
-  max-width: 85rem;
-  width: 80%;
-  border-radius: 1rem;
-  opacity: 0;
-  transition: all 1s;
-  background: linear-gradient(to right, #0072ff, #00c6ff);
-}
-.contact form.formShown {
-  opacity: 1;
-}
-.contact form .name,
-.contact form .email {
   width: 50%;
 }
-.contact form .name label,
-.contact form .email label {
-  font-size: 2.5rem;
-  color: white;
-}
-.contact form .name input,
-.contact form .email input {
-  width: 100%;
-  height: 3.5rem;
-  font-size: 1.8rem;
-}
-.contact form .textarea {
-  width: 50%;
-}
-.contact form .textarea label {
-  font-size: 2.5rem;
-  color: white;
-}
-.contact form .textarea textarea {
-  width: 100%;
-  height: 10rem;
-  font-size: 1.8rem;
-}
-.contact form button {
-  position: relative;
-  background: linear-gradient(to right, #0072ff, #00c6ff);
-  width: 20rem;
-  height: 5rem;
+.contact .contactFlexContainer form input {
+  width: 85%;
+  height: 4rem;
+  font-size: 1.7rem;
+  margin-bottom: 4rem;
   border-radius: 1rem;
+}
+.contact .contactFlexContainer form textarea {
+  width: 85%;
+  height: 15rem;
+  font-size: 1.7rem;
+  padding-top: 1rem;
+  margin-bottom: 4rem;
+  border-radius: 1rem;
+}
+.contact .contactFlexContainer form button {
+  width: 15rem;
+  height: 4.5rem;
+  border-radius: 1rem;
+  background: pink;
   border: none;
-  color: white;
   font-size: 2rem;
-  box-shadow: 7px 7px skyblue;
+  transition: all 0.4s;
+  color: blue;
 }
-.contact form button:hover {
-  top: 3.5px;
-  left: 3.7px;
-  box-shadow: 3.5px 3.5px skyblue;
+.contact .contactFlexContainer form button:hover {
+  transform: scale(1.2);
 }
