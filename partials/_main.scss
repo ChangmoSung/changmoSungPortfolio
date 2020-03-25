@@ -151,10 +151,6 @@
             @include mq590 {
                 font-size: 4rem;
             }
-
-            @include mq435 {
-                font-size: 3rem;
-            }
         }
 
         .aboutProject {
@@ -237,7 +233,6 @@
                 }
 
                 @include mq435 {
-                    height: 3.5rem;
                     width: 12rem;
                     font-size: 1.8rem;
                 }

@@ -131,12 +131,9 @@
                         height: 65%;
                     }
 
-                    @include mq435 {
-                        height: 75%;
-                    }
-
                     @include mq414height {
                         font-size: 3.5rem;
+                        height: 80%;
                     }
 
                     span {
@@ -209,8 +206,7 @@
                 display: flex;
                 justify-content: space-around;
 
-                a span, 
-                button {
+                span {
                     display: inline-block;
                     text-decoration: none;
                     background: linear-gradient(to right, #0072ff, #00c6ff);
@@ -222,11 +218,12 @@
                     color: white;
                     border: none;
                     padding: 0;
+                    font-weight: 400;
                     cursor: pointer;
     
                     @include mq1088 {
                         font-size: 2rem;
-                        height: 4rem;
+                        line-height: 4rem;
                         width: 17rem;
                     }
     
@@ -238,8 +235,7 @@
                         margin-bottom: 2rem;
                         font-size: 1.4rem;
                         width: 12rem;
-                        line-height: 3rem;
-                        height: 3rem;
+                        line-height: 3.5rem;
                     }
                 }
             }
