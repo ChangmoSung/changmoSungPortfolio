@@ -75,7 +75,7 @@
             flex-wrap: wrap;
             justify-content: space-around;
             width: 45%;
-            height: 80%;
+            height: 100%;
             list-style: none;
             padding: 0;
             margin: 0;
@@ -104,18 +104,48 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                position: relative;
                 color: white;
                 width: 20%;
-                text-align: center;
-                font-size: 6rem;
                 transition: all 1s;
 
-                @include mq1088 {
-                    font-size: 4.5rem;
-                }
+                i {
+                    width: 100%;
+                    height: 55%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: space-evenly;
+                    position: relative;
+                    font-size: 6rem;
 
-                @include mq435 {
-                    font-size: 3rem;
+                    @include mq1088 {
+                        height: 80%;
+                        font-size: 4.5rem;
+                    }
+
+                    @include mq590 {
+                        font-size: 3.5rem;
+                    }
+
+                    @include mq435 {
+                        height: 75%;
+                    }
+
+                    span {
+                        display: block;
+                        position: absolute;
+                        font-size: 2.2rem;
+                        bottom: 0;
+                        font-weight: 400;
+
+                        @include mq1088 {
+                            font-size: 1.8rem;
+                        }
+
+                        @include mq590 {
+                            font-size: 1.6rem;
+                        }
+                    }
                 }
             }
         }

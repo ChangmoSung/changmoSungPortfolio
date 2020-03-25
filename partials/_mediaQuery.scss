@@ -41,7 +41,7 @@
 }
 
 @mixin mq375height {
-    @media(max-height: 670px) {
+    @media(max-height: 736px) {
         @content;
     }
 }
