@@ -49,11 +49,9 @@ nav {
         li {
             background: #26de81;
             color: white;
+            border: 1.5px solid white;
             line-height: 10rem;
             cursor: pointer;
-            border-bottom: 3px solid white;
-            border-left: 3px solid white;
-            transition: all 0.5s;
             width: calc(100% / 7);
 
             &:nth-child(1) {
@@ -73,7 +71,7 @@ nav {
             }
 
             &:nth-child(5) {
-                background: #5f27cd;
+                background: #9980FA;
             }
 
             &:nth-child(6) {
@@ -81,12 +79,13 @@ nav {
             }
 
             &:nth-child(7) {
-                background: #8395a7;
+                background: #10ac84;
             }
 
             &:hover,
             &:focus {
-                background: black;
+                transition: all 0.3s;
+                transform: scale(1.2);
             }
         }
     }

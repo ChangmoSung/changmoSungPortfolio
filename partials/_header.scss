@@ -12,6 +12,21 @@ header {
     background-position: 0 15%;
     opacity: 0;
 
+    @include mq1088 {
+        background-size: 117.5% 115%;
+        background-position: 40% 15%;
+    }
+
+    @include mq768 {
+        background-size: 140% 130%;
+        background-position: 45% 30%;
+    }
+
+    @include mq435 {
+        background-size: 190% 125%;
+        background-position: 50% 25%;
+    }
+
     .headerFlexContainer {
         display: flex;
         flex-direction: column;
@@ -23,8 +38,13 @@ header {
             color: #26de81;
             margin: 0 0 16rem 0;
 
+            @include mq1088 {
+                font-size: 13rem;
+            }
+
             @include mq768 {
                 font-size: 12rem;
+                margin: 0 0 12rem 0;
             }
 
             @include mq590 {
@@ -33,6 +53,7 @@ header {
 
             @include mq435 {
                 font-size: 8rem;
+                margin: 0 0 13.5rem 0;
             }
 
             @include mq375 {

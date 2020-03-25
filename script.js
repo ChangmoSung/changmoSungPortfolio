@@ -1,11 +1,10 @@
 const portfolio = {};
 
 portfolio.init = function () {
-    const $greeting = $('.greeting');
     const $navOpener = $('.navOpener');
     const $nav = $('nav');
     const $navLists = $('nav li');
-    let navOpened = false;
+    let navOpened = true;
     const $me = $('.me');
     const $aboutContainer = $('.aboutContainer');
     const $title = $('.title');
@@ -23,19 +22,14 @@ portfolio.init = function () {
     let previouslySelectedProject;
     let list;
 
-    setTimeout(function() {
-        $greeting.fadeOut(function() {
-            $header.css('opacity', '1');
-            $nav.css('top', '0');
+    $header.css('opacity', '1');
+    $nav.css('top', '0');
 
-            navOpened = !navOpened;
-            if(navOpened) {
-                $navLists.attr('tabindex', '0');
-            } else {
-                $navLists.attr('tabindex', '-1');
-            }
-        })
-    })
+    if(navOpened) {
+        $navLists.attr('tabindex', '0');
+    } else {
+        $navLists.attr('tabindex', '-1');
+    }
 
     $navOpener.on('click', function() {
         $nav.toggleClass('navOpened');
