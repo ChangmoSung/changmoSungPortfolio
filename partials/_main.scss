@@ -5,8 +5,8 @@
     display: flex;
     justify-content: space-evenly;
     height: 100vh;
-    position: fixed;
     width: 100%;
+    position: fixed;
     background: rgb(252, 232, 173);
 
     &.selectedProject {
@@ -27,13 +27,11 @@
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
-        opacity: 0;
         transition: all 0.6s;
         transform: translateY(100vh);
 
         &.selected {
             transform: translateY(0);
-            opacity: 1;
 
             @include mq980 {
                 transform: translateX(0);
@@ -42,7 +40,6 @@
 
         &.notSelected {
             transform: translateY(-100vh);
-            opacity: 0;
 
             @include mq980 {
                 transform: translateX(100vh);

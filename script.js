@@ -91,36 +91,41 @@ portfolio.init = function () {
     
             // ---------- previously selected project ---------- //
             if (selectedProject) {
-                selectedProject.children()[0].children[1].children[0].setAttribute('tabIndex', '-1');
-
-                selectedProject.children()[1].children[3].children[0].children[0].setAttribute('tabIndex', '-1');
-                selectedProject.children()[1].children[3].children[1].children[0].setAttribute('tabIndex', '-1');
-                
-                selectedProject.removeClass('selectedProject');
-                selectedProject.children().removeClass('selected');
-                selectedProject.children().addClass('notSelected');
-    
-    //--------- push it up first and then once it's not shown, push it down--------//
                 previouslySelectedProject = selectedProject;
-                setTimeout(function() {
+
+                previouslySelectedProject.children().addClass('notSelected');
+
+                setTimeout(function () {
+                    previouslySelectedProject.children().removeClass('selected');
                     previouslySelectedProject.children().removeClass('notSelected');
-                }, 400)
-    
-                selectedProject.children().children()[1].children[0].pause();
-                selectedProject.children().children()[1].children[0].currentTime = 0;
-    
+                    previouslySelectedProject.removeClass('selectedProject');
+                }, 250);
+
                 $(list).css('pointer-events', 'auto');
+
+                previouslySelectedProject.children()[0].children[1].children[0].setAttribute('tabIndex', '-1');
+
+                previouslySelectedProject.children()[1].children[3].children[0].children[0].setAttribute('tabIndex', '-1');
+                previouslySelectedProject.children()[1].children[3].children[1].children[0].setAttribute('tabIndex', '-1');
+
+                previouslySelectedProject.children().children()[1].children[0].pause();
+                previouslySelectedProject.children().children()[1].children[0].currentTime = 0;
             }
     
             // -------- current project selected here ------- //
-            const project = $(this).attr('data-selected');
-            selectedProject = $(project).addClass('selectedProject');
-            selectedProject.children()[0].children[1].children[0].setAttribute('tabIndex', '0');
             
-            selectedProject.children()[1].children[3].children[0].children[0].setAttribute('tabIndex', '0');
-            selectedProject.children()[1].children[3].children[1].children[0].setAttribute('tabIndex', '0');
+            const project = $(this).attr('data-selected');
+            selectedProject = $(project);
 
-            selectedProject.children().addClass('selected');
+            setTimeout(function() {
+                selectedProject.addClass('selectedProject');
+                selectedProject.children().addClass('selected');
+    
+                selectedProject.children()[0].children[1].children[0].setAttribute('tabIndex', '0');
+                
+                selectedProject.children()[1].children[3].children[0].children[0].setAttribute('tabIndex', '0');
+                selectedProject.children()[1].children[3].children[1].children[0].setAttribute('tabIndex', '0');
+            }, 250)
 
             // ----------current nav list item selected here----------- //
             list = $(this);
@@ -134,39 +139,40 @@ portfolio.init = function () {
     // ---------------------------- //
     $info.on('click keypress', function (e) {
         if(e.keyCode === 13 || typeof e.keyCode !== 'number') {
-
             if (selectedProject) {
-                selectedProject.removeClass('selectedProject');
-                selectedProject.children().addClass('notSelected');
-
-    
-    //--------- push it up first and then once it's not shown, push it down--------//
+    // --------- push it up first and then once it's not shown, push it down--------//
                 previouslySelectedProject = selectedProject;
-                setTimeout(function() {
+
+                previouslySelectedProject.children().addClass('notSelected');
+
+                setTimeout(function () {
                     previouslySelectedProject.children().removeClass('selected');
                     previouslySelectedProject.children().removeClass('notSelected');
-    
-    // --------to prevent selectedProject from getting class again in the above code-------- //
+                    previouslySelectedProject.removeClass('selectedProject');
+
+    // // --------to prevent selectedProject from getting class again in the above code-------- //
                     selectedProject = '';
-                }, 400)
-    
-                selectedProject.children().children()[1].children[0].pause();
-                selectedProject.children().children()[1].children[0].currentTime = 0;
-    
+                }, 250);
+
+                previouslySelectedProject.children()[0].children[1].children[0].setAttribute('tabIndex', '-1');
+
+                previouslySelectedProject.children()[1].children[3].children[0].children[0].setAttribute('tabIndex', '-1');
+                previouslySelectedProject.children()[1].children[3].children[1].children[0].setAttribute('tabIndex', '-1');
+
+                previouslySelectedProject.children().children()[1].children[0].pause();
+                previouslySelectedProject.children().children()[1].children[0].currentTime = 0;
                 $(list).css('pointer-events', 'auto');
             }
     
 // ----------- non project list starts here -------------- //
             const selectedList = $(this).attr('data-selected');
-    
             if (selectedList === '.header') {
+                $header.fadeIn();
+
                 $me.removeClass('imageShown');
                 $aboutContainer.removeClass('aboutContainerShown');
 
-                $about.fadeOut(function() {
-                    $header.fadeIn('slow');
-                });
-    
+                $about.fadeOut();
                 $contact.fadeOut();
     
             } else if (selectedList === '.about') {
@@ -178,9 +184,7 @@ portfolio.init = function () {
                 setTimeout(function() {
                     $me.addClass('imageShown');
 
-                    setTimeout(function() {
-                        $aboutContainer.addClass('aboutContainerShown')
-                    },600)
+                    $aboutContainer.addClass('aboutContainerShown')
                 },50);
     
             } else if(selectedList === '.contact'){

@@ -1,16 +1,15 @@
-.greeting {
-    font-size: 10rem;
-}
-
 header {
     height: 100vh;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    background-image: url(../assets/example6.gif);
+    background-image: url(../assets/tumblr_ojmez2Krcp1twkrf5o1_500.webp);
     background-size: 100% 115%;
     background-position: 0 15%;
-    opacity: 0;
+    position: fixed;
+    top: 0;
+    z-index: 2;
 
     @include mq1088 {
         background-size: 117.5% 115%;
