@@ -18,6 +18,10 @@
         transition: all 1s;
         transform: perspective(500px) rotateX(120deg);
 
+        @include mq435 {
+            transform: rotateY(120deg);
+        }
+
         &.contactShown {
             width: 80%;
             height: 70%;
@@ -36,6 +40,7 @@
 
             @include mq435 {
                 height: 90%;
+                transform: rotateY(0);
             }
         }
 
