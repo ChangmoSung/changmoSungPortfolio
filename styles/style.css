@@ -305,9 +305,16 @@ html video {
   .navOpener {
     top: 13rem;
     right: 1rem;
-    width: 9rem;
+    width: 8rem;
     line-height: 3.7rem;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
+  }
+}
+@media (max-width: 375px) {
+  .navOpener {
+    width: 7rem;
+    font-size: 1.6rem;
+    line-height: 3.5rem;
   }
 }
 
@@ -879,8 +886,8 @@ header .headerFlexContainer h1 {
 }
 @media (max-width: 1088px) {
   .about .me {
-    width: 30rem;
-    height: 22rem;
+    width: 32rem;
+    height: 20rem;
     margin: 2.5rem auto;
   }
 }
@@ -923,12 +930,14 @@ header .headerFlexContainer h1 {
   .about .aboutContainer {
     flex-direction: column;
     justify-content: space-evenly;
-    height: 65%;
+    height: 70%;
+    margin-bottom: 2%;
   }
 }
 @media (max-width: 590px) {
   .about .aboutContainer {
-    height: 100%;
+    height: 80%;
+    margin-bottom: 3.5%;
   }
 }
 .about .aboutContainer.aboutContainerShown .skillList, .about .aboutContainer.aboutContainerShown .description {
@@ -955,23 +964,22 @@ header .headerFlexContainer h1 {
   .about .aboutContainer .skillList {
     order: 1;
     width: 80%;
-    height: 35%;
+    height: 45%;
+  }
+}
+@media (max-width: 768px) {
+  .about .aboutContainer .skillList {
+    width: 90%;
   }
 }
 @media (max-width: 590px) {
   .about .aboutContainer .skillList {
-    width: 100%;
-    margin-bottom: 15%;
-    border-radius: 0;
-  }
-}
-@media (max-height: 736px) and (max-width: 414px) {
-  .about .aboutContainer .skillList {
-    margin-bottom: 5%;
+    margin-bottom: 3%;
   }
 }
 .about .aboutContainer .skillList li {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -980,47 +988,35 @@ header .headerFlexContainer h1 {
   transition: all 1s;
 }
 .about .aboutContainer .skillList li i {
-  width: 100%;
-  height: 55%;
-  display: flex;
-  justify-content: center;
-  align-items: space-evenly;
-  position: relative;
   font-size: 6rem;
+  margin-bottom: 1rem;
 }
 @media (max-width: 1088px) {
   .about .aboutContainer .skillList li i {
-    height: 80%;
-    font-size: 4.5rem;
+    font-size: 5rem;
+  }
+}
+@media (max-width: 768px) {
+  .about .aboutContainer .skillList li i {
+    font-size: 4rem;
+  }
+}
+.about .aboutContainer .skillList li span {
+  font-size: 2.2rem;
+}
+@media (max-width: 1088px) {
+  .about .aboutContainer .skillList li span {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 768px) {
+  .about .aboutContainer .skillList li span {
+    font-size: 1.4rem;
   }
 }
 @media (max-width: 590px) {
-  .about .aboutContainer .skillList li i {
-    font-size: 4rem;
-    height: 65%;
-  }
-}
-@media (max-height: 736px) and (max-width: 414px) {
-  .about .aboutContainer .skillList li i {
-    font-size: 3.5rem;
-    height: 80%;
-  }
-}
-.about .aboutContainer .skillList li i span {
-  position: absolute;
-  font-size: 2.2rem;
-  bottom: 0;
-  font-weight: 400;
-  font-family: "Open Sans", sans-serif;
-}
-@media (max-width: 1088px) {
-  .about .aboutContainer .skillList li i span {
-    font-size: 1.8rem;
-  }
-}
-@media (max-height: 736px) and (max-width: 414px) {
-  .about .aboutContainer .skillList li i span {
-    font-size: 1.6rem;
+  .about .aboutContainer .skillList li span {
+    font-size: 1.3rem;
   }
 }
 .about .aboutContainer .description {
@@ -1037,19 +1033,15 @@ header .headerFlexContainer h1 {
 @media (max-width: 1088px) {
   .about .aboutContainer .description {
     width: 80%;
+    margin-bottom: 3%;
   }
 }
 @media (max-width: 768px) {
   .about .aboutContainer .description {
-    line-height: 2.4rem;
-  }
-}
-@media (max-width: 590px) {
-  .about .aboutContainer .description {
     width: 90%;
+    line-height: 2.4rem;
+    font-size: 1.45rem;
   }
-}
-@media (max-width: 435px) {
   .about .aboutContainer .description p {
     margin: 1rem 0;
   }
@@ -1058,7 +1050,7 @@ header .headerFlexContainer h1 {
   .about .aboutContainer .description {
     font-size: 1.3rem;
     line-height: 2rem;
-    margin: 0;
+    margin: 0 0 2rem;
   }
 }
 .about .aboutContainer .description p:first-child {
@@ -1094,19 +1086,29 @@ header .headerFlexContainer h1 {
     font-size: 2rem;
     line-height: 4rem;
     width: 17rem;
+    margin-top: 1rem;
+  }
+}
+@media (max-width: 980px) {
+  .about .aboutContainer .description .resumeContactButton span {
+    width: 15rem;
   }
 }
 @media (max-width: 768px) {
   .about .aboutContainer .description .resumeContactButton span {
-    margin-bottom: 3rem;
+    margin: 1.5rem 0 1rem;
   }
 }
-@media (max-width: 435px) {
+@media (max-width: 590px) {
   .about .aboutContainer .description .resumeContactButton span {
-    margin-bottom: 2rem;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     width: 12rem;
     line-height: 3.5rem;
+  }
+}
+@media (max-height: 736px) and (max-width: 414px) {
+  .about .aboutContainer .description .resumeContactButton span {
+    font-size: 1.4rem;
   }
 }
 

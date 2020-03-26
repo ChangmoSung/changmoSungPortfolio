@@ -16,8 +16,8 @@
         top: -100%;
 
         @include mq1088 {
-            width: 30rem;
-            height: 22rem;
+            width: 32rem;
+            height: 20rem;
             margin: 2.5rem auto;
         }
 
@@ -58,11 +58,13 @@
         @include mq1088 {
             flex-direction: column;
             justify-content: space-evenly;
-            height: 65%;
+            height: 70%;
+            margin-bottom: 2%;
         }
 
         @include mq590 {
-            height: 100%;
+            height: 80%;
+            margin-bottom: 3.5%;
         }
 
         &.aboutContainerShown .skillList,
@@ -90,21 +92,20 @@
             @include mq1088 {
                 order: 1;
                 width: 80%;
-                height: 35%;
+                height: 45%;
+            }
+
+            @include mq768 {
+                width: 90%;
             }
 
             @include mq590 {
-                width: 100%;
-                margin-bottom: 15%;
-                border-radius: 0;
-            }
-
-            @include mq414height {
-                margin-bottom: 5%;
+                margin-bottom: 3%;
             }
 
             li {
                 display: flex;
+                flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 position: relative;
@@ -113,43 +114,31 @@
                 transition: all 1s;
 
                 i {
-                    width: 100%;
-                    height: 55%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: space-evenly;
-                    position: relative;
                     font-size: 6rem;
+                    margin-bottom: 1rem;
 
                     @include mq1088 {
-                        height: 80%;
-                        font-size: 4.5rem;
+                        font-size: 5rem;
+                    }
+
+                    @include mq768 {
+                        font-size: 4rem;
+                    }
+                }
+
+                span {
+                    font-size:2.2rem;
+
+                    @include mq1088 {
+                        font-size: 1.6rem;
+                    }
+
+                    @include mq768 {
+                        font-size: 1.4rem;
                     }
 
                     @include mq590 {
-                        font-size: 4rem;
-                        height: 65%;
-                    }
-
-                    @include mq414height {
-                        font-size: 3.5rem;
-                        height: 80%;
-                    }
-
-                    span {
-                        position: absolute;
-                        font-size: 2.2rem;
-                        bottom: 0;
-                        font-weight: 400;
-                        font-family: 'Open Sans', sans-serif;
-
-                        @include mq1088 {
-                            font-size: 1.8rem;
-                        }
-
-                        @include mq414height {
-                            font-size: 1.6rem;
-                        }
+                        font-size: 1.3rem;
                     }
                 }
             }
@@ -168,17 +157,14 @@
 
             @include mq1088 {
                 width: 80%;
+                margin-bottom: 3%;
             }
 
             @include mq768 {
-                line-height: 2.4rem;
-            }
-
-            @include mq590 {
                 width: 90%;
-            }
+                line-height: 2.4rem;
+                font-size: 1.45rem;
 
-            @include mq435 {
                 p {
                     margin: 1rem 0;
                 }
@@ -187,7 +173,7 @@
             @include mq414height {
                 font-size: 1.3rem;
                 line-height: 2rem;
-                margin: 0;
+                margin: 0 0 2rem;
             }
 
             p:first-child {
@@ -225,17 +211,25 @@
                         font-size: 2rem;
                         line-height: 4rem;
                         width: 17rem;
+                        margin-top: 1rem;
+                    }
+
+                    @include mq980 {
+                        width: 15rem;
                     }
     
                     @include mq768 {
-                        margin-bottom: 3rem;
+                        margin: 1.5rem 0 1rem;
                     }
     
-                    @include mq435 {
-                        margin-bottom: 2rem;
-                        font-size: 1.4rem;
+                    @include mq590 {
+                        font-size: 1.5rem;
                         width: 12rem;
                         line-height: 3.5rem;
+                    }
+
+                    @include mq414height {
+                        font-size: 1.4rem;
                     }
                 }
             }
