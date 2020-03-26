@@ -498,7 +498,7 @@ header .headerFlexContainer h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 85%;
+  height: 83%;
 }
 .firstProject .projectVideo .videoContainer .video,
 .secondProject .projectVideo .videoContainer .video,
@@ -513,28 +513,50 @@ header .headerFlexContainer h1 {
 .fourthProject .projectVideo .frame {
   display: flex;
   justify-content: space-around;
-  height: 15%;
-  background: silver;
+  align-items: center;
+  height: 17%;
+  background: #606166;
   border-radius: 0 0 1.5rem 1.5rem;
 }
 .firstProject .projectVideo .frame .playButton,
 .secondProject .projectVideo .frame .playButton,
 .thirdProject .projectVideo .frame .playButton,
 .fourthProject .projectVideo .frame .playButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 25%;
+  height: 70%;
+  background: none;
+  font-size: 2.5vmax;
+  box-shadow: inset 0px 0px 0.4vmax 0.2vmax #000;
 }
 .firstProject .projectVideo .frame .appleLogo,
 .secondProject .projectVideo .frame .appleLogo,
 .thirdProject .projectVideo .frame .appleLogo,
 .fourthProject .projectVideo .frame .appleLogo {
   width: 10%;
-  height: 80%;
+  height: 70%;
 }
-.firstProject .projectVideo .frame .github,
-.secondProject .projectVideo .frame .github,
-.thirdProject .projectVideo .frame .github,
-.fourthProject .projectVideo .frame .github {
+.firstProject .projectVideo .frame .githubLink,
+.secondProject .projectVideo .frame .githubLink,
+.thirdProject .projectVideo .frame .githubLink,
+.fourthProject .projectVideo .frame .githubLink {
   width: 25%;
+  height: 70%;
+  background: none;
+  font-size: 2.5vmax;
+  box-shadow: inset 0px 0px 0.4vmax 0.2vmax #000;
+}
+.firstProject .projectVideo .frame .githubLink a,
+.secondProject .projectVideo .frame .githubLink a,
+.thirdProject .projectVideo .frame .githubLink a,
+.fourthProject .projectVideo .frame .githubLink a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  text-decoration: none;
 }
 .firstProject .projectVideo.selected,
 .secondProject .projectVideo.selected,
