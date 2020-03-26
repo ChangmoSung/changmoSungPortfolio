@@ -4,11 +4,7 @@
     }
 }
 
-@mixin mq980 {
-    @media(max-width: 980px) {
-        @content;
-    }
-}
+
 
 @mixin mq435 {
     @media(max-width: 435px) {
@@ -32,6 +28,12 @@
 // ----------------------------//
 @mixin mq1200 {
     @media(max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin mq980 {
+    @media(max-width: 980px) {
         @content;
     }
 }

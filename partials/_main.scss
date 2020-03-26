@@ -19,22 +19,25 @@
 
     @include mq1200 {
         flex-direction: column;
+        justify-content: space-evenly;
     }
 
     .projectVideo {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        height: 38vmax;
+        height: 37vmax;
         width: 48vmax;
-        border-radius: 1.5rem;
+        border-radius: 1rem;
         transition: all 0.6s;
         background: black;
-        transform: translateY(110vh);
+        box-shadow: inset 0 0 1vmax 0.1vmax rgb(96, 97, 102), 0 0 0.1vmax 0.8vmax rgb(96, 97, 102);
+        // transform: translateY(110vh);
 
         @include mq1200 {
-            margin-top: 4vmax;
-            transform: translateX(-110vh);
+            height: 32vmax;
+            width: 42vmax;
+            // transform: translateX(-110vh);
         }
 
         .videoContainer {
@@ -55,7 +58,7 @@
             align-items: center;
             height: 17%;
             background: rgb(96, 97, 102);
-            border-radius: 0 0 1.5rem 1.5rem;
+            border-radius: 0 0 1rem 1rem;
 
             .playButton {
                 display: flex;
@@ -118,15 +121,16 @@
 
 
     .description {
-        width: 35vmax;
-        height: 42vmax;
+        width: 33vmax;
+        height: 38vmax;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
         transition: all 0.6s;
-        transform: translateY(-110vh);
         padding: 2vmax;
+        border-radius: 1rem;
+        // transform: translateY(-110vh);
         
 
         &.selected {
@@ -148,9 +152,10 @@
         }
 
         @include mq1200 {
-            width: 65%;
-            margin-bottom: 4vmax;
-            transform: translateX(110vh);
+            // transform: translateX(110vh);
+            width: 75vmax;
+            height: 27vmax;
+            overflow: auto;
         }
 
         @include mq790 {
@@ -162,19 +167,10 @@
             margin: 0 0 1vmax 0;
 
             @include mq1200 {
-                font-size: 5rem;
-                margin: 3rem;
+                font-size: 4.2vmax;
+                margin: 24rem 0 2.5vmax;
             }
 
-            @include mq790 {
-                font-size: 4.7rem;
-                margin: 2.5rem;
-            }
-
-            @include mq435 {
-                font-size: 3.7rem;
-                margin: 1.5rem;
-            }
         }
 
         .aboutProject {
@@ -182,9 +178,10 @@
             line-height: 1.9vmax;
 
             @include mq1200 {
-                font-size: 2rem;
-                line-height: 3rem;
-                margin: 0;
+                width: 85%;
+                font-size: 1.5vmax;
+                line-height: 2.7rem;
+                margin: 0 0 2.8vmax;
             }
 
             @include mq790 {
@@ -205,11 +202,21 @@
             justify-content: space-around;
             list-style: none;
             padding: 0;
-            margin: 0 0 3rem 0;
+            margin: 0 0 3rem;
+
+            @include mq1200 {
+                order: 2;
+                justify-content: space-evenly;
+            }
 
             li {
                 width: 5vmax;
                 height: 5vmax;
+
+                @include mq1200 {
+                    width: 7vmax;
+                    height: 7vmax;
+                }
             }
         }
 
@@ -223,11 +230,16 @@
             width: 11.5vmax;
             line-height: 3.1vmax;
 
+            a {
+                text-decoration: none;
+            }
+
             @include mq1200 {
-                font-size: 2.4rem;
-                width: 15rem;
-                line-height: 4.8rem;
-                margin-top: 1rem;
+                font-size: 2vmax;
+                width: 20vmax;
+                line-height: 3.8vmax;
+                margin: 0 0 3rem;
+                order: 1;
             }
 
             @include mq790 {
@@ -246,19 +258,34 @@
             justify-content: space-between;
             width: 100%;
 
+            @include mq1200 {
+                order: 2;
+                justify-content: space-evenly;
+            }
+
             div {
-                width: 11vmax;
-                height: 11vmax;
+                width: 9vmax;
+                height: 9vmax;
+
+                @include mq1200 {
+                    width: 12vmax;
+                    height: 12vmax;
+                    margin-bottom: 3rem;
+                }
             }
         }
     }
+}
+
+.firstProject {
+    z-index: 999;
 }
 
 .firstProject .description {
     background: rgb(250, 219, 217);
     color: blue;
     border: 5px solid blue;
-    border-radius: 1rem;
+    box-shadow: inset 0 0 1vmax 0.1vmax blue, 0 0 0.1vmax 0.4vmax blue;
 
     .liveLink {
         background: white;
@@ -266,12 +293,52 @@
         color: black;
         box-shadow: 5px 5px blue;
         position: relative;
+        border: none;
+
+        a {
+            color: black;
+        }
 
         &:hover,
         &:focus {
             box-shadow: 2.5px 2.5px blue;
             top: 2.5px;
             left: 2.5px;
+        }
+    }
+}
+
+.secondProject .description {
+  background: linear-gradient(to right, #0072ff, #00c6ff); 
+  color: white;
+  box-shadow: inset 0 0 1vmax 0.1vmax blue, 0 0 0.1vmax 0.4vmax blue;
+
+
+  .liveLink {
+    background: linear-gradient(319deg, #6FB1FC, #4364F7, #0052D4);
+    border-radius: 1rem;
+
+    a {
+        color: white;
+    }
+  }
+}
+
+.thirdProject .description {
+    background: #e3f4f3;
+    color: black;
+
+    .liveLink {
+        background: white;
+        transition: all 0.4s;
+        border-radius: 1.2rem;
+        color: black;
+        border: 2px solid black;
+        box-shadow: inset 0 0 1vmax 0.1vmax blue, 0 0 0.1vmax 0.4vmax blue;
+
+        &:hover {
+            background: #6056f9;
+            color: white;
         }
     }
 }

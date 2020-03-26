@@ -466,6 +466,7 @@ header .headerFlexContainer h1 {
 .thirdProject,
 .fourthProject {
     flex-direction: column;
+    justify-content: space-evenly;
   }
 }
 .firstProject .projectVideo,
@@ -475,20 +476,20 @@ header .headerFlexContainer h1 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 38vmax;
+  height: 37vmax;
   width: 48vmax;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   transition: all 0.6s;
   background: black;
-  transform: translateY(110vh);
+  box-shadow: inset 0 0 1vmax 0.1vmax #606166, 0 0 0.1vmax 0.8vmax #606166;
 }
 @media (max-width: 1200px) {
   .firstProject .projectVideo,
 .secondProject .projectVideo,
 .thirdProject .projectVideo,
 .fourthProject .projectVideo {
-    margin-top: 4vmax;
-    transform: translateX(-110vh);
+    height: 32vmax;
+    width: 42vmax;
   }
 }
 .firstProject .projectVideo .videoContainer,
@@ -516,7 +517,7 @@ header .headerFlexContainer h1 {
   align-items: center;
   height: 17%;
   background: #606166;
-  border-radius: 0 0 1.5rem 1.5rem;
+  border-radius: 0 0 1rem 1rem;
 }
 .firstProject .projectVideo .frame .playButton,
 .secondProject .projectVideo .frame .playButton,
@@ -603,15 +604,15 @@ header .headerFlexContainer h1 {
 .secondProject .description,
 .thirdProject .description,
 .fourthProject .description {
-  width: 35vmax;
-  height: 42vmax;
+  width: 33vmax;
+  height: 38vmax;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   transition: all 0.6s;
-  transform: translateY(-110vh);
   padding: 2vmax;
+  border-radius: 1rem;
 }
 .firstProject .description.selected,
 .secondProject .description.selected,
@@ -648,9 +649,9 @@ header .headerFlexContainer h1 {
 .secondProject .description,
 .thirdProject .description,
 .fourthProject .description {
-    width: 65%;
-    margin-bottom: 4vmax;
-    transform: translateX(110vh);
+    width: 75vmax;
+    height: 27vmax;
+    overflow: auto;
   }
 }
 @media (max-width: 790px) {
@@ -673,26 +674,8 @@ header .headerFlexContainer h1 {
 .secondProject .description h3,
 .thirdProject .description h3,
 .fourthProject .description h3 {
-    font-size: 5rem;
-    margin: 3rem;
-  }
-}
-@media (max-width: 790px) {
-  .firstProject .description h3,
-.secondProject .description h3,
-.thirdProject .description h3,
-.fourthProject .description h3 {
-    font-size: 4.7rem;
-    margin: 2.5rem;
-  }
-}
-@media (max-width: 435px) {
-  .firstProject .description h3,
-.secondProject .description h3,
-.thirdProject .description h3,
-.fourthProject .description h3 {
-    font-size: 3.7rem;
-    margin: 1.5rem;
+    font-size: 4.2vmax;
+    margin: 24rem 0 2.5vmax;
   }
 }
 .firstProject .description .aboutProject,
@@ -707,9 +690,10 @@ header .headerFlexContainer h1 {
 .secondProject .description .aboutProject,
 .thirdProject .description .aboutProject,
 .fourthProject .description .aboutProject {
-    font-size: 2rem;
-    line-height: 3rem;
-    margin: 0;
+    width: 85%;
+    font-size: 1.5vmax;
+    line-height: 2.7rem;
+    margin: 0 0 2.8vmax;
   }
 }
 @media (max-width: 790px) {
@@ -740,7 +724,16 @@ header .headerFlexContainer h1 {
   justify-content: space-around;
   list-style: none;
   padding: 0;
-  margin: 0 0 3rem 0;
+  margin: 0 0 3rem;
+}
+@media (max-width: 1200px) {
+  .firstProject .description .skill,
+.secondProject .description .skill,
+.thirdProject .description .skill,
+.fourthProject .description .skill {
+    order: 2;
+    justify-content: space-evenly;
+  }
 }
 .firstProject .description .skill li,
 .secondProject .description .skill li,
@@ -748,6 +741,15 @@ header .headerFlexContainer h1 {
 .fourthProject .description .skill li {
   width: 5vmax;
   height: 5vmax;
+}
+@media (max-width: 1200px) {
+  .firstProject .description .skill li,
+.secondProject .description .skill li,
+.thirdProject .description .skill li,
+.fourthProject .description .skill li {
+    width: 7vmax;
+    height: 7vmax;
+  }
 }
 .firstProject .description .liveLink,
 .secondProject .description .liveLink,
@@ -762,15 +764,22 @@ header .headerFlexContainer h1 {
   width: 11.5vmax;
   line-height: 3.1vmax;
 }
+.firstProject .description .liveLink a,
+.secondProject .description .liveLink a,
+.thirdProject .description .liveLink a,
+.fourthProject .description .liveLink a {
+  text-decoration: none;
+}
 @media (max-width: 1200px) {
   .firstProject .description .liveLink,
 .secondProject .description .liveLink,
 .thirdProject .description .liveLink,
 .fourthProject .description .liveLink {
-    font-size: 2.4rem;
-    width: 15rem;
-    line-height: 4.8rem;
-    margin-top: 1rem;
+    font-size: 2vmax;
+    width: 20vmax;
+    line-height: 3.8vmax;
+    margin: 0 0 3rem;
+    order: 1;
   }
 }
 @media (max-width: 790px) {
@@ -799,19 +808,42 @@ header .headerFlexContainer h1 {
   justify-content: space-between;
   width: 100%;
 }
+@media (max-width: 1200px) {
+  .firstProject .description .descriptionImages,
+.secondProject .description .descriptionImages,
+.thirdProject .description .descriptionImages,
+.fourthProject .description .descriptionImages {
+    order: 2;
+    justify-content: space-evenly;
+  }
+}
 .firstProject .description .descriptionImages div,
 .secondProject .description .descriptionImages div,
 .thirdProject .description .descriptionImages div,
 .fourthProject .description .descriptionImages div {
-  width: 11vmax;
-  height: 11vmax;
+  width: 9vmax;
+  height: 9vmax;
+}
+@media (max-width: 1200px) {
+  .firstProject .description .descriptionImages div,
+.secondProject .description .descriptionImages div,
+.thirdProject .description .descriptionImages div,
+.fourthProject .description .descriptionImages div {
+    width: 12vmax;
+    height: 12vmax;
+    margin-bottom: 3rem;
+  }
+}
+
+.firstProject {
+  z-index: 999;
 }
 
 .firstProject .description {
   background: #fadbd9;
   color: blue;
   border: 5px solid blue;
-  border-radius: 1rem;
+  box-shadow: inset 0 0 1vmax 0.1vmax blue, 0 0 0.1vmax 0.4vmax blue;
 }
 .firstProject .description .liveLink {
   background: white;
@@ -819,11 +851,45 @@ header .headerFlexContainer h1 {
   color: black;
   box-shadow: 5px 5px blue;
   position: relative;
+  border: none;
+}
+.firstProject .description .liveLink a {
+  color: black;
 }
 .firstProject .description .liveLink:hover, .firstProject .description .liveLink:focus {
   box-shadow: 2.5px 2.5px blue;
   top: 2.5px;
   left: 2.5px;
+}
+
+.secondProject .description {
+  background: linear-gradient(to right, #0072ff, #00c6ff);
+  color: white;
+  box-shadow: inset 0 0 1vmax 0.1vmax blue, 0 0 0.1vmax 0.4vmax blue;
+}
+.secondProject .description .liveLink {
+  background: linear-gradient(319deg, #6FB1FC, #4364F7, #0052D4);
+  border-radius: 1rem;
+}
+.secondProject .description .liveLink a {
+  color: white;
+}
+
+.thirdProject .description {
+  background: #e3f4f3;
+  color: black;
+}
+.thirdProject .description .liveLink {
+  background: white;
+  transition: all 0.4s;
+  border-radius: 1.2rem;
+  color: black;
+  border: 2px solid black;
+  box-shadow: inset 0 0 1vmax 0.1vmax blue, 0 0 0.1vmax 0.4vmax blue;
+}
+.thirdProject .description .liveLink:hover {
+  background: #6056f9;
+  color: white;
 }
 
 .about {
