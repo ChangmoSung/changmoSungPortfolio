@@ -273,7 +273,7 @@ html video {
 .navOpener:hover, .navOpener:focus {
   transform: rotate(35deg);
 }
-@media (max-width: 1304px) {
+@media (max-width: 1200px) {
   .navOpener {
     width: 12rem;
     line-height: 5rem;
@@ -284,7 +284,7 @@ html video {
     top: 11rem;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 790px) {
   .navOpener {
     top: 9.5rem;
     width: 10.5rem;
@@ -355,7 +355,7 @@ nav ul li {
     line-height: 9rem;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 790px) {
   nav ul li {
     font-size: 1.8rem;
     line-height: 7.5rem;
@@ -415,7 +415,7 @@ header {
     background-position: 40% 15%;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 790px) {
   header {
     background-size: 140% 130%;
     background-position: 45% 30%;
@@ -530,6 +530,7 @@ header .headerFlexContainer h1 {
   background: none;
   font-size: 2.5vmax;
   box-shadow: inset 0px 0px 0.4vmax 0.2vmax #000;
+  cursor: pointer;
 }
 .firstProject .projectVideo .frame .appleLogo,
 .secondProject .projectVideo .frame .appleLogo,
@@ -634,7 +635,7 @@ header .headerFlexContainer h1 {
 .secondProject .description,
 .thirdProject .description,
 .fourthProject .description {
-    width: 80%;
+    width: 65%;
     margin-bottom: 4vmax;
     transform: translateX(110vh);
   }
@@ -644,7 +645,7 @@ header .headerFlexContainer h1 {
 .secondProject .description,
 .thirdProject .description,
 .fourthProject .description {
-    width: 85%;
+    width: 80%;
   }
 }
 .firstProject .description h3,
@@ -671,7 +672,7 @@ header .headerFlexContainer h1 {
     margin: 2.5rem;
   }
 }
-@media (max-width: 430px) {
+@media (max-width: 435px) {
   .firstProject .description h3,
 .secondProject .description h3,
 .thirdProject .description h3,
@@ -707,7 +708,7 @@ header .headerFlexContainer h1 {
     line-height: 2.7rem;
   }
 }
-@media (max-width: 430px) {
+@media (max-width: 435px) {
   .firstProject .description .aboutProject,
 .secondProject .description .aboutProject,
 .thirdProject .description .aboutProject,
@@ -733,7 +734,7 @@ header .headerFlexContainer h1 {
 .thirdProject .description .skill,
 .fourthProject .description .skill {
     font-size: 5.5rem;
-    margin: 3vmax;
+    margin: 2vmax;
   }
 }
 @media (max-width: 790px) {
@@ -744,7 +745,7 @@ header .headerFlexContainer h1 {
     font-size: 5rem;
   }
 }
-@media (max-width: 430px) {
+@media (max-width: 435px) {
   .firstProject .description .skill,
 .secondProject .description .skill,
 .thirdProject .description .skill,
@@ -788,7 +789,7 @@ header .headerFlexContainer h1 {
     line-height: 4.6rem;
   }
 }
-@media (max-width: 430px) {
+@media (max-width: 435px) {
   .firstProject .description .liveLink,
 .secondProject .description .liveLink,
 .thirdProject .description .liveLink,
@@ -822,7 +823,7 @@ header .headerFlexContainer h1 {
     margin: 2.5rem auto;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 790px) {
   .about .me {
     width: 27rem;
     height: 18rem;
@@ -898,7 +899,7 @@ header .headerFlexContainer h1 {
     height: 45%;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 790px) {
   .about .aboutContainer .skillList {
     width: 90%;
   }
@@ -927,7 +928,7 @@ header .headerFlexContainer h1 {
     font-size: 5rem;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 790px) {
   .about .aboutContainer .skillList li i {
     font-size: 4rem;
   }
@@ -940,7 +941,7 @@ header .headerFlexContainer h1 {
     font-size: 1.6rem;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 790px) {
   .about .aboutContainer .skillList li span {
     font-size: 1.4rem;
   }
@@ -967,7 +968,7 @@ header .headerFlexContainer h1 {
     margin-bottom: 3%;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 790px) {
   .about .aboutContainer .description {
     width: 90%;
     line-height: 2.4rem;
@@ -1025,7 +1026,7 @@ header .headerFlexContainer h1 {
     width: 15rem;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 790px) {
   .about .aboutContainer .description .resumeContactButton span {
     margin: 1.5rem 0 1rem;
   }
@@ -1070,10 +1071,10 @@ header .headerFlexContainer h1 {
 }
 .contact .contactFlexContainer.contactShown {
   width: 80%;
-  height: 70%;
+  height: 65%;
   transform: rotateX(0);
 }
-@media (max-width: 768px) {
+@media (max-width: 790px) {
   .contact .contactFlexContainer.contactShown {
     flex-direction: column;
     justify-content: space-around;
@@ -1096,20 +1097,21 @@ header .headerFlexContainer h1 {
   position: absolute;
   width: 30rem;
   height: 30rem;
-  top: -10rem;
+  top: -13.5rem;
   left: -10rem;
 }
-@media (max-width: 768px) {
+@media (max-width: 790px) {
   .contact .contactFlexContainer .emailImage {
-    top: -7rem;
+    top: -9rem;
     left: -7rem;
+    width: 27rem;
+    height: 27rem;
   }
 }
 @media (max-width: 590px) {
   .contact .contactFlexContainer .emailImage {
     width: 20.5rem;
     height: 20.5rem;
-    top: -9rem;
     left: -3rem;
   }
 }
@@ -1118,7 +1120,6 @@ header .headerFlexContainer h1 {
     width: 12rem;
     height: 12rem;
     top: -5rem;
-    left: -3rem;
   }
 }
 @media (max-width: 375px) {
@@ -1136,14 +1137,14 @@ header .headerFlexContainer h1 {
   padding: 0 5%;
   color: white;
 }
-@media (max-width: 1088px) {
+@media (max-width: 1200px) {
   .contact .contactFlexContainer .contactText {
     font-size: 2.3rem;
     line-height: 3.1rem;
     width: 45%;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 790px) {
   .contact .contactFlexContainer .contactText {
     align-self: flex-end;
     width: 55%;
@@ -1169,12 +1170,12 @@ header .headerFlexContainer h1 {
   width: 50%;
   padding-right: 5%;
 }
-@media (max-width: 1088px) {
+@media (max-width: 1200px) {
   .contact .contactFlexContainer form {
     width: 55%;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 790px) {
   .contact .contactFlexContainer form {
     width: 85%;
     padding-right: 0;
@@ -1187,7 +1188,7 @@ header .headerFlexContainer h1 {
   margin-bottom: 4rem;
   border-radius: 1rem;
 }
-@media (max-width: 768px) {
+@media (max-width: 790px) {
   .contact .contactFlexContainer form input {
     margin-bottom: 2.5rem;
   }
@@ -1200,7 +1201,7 @@ header .headerFlexContainer h1 {
   margin-bottom: 4rem;
   border-radius: 1rem;
 }
-@media (max-width: 768px) {
+@media (max-width: 790px) {
   .contact .contactFlexContainer form textarea {
     height: 15rem;
     margin-bottom: 2.5rem;
@@ -1210,11 +1211,12 @@ header .headerFlexContainer h1 {
   width: 15rem;
   height: 4.5rem;
   border-radius: 1rem;
-  background: #fce8ad;
+  background: #26de81;
   border: none;
   font-size: 2.1rem;
   transition: all 0.4s;
-  color: #0072ff;
+  color: white;
+  border: 3px solid white;
   cursor: pointer;
 }
 .contact .contactFlexContainer form button:hover {

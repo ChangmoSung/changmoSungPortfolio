@@ -66,6 +66,7 @@
                 background: none;
                 font-size: 2.5vmax;
                 box-shadow: inset 0px 0px 0.4vmax 0.2vmax #000;
+                cursor: pointer;
             }
 
             .appleLogo {
@@ -137,13 +138,13 @@
         }
 
         @include mq1200 {
-            width: 80%;
+            width: 65%;
             margin-bottom: 4vmax;
             transform: translateX(110vh);
         }
 
         @include mq790 {
-            width: 85%;
+            width: 80%;
         }
 
         h3 {
@@ -159,7 +160,7 @@
                 margin: 2.5rem;
             }
 
-            @include mq430 {
+            @include mq435 {
                 font-size: 3.7rem;
                 margin: 1.5rem;
             }
@@ -181,7 +182,7 @@
                 line-height: 2.7rem;
             }
 
-            @include mq430 {
+            @include mq435 {
                 font-size: 1.6rem;
                 line-height: 2.4rem;
             }
@@ -197,14 +198,14 @@
 
             @include mq1200 {
                 font-size: 5.5rem;
-                margin: 3vmax;
+                margin: 2vmax;
             }
 
             @include mq790 {
                 font-size: 5rem;
             }
 
-            @include mq430 {
+            @include mq435 {
                 font-size: 4.5rem;
             }
         }
@@ -234,7 +235,7 @@
                 line-height: 4.6rem;
             }
 
-            @include mq430 {
+            @include mq435 {
                 font-size: 2rem;
                 line-height: 4.4rem;
             }

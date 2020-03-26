@@ -30,7 +30,7 @@
         transform: rotate(35deg);
     }
 
-    @include mq1304 {
+    @include mq1200 {
         width: 12rem;
         line-height: 5rem;
     }
@@ -39,7 +39,7 @@
         top: 11rem;
     }
 
-    @include mq768 {
+    @include mq790 {
         top: 9.5rem;
         width: 10.5rem;
         line-height: 4.5rem;
@@ -106,7 +106,7 @@ nav {
                 line-height: 9rem;
             }
 
-            @include mq768 {
+            @include mq790 {
                 font-size: 1.8rem;
                 line-height: 7.5rem;
             }

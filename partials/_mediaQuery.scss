@@ -1,9 +1,3 @@
-@mixin mq1304 {
-    @media(max-width: 1304px) {
-        @content;
-    }
-}
-
 @mixin mq1088 {
     @media(max-width: 1088px) {
         @content;
@@ -12,18 +6,6 @@
 
 @mixin mq980 {
     @media(max-width: 980px) {
-        @content;
-    }
-}
-
-@mixin mq768 {
-    @media(max-width: 768px) {
-        @content;
-    }
-}
-
-@mixin mq590 {
-    @media(max-width: 590px) {
         @content;
     }
 }
@@ -60,8 +42,14 @@
     }
 }
 
-@mixin mq430 {
-    @media(max-width: 430px) {
+@mixin mq590 {
+    @media(max-width: 590px) {
+        @content;
+    }
+}
+
+@mixin mq435 {
+    @media(max-width: 435px) {
         @content;
     }
 }

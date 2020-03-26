@@ -49,13 +49,14 @@ portfolio.init = function () {
     $playButton.on('click', function() {
         const project = $(this).attr('data-project');
         const video = $(`video[data-project=${project}]`);
+        const $button = $(this);
         
         if (videoPlaying) {
             video[0].pause();
-            $(this).html('<i class="fas fa-play">');
+            $button.html('<i class="fas fa-play">');
         } else {
             video[0].play();
-            $(this).html('<i class="fas fa-pause"></i>');
+            $button.html('<i class="fas fa-pause"></i>');
         }
 
         videoPlaying = !videoPlaying;

@@ -21,7 +21,7 @@
             margin: 2.5rem auto;
         }
 
-        @include mq768 {
+        @include mq790 {
             width: 27rem;
             height: 18rem;
         }
@@ -95,7 +95,7 @@
                 height: 45%;
             }
 
-            @include mq768 {
+            @include mq790 {
                 width: 90%;
             }
 
@@ -121,7 +121,7 @@
                         font-size: 5rem;
                     }
 
-                    @include mq768 {
+                    @include mq790 {
                         font-size: 4rem;
                     }
                 }
@@ -133,7 +133,7 @@
                         font-size: 1.6rem;
                     }
 
-                    @include mq768 {
+                    @include mq790 {
                         font-size: 1.4rem;
                     }
 
@@ -160,7 +160,7 @@
                 margin-bottom: 3%;
             }
 
-            @include mq768 {
+            @include mq790 {
                 width: 90%;
                 line-height: 2.4rem;
                 font-size: 1.45rem;
@@ -218,7 +218,7 @@
                         width: 15rem;
                     }
     
-                    @include mq768 {
+                    @include mq790 {
                         margin: 1.5rem 0 1rem;
                     }
     
