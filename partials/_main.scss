@@ -32,12 +32,22 @@
         transition: all 0.6s;
         background: black;
         box-shadow: inset 0 0 1vmax 0.1vmax rgb(96, 97, 102), 0 0 0.1vmax 0.8vmax rgb(96, 97, 102);
-        // transform: translateY(110vh);
+        transform: translateY(110vh);
 
         @include mq1200 {
-            height: 32vmax;
             width: 42vmax;
-            // transform: translateX(-110vh);
+            height: 32vmax;
+            transform: translateX(-110vh);
+        }
+
+        @include mq980 {
+            width: 50vmax;
+            height: 39vmax;
+        }
+
+        @include mq590 {
+            width: 85%;
+            height: 42vmax;
         }
 
         .videoContainer {
@@ -130,7 +140,7 @@
         transition: all 0.6s;
         padding: 2vmax;
         border-radius: 1rem;
-        // transform: translateY(-110vh);
+        transform: translateY(-110vh);
         
 
         &.selected {
@@ -152,14 +162,24 @@
         }
 
         @include mq1200 {
-            // transform: translateX(110vh);
-            width: 75vmax;
-            height: 27vmax;
+            transform: translateX(110vh);
+            width: 70vmax;
+            height: 25vmax;
             overflow: auto;
         }
 
-        @include mq790 {
-            width: 80%;
+        @include mq980 {
+            height: 30vmax;
+            width: 65vmax;
+        }
+
+        @include mq590 {
+            width: 86%;
+            height: 35vmax;
+        }
+
+        @include mq414height {
+            height: 45vmax;
         }
 
         h3 {
@@ -168,9 +188,20 @@
 
             @include mq1200 {
                 font-size: 4.2vmax;
-                margin: 24rem 0 2.5vmax;
+                margin: 28rem 0 2.5vmax;
             }
 
+            @include mq980 {
+                margin: 22.5rem 0 2vmax;
+            }
+
+            @include mq590 {
+                margin: 33vmax 0 2vmax;
+            }
+
+            @include mq470 {
+                font-size: 3.8vmax;
+            }
         }
 
         .aboutProject {
@@ -180,19 +211,25 @@
             @include mq1200 {
                 width: 85%;
                 font-size: 1.5vmax;
-                line-height: 2.7rem;
+                line-height: 2.3vmax;
                 margin: 0 0 2.8vmax;
             }
 
-            @include mq790 {
-                font-size: 1.8rem;
-                text-align: center;
-                line-height: 2.7rem;
+            @include mq980 {
+                margin: 0 0 2.3vmax;
+                font-size: 1.7vmax;
+                line-height: 2.6vmax;
             }
 
-            @include mq435 {
-                font-size: 1.6rem;
-                line-height: 2.4rem;
+            @include mq590 {
+                font-size: 1.5rem;
+                line-height: 2.1rem;
+                margin: 1vmax 0 3vmax;
+            }
+
+            @include mq470 {
+                font-size: 1.4rem;
+                width: 90%;
             }
         }
 
@@ -214,8 +251,18 @@
                 height: 5vmax;
 
                 @include mq1200 {
-                    width: 7vmax;
-                    height: 7vmax;
+                    width: 7.5vmax;
+                    height: 7.5vmax;
+                }
+
+                @include mq980 {
+                    width: 8.5vmax;
+                    height: 8.5vmax;
+                }
+
+                @include mq590 {
+                    width: 9.5vmax;
+                    height: 9.5vmax;
                 }
             }
         }
@@ -238,18 +285,19 @@
                 font-size: 2vmax;
                 width: 20vmax;
                 line-height: 3.8vmax;
-                margin: 0 0 3rem;
+                margin: 0 0 2.9vmax;
                 order: 1;
             }
 
-            @include mq790 {
-                font-size: 2.2rem;
-                line-height: 4.6rem;
+            @include mq980 {
+                font-size: 1.9vmax;
+                width: 17.5vmax;
+                line-height: 4vmax;
             }
 
-            @include mq435 {
-                font-size: 2rem;
-                line-height: 4.4rem;
+            @include mq590 {
+                line-height: 4rem;
+                margin: 1.5vmax 0 3.5vmax;
             }
         }
 
@@ -272,20 +320,21 @@
                     height: 12vmax;
                     margin-bottom: 3rem;
                 }
+
+                @include mq590 {
+                    width: 14vmax;
+                    height: 14vmax;
+                }
             }
         }
     }
-}
-
-.firstProject {
-    z-index: 999;
 }
 
 .firstProject .description {
     background: rgb(250, 219, 217);
     color: blue;
     border: 5px solid blue;
-    box-shadow: inset 0 0 1vmax 0.1vmax blue, 0 0 0.1vmax 0.4vmax blue;
+    box-shadow: inset 0 0 1vmax 0vmax blue, 0 0 0.1vmax 0.4vmax blue;
 
     .liveLink {
         background: white;
@@ -311,7 +360,7 @@
 .secondProject .description {
   background: linear-gradient(to right, #0072ff, #00c6ff); 
   color: white;
-  box-shadow: inset 0 0 1vmax 0.1vmax blue, 0 0 0.1vmax 0.4vmax blue;
+  box-shadow: inset 0 0 1vmax 0vmax blue, 0 0 0.1vmax 0.4vmax blue;
 
 
   .liveLink {
@@ -334,7 +383,7 @@
         border-radius: 1.2rem;
         color: black;
         border: 2px solid black;
-        box-shadow: inset 0 0 1vmax 0.1vmax blue, 0 0 0.1vmax 0.4vmax blue;
+        box-shadow: inset 0 0 1vmax 0vmax blue, 0 0 0.1vmax 0.4vmax blue;
 
         &:hover {
             background: #6056f9;

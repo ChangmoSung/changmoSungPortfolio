@@ -18,11 +18,7 @@
     }
 }
 
-@mixin mq414height {
-    @media(max-height: 736px) and (max-width: 414px) {
-        @content;
-    }
-}
+
 
 
 // ----------------------------//
@@ -50,8 +46,14 @@
     }
 }
 
-@mixin mq435 {
-    @media(max-width: 435px) {
+@mixin mq470 {
+    @media(max-width: 470px) {
+        @content;
+    }
+}
+
+@mixin mq414height {
+    @media(max-height: 736px) and (max-width: 414px) {
         @content;
     }
 }
