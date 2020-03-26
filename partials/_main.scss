@@ -11,7 +11,7 @@
     overflow: hidden;
     height: 100vh;
     width: 100%;
-    background: rgb(252, 232, 173);
+    background: white;
 
     &.selectedProject {
         z-index: 2;
@@ -25,8 +25,8 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        height: 33vmax;
-        width: 45vmax;
+        height: 38vmax;
+        width: 48vmax;
         border-radius: 1.5rem;
         transition: all 0.6s;
         background: black;
@@ -64,21 +64,24 @@
                 width: 25%;
                 height: 70%;
                 background: none;
-                font-size: 2.5vmax;
                 box-shadow: inset 0px 0px 0.4vmax 0.2vmax #000;
                 cursor: pointer;
+
+                img {
+                    width: 4.5vmax;
+                    height: 3.4vmax;
+                }
             }
 
             .appleLogo {
-                width: 10%;
-                height: 70%;
+                width: 4.5vmax;
+                height: 3.4vmax;
             }
 
             .githubLink {
                 width: 25%;
                 height: 70%;
                 background: none;
-                font-size: 2.5vmax;
                 box-shadow: inset 0px 0px 0.4vmax 0.2vmax #000;
 
                 a {
@@ -87,6 +90,11 @@
                     align-items: center;
                     color: #000;
                     text-decoration: none;
+
+                    img {
+                        width: 4.5vmax;
+                        height: 3.4vmax;
+                    }
                 }
             }
         }
@@ -111,13 +119,15 @@
 
     .description {
         width: 35vmax;
+        height: 42vmax;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: space-evenly;
         align-items: center;
-        color: #26de81;
         transition: all 0.6s;
         transform: translateY(-110vh);
+        padding: 2vmax;
+        
 
         &.selected {
             opacity: 1;
@@ -148,7 +158,8 @@
         }
 
         h3 {
-            font-size: 3.5vmax;
+            font-size: 2.8vmax;
+            margin: 0 0 1vmax 0;
 
             @include mq1200 {
                 font-size: 5rem;
@@ -167,8 +178,8 @@
         }
 
         .aboutProject {
-            font-size: 1.4vmax;
-            line-height: 2vmax;
+            font-size: 1.18vmax;
+            line-height: 1.9vmax;
 
             @include mq1200 {
                 font-size: 2rem;
@@ -191,22 +202,14 @@
         .skill {
             width: 100%;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             list-style: none;
             padding: 0;
-            font-size: 3.9vmax;
+            margin: 0 0 3rem 0;
 
-            @include mq1200 {
-                font-size: 5.5rem;
-                margin: 2vmax;
-            }
-
-            @include mq790 {
-                font-size: 5rem;
-            }
-
-            @include mq435 {
-                font-size: 4.5rem;
+            li {
+                width: 5vmax;
+                height: 5vmax;
             }
         }
 
@@ -214,14 +217,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 1.6vmax;
+            font-size: 1.55vmax;
             text-transform: uppercase;
             text-decoration: none;
             width: 11.5vmax;
-            line-height: 3.6vmax;
-            background: linear-gradient(to right, #0072ff, #00c6ff); 
-            color: white;
-            border-radius: 1rem;
+            line-height: 3.1vmax;
 
             @include mq1200 {
                 font-size: 2.4rem;
@@ -239,6 +239,39 @@
                 font-size: 2rem;
                 line-height: 4.4rem;
             }
+        }
+
+        .descriptionImages {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+
+            div {
+                width: 11vmax;
+                height: 11vmax;
+            }
+        }
+    }
+}
+
+.firstProject .description {
+    background: rgb(250, 219, 217);
+    color: blue;
+    border: 5px solid blue;
+    border-radius: 1rem;
+
+    .liveLink {
+        background: white;
+        border-radius: 2rem;
+        color: black;
+        box-shadow: 5px 5px blue;
+        position: relative;
+
+        &:hover,
+        &:focus {
+            box-shadow: 2.5px 2.5px blue;
+            top: 2.5px;
+            left: 2.5px;
         }
     }
 }

@@ -113,21 +113,14 @@
                 width: 20%;
                 transition: all 1s;
 
-                i {
-                    font-size: 6rem;
-                    margin-bottom: 1rem;
-
-                    @include mq1088 {
-                        font-size: 5rem;
-                    }
-
-                    @include mq790 {
-                        font-size: 4rem;
-                    }
+                img {
+                    width: 6vmax;
+                    height: 6vmax;
+                    margin-bottom: 1vmax;
                 }
 
                 span {
-                    font-size:2.2rem;
+                    font-size:1.6rem;
 
                     @include mq1088 {
                         font-size: 1.6rem;

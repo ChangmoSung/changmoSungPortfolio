@@ -53,10 +53,10 @@ portfolio.init = function () {
         
         if (videoPlaying) {
             video[0].pause();
-            $button.html('<i class="fas fa-play">');
+            $button.html('<img src="assets/play.png" alt=""></img>');
         } else {
             video[0].play();
-            $button.html('<i class="fas fa-pause"></i>');
+            $button.html('<img src="assets/pause.png" alt=""></img>');
         }
 
         videoPlaying = !videoPlaying;

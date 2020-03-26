@@ -452,7 +452,7 @@ header .headerFlexContainer h1 {
   overflow: hidden;
   height: 100vh;
   width: 100%;
-  background: #fce8ad;
+  background: white;
 }
 .firstProject.selectedProject,
 .secondProject.selectedProject,
@@ -475,8 +475,8 @@ header .headerFlexContainer h1 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 33vmax;
-  width: 45vmax;
+  height: 38vmax;
+  width: 48vmax;
   border-radius: 1.5rem;
   transition: all 0.6s;
   background: black;
@@ -528,16 +528,22 @@ header .headerFlexContainer h1 {
   width: 25%;
   height: 70%;
   background: none;
-  font-size: 2.5vmax;
   box-shadow: inset 0px 0px 0.4vmax 0.2vmax #000;
   cursor: pointer;
+}
+.firstProject .projectVideo .frame .playButton img,
+.secondProject .projectVideo .frame .playButton img,
+.thirdProject .projectVideo .frame .playButton img,
+.fourthProject .projectVideo .frame .playButton img {
+  width: 4.5vmax;
+  height: 3.4vmax;
 }
 .firstProject .projectVideo .frame .appleLogo,
 .secondProject .projectVideo .frame .appleLogo,
 .thirdProject .projectVideo .frame .appleLogo,
 .fourthProject .projectVideo .frame .appleLogo {
-  width: 10%;
-  height: 70%;
+  width: 4.5vmax;
+  height: 3.4vmax;
 }
 .firstProject .projectVideo .frame .githubLink,
 .secondProject .projectVideo .frame .githubLink,
@@ -546,7 +552,6 @@ header .headerFlexContainer h1 {
   width: 25%;
   height: 70%;
   background: none;
-  font-size: 2.5vmax;
   box-shadow: inset 0px 0px 0.4vmax 0.2vmax #000;
 }
 .firstProject .projectVideo .frame .githubLink a,
@@ -558,6 +563,13 @@ header .headerFlexContainer h1 {
   align-items: center;
   color: #000;
   text-decoration: none;
+}
+.firstProject .projectVideo .frame .githubLink a img,
+.secondProject .projectVideo .frame .githubLink a img,
+.thirdProject .projectVideo .frame .githubLink a img,
+.fourthProject .projectVideo .frame .githubLink a img {
+  width: 4.5vmax;
+  height: 3.4vmax;
 }
 .firstProject .projectVideo.selected,
 .secondProject .projectVideo.selected,
@@ -592,13 +604,14 @@ header .headerFlexContainer h1 {
 .thirdProject .description,
 .fourthProject .description {
   width: 35vmax;
+  height: 42vmax;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   align-items: center;
-  color: #26de81;
   transition: all 0.6s;
   transform: translateY(-110vh);
+  padding: 2vmax;
 }
 .firstProject .description.selected,
 .secondProject .description.selected,
@@ -652,7 +665,8 @@ header .headerFlexContainer h1 {
 .secondProject .description h3,
 .thirdProject .description h3,
 .fourthProject .description h3 {
-  font-size: 3.5vmax;
+  font-size: 2.8vmax;
+  margin: 0 0 1vmax 0;
 }
 @media (max-width: 1200px) {
   .firstProject .description h3,
@@ -685,8 +699,8 @@ header .headerFlexContainer h1 {
 .secondProject .description .aboutProject,
 .thirdProject .description .aboutProject,
 .fourthProject .description .aboutProject {
-  font-size: 1.4vmax;
-  line-height: 2vmax;
+  font-size: 1.18vmax;
+  line-height: 1.9vmax;
 }
 @media (max-width: 1200px) {
   .firstProject .description .aboutProject,
@@ -723,35 +737,17 @@ header .headerFlexContainer h1 {
 .fourthProject .description .skill {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   list-style: none;
   padding: 0;
-  font-size: 3.9vmax;
+  margin: 0 0 3rem 0;
 }
-@media (max-width: 1200px) {
-  .firstProject .description .skill,
-.secondProject .description .skill,
-.thirdProject .description .skill,
-.fourthProject .description .skill {
-    font-size: 5.5rem;
-    margin: 2vmax;
-  }
-}
-@media (max-width: 790px) {
-  .firstProject .description .skill,
-.secondProject .description .skill,
-.thirdProject .description .skill,
-.fourthProject .description .skill {
-    font-size: 5rem;
-  }
-}
-@media (max-width: 435px) {
-  .firstProject .description .skill,
-.secondProject .description .skill,
-.thirdProject .description .skill,
-.fourthProject .description .skill {
-    font-size: 4.5rem;
-  }
+.firstProject .description .skill li,
+.secondProject .description .skill li,
+.thirdProject .description .skill li,
+.fourthProject .description .skill li {
+  width: 5vmax;
+  height: 5vmax;
 }
 .firstProject .description .liveLink,
 .secondProject .description .liveLink,
@@ -760,14 +756,11 @@ header .headerFlexContainer h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.6vmax;
+  font-size: 1.55vmax;
   text-transform: uppercase;
   text-decoration: none;
   width: 11.5vmax;
-  line-height: 3.6vmax;
-  background: linear-gradient(to right, #0072ff, #00c6ff);
-  color: white;
-  border-radius: 1rem;
+  line-height: 3.1vmax;
 }
 @media (max-width: 1200px) {
   .firstProject .description .liveLink,
@@ -797,6 +790,40 @@ header .headerFlexContainer h1 {
     font-size: 2rem;
     line-height: 4.4rem;
   }
+}
+.firstProject .description .descriptionImages,
+.secondProject .description .descriptionImages,
+.thirdProject .description .descriptionImages,
+.fourthProject .description .descriptionImages {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.firstProject .description .descriptionImages div,
+.secondProject .description .descriptionImages div,
+.thirdProject .description .descriptionImages div,
+.fourthProject .description .descriptionImages div {
+  width: 11vmax;
+  height: 11vmax;
+}
+
+.firstProject .description {
+  background: #fadbd9;
+  color: blue;
+  border: 5px solid blue;
+  border-radius: 1rem;
+}
+.firstProject .description .liveLink {
+  background: white;
+  border-radius: 2rem;
+  color: black;
+  box-shadow: 5px 5px blue;
+  position: relative;
+}
+.firstProject .description .liveLink:hover, .firstProject .description .liveLink:focus {
+  box-shadow: 2.5px 2.5px blue;
+  top: 2.5px;
+  left: 2.5px;
 }
 
 .about {
@@ -919,22 +946,13 @@ header .headerFlexContainer h1 {
   width: 20%;
   transition: all 1s;
 }
-.about .aboutContainer .skillList li i {
-  font-size: 6rem;
-  margin-bottom: 1rem;
-}
-@media (max-width: 1088px) {
-  .about .aboutContainer .skillList li i {
-    font-size: 5rem;
-  }
-}
-@media (max-width: 790px) {
-  .about .aboutContainer .skillList li i {
-    font-size: 4rem;
-  }
+.about .aboutContainer .skillList li img {
+  width: 6vmax;
+  height: 6vmax;
+  margin-bottom: 1vmax;
 }
 .about .aboutContainer .skillList li span {
-  font-size: 2.2rem;
+  font-size: 1.6rem;
 }
 @media (max-width: 1088px) {
   .about .aboutContainer .skillList li span {
