@@ -434,36 +434,9 @@ header .headerFlexContainer {
 }
 header .headerFlexContainer h1 {
   position: relative;
-  font-size: 14rem;
+  font-size: 10vmax;
   color: #26de81;
   margin: 0 0 16rem 0;
-}
-@media (max-width: 1088px) {
-  header .headerFlexContainer h1 {
-    font-size: 13rem;
-  }
-}
-@media (max-width: 768px) {
-  header .headerFlexContainer h1 {
-    font-size: 12rem;
-    margin: 0 0 12rem 0;
-  }
-}
-@media (max-width: 590px) {
-  header .headerFlexContainer h1 {
-    font-size: 9rem;
-  }
-}
-@media (max-width: 435px) {
-  header .headerFlexContainer h1 {
-    font-size: 8rem;
-    margin: 0 0 13.5rem 0;
-  }
-}
-@media (max-width: 375px) {
-  header .headerFlexContainer h1 {
-    font-size: 7rem;
-  }
 }
 
 .firstProject,
@@ -472,7 +445,10 @@ header .headerFlexContainer h1 {
 .fourthProject {
   display: flex;
   justify-content: space-evenly;
-  position: fixed;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
   height: 100vh;
   width: 100%;
   background: #fce8ad;
@@ -483,7 +459,7 @@ header .headerFlexContainer h1 {
 .fourthProject.selectedProject {
   z-index: 2;
 }
-@media (max-width: 980px) {
+@media (max-width: 1200px) {
   .firstProject,
 .secondProject,
 .thirdProject,
@@ -491,138 +467,112 @@ header .headerFlexContainer h1 {
     flex-direction: column;
   }
 }
-@media (max-width: 435px) {
-  .firstProject,
-.secondProject,
-.thirdProject,
-.fourthProject {
-    justify-content: flex-start;
-  }
-}
-.firstProject .imageAndVideo,
-.secondProject .imageAndVideo,
-.thirdProject .imageAndVideo,
-.fourthProject .imageAndVideo {
-  width: 45%;
+.firstProject .projectVideo,
+.secondProject .projectVideo,
+.thirdProject .projectVideo,
+.fourthProject .projectVideo {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: space-between;
+  height: 33vmax;
+  width: 45vmax;
+  border-radius: 1.5rem;
   transition: all 0.6s;
-  transform: translateY(110vh);
+  background: black;
+  transform: translateY(100vh);
 }
-.firstProject .imageAndVideo.selected,
-.secondProject .imageAndVideo.selected,
-.thirdProject .imageAndVideo.selected,
-.fourthProject .imageAndVideo.selected {
+@media (max-width: 1200px) {
+  .firstProject .projectVideo,
+.secondProject .projectVideo,
+.thirdProject .projectVideo,
+.fourthProject .projectVideo {
+    margin-top: 4vmax;
+  }
+}
+.firstProject .projectVideo .videoContainer,
+.secondProject .projectVideo .videoContainer,
+.thirdProject .projectVideo .videoContainer,
+.fourthProject .projectVideo .videoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85%;
+}
+.firstProject .projectVideo .videoContainer .video,
+.secondProject .projectVideo .videoContainer .video,
+.thirdProject .projectVideo .videoContainer .video,
+.fourthProject .projectVideo .videoContainer .video {
+  width: 100%;
+  height: 92%;
+}
+.firstProject .projectVideo .frame,
+.secondProject .projectVideo .frame,
+.thirdProject .projectVideo .frame,
+.fourthProject .projectVideo .frame {
+  display: flex;
+  justify-content: space-around;
+  height: 15%;
+  background: silver;
+  border-radius: 0 0 1.5rem 1.5rem;
+}
+.firstProject .projectVideo .frame .playButton,
+.secondProject .projectVideo .frame .playButton,
+.thirdProject .projectVideo .frame .playButton,
+.fourthProject .projectVideo .frame .playButton {
+  width: 25%;
+}
+.firstProject .projectVideo .frame .appleLogo,
+.secondProject .projectVideo .frame .appleLogo,
+.thirdProject .projectVideo .frame .appleLogo,
+.fourthProject .projectVideo .frame .appleLogo {
+  width: 10%;
+  height: 80%;
+}
+.firstProject .projectVideo .frame .github,
+.secondProject .projectVideo .frame .github,
+.thirdProject .projectVideo .frame .github,
+.fourthProject .projectVideo .frame .github {
+  width: 25%;
+}
+.firstProject .projectVideo.selected,
+.secondProject .projectVideo.selected,
+.thirdProject .projectVideo.selected,
+.fourthProject .projectVideo.selected {
   transform: translateY(0);
 }
-@media (max-width: 980px) {
-  .firstProject .imageAndVideo.selected,
-.secondProject .imageAndVideo.selected,
-.thirdProject .imageAndVideo.selected,
-.fourthProject .imageAndVideo.selected {
+@media (max-width: 1200px) {
+  .firstProject .projectVideo.selected,
+.secondProject .projectVideo.selected,
+.thirdProject .projectVideo.selected,
+.fourthProject .projectVideo.selected {
     transform: translateX(0);
   }
 }
-.firstProject .imageAndVideo.notSelected,
-.secondProject .imageAndVideo.notSelected,
-.thirdProject .imageAndVideo.notSelected,
-.fourthProject .imageAndVideo.notSelected {
+.firstProject .projectVideo.notSelected,
+.secondProject .projectVideo.notSelected,
+.thirdProject .projectVideo.notSelected,
+.fourthProject .projectVideo.notSelected {
   transform: translateY(-100vh);
 }
-@media (max-width: 980px) {
-  .firstProject .imageAndVideo.notSelected,
-.secondProject .imageAndVideo.notSelected,
-.thirdProject .imageAndVideo.notSelected,
-.fourthProject .imageAndVideo.notSelected {
+@media (max-width: 1200px) {
+  .firstProject .projectVideo.notSelected,
+.secondProject .projectVideo.notSelected,
+.thirdProject .projectVideo.notSelected,
+.fourthProject .projectVideo.notSelected {
     transform: translateX(100vh);
-  }
-}
-@media (max-width: 980px) {
-  .firstProject .imageAndVideo,
-.secondProject .imageAndVideo,
-.thirdProject .imageAndVideo,
-.fourthProject .imageAndVideo {
-    width: 95%;
-    height: calc(395.2px + (500 - 395.2) * ((100vw - 768px) / (980 - 768)));
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0 auto;
-    transform: translateX(-110vh);
-  }
-}
-@media (max-width: 768px) {
-  .firstProject .imageAndVideo,
-.secondProject .imageAndVideo,
-.thirdProject .imageAndVideo,
-.fourthProject .imageAndVideo {
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 100%;
-    height: 55%;
-  }
-}
-@media (max-width: 435px) {
-  .firstProject .imageAndVideo,
-.secondProject .imageAndVideo,
-.thirdProject .imageAndVideo,
-.fourthProject .imageAndVideo {
-    height: 40%;
-    margin: 2rem 0;
-  }
-}
-.firstProject .imageAndVideo .projectImage,
-.firstProject .imageAndVideo .projectVideo,
-.secondProject .imageAndVideo .projectImage,
-.secondProject .imageAndVideo .projectVideo,
-.thirdProject .imageAndVideo .projectImage,
-.thirdProject .imageAndVideo .projectVideo,
-.fourthProject .imageAndVideo .projectImage,
-.fourthProject .imageAndVideo .projectVideo {
-  max-width: 60rem;
-  border: 4px solid blue;
-  border-radius: 1rem;
-  overflow: hidden;
-}
-@media (max-width: 980px) {
-  .firstProject .imageAndVideo .projectImage,
-.firstProject .imageAndVideo .projectVideo,
-.secondProject .imageAndVideo .projectImage,
-.secondProject .imageAndVideo .projectVideo,
-.thirdProject .imageAndVideo .projectImage,
-.thirdProject .imageAndVideo .projectVideo,
-.fourthProject .imageAndVideo .projectImage,
-.fourthProject .imageAndVideo .projectVideo {
-    width: 48.75%;
-    height: 75%;
-  }
-}
-@media (max-width: 768px) {
-  .firstProject .imageAndVideo .projectImage,
-.firstProject .imageAndVideo .projectVideo,
-.secondProject .imageAndVideo .projectImage,
-.secondProject .imageAndVideo .projectVideo,
-.thirdProject .imageAndVideo .projectImage,
-.thirdProject .imageAndVideo .projectVideo,
-.fourthProject .imageAndVideo .projectImage,
-.fourthProject .imageAndVideo .projectVideo {
-    width: 70%;
-    height: 47.5%;
   }
 }
 .firstProject .description,
 .secondProject .description,
 .thirdProject .description,
 .fourthProject .description {
-  width: 45%;
+  width: 35vmax;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   color: #26de81;
   transition: all 0.6s;
-  opacity: 0;
   transform: translateY(-100vh);
 }
 .firstProject .description.selected,
@@ -632,7 +582,7 @@ header .headerFlexContainer h1 {
   opacity: 1;
   transform: translateY(0);
 }
-@media (max-width: 980px) {
+@media (max-width: 1200px) {
   .firstProject .description.selected,
 .secondProject .description.selected,
 .thirdProject .description.selected,
@@ -647,7 +597,7 @@ header .headerFlexContainer h1 {
   transform: translateY(100vh);
   opacity: 0;
 }
-@media (max-width: 980px) {
+@media (max-width: 1200px) {
   .firstProject .description.notSelected,
 .secondProject .description.notSelected,
 .thirdProject .description.notSelected,
@@ -655,128 +605,90 @@ header .headerFlexContainer h1 {
     transform: translateX(-100vh);
   }
 }
-@media (max-width: 980px) {
+@media (max-width: 1200px) {
   .firstProject .description,
 .secondProject .description,
 .thirdProject .description,
 .fourthProject .description {
-    width: 90%;
-    height: 50%;
-    justify-content: flex-start;
-    margin: 0 auto;
-    transform: translateX(100vh);
+    width: 80%;
+    margin-bottom: 4vmax;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 790px) {
   .firstProject .description,
 .secondProject .description,
 .thirdProject .description,
 .fourthProject .description {
-    height: 40%;
+    width: 85%;
   }
 }
 .firstProject .description h3,
 .secondProject .description h3,
 .thirdProject .description h3,
 .fourthProject .description h3 {
-  font-size: 5.5rem;
+  font-size: 3.5vmax;
 }
-@media (max-width: 1304px) {
+@media (max-width: 1200px) {
   .firstProject .description h3,
 .secondProject .description h3,
 .thirdProject .description h3,
 .fourthProject .description h3 {
     font-size: 5rem;
+    margin: 3rem;
   }
 }
-@media (max-width: 1088px) {
+@media (max-width: 790px) {
   .firstProject .description h3,
 .secondProject .description h3,
 .thirdProject .description h3,
 .fourthProject .description h3 {
-    font-size: 4.5rem;
+    font-size: 4.7rem;
+    margin: 2.5rem;
   }
 }
-@media (max-width: 980px) {
+@media (max-width: 430px) {
   .firstProject .description h3,
 .secondProject .description h3,
 .thirdProject .description h3,
 .fourthProject .description h3 {
-    font-size: 5rem;
-    margin: 0 0 3rem 0;
-  }
-}
-@media (max-width: 768px) {
-  .firstProject .description h3,
-.secondProject .description h3,
-.thirdProject .description h3,
-.fourthProject .description h3 {
-    font-size: 4.5rem;
-    margin: 0 0 2rem 0;
-  }
-}
-@media (max-width: 590px) {
-  .firstProject .description h3,
-.secondProject .description h3,
-.thirdProject .description h3,
-.fourthProject .description h3 {
-    font-size: 4rem;
+    font-size: 3.7rem;
+    margin: 1.5rem;
   }
 }
 .firstProject .description .aboutProject,
 .secondProject .description .aboutProject,
 .thirdProject .description .aboutProject,
 .fourthProject .description .aboutProject {
-  font-size: 2rem;
-  line-height: 2.5rem;
+  font-size: 1.4vmax;
+  line-height: 2vmax;
 }
-@media (max-width: 1304px) {
+@media (max-width: 1200px) {
+  .firstProject .description .aboutProject,
+.secondProject .description .aboutProject,
+.thirdProject .description .aboutProject,
+.fourthProject .description .aboutProject {
+    font-size: 2rem;
+    line-height: 3rem;
+    margin: 0;
+  }
+}
+@media (max-width: 790px) {
   .firstProject .description .aboutProject,
 .secondProject .description .aboutProject,
 .thirdProject .description .aboutProject,
 .fourthProject .description .aboutProject {
     font-size: 1.8rem;
+    text-align: center;
+    line-height: 2.7rem;
   }
 }
-@media (max-width: 1088px) {
-  .firstProject .description .aboutProject,
-.secondProject .description .aboutProject,
-.thirdProject .description .aboutProject,
-.fourthProject .description .aboutProject {
-    font-size: 1.7rem;
-  }
-}
-@media (max-width: 980px) {
-  .firstProject .description .aboutProject,
-.secondProject .description .aboutProject,
-.thirdProject .description .aboutProject,
-.fourthProject .description .aboutProject {
-    margin: 0;
-    font-size: 2rem;
-  }
-}
-@media (max-width: 768px) {
-  .firstProject .description .aboutProject,
-.secondProject .description .aboutProject,
-.thirdProject .description .aboutProject,
-.fourthProject .description .aboutProject {
-    font-size: 1.7rem;
-  }
-}
-@media (max-width: 590px) {
+@media (max-width: 430px) {
   .firstProject .description .aboutProject,
 .secondProject .description .aboutProject,
 .thirdProject .description .aboutProject,
 .fourthProject .description .aboutProject {
     font-size: 1.6rem;
-  }
-}
-@media (max-width: 435px) {
-  .firstProject .description .aboutProject,
-.secondProject .description .aboutProject,
-.thirdProject .description .aboutProject,
-.fourthProject .description .aboutProject {
-    line-height: 2rem;
+    line-height: 2.4rem;
   }
 }
 .firstProject .description .skill,
@@ -786,84 +698,78 @@ header .headerFlexContainer h1 {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  font-size: 5rem;
   list-style: none;
   padding: 0;
+  font-size: 3.9vmax;
 }
-@media (max-width: 980px) {
+@media (max-width: 1200px) {
   .firstProject .description .skill,
 .secondProject .description .skill,
 .thirdProject .description .skill,
 .fourthProject .description .skill {
-    margin: 3rem 0;
+    font-size: 5.5rem;
+    margin: 3vmax;
   }
 }
-@media (max-width: 590px) {
+@media (max-width: 790px) {
   .firstProject .description .skill,
 .secondProject .description .skill,
 .thirdProject .description .skill,
 .fourthProject .description .skill {
-    font-size: 4.2rem;
+    font-size: 5rem;
   }
 }
-@media (max-width: 435px) {
+@media (max-width: 430px) {
   .firstProject .description .skill,
 .secondProject .description .skill,
 .thirdProject .description .skill,
 .fourthProject .description .skill {
-    margin: 1.5rem 0;
+    font-size: 4.5rem;
   }
 }
-.firstProject .description .links,
-.secondProject .description .links,
-.thirdProject .description .links,
-.fourthProject .description .links {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-}
-.firstProject .description .links a,
-.secondProject .description .links a,
-.thirdProject .description .links a,
-.fourthProject .description .links a {
+.firstProject .description .liveLink,
+.secondProject .description .liveLink,
+.thirdProject .description .liveLink,
+.fourthProject .description .liveLink {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2.5rem;
+  font-size: 1.6vmax;
   text-transform: uppercase;
   text-decoration: none;
-  width: 14rem;
-  height: 4.5rem;
+  width: 11.5vmax;
+  line-height: 3.6vmax;
   background: linear-gradient(to right, #0072ff, #00c6ff);
   color: white;
   border-radius: 1rem;
 }
-@media (max-width: 768px) {
-  .firstProject .description .links a,
-.secondProject .description .links a,
-.thirdProject .description .links a,
-.fourthProject .description .links a {
-    height: 4.1rem;
-    font-size: 2.1rem;
+@media (max-width: 1200px) {
+  .firstProject .description .liveLink,
+.secondProject .description .liveLink,
+.thirdProject .description .liveLink,
+.fourthProject .description .liveLink {
+    font-size: 2.4rem;
+    width: 15rem;
+    line-height: 4.8rem;
+    margin-top: 1rem;
   }
 }
-@media (max-width: 590px) {
-  .firstProject .description .links a,
-.secondProject .description .links a,
-.thirdProject .description .links a,
-.fourthProject .description .links a {
+@media (max-width: 790px) {
+  .firstProject .description .liveLink,
+.secondProject .description .liveLink,
+.thirdProject .description .liveLink,
+.fourthProject .description .liveLink {
+    font-size: 2.2rem;
+    line-height: 4.6rem;
+  }
+}
+@media (max-width: 430px) {
+  .firstProject .description .liveLink,
+.secondProject .description .liveLink,
+.thirdProject .description .liveLink,
+.fourthProject .description .liveLink {
     font-size: 2rem;
-    height: 4rem;
-  }
-}
-@media (max-width: 435px) {
-  .firstProject .description .links a,
-.secondProject .description .links a,
-.thirdProject .description .links a,
-.fourthProject .description .links a {
-    height: 3.5rem;
-    width: 12rem;
-    font-size: 1.8rem;
+    line-height: 4.4rem;
   }
 }
 

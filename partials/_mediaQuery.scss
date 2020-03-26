@@ -45,3 +45,23 @@
         @content;
     }
 }
+
+
+// ----------------------------//
+@mixin mq1200 {
+    @media(max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin mq790 {
+    @media(max-width: 790px) {
+        @content;
+    }
+}
+
+@mixin mq430 {
+    @media(max-width: 430px) {
+        @content;
+    }
+}

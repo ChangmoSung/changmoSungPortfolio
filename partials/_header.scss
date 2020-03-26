@@ -32,31 +32,9 @@ header {
 
         h1 {
             position: relative;
-            font-size: 14rem;
+            font-size: 10vmax;
             color: #26de81;
             margin: 0 0 16rem 0;
-
-            @include mq1088 {
-                font-size: 13rem;
-            }
-
-            @include mq768 {
-                font-size: 12rem;
-                margin: 0 0 12rem 0;
-            }
-
-            @include mq590 {
-                font-size: 9rem;
-            }
-
-            @include mq435 {
-                font-size: 8rem;
-                margin: 0 0 13.5rem 0;
-            }
-
-            @include mq375 {
-                font-size: 7rem;
-            }
         }
     }
 }

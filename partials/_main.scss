@@ -4,7 +4,10 @@
 .fourthProject {
     display: flex;
     justify-content: space-evenly;
-    position: fixed;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
     height: 100vh;
     width: 100%;
     background: rgb(252, 232, 173);
@@ -13,27 +16,62 @@
         z-index: 2;
     }
 
-    @include mq980 {
+    @include mq1200 {
         flex-direction: column;
     }
 
-    @include mq435 {
-        justify-content: flex-start;
-    }
-
-    .imageAndVideo {
-        width: 45%;
+    .projectVideo {
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
+        justify-content: space-between;
+        height: 33vmax;
+        width: 45vmax;
+        border-radius: 1.5rem;
         transition: all 0.6s;
-        transform: translateY(110vh);
+        background: black;
+        transform: translateY(100vh);
+
+        @include mq1200 {
+            margin-top: 4vmax;
+        }
+
+        .videoContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 85%;
+
+            .video {
+                width: 100%;
+                height: 92%;
+            }
+        }
+
+        .frame {
+            display: flex;
+            justify-content: space-around;
+            height: 15%;
+            background: silver;
+            border-radius: 0 0 1.5rem 1.5rem;
+
+            .playButton {
+                width: 25%;
+            }
+
+            .appleLogo {
+                width: 10%;
+                height: 80%;
+            }
+
+            .github {
+                width: 25%;
+            }
+        }
 
         &.selected {
             transform: translateY(0);
 
-            @include mq980 {
+            @include mq1200 {
                 transform: translateX(0);
             }
         }
@@ -41,67 +79,28 @@
         &.notSelected {
             transform: translateY(-100vh);
 
-            @include mq980 {
+            @include mq1200 {
                 transform: translateX(100vh);
-            }
-        }
-
-        @include mq980 {
-            width: 95%;
-            height: calc(395.2px + (500 - 395.2) * ((100vw - 768px) / (980 - 768)));
-            flex-direction: row;
-            justify-content: space-between;
-            margin: 0 auto;
-            transform: translateX(-110vh);
-        }
-
-        @include mq768 {
-            flex-direction: column;
-            justify-content: space-evenly;
-            width: 100%;
-            height: 55%;
-        }
-
-        @include mq435 {
-            height: 40%;
-            margin: 2rem 0;
-        }
-
-        .projectImage,
-        .projectVideo {
-            max-width: 60rem;
-            border: 4px solid blue;
-            border-radius: 1rem;
-            overflow: hidden;
-
-            @include mq980 {
-                width: 48.75%;
-                height: 75%;
-            }
-
-            @include mq768 {
-                width: 70%;
-                height: 47.5%;
             }
         }
     }
 
+
     .description {
-        width: 45%;
+        width: 35vmax;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         color: #26de81;
         transition: all 0.6s;
-        opacity: 0;
         transform: translateY(-100vh);
 
         &.selected {
             opacity: 1;
             transform: translateY(0);
 
-            @include mq980 {
+            @include mq1200 {
                 transform: translateX(0);
             }
         }
@@ -110,76 +109,58 @@
             transform: translateY(100vh);
             opacity: 0;
 
-            @include mq980 {
+            @include mq1200 {
                 transform: translateX(-100vh);
             }
         }
 
-        @include mq980 {
-            width: 90%;
-            height: 50%;
-            justify-content: flex-start;
-            margin: 0 auto;
-            transform: translateX(100vh);
+        @include mq1200 {
+            width: 80%;
+            margin-bottom: 4vmax;
         }
 
-        @include mq768 {
-            height: 40%;
+        @include mq790 {
+            width: 85%;
         }
 
         h3 {
-            font-size: 5.5rem;
+            font-size: 3.5vmax;
 
-            @include mq1304 {
+            @include mq1200 {
                 font-size: 5rem;
+                margin: 3rem;
             }
 
-            @include mq1088 {
-                font-size: 4.5rem;
+            @include mq790 {
+                font-size: 4.7rem;
+                margin: 2.5rem;
             }
 
-            @include mq980 {
-                font-size: 5rem;
-                margin: 0 0 3rem 0;
-            }
-
-            @include mq768 {
-                font-size: 4.5rem;
-                margin: 0 0 2rem 0;
-            }
-
-            @include mq590 {
-                font-size: 4rem;
+            @include mq430 {
+                font-size: 3.7rem;
+                margin: 1.5rem;
             }
         }
 
         .aboutProject {
-            font-size: 2rem;
-            line-height: 2.5rem;
+            font-size: 1.4vmax;
+            line-height: 2vmax;
 
-            @include mq1304 {
-                font-size: 1.8rem;
-            }
-
-            @include mq1088 {
-                font-size: 1.7rem;
-            }
-
-            @include mq980 {
-                margin: 0;
+            @include mq1200 {
                 font-size: 2rem;
+                line-height: 3rem;
+                margin: 0;
             }
 
-            @include mq768 {
-                font-size: 1.7rem;
+            @include mq790 {
+                font-size: 1.8rem;
+                text-align: center;
+                line-height: 2.7rem;
             }
 
-            @include mq590 {
+            @include mq430 {
                 font-size: 1.6rem;
-            }
-
-            @include mq435 {
-                line-height: 2rem;
+                line-height: 2.4rem;
             }
         }
 
@@ -187,56 +168,52 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
-            font-size: 5rem;
             list-style: none;
             padding: 0;
+            font-size: 3.9vmax;
 
-            @include mq980 {
-                margin: 3rem 0;
+            @include mq1200 {
+                font-size: 5.5rem;
+                margin: 3vmax;
             }
 
-            @include mq590 {
-                font-size: 4.2rem;
+            @include mq790 {
+                font-size: 5rem;
             }
 
-            @include mq435 {
-                margin: 1.5rem 0;
+            @include mq430 {
+                font-size: 4.5rem;
             }
         }
 
-        .links  {
-            width: 100%;
+        .liveLink {
             display: flex;
-            justify-content: space-evenly;  
+            justify-content: center;
+            align-items: center;
+            font-size: 1.6vmax;
+            text-transform: uppercase;
+            text-decoration: none;
+            width: 11.5vmax;
+            line-height: 3.6vmax;
+            background: linear-gradient(to right, #0072ff, #00c6ff); 
+            color: white;
+            border-radius: 1rem;
 
-            a {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-size: 2.5rem;
-                text-transform: uppercase;
-                text-decoration: none;
-                width: 14rem;
-                height: 4.5rem;
-                background: linear-gradient(to right, #0072ff, #00c6ff); 
-                color: white;
-                border-radius: 1rem;
+            @include mq1200 {
+                font-size: 2.4rem;
+                width: 15rem;
+                line-height: 4.8rem;
+                margin-top: 1rem;
+            }
 
-                @include mq768 {
-                    height: 4.1rem;
-                    font-size: 2.1rem;
-                }
+            @include mq790 {
+                font-size: 2.2rem;
+                line-height: 4.6rem;
+            }
 
-                @include mq590 {
-                    font-size: 2rem;
-                    height: 4rem;
-                }
-
-                @include mq435 {
-                    height: 3.5rem;
-                    width: 12rem;
-                    font-size: 1.8rem;
-                }
+            @include mq430 {
+                font-size: 2rem;
+                line-height: 4.4rem;
             }
         }
     }

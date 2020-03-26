@@ -10,6 +10,8 @@ portfolio.init = function () {
     const $contactContainer = $('.contactFlexContainer');
     const $info = $('li[data-category=info]');
     const $projects = $('li[data-category=project');
+    const $playButton = $('.playButton');
+    let videoPlaying = false;
     const $header = $('header');
     const $about = $('.about');
     const $contact = $('.contact');
@@ -39,6 +41,19 @@ portfolio.init = function () {
         }
     })
 
+    $playButton.on('click', function() {
+        const project = $(this).attr('data-project');
+        const video = $(`video[data-project=${project}]`);
+
+        if (videoPlaying) {
+            video[0].pause();
+        } else {
+            video[0].play();
+        }
+
+        videoPlaying = !videoPlaying;
+    })
+
     // ---------------------------- //
     // ------------Info------------ //
     // ---------------------------- //
@@ -59,13 +74,13 @@ portfolio.init = function () {
                     selectedProject = '';
                 }, 250);
 
-                previouslySelectedProject.children()[0].children[1].children[0].setAttribute('tabIndex', '-1');
+                // previouslySelectedProject.children()[0].children[1].children[0].setAttribute('tabIndex', '-1');
 
-                previouslySelectedProject.children()[1].children[3].children[0].children[0].setAttribute('tabIndex', '-1');
-                previouslySelectedProject.children()[1].children[3].children[1].children[0].setAttribute('tabIndex', '-1');
+                // previouslySelectedProject.children()[1].children[3].children[0].children[0].setAttribute('tabIndex', '-1');
+                // previouslySelectedProject.children()[1].children[3].children[1].children[0].setAttribute('tabIndex', '-1');
 
-                previouslySelectedProject.children().children()[1].children[0].pause();
-                previouslySelectedProject.children().children()[1].children[0].currentTime = 0;
+                // previouslySelectedProject.children().children()[1].children[0].pause();
+                // previouslySelectedProject.children().children()[1].children[0].currentTime = 0;
                 $(list).css('pointer-events', 'auto');
             }
 
@@ -140,28 +155,27 @@ portfolio.init = function () {
 
                 $(list).css('pointer-events', 'auto');
 
-                previouslySelectedProject.children()[0].children[1].children[0].setAttribute('tabIndex', '-1');
+                // previouslySelectedProject.children()[0].children[1].children[0].setAttribute('tabIndex', '-1');
 
-                previouslySelectedProject.children()[1].children[3].children[0].children[0].setAttribute('tabIndex', '-1');
-                previouslySelectedProject.children()[1].children[3].children[1].children[0].setAttribute('tabIndex', '-1');
+                // previouslySelectedProject.children()[1].children[3].children[0].children[0].setAttribute('tabIndex', '-1');
+                // previouslySelectedProject.children()[1].children[3].children[1].children[0].setAttribute('tabIndex', '-1');
 
-                previouslySelectedProject.children().children()[1].children[0].pause();
-                previouslySelectedProject.children().children()[1].children[0].currentTime = 0;
+                // previouslySelectedProject.children().children()[1].children[0].pause();
+                // previouslySelectedProject.children().children()[1].children[0].currentTime = 0;
             }
     
             // -------- current project selected here ------- //
             
             const project = $(this).attr('data-selected');
             selectedProject = $(project);
-
             setTimeout(function() {
                 selectedProject.addClass('selectedProject');
                 selectedProject.children().addClass('selected');
     
-                selectedProject.children()[0].children[1].children[0].setAttribute('tabIndex', '0');
+                // selectedProject.children()[0].children[1].children[0].setAttribute('tabIndex', '0');
                 
-                selectedProject.children()[1].children[3].children[0].children[0].setAttribute('tabIndex', '0');
-                selectedProject.children()[1].children[3].children[1].children[0].setAttribute('tabIndex', '0');
+                // selectedProject.children()[1].children[3].children[0].children[0].setAttribute('tabIndex', '0');
+                // selectedProject.children()[1].children[3].children[1].children[0].setAttribute('tabIndex', '0');
             }, 250)
 
             // ----------current nav list item selected here----------- //
