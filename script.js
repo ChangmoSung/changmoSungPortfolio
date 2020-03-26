@@ -11,6 +11,11 @@ portfolio.init = function () {
     const $info = $('li[data-category=info]');
     const $projects = $('li[data-category=project');
     const $playButton = $('.playButton');
+    const $githubLink = $('.githubLink');
+    const $liveLink = $('.liveLink');
+    const $resumeLink = $('.resumeLink');
+    const $contactPageLink = $('.contactpageLink');
+    const $contactSubmitButton = $('.contactSubmitButton');
     let videoPlaying = false;
     const $header = $('header');
     const $about = $('.about');
@@ -74,10 +79,12 @@ portfolio.init = function () {
                     selectedProject = '';
                 }, 250);
 
-                // previouslySelectedProject.children()[0].children[1].children[0].setAttribute('tabIndex', '-1');
-
-                // previouslySelectedProject.children()[1].children[3].children[0].children[0].setAttribute('tabIndex', '-1');
-                // previouslySelectedProject.children()[1].children[3].children[1].children[0].setAttribute('tabIndex', '-1');
+                $liveLink.attr('tabindex', '-1');
+                $githubLink.attr('tabindex', '-1');
+                $playButton.attr('tabindex', '-1');
+                $resumeLink.attr('tabindex', '-1');
+                $contactPageLink.attr('tabindex', '-1');
+                $contactSubmitButton.attr('tabindex', '-1');
 
                 // previouslySelectedProject.children().children()[1].children[0].pause();
                 // previouslySelectedProject.children().children()[1].children[0].currentTime = 0;
@@ -172,10 +179,12 @@ portfolio.init = function () {
                 selectedProject.addClass('selectedProject');
                 selectedProject.children().addClass('selected');
     
-                // selectedProject.children()[0].children[1].children[0].setAttribute('tabIndex', '0');
-                
-                // selectedProject.children()[1].children[3].children[0].children[0].setAttribute('tabIndex', '0');
-                // selectedProject.children()[1].children[3].children[1].children[0].setAttribute('tabIndex', '0');
+                $liveLink.attr('tabindex', '0');
+                $githubLink.attr('tabindex', '0');
+                $playButton.attr('tabindex', '0');
+                $resumeLink.attr('tabindex', '0');
+                $contactPageLink.attr('tabindex', '0');
+                $contactSubmitButton.attr('tabindex', '0');
             }, 250)
 
             // ----------current nav list item selected here----------- //
