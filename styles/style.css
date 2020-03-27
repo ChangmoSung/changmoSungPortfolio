@@ -278,7 +278,7 @@ header .treasureMap {
 }
 header .treasureMap .card,
 header .treasureMap .project {
-  background-image: url(../assets/treasureChest.jpg);
+  background-image: url(../assets/treasureChest.png);
   background-size: 100% 100%;
   display: flex;
   flex-direction: column;
@@ -306,7 +306,7 @@ header .treasureMap .project span {
   position: absolute;
   top: -3.5vmax;
   font-size: 2vmax;
-  color: blue;
+  color: #472509;
   background: white;
   border-radius: 0 0 0.5rem 0.5rem;
   padding: 0.1vmax;
@@ -446,7 +446,6 @@ header .welcomeDoor .rightDoor .knob {
   border-radius: 1rem;
   background: black;
   box-shadow: 0 0 1vmax 0.1vmax #606166 inset, 0 0 0.1vmax 0.8vmax #606166;
-  transform: translateY(100vh);
   transition: all 0.6s;
 }
 @media (max-width: 1200px) {
@@ -454,9 +453,8 @@ header .welcomeDoor .rightDoor .knob {
 .secondProject .projectVideo,
 .thirdProject .projectVideo,
 .fourthProject .projectVideo {
-    width: 42vmax;
-    height: 32vmax;
-    transform: translateX(-100vh);
+    width: 45vmax;
+    height: 34vmax;
   }
 }
 @media (max-width: 980px) {
@@ -464,8 +462,17 @@ header .welcomeDoor .rightDoor .knob {
 .secondProject .projectVideo,
 .thirdProject .projectVideo,
 .fourthProject .projectVideo {
-    width: 50vmax;
-    height: 39vmax;
+    width: 57vmax;
+    height: 44vmax;
+  }
+}
+@media (max-width: 790px) {
+  .firstProject .projectVideo,
+.secondProject .projectVideo,
+.thirdProject .projectVideo,
+.fourthProject .projectVideo {
+    width: 65vmax;
+    height: 50vmax;
   }
 }
 @media (max-width: 590px) {
@@ -474,7 +481,7 @@ header .welcomeDoor .rightDoor .knob {
 .thirdProject .projectVideo,
 .fourthProject .projectVideo {
     width: 85%;
-    height: 42vmax;
+    height: 47vmax;
   }
 }
 .firstProject .projectVideo .videoContainer,
@@ -596,7 +603,6 @@ header .welcomeDoor .rightDoor .knob {
   align-items: center;
   padding: 2vmax;
   border-radius: 1rem;
-  transform: translateY(-100vh);
   transition: all 0.6s;
 }
 .firstProject .description.selected,
@@ -634,7 +640,6 @@ header .welcomeDoor .rightDoor .knob {
 .secondProject .description,
 .thirdProject .description,
 .fourthProject .description {
-    transform: translateX(100vh);
     width: 70vmax;
     height: 25vmax;
     overflow: auto;
@@ -645,7 +650,14 @@ header .welcomeDoor .rightDoor .knob {
 .secondProject .description,
 .thirdProject .description,
 .fourthProject .description {
-    height: 30vmax;
+    height: 28vmax;
+  }
+}
+@media (max-width: 790px) {
+  .firstProject .description,
+.secondProject .description,
+.thirdProject .description,
+.fourthProject .description {
     width: 65vmax;
   }
 }
@@ -671,14 +683,23 @@ header .welcomeDoor .rightDoor .knob {
 .thirdProject .description h3,
 .fourthProject .description h3 {
   font-size: 2.8vmax;
-  margin: 0 0 1vmax 0;
+  margin: 0;
 }
 @media (max-width: 1200px) {
   .firstProject .description h3,
 .secondProject .description h3,
 .thirdProject .description h3,
 .fourthProject .description h3 {
+    margin-bottom: 3rem;
     font-size: 4.2vmax;
+  }
+}
+@media (max-width: 590px) {
+  .firstProject .description h3,
+.secondProject .description h3,
+.thirdProject .description h3,
+.fourthProject .description h3 {
+    margin-bottom: 2rem;
   }
 }
 @media (max-width: 470px) {
@@ -694,7 +715,7 @@ header .welcomeDoor .rightDoor .knob {
 .thirdProject .description .aboutProject,
 .fourthProject .description .aboutProject {
   font-size: 1.18vmax;
-  line-height: 1.9vmax;
+  line-height: 1.8vmax;
 }
 @media (max-width: 1200px) {
   .firstProject .description .aboutProject,
@@ -745,7 +766,7 @@ header .welcomeDoor .rightDoor .knob {
   justify-content: space-around;
   list-style: none;
   padding: 0;
-  margin: 0 0 3rem;
+  margin: 1rem 0 3rem;
 }
 @media (max-width: 1200px) {
   .firstProject .description .skill,
@@ -768,8 +789,8 @@ header .welcomeDoor .rightDoor .knob {
 .secondProject .description .skill li,
 .thirdProject .description .skill li,
 .fourthProject .description .skill li {
-    width: 7.5vmax;
-    height: 7.5vmax;
+    width: 7vmax;
+    height: 7vmax;
   }
 }
 @media (max-width: 980px) {
@@ -779,15 +800,6 @@ header .welcomeDoor .rightDoor .knob {
 .fourthProject .description .skill li {
     width: 8.5vmax;
     height: 8.5vmax;
-  }
-}
-@media (max-width: 590px) {
-  .firstProject .description .skill li,
-.secondProject .description .skill li,
-.thirdProject .description .skill li,
-.fourthProject .description .skill li {
-    width: 9.5vmax;
-    height: 9.5vmax;
   }
 }
 .firstProject .description .liveLink,
@@ -811,25 +823,22 @@ header .welcomeDoor .rightDoor .knob {
   width: 100%;
 }
 @media (max-width: 1200px) {
+  .firstProject .description .liveLink a,
+.secondProject .description .liveLink a,
+.thirdProject .description .liveLink a,
+.fourthProject .description .liveLink a {
+    line-height: 4.2vmax;
+  }
+}
+@media (max-width: 1200px) {
   .firstProject .description .liveLink,
 .secondProject .description .liveLink,
 .thirdProject .description .liveLink,
 .fourthProject .description .liveLink {
     font-size: 2vmax;
     width: 20vmax;
-    line-height: 3.8vmax;
     margin: 0 0 2.9vmax;
     order: 1;
-  }
-}
-@media (max-width: 980px) {
-  .firstProject .description .liveLink,
-.secondProject .description .liveLink,
-.thirdProject .description .liveLink,
-.fourthProject .description .liveLink {
-    font-size: 1.9vmax;
-    width: 17.5vmax;
-    line-height: 4vmax;
   }
 }
 @media (max-width: 590px) {
@@ -837,8 +846,7 @@ header .welcomeDoor .rightDoor .knob {
 .secondProject .description .liveLink,
 .thirdProject .description .liveLink,
 .fourthProject .description .liveLink {
-    line-height: 4rem;
-    margin: 1.5vmax 0 3.5vmax;
+    margin: 0 0 2.3vmax;
   }
 }
 .firstProject .description .descriptionImages,
@@ -862,16 +870,16 @@ header .welcomeDoor .rightDoor .knob {
 .secondProject .description .descriptionImages div,
 .thirdProject .description .descriptionImages div,
 .fourthProject .description .descriptionImages div {
-  width: 9vmax;
-  height: 9vmax;
+  width: 8vmax;
+  height: 8vmax;
 }
 @media (max-width: 1200px) {
   .firstProject .description .descriptionImages div,
 .secondProject .description .descriptionImages div,
 .thirdProject .description .descriptionImages div,
 .fourthProject .description .descriptionImages div {
-    width: 12vmax;
-    height: 12vmax;
+    width: 10vmax;
+    height: 10vmax;
     margin-bottom: 3rem;
   }
 }
@@ -880,8 +888,8 @@ header .welcomeDoor .rightDoor .knob {
 .secondProject .description .descriptionImages div,
 .thirdProject .description .descriptionImages div,
 .fourthProject .description .descriptionImages div {
-    width: 14vmax;
-    height: 14vmax;
+    width: 12vmax;
+    height: 12vmax;
   }
 }
 
@@ -889,7 +897,7 @@ header .welcomeDoor .rightDoor .knob {
   background: #fadbd9;
   color: blue;
   border: 5px solid blue;
-  box-shadow: 0 0 1vmax 0vmax blue inset, 0 0 0.1vmax 0.4vmax blue;
+  box-shadow: 0 0 0.1vmax 0.4vmax blue;
 }
 .firstProject .description .liveLink {
   background: white;
@@ -936,6 +944,10 @@ header .welcomeDoor .rightDoor .knob {
 .thirdProject .description .liveLink:hover {
   background: #6056f9;
   color: white;
+}
+
+.firstProject {
+  z-index: 999;
 }
 
 .about {

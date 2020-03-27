@@ -31,23 +31,28 @@
         border-radius: 1rem;
         background: black;
         box-shadow: 0 0 1vmax 0.1vmax rgb(96, 97, 102) inset, 0 0 0.1vmax 0.8vmax rgb(96, 97, 102);
-        transform: translateY(100vh);
+        // transform: translateY(100vh);
         transition: all 0.6s;
 
         @include mq1200 {
-            width: 42vmax;
-            height: 32vmax;
-            transform: translateX(-100vh);
+            width: 45vmax;
+            height: 34vmax;
+            // transform: translateX(-100vh);
         }
 
         @include mq980 {
-            width: 50vmax;
-            height: 39vmax;
+            width: 57vmax;
+            height: 44vmax;
+        }
+
+        @include mq790 {
+            width: 65vmax;
+            height: 50vmax;
         }
 
         @include mq590 {
             width: 85%;
-            height: 42vmax;
+            height: 47vmax;
         }
 
         .videoContainer {
@@ -138,7 +143,7 @@
         align-items: center;
         padding: 2vmax;
         border-radius: 1rem;
-        transform: translateY(-100vh);
+        // transform: translateY(-100vh);
         transition: all 0.6s;
         
 
@@ -161,14 +166,17 @@
         }
 
         @include mq1200 {
-            transform: translateX(100vh);
+            // transform: translateX(100vh);
             width: 70vmax;
             height: 25vmax;
             overflow: auto;
         }
 
         @include mq980 {
-            height: 30vmax;
+            height: 28vmax;
+        }
+
+        @include mq790 {
             width: 65vmax;
         }
 
@@ -183,10 +191,15 @@
 
         h3 {
             font-size: 2.8vmax;
-            margin: 0 0 1vmax 0;
+            margin: 0;
 
             @include mq1200 {
+                margin-bottom: 3rem;
                 font-size: 4.2vmax;
+            }
+
+            @include mq590 {
+                margin-bottom: 2rem;
             }
 
             @include mq470 {
@@ -196,7 +209,7 @@
 
         .aboutProject {
             font-size: 1.18vmax;
-            line-height: 1.9vmax;
+            line-height: 1.8vmax;
 
             @include mq1200 {
                 width: 85%;
@@ -229,7 +242,7 @@
             justify-content: space-around;
             list-style: none;
             padding: 0;
-            margin: 0 0 3rem;
+            margin: 1rem 0 3rem;
 
             @include mq1200 {
                 order: 2;
@@ -241,18 +254,13 @@
                 height: 5vmax;
 
                 @include mq1200 {
-                    width: 7.5vmax;
-                    height: 7.5vmax;
+                    width: 7vmax;
+                    height: 7vmax;
                 }
 
                 @include mq980 {
                     width: 8.5vmax;
                     height: 8.5vmax;
-                }
-
-                @include mq590 {
-                    width: 9.5vmax;
-                    height: 9.5vmax;
                 }
             }
         }
@@ -270,25 +278,21 @@
             a {
                 text-decoration: none;
                 width: 100%;
+
+                @include mq1200 {
+                    line-height: 4.2vmax;
+                }
             }
 
             @include mq1200 {
                 font-size: 2vmax;
                 width: 20vmax;
-                line-height: 3.8vmax;
                 margin: 0 0 2.9vmax;
                 order: 1;
             }
 
-            @include mq980 {
-                font-size: 1.9vmax;
-                width: 17.5vmax;
-                line-height: 4vmax;
-            }
-
             @include mq590 {
-                line-height: 4rem;
-                margin: 1.5vmax 0 3.5vmax;
+                margin: 0 0 2.3vmax;
             }
         }
 
@@ -303,18 +307,18 @@
             }
 
             div {
-                width: 9vmax;
-                height: 9vmax;
+                width: 8vmax;
+                height: 8vmax;
 
                 @include mq1200 {
-                    width: 12vmax;
-                    height: 12vmax;
+                    width: 10vmax;
+                    height: 10vmax;
                     margin-bottom: 3rem;
                 }
 
                 @include mq590 {
-                    width: 14vmax;
-                    height: 14vmax;
+                    width: 12vmax;
+                    height: 12vmax;
                 }
             }
         }
@@ -325,7 +329,7 @@
     background: rgb(250, 219, 217);
     color: blue;
     border: 5px solid blue;
-    box-shadow: 0 0 1vmax 0vmax blue inset, 0 0 0.1vmax 0.4vmax blue;
+    box-shadow: 0 0 0.1vmax 0.4vmax blue;
 
     .liveLink {
         background: white;
@@ -381,4 +385,8 @@
             color: white;
         }
     }
+}
+
+.firstProject  {
+    z-index: 999;
 }

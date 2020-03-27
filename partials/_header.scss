@@ -21,7 +21,7 @@ header {
 
         .card,
         .project {
-            background-image: url(../assets/treasureChest.jpg);
+            background-image: url(../assets/treasureChest.png);
             background-size: 100% 100%;
             display: flex;
             flex-direction: column;
@@ -48,7 +48,7 @@ header {
                 position: absolute;
                 top: -3.5vmax;
                 font-size: 2vmax;
-                color: blue;
+                color:rgb(71, 37, 9);
                 background: white;
                 border-radius: 0 0 0.5rem 0.5rem;
                 padding: 0.1vmax;
