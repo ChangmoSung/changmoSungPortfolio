@@ -1,20 +1,6 @@
 header {
     height: 100vh;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    position: absolute;
-    z-index: 1;
-    transition: all 0.5s;
-
-    &.closed {
-        transform: translateY(-100vh);
-    }
-
-    &.shrunk {
-        transform: scale(0);
-    }
 
     .treasureMap {
         background-image: url(../assets/treasureMap.jpeg);
@@ -35,6 +21,10 @@ header {
             width: 3.5vmax;
             height: 3.5vmax;
             cursor: pointer;
+
+            &:focus {
+                border: 5px solid blue;
+            }
 
             img {
                 position: absolute;
@@ -61,23 +51,23 @@ header {
         }
 
         .aboutCard {
-            top: 33%;
-            left: 37%;
+            top: 32%;
+            left: 22%;
         }
 
         .contactCard {
             top: 33%;
-            left: 67%;
+            left: 75%;
         }
 
         .project1 {
-            top: 64%;
-            left: 30%;
+            top: 63%;
+            left: 31%;
         }
 
         .project2 {
-            top: 60%;
-            left: 75%;
+            top: 70%;
+            left: 70%;
         }
 
         .project3 {
