@@ -2,6 +2,7 @@ const portfolio = {};
 
 portfolio.init = function () {
     const $welcomeDoor = $('.welcomeDoor');
+    const $projectDoor = $('.projectDoor');
     const $mapOpener = $('.mapOpener');
     const $me = $('.me');
     const $aboutContainer = $('.aboutContainer');
@@ -58,22 +59,18 @@ portfolio.init = function () {
             
             $mapOpener.removeClass('openerShown');
 
+            $projectDoor.removeClass('projectDoorOpened');
+
             if (selectedProject) {
                 // --------- push it up first and then once it's not shown, push it down--------//
                 previouslySelectedProject = selectedProject;
 
-                previouslySelectedProject.children().addClass('notSelected');
-
-                setTimeout(function () {
-                    previouslySelectedProject.children().removeClass('selected');
-                    previouslySelectedProject.children().removeClass('notSelected');
+                setTimeout(function() {
                     previouslySelectedProject.removeClass('selectedProject');
+                }, 600)
 
-                    // // --------to prevent selectedProject from getting class again in the above code-------- //
-                    selectedProject = '';
-
-                    $header.removeClass('closed');
-                }, 250);
+                // // --------to prevent selectedProject from getting class again in the above code-------- //
+                selectedProject = '';
 
                 $playButton.attr('tabindex', '-1');
 
@@ -138,6 +135,10 @@ portfolio.init = function () {
     // ------------------------------- //
     $projects.on('click keypress', function(e) {
         if(e.keyCode === 13 || typeof e.keyCode !== 'number') {
+            setTimeout(function() {
+                $projectDoor.addClass('projectDoorOpened');
+            }, 600)
+
             $cards.attr('tabindex', '-1');
             $projects.attr('tabindex', '-1');
             $resumeLink.attr('tabindex', '-1');
@@ -153,8 +154,6 @@ portfolio.init = function () {
 
             selectedProject.addClass('selectedProject');
 
-            selectedProject.children().addClass('selected');
-            
             $playButton.attr('tabindex', '0');
             // $liveLink.children().attr('tabindex', '0');
             // $githubLink.children().attr('tabindex', '0');
