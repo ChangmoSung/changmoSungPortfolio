@@ -48,6 +48,7 @@ portfolio.init = function () {
         if (e.keyCode === 13 || typeof e.keyCode !== 'number') {
             // $cards.attr('tabindex', '0');
             // $projects.attr('tabindex', '0');
+            $mapOpener.removeClass('openerShown');
 
             if (selectedProject) {
                 // --------- push it up first and then once it's not shown, push it down--------//
@@ -72,19 +73,17 @@ portfolio.init = function () {
                 // $resumeLink.attr('tabindex', '-1');
                 // $aboutPageContactLink.attr('tabindex', '-1');
                 // $contactSubmitButton.attr('tabindex', '-1');
-
-                $(list).css('pointer-events', 'auto');
             }
 
             setTimeout(function() {
-                $header.removeClass('closed')
-            }, 250)
+                $header.removeClass('shrunk')
+            },500)
 
             $me.removeClass('imageShown');
             $aboutContainer.removeClass('aboutContainerShown');
             $about.fadeOut();
 
-            $contact.fadeOut();
+            $contact.removeClass('contactOpened');
             $contactContainer.removeClass('contactShown');
         }
     })
@@ -98,7 +97,9 @@ portfolio.init = function () {
             // $cards.attr('tabindex', '-1');
             // $projects.attr('tabindex', '-1');
 
-            $header.addClass('closed');
+            $mapOpener.addClass('openerShown');
+
+            $header.addClass('shrunk');
 
             // ----------- non project list starts here -------------- //
             const selectedList = $(this).attr('data-selected');
@@ -111,19 +112,11 @@ portfolio.init = function () {
                     $aboutContainer.addClass('aboutContainerShown')
                 }, 50);
 
-                $contact.fadeOut();
-                $contactContainer.removeClass('contactShown');
-
             } else if (selectedList === '.contact') {
-                $contact.css('display', 'flex').css('z-index', '2');
-
                 setTimeout(function () {
+                    $contact.addClass('contactOpened');
                     $contactContainer.addClass('contactShown');
-                }, 50)
-
-                $about.fadeOut();
-                $me.removeClass('imageShown');
-                $aboutContainer.removeClass('aboutContainerShown');
+                }, 500)
             }
         }
     })
@@ -135,16 +128,10 @@ portfolio.init = function () {
         if(e.keyCode === 13 || typeof e.keyCode !== 'number') {
             // $cards.attr('tabindex', '-1');
             // $projects.attr('tabindex', '-1');
+            $mapOpener.addClass('openerShown');
 
             $header.addClass('closed');
 
-            $about.fadeOut();
-            $me.removeClass('imageShown');
-            $aboutContainer.removeClass('aboutContainerShown');
-    
-            $contact.fadeOut();
-            $contactContainer.removeClass('contactShown');
-    
             // -------- current project selected here ------- //
             
             const project = $(this).attr('data-selected');
@@ -161,10 +148,6 @@ portfolio.init = function () {
                 // $aboutPageContactLink.attr('tabindex', '0');
                 // $contactSubmitButton.attr('tabindex', '0');
             }, 400)
-
-            // ----------current nav list item selected here----------- //
-            list = $(this);
-            list.css('pointer-events', 'none');
         }
     })
 }

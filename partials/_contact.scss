@@ -1,12 +1,22 @@
 .contact {
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
     top: 0;
     left: 0;
-    height: 100vh;
     width: 100%;
+    height: 100vh;
+    z-index: 2;
+    background-image: url(../assets/treasureMap.jpeg);
+    background-size: 100% 100%;
+    transform: scale(0);
+    transform-origin: 50%;
+    transition: all 0.5s;
+
+    &.contactOpened {
+        transform: scale(1);
+    }
 
     .contactFlexContainer {
         display: flex;
@@ -24,8 +34,8 @@
         }
 
         &.contactShown {
-            width: 80%;
-            height: 65%;
+            width: 69.5%;
+            height: 68%;
             transform: rotateX(0);
 
             @include mq790 {
