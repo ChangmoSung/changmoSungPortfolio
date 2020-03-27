@@ -4,8 +4,13 @@ header {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    position: relative;
+    position: absolute;
     z-index: 1;
+    transition: all 0.6s;
+
+    &.closed {
+        transform: translateY(-100vh);
+    }
 
     .headerFlexContainer {
         display: flex;

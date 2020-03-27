@@ -44,8 +44,7 @@ portfolio.init = function () {
     });
 
 
-
-    $mapOpener.on('click', function(e) {
+    $mapOpener.on('click keypress', function(e) {
         if (e.keyCode === 13 || typeof e.keyCode !== 'number') {
             if (selectedProject) {
                 // --------- push it up first and then once it's not shown, push it down--------//
@@ -60,6 +59,8 @@ portfolio.init = function () {
 
                     // // --------to prevent selectedProject from getting class again in the above code-------- //
                     selectedProject = '';
+
+                    $header.removeClass('closed');
                 }, 250);
 
                 $liveLink.attr('tabindex', '-1');
@@ -72,45 +73,16 @@ portfolio.init = function () {
                 $(list).css('pointer-events', 'auto');
             }
 
-            // ----------- non project list starts here -------------- //
-            const selectedList = $(this).attr('data-selected');
-            if (selectedList === '.header') {
-                $header.fadeIn();
+            setTimeout(function() {
+                $header.removeClass('closed')
+            }, 250)
 
-                $me.removeClass('imageShown');
-                $aboutContainer.removeClass('aboutContainerShown');
-                $about.fadeOut();
+            $me.removeClass('imageShown');
+            $aboutContainer.removeClass('aboutContainerShown');
+            $about.fadeOut();
 
-                $contact.fadeOut();
-                $contactContainer.removeClass('contactShown');
-
-            } else if (selectedList === '.about') {
-                $header.fadeOut();
-
-                $about.css('display', 'flex');
-
-                setTimeout(function () {
-                    $me.addClass('imageShown');
-
-                    $aboutContainer.addClass('aboutContainerShown')
-                }, 50);
-
-                $contact.fadeOut();
-                $contactContainer.removeClass('contactShown');
-
-            } else if (selectedList === '.contact') {
-                $contact.css('display', 'flex').css('z-index', '2');
-
-                setTimeout(function () {
-                    $contactContainer.addClass('contactShown');
-                }, 50)
-
-                $header.fadeOut();
-
-                $about.fadeOut();
-                $me.removeClass('imageShown');
-                $aboutContainer.removeClass('aboutContainerShown');
-            }
+            $contact.fadeOut();
+            $contactContainer.removeClass('contactShown');
         }
     })
 
@@ -119,6 +91,8 @@ portfolio.init = function () {
     // ---------------------------- //
 
     $cards.on('click keypress', function (e) {
+        $header.addClass('closed');
+
         if (e.keyCode === 13 || typeof e.keyCode !== 'number') {
             if (selectedProject) {
                 // --------- push it up first and then once it's not shown, push it down--------//
@@ -148,8 +122,6 @@ portfolio.init = function () {
             // ----------- non project list starts here -------------- //
             const selectedList = $(this).attr('data-selected');
             if (selectedList === '.about') {
-                $header.fadeOut();
-
                 $about.css('display', 'flex');
 
                 setTimeout(function () {
@@ -168,8 +140,6 @@ portfolio.init = function () {
                     $contactContainer.addClass('contactShown');
                 }, 50)
 
-                $header.fadeOut();
-
                 $about.fadeOut();
                 $me.removeClass('imageShown');
                 $aboutContainer.removeClass('aboutContainerShown');
@@ -182,8 +152,8 @@ portfolio.init = function () {
     // ------------------------------- //
     $projects.on('click keypress', function(e) {
         if(e.keyCode === 13 || typeof e.keyCode !== 'number') {
-            $header.fadeOut();
-    
+            $header.addClass('closed');
+
             $about.fadeOut();
             $me.removeClass('imageShown');
             $aboutContainer.removeClass('aboutContainerShown');
@@ -221,7 +191,7 @@ portfolio.init = function () {
                 $resumeLink.attr('tabindex', '0');
                 $contactPageLink.attr('tabindex', '0');
                 $contactSubmitButton.attr('tabindex', '0');
-            }, 250)
+            }, 300)
 
             // ----------current nav list item selected here----------- //
             list = $(this);
