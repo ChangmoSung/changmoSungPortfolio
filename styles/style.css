@@ -285,26 +285,27 @@ header .treasureMap .project {
   justify-content: space-between;
   align-items: center;
   position: absolute;
-  width: 3vmax;
-  height: 3vmax;
-  border-radius: 1rem;
-  box-shadow: 0 0 0 0.2vmax #472509, 0 0 0.1vmax 0.3vmax #472509 inset;
+  width: 3.5vmax;
+  height: 3.5vmax;
   cursor: pointer;
 }
 header .treasureMap .card img,
 header .treasureMap .project img {
   position: absolute;
-  top: -17vmax;
+  top: -13.9vmax;
   padding: 0.5vmax;
-  width: 13vmax;
-  height: 13vmax;
+  width: 10vmax;
+  height: 10vmax;
+  border-radius: 0.5rem;
   animation: floating 2.5s ease-in-out infinite;
+  box-shadow: 0 0 0.1vmax 0.2vmax #472509, 0 0 0.5vmax 0.2vmax #472509 inset;
+  background: #472509;
 }
 header .treasureMap .card span,
 header .treasureMap .project span {
   position: absolute;
-  top: -4.5vmax;
-  font-size: 1.8vmax;
+  top: -3.5vmax;
+  font-size: 2vmax;
   color: blue;
   background: white;
   border-radius: 0 0 0.5rem 0.5rem;
@@ -320,15 +321,15 @@ header .treasureMap .contactCard {
   left: 67%;
 }
 header .treasureMap .project1 {
-  top: 59%;
+  top: 64%;
   left: 30%;
 }
 header .treasureMap .project2 {
   top: 60%;
-  left: 74%;
+  left: 75%;
 }
 header .treasureMap .project3 {
-  top: 70%;
+  top: 72%;
   left: 50%;
 }
 header .welcomeDoor {
