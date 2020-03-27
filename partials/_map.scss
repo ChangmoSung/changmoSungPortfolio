@@ -1,12 +1,17 @@
 .mapOpener {
     position: absolute;
-    top: 2rem;
-    right: 2rem;
+    top: -10vmax;
+    right: 0;
     z-index: 3;
-    width: 15;
-    height: 15vmax;
-    transition: all 0.4s;
+    width: 10vmax;
+    height: 10vmax;
+    transition: all 1s;
     cursor: pointer;
     background: none;
     border: none;
+    padding: 0;
+
+    &.openerShown {
+        transform: translateY(10vmax);
+    }
 }
