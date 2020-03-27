@@ -278,33 +278,57 @@ header .treasureMap {
 }
 header .treasureMap .card,
 header .treasureMap .project {
+  background-image: url(../assets/treasureChest.jpg);
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   position: absolute;
-  width: 15vmax;
-  height: 15vmax;
+  width: 3vmax;
+  height: 3vmax;
+  border-radius: 1rem;
+  box-shadow: 0 0 0 0.2vmax #472509, 0 0 0.1vmax 0.3vmax #472509 inset;
   cursor: pointer;
 }
-header .treasureMap .homeCard {
-  top: 30%;
-  left: 25%;
+header .treasureMap .card img,
+header .treasureMap .project img {
+  position: absolute;
+  top: -17vmax;
+  padding: 0.5vmax;
+  width: 13vmax;
+  height: 13vmax;
+  animation: floating 2.5s ease-in-out infinite;
+}
+header .treasureMap .card span,
+header .treasureMap .project span {
+  position: absolute;
+  top: -4.5vmax;
+  font-size: 1.8vmax;
+  color: blue;
+  background: white;
+  border-radius: 0 0 0.5rem 0.5rem;
+  padding: 0.1vmax;
+  animation: floating 2.5s ease-in-out infinite;
 }
 header .treasureMap .aboutCard {
-  top: 25%;
-  left: 45%;
+  top: 33%;
+  left: 37%;
 }
 header .treasureMap .contactCard {
-  top: 25%;
-  left: 70%;
+  top: 33%;
+  left: 67%;
 }
 header .treasureMap .project1 {
-  top: 55%;
-  left: 20%;
+  top: 59%;
+  left: 30%;
 }
 header .treasureMap .project2 {
-  top: 50%;
-  left: 60%;
+  top: 60%;
+  left: 74%;
 }
 header .treasureMap .project3 {
-  top: 75%;
+  top: 70%;
   left: 50%;
 }
 header .welcomeDoor {
@@ -333,7 +357,7 @@ header .welcomeDoor .rightDoor {
   justify-content: space-evenly;
   align-content: space-evenly;
   border: 15px solid #4788c7;
-  transition: all 1.5s;
+  transition: all 0.5s;
 }
 header .welcomeDoor .leftDoor .decoration,
 header .welcomeDoor .rightDoor .decoration {
@@ -368,6 +392,17 @@ header .welcomeDoor .rightDoor .knob {
   left: 1vmax;
 }
 
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.9vmax);
+  }
+  10% {
+    transform: translateY(0);
+  }
+}
 .firstProject,
 .secondProject,
 .thirdProject,
@@ -992,9 +1027,9 @@ header .welcomeDoor .rightDoor .knob {
   background: linear-gradient(to right, #0072ff, #00c6ff);
   transition: all 1s;
   transform-origin: 100% 100%;
-  transform: perspective(500px) rotateX(90deg);
-  -webkit-transform: perspective(500px) rotateX(90deg);
-  -moz-transform: perspective(500px) rotateX(90deg);
+  transform: perspective(1000px) rotateX(90deg);
+  -webkit-transform: perspective(1000px) rotateX(90deg);
+  -moz-transform: perspective(1000px) rotateX(90deg);
 }
 @media (max-width: 1088px) {
   .about .aboutContainer .skillList {
@@ -1053,9 +1088,9 @@ header .welcomeDoor .rightDoor .knob {
   line-height: 2.5rem;
   transition: all 1s;
   transform-origin: 100% 100%;
-  transform: perspective(500px) rotateX(90deg);
-  -webkit-transform: perspective(500px) rotateX(90deg);
-  -moz-transform: perspective(500px) rotateX(90deg);
+  transform: perspective(1000px) rotateX(90deg);
+  -webkit-transform: perspective(1000px) rotateX(90deg);
+  -moz-transform: perspective(1000px) rotateX(90deg);
 }
 @media (max-width: 1088px) {
   .about .aboutContainer .description {

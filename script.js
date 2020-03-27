@@ -160,7 +160,7 @@ portfolio.init = function () {
                 // $resumeLink.attr('tabindex', '0');
                 // $aboutPageContactLink.attr('tabindex', '0');
                 // $contactSubmitButton.attr('tabindex', '0');
-            }, 200)
+            }, 400)
 
             // ----------current nav list item selected here----------- //
             list = $(this);

@@ -21,39 +21,62 @@ header {
 
         .card,
         .project {
+            background-image: url(../assets/treasureChest.jpg);
+            background-size: 100% 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
             position: absolute;
-            width: 15vmax;
-            height: 15vmax;
+            width: 3vmax;
+            height: 3vmax;
+            border-radius: 1rem;
+            box-shadow: 0 0 0 0.2vmax rgb(71, 37, 9), 0 0 0.1vmax 0.3vmax rgb(71, 37, 9) inset;
             cursor: pointer;
-        }
 
-        .homeCard {
-            top: 30%;
-            left: 25%;
+            img {
+                position: absolute;
+                top: -17vmax;
+                padding: 0.5vmax;
+                width: 13vmax;
+                height: 13vmax;
+                animation: floating 2.5s ease-in-out infinite;
+            }
+
+            span {
+                position: absolute;
+                top: -4.5vmax;
+                font-size: 1.8vmax;
+                color: blue;
+                background: white;
+                border-radius: 0 0 0.5rem 0.5rem;
+                padding: 0.1vmax;
+                animation: floating 2.5s ease-in-out infinite;
+            }
         }
 
         .aboutCard {
-            top: 25%;
-            left: 45%;
+            top: 33%;
+            left: 37%;
         }
 
         .contactCard {
-            top: 25%;
-            left: 70%;
+            top: 33%;
+            left: 67%;
         }
 
         .project1 {
-            top: 55%;
-            left: 20%;
+            top: 59%;
+            left: 30%;
         }
 
         .project2 {
-            top: 50%;
-            left: 60%;
+            top: 60%;
+            left: 74%;
         }
 
         .project3 {
-            top: 75%;
+            top: 70%;
             left: 50%;
         }
     }
@@ -87,7 +110,7 @@ header {
             justify-content: space-evenly;
             align-content: space-evenly;
             border: 15px solid rgb(71, 136, 199);
-            transition: all 1.5s;
+            transition: all 0.5s;
 
             .decoration {
                 width: 34%;
@@ -125,5 +148,19 @@ header {
                 left: 1vmax;
             }
         }
+    }
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-0.9vmax);
+    }
+
+    10% {
+        transform: translateY(0);
     }
 }
