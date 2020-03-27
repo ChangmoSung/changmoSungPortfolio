@@ -12,7 +12,7 @@ portfolio.init = function () {
     const $githubLink = $('.githubLink');
     const $liveLink = $('.liveLink');
     const $resumeLink = $('.resumeLink');
-    const $contactPageLink = $('.contactpageLink');
+    const $aboutPageContactLink = $('.aboutPageContactLink');
     const $contactSubmitButton = $('.contactSubmitButton');
     let videoPlaying = false;
     const $header = $('header');
@@ -46,6 +46,9 @@ portfolio.init = function () {
 
     $mapOpener.on('click keypress', function(e) {
         if (e.keyCode === 13 || typeof e.keyCode !== 'number') {
+            // $cards.attr('tabindex', '0');
+            // $projects.attr('tabindex', '0');
+
             if (selectedProject) {
                 // --------- push it up first and then once it's not shown, push it down--------//
                 previouslySelectedProject = selectedProject;
@@ -63,12 +66,12 @@ portfolio.init = function () {
                     $header.removeClass('closed');
                 }, 250);
 
-                $liveLink.attr('tabindex', '-1');
-                $githubLink.attr('tabindex', '-1');
-                $playButton.attr('tabindex', '-1');
-                $resumeLink.attr('tabindex', '-1');
-                $contactPageLink.attr('tabindex', '-1');
-                $contactSubmitButton.attr('tabindex', '-1');
+                // $liveLink.attr('tabindex', '-1');
+                // $githubLink.attr('tabindex', '-1');
+                // $playButton.attr('tabindex', '-1');
+                // $resumeLink.attr('tabindex', '-1');
+                // $aboutPageContactLink.attr('tabindex', '-1');
+                // $contactSubmitButton.attr('tabindex', '-1');
 
                 $(list).css('pointer-events', 'auto');
             }
@@ -91,33 +94,11 @@ portfolio.init = function () {
     // ---------------------------- //
 
     $cards.on('click keypress', function (e) {
-        $header.addClass('closed');
-
         if (e.keyCode === 13 || typeof e.keyCode !== 'number') {
-            if (selectedProject) {
-                // --------- push it up first and then once it's not shown, push it down--------//
-                previouslySelectedProject = selectedProject;
+            // $cards.attr('tabindex', '-1');
+            // $projects.attr('tabindex', '-1');
 
-                previouslySelectedProject.children().addClass('notSelected');
-
-                setTimeout(function () {
-                    previouslySelectedProject.children().removeClass('selected');
-                    previouslySelectedProject.children().removeClass('notSelected');
-                    previouslySelectedProject.removeClass('selectedProject');
-
-                    // // --------to prevent selectedProject from getting class again in the above code-------- //
-                    selectedProject = '';
-                }, 250);
-
-                $liveLink.attr('tabindex', '-1');
-                $githubLink.attr('tabindex', '-1');
-                $playButton.attr('tabindex', '-1');
-                $resumeLink.attr('tabindex', '-1');
-                $contactPageLink.attr('tabindex', '-1');
-                $contactSubmitButton.attr('tabindex', '-1');
-
-                $(list).css('pointer-events', 'auto');
-            }
+            $header.addClass('closed');
 
             // ----------- non project list starts here -------------- //
             const selectedList = $(this).attr('data-selected');
@@ -152,6 +133,9 @@ portfolio.init = function () {
     // ------------------------------- //
     $projects.on('click keypress', function(e) {
         if(e.keyCode === 13 || typeof e.keyCode !== 'number') {
+            // $cards.attr('tabindex', '-1');
+            // $projects.attr('tabindex', '-1');
+
             $header.addClass('closed');
 
             $about.fadeOut();
@@ -160,21 +144,6 @@ portfolio.init = function () {
     
             $contact.fadeOut();
             $contactContainer.removeClass('contactShown');
-    
-            // ---------- previously selected project ---------- //
-            if (selectedProject) {
-                previouslySelectedProject = selectedProject;
-
-                previouslySelectedProject.children().addClass('notSelected');
-
-                setTimeout(function () {
-                    previouslySelectedProject.children().removeClass('selected');
-                    previouslySelectedProject.children().removeClass('notSelected');
-                    previouslySelectedProject.removeClass('selectedProject');
-                }, 250);
-
-                $(list).css('pointer-events', 'auto');
-            }
     
             // -------- current project selected here ------- //
             
@@ -185,13 +154,13 @@ portfolio.init = function () {
                 selectedProject.addClass('selectedProject');
                 selectedProject.children().addClass('selected');
     
-                $liveLink.attr('tabindex', '0');
-                $githubLink.attr('tabindex', '0');
-                $playButton.attr('tabindex', '0');
-                $resumeLink.attr('tabindex', '0');
-                $contactPageLink.attr('tabindex', '0');
-                $contactSubmitButton.attr('tabindex', '0');
-            }, 300)
+                // $liveLink.attr('tabindex', '0');
+                // $githubLink.attr('tabindex', '0');
+                // $playButton.attr('tabindex', '0');
+                // $resumeLink.attr('tabindex', '0');
+                // $aboutPageContactLink.attr('tabindex', '0');
+                // $contactSubmitButton.attr('tabindex', '0');
+            }, 200)
 
             // ----------current nav list item selected here----------- //
             list = $(this);

@@ -292,6 +292,7 @@ header .treasureMap .project {
   position: absolute;
   width: 15vmax;
   height: 15vmax;
+  cursor: pointer;
 }
 header .treasureMap .homeCard {
   top: 30%;
