@@ -262,18 +262,6 @@ html video {
 header {
   height: 100vh;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  position: absolute;
-  z-index: 1;
-  transition: all 0.5s;
-}
-header.closed {
-  transform: translateY(-100vh);
-}
-header.shrunk {
-  transform: scale(0);
 }
 header .treasureMap {
   background-image: url(../assets/treasureMap.jpeg);
@@ -294,6 +282,10 @@ header .treasureMap .project {
   width: 3.5vmax;
   height: 3.5vmax;
   cursor: pointer;
+}
+header .treasureMap .card:focus,
+header .treasureMap .project:focus {
+  border: 5px solid blue;
 }
 header .treasureMap .card img,
 header .treasureMap .project img {
@@ -319,20 +311,20 @@ header .treasureMap .project span {
   animation: floating 2.5s ease-in-out infinite;
 }
 header .treasureMap .aboutCard {
-  top: 33%;
-  left: 37%;
+  top: 32%;
+  left: 22%;
 }
 header .treasureMap .contactCard {
   top: 33%;
-  left: 67%;
+  left: 75%;
 }
 header .treasureMap .project1 {
-  top: 64%;
-  left: 30%;
+  top: 63%;
+  left: 31%;
 }
 header .treasureMap .project2 {
-  top: 60%;
-  left: 75%;
+  top: 70%;
+  left: 70%;
 }
 header .treasureMap .project3 {
   top: 72%;
@@ -424,12 +416,17 @@ header .welcomeDoor .rightDoor .knob {
   height: 100vh;
   width: 100%;
   background: white;
+  z-index: 2;
+  background-size: 100% 100%;
+  transform: scale(0);
+  transform-origin: 50%;
+  transition: all 0.5s;
 }
 .firstProject.selectedProject,
 .secondProject.selectedProject,
 .thirdProject.selectedProject,
 .fourthProject.selectedProject {
-  z-index: 2;
+  transform: scale(1);
 }
 @media (max-width: 1200px) {
   .firstProject,
@@ -452,7 +449,6 @@ header .welcomeDoor .rightDoor .knob {
   border-radius: 1rem;
   background: black;
   box-shadow: 0 0 1vmax 0.1vmax #606166 inset, 0 0 0.1vmax 0.8vmax #606166;
-  transform: translateY(100vh);
   transition: all 0.6s;
 }
 @media (max-width: 1200px) {
@@ -462,7 +458,6 @@ header .welcomeDoor .rightDoor .knob {
 .fourthProject .projectVideo {
     width: 45vmax;
     height: 34vmax;
-    transform: translateX(-100vh);
   }
 }
 @media (max-width: 980px) {
@@ -572,34 +567,6 @@ header .welcomeDoor .rightDoor .knob {
   width: 4.5vmax;
   height: 3.4vmax;
 }
-.firstProject .projectVideo.selected,
-.secondProject .projectVideo.selected,
-.thirdProject .projectVideo.selected,
-.fourthProject .projectVideo.selected {
-  transform: translateY(0);
-}
-@media (max-width: 1200px) {
-  .firstProject .projectVideo.selected,
-.secondProject .projectVideo.selected,
-.thirdProject .projectVideo.selected,
-.fourthProject .projectVideo.selected {
-    transform: translateX(0);
-  }
-}
-.firstProject .projectVideo.notSelected,
-.secondProject .projectVideo.notSelected,
-.thirdProject .projectVideo.notSelected,
-.fourthProject .projectVideo.notSelected {
-  transform: translateY(-100vh);
-}
-@media (max-width: 1200px) {
-  .firstProject .projectVideo.notSelected,
-.secondProject .projectVideo.notSelected,
-.thirdProject .projectVideo.notSelected,
-.fourthProject .projectVideo.notSelected {
-    transform: translateX(100vh);
-  }
-}
 .firstProject .description,
 .secondProject .description,
 .thirdProject .description,
@@ -611,45 +578,13 @@ header .welcomeDoor .rightDoor .knob {
   align-items: center;
   padding: 2vmax;
   border-radius: 1rem;
-  transform: translateY(-100vh);
   transition: all 0.6s;
-}
-.firstProject .description.selected,
-.secondProject .description.selected,
-.thirdProject .description.selected,
-.fourthProject .description.selected {
-  opacity: 1;
-  transform: translateY(0);
-}
-@media (max-width: 1200px) {
-  .firstProject .description.selected,
-.secondProject .description.selected,
-.thirdProject .description.selected,
-.fourthProject .description.selected {
-    transform: translateX(0);
-  }
-}
-.firstProject .description.notSelected,
-.secondProject .description.notSelected,
-.thirdProject .description.notSelected,
-.fourthProject .description.notSelected {
-  transform: translateY(100vh);
-  opacity: 0;
-}
-@media (max-width: 1200px) {
-  .firstProject .description.notSelected,
-.secondProject .description.notSelected,
-.thirdProject .description.notSelected,
-.fourthProject .description.notSelected {
-    transform: translateX(-100vh);
-  }
 }
 @media (max-width: 1200px) {
   .firstProject .description,
 .secondProject .description,
 .thirdProject .description,
 .fourthProject .description {
-    transform: translateX(100vh);
     width: 70vmax;
     height: 25vmax;
     overflow: auto;
@@ -967,7 +902,7 @@ header .welcomeDoor .rightDoor .knob {
   background: #fce8ad;
   background-size: 100% 100%;
   transform: scale(0);
-  transform-origin: 50%;
+  transform-origin: 24% 19%;
   transition: all 0.5s;
 }
 .about.aboutOpened {
@@ -1215,7 +1150,7 @@ header .welcomeDoor .rightDoor .knob {
   background-image: url(../assets/treasureMap.jpeg);
   background-size: 100% 100%;
   transform: scale(0);
-  transform-origin: 50%;
+  transform-origin: 77% 20%;
   transition: all 0.5s;
 }
 .contact.contactOpened {
