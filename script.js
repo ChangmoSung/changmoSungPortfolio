@@ -9,8 +9,8 @@ portfolio.init = function () {
     const $me = $('.me');
     const $aboutContainer = $('.aboutContainer');
     const $contactContainer = $('.contactFlexContainer');
-    const $info = $('li[data-category=info]');
-    const $projects = $('li[data-category=project');
+    const $cards = $('.card');
+    const $projects = $('.project')
     const $playButton = $('.playButton');
     const $githubLink = $('.githubLink');
     const $liveLink = $('.liveLink');
@@ -26,6 +26,9 @@ portfolio.init = function () {
     let list;
 
     $welcomeDoor.addClass('doorOpened');
+    $welcomeDoor.on('transitionend', function() {
+        $(this).css('z-index', '-1');
+    })
 
     $nav.css('top', '0');
 
@@ -68,7 +71,8 @@ portfolio.init = function () {
     // ---------------------------- //
     // ------------Info------------ //
     // ---------------------------- //
-    $info.on('click keypress', function (e) {
+
+    $cards.on('click keypress', function (e) {
         if (e.keyCode === 13 || typeof e.keyCode !== 'number') {
             if (selectedProject) {
                 // --------- push it up first and then once it's not shown, push it down--------//
@@ -92,8 +96,6 @@ portfolio.init = function () {
                 $contactPageLink.attr('tabindex', '-1');
                 $contactSubmitButton.attr('tabindex', '-1');
 
-                // previouslySelectedProject.children().children()[1].children[0].pause();
-                // previouslySelectedProject.children().children()[1].children[0].currentTime = 0;
                 $(list).css('pointer-events', 'auto');
             }
 
@@ -167,20 +169,13 @@ portfolio.init = function () {
                 }, 250);
 
                 $(list).css('pointer-events', 'auto');
-
-                // previouslySelectedProject.children()[0].children[1].children[0].setAttribute('tabIndex', '-1');
-
-                // previouslySelectedProject.children()[1].children[3].children[0].children[0].setAttribute('tabIndex', '-1');
-                // previouslySelectedProject.children()[1].children[3].children[1].children[0].setAttribute('tabIndex', '-1');
-
-                // previouslySelectedProject.children().children()[1].children[0].pause();
-                // previouslySelectedProject.children().children()[1].children[0].currentTime = 0;
             }
     
             // -------- current project selected here ------- //
             
             const project = $(this).attr('data-selected');
             selectedProject = $(project);
+            
             setTimeout(function() {
                 selectedProject.addClass('selectedProject');
                 selectedProject.children().addClass('selected');

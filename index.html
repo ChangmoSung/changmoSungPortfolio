@@ -8,24 +8,62 @@
     <title>Changmo Sung</title>
 </head>
 <body>
-    <nav class='navOpened'>
-        <ul>
-            <li data-category='info' data-selected='.header'>home</li>
-            <li data-category='info' data-selected='.about'>about</li>
-            <li data-category='info' data-selected='.contact'>contact</li>
-            <li data-category='project' data-selected='.firstProject'>project1</li>
-            <li data-category='project' data-selected='.secondProject'>project2</li>
-            <li data-category='project' data-selected='.thirdProject'>project3</li>
-            <li data-category='project' data-selected='.fourthProject'>project4</li>
-        </ul>
-    </nav> 
-
     <button class='navOpener'>hide</button>
 
     <header class='header'>
-        <div class='headerFlexContainer'>
-            <h1 class='changmo'>Changmo</h1>
+        <div class="treasureMap">
+            <div class="card homeCard" data-selected='.header' tabindex="0">
+                <div class="homeImage">
+                    <img src="assets/home.png" alt="">
+                    <span>home</span>
+                </div>
+            </div>
+
+            <div class="card aboutCard" data-selected=".about" tabindex="0">
+                <div class="aboutImage">
+                    <img src="assets/about.png" alt="">
+                    <span>about</span>
+                </div>
+            </div>
+
+            <div class="card contactCard" data-selected=".contact" tabindex="0">
+                <div class="contactImage">
+                    <img src="assets/contact-card.png" alt="">
+                    <span>contact</span>
+                </div>
+            </div>
+
+            <div class="project project1" data-selected=".firstProject" tabindex="0">
+                <div class="project1Image">
+                    <img src="assets/magicLand.jpg" alt="">
+                    <span>project1</span>
+                </div>
+            </div>
+
+            <div class="project project2" data-selected=".secondProject" tabindex="0">
+                <div class="project2Image">
+                    <img src="assets/project5.jpg" alt="">
+                    <span>project2</span>
+                </div>
+            </div>
+
+            <div class="project project3" data-selected=".thirdProject" tabindex="0">
+                <div class="project3Image">
+                    <img src="assets/whatDoYouNo.jpg" alt="">
+                    <span>project3</span>
+                </div>
+            </div>
+
+            <!-- <div class="project project4" data-selected=".fourthProject" tabindex="0">
+                <div class="project4Image">
+                    <img src="" alt="">
+                    <span>project4</span>
+                </div>
+            </div> -->
         </div>
+
+
+        <!-- ------------------------- -->
 
         <div class='welcomeDoor'>
             <div class="leftDoor">
