@@ -27,8 +27,6 @@ portfolio.init = function () {
 
     $welcomeDoor.addClass('doorOpened');
 
-
-
     $nav.css('top', '0');
 
     if(navOpened) {

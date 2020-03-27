@@ -135,7 +135,6 @@
         height: 38vmax;
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
         align-items: center;
         transition: all 0.6s;
         padding: 2vmax;
@@ -188,15 +187,6 @@
 
             @include mq1200 {
                 font-size: 4.2vmax;
-                margin: 28rem 0 2.5vmax;
-            }
-
-            @include mq980 {
-                margin: 22.5rem 0 2vmax;
-            }
-
-            @include mq590 {
-                margin: 33vmax 0 2vmax;
             }
 
             @include mq470 {
@@ -271,14 +261,15 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 1.55vmax;
-            text-transform: uppercase;
             text-decoration: none;
+            text-transform: uppercase;
             width: 11.5vmax;
+            font-size: 1.55vmax;
             line-height: 3.1vmax;
 
             a {
                 text-decoration: none;
+                width: 100%;
             }
 
             @include mq1200 {
