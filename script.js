@@ -1,6 +1,7 @@
 const portfolio = {};
 
 portfolio.init = function () {
+    const $welcomeDoor = $('.welcomeDoor');
     const $navOpener = $('.navOpener');
     const $nav = $('nav');
     const $navLists = $('nav li');
@@ -23,6 +24,10 @@ portfolio.init = function () {
     let selectedProject;
     let previouslySelectedProject;
     let list;
+
+    $welcomeDoor.addClass('doorOpened');
+
+
 
     $nav.css('top', '0');
 

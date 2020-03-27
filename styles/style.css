@@ -403,7 +403,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  position: absolute;
+  position: relative;
   z-index: 2;
   background-image: url(../assets/headerBackground.gif);
   background-size: 100% 115%;
@@ -437,6 +437,67 @@ header .headerFlexContainer h1 {
   font-size: 10vmax;
   color: #26de81;
   margin: 0 0 16rem 0;
+}
+header .welcomeDoor {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  cursor: pointer;
+}
+header .welcomeDoor.doorOpened {
+  background: none;
+}
+header .welcomeDoor.doorOpened .leftDoor {
+  transform: rotateY(90deg);
+}
+header .welcomeDoor.doorOpened .rightDoor {
+  transform: rotateY(-90deg);
+}
+header .welcomeDoor .leftDoor,
+header .welcomeDoor .rightDoor {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  background: #b6dcfe;
+  transition: all 1s;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+  border: 15px solid #4788c7;
+}
+header .welcomeDoor .leftDoor .decoration,
+header .welcomeDoor .rightDoor .decoration {
+  width: 34%;
+  height: 38%;
+  background: white;
+  background: #dff0fe;
+}
+header .welcomeDoor .leftDoor .knob,
+header .welcomeDoor .rightDoor .knob {
+  width: 3vmax;
+  height: 3vmax;
+  background: #4788c7;
+  position: absolute;
+  border-radius: 50%;
+}
+header .welcomeDoor .leftDoor {
+  left: 0;
+  transform-origin: 0;
+  transform: perspective(500px) rotateY(0);
+}
+header .welcomeDoor .leftDoor .knob {
+  right: 1vmax;
+}
+header .welcomeDoor .rightDoor {
+  right: 0;
+  transform-origin: 100%;
+  transform: perspective(500px) rotateY(0);
+}
+header .welcomeDoor .rightDoor .knob {
+  left: 1vmax;
 }
 
 .firstProject,
@@ -481,7 +542,7 @@ header .headerFlexContainer h1 {
   border-radius: 1rem;
   transition: all 0.6s;
   background: black;
-  box-shadow: inset 0 0 1vmax 0.1vmax #606166, 0 0 0.1vmax 0.8vmax #606166;
+  box-shadow: 0 0 1vmax 0.1vmax #606166 inset, 0 0 0.1vmax 0.8vmax #606166;
   transform: translateY(110vh);
 }
 @media (max-width: 1200px) {
@@ -941,7 +1002,7 @@ header .headerFlexContainer h1 {
   background: #fadbd9;
   color: blue;
   border: 5px solid blue;
-  box-shadow: inset 0 0 1vmax 0vmax blue, 0 0 0.1vmax 0.4vmax blue;
+  box-shadow: 0 0 1vmax 0vmax blue inset, 0 0 0.1vmax 0.4vmax blue;
 }
 .firstProject .description .liveLink {
   background: white;
@@ -963,7 +1024,7 @@ header .headerFlexContainer h1 {
 .secondProject .description {
   background: linear-gradient(to right, #0072ff, #00c6ff);
   color: white;
-  box-shadow: inset 0 0 1vmax 0vmax blue, 0 0 0.1vmax 0.4vmax blue;
+  box-shadow: 0 0 1vmax 0vmax blue inset, 0 0 0.1vmax 0.4vmax blue;
 }
 .secondProject .description .liveLink {
   background: linear-gradient(319deg, #6FB1FC, #4364F7, #0052D4);
@@ -983,7 +1044,7 @@ header .headerFlexContainer h1 {
   border-radius: 1.2rem;
   color: black;
   border: 2px solid black;
-  box-shadow: inset 0 0 1vmax 0vmax blue, 0 0 0.1vmax 0.4vmax blue;
+  box-shadow: 0 0 1vmax 0vmax blue inset, 0 0 0.1vmax 0.4vmax blue;
 }
 .thirdProject .description .liveLink:hover {
   background: #6056f9;
