@@ -244,13 +244,13 @@ html video {
 }
 
 .mapOpener {
-  position: absolute;
+  position: fixed;
   top: -10vmax;
   right: 0;
   z-index: 3;
   width: 10vmax;
   height: 10vmax;
-  transition: all 1s;
+  transition: all 0.6s;
   cursor: pointer;
   background: none;
   border: none;
@@ -259,7 +259,6 @@ html video {
 .mapOpener.openerShown {
   transform: translateY(10vmax);
 }
-
 header {
   height: 100vh;
   width: 100%;
@@ -958,7 +957,7 @@ header .welcomeDoor .rightDoor .knob {
 }
 
 .about {
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: flex-start;
   position: absolute;
@@ -966,6 +965,13 @@ header .welcomeDoor .rightDoor .knob {
   z-index: 2;
   height: 100vh;
   background: #fce8ad;
+  background-size: 100% 100%;
+  transform: scale(0);
+  transform-origin: 50%;
+  transition: all 0.5s;
+}
+.about.aboutOpened {
+  transform: scale(1);
 }
 .about .me {
   height: 26rem;
@@ -974,6 +980,7 @@ header .welcomeDoor .rightDoor .knob {
   transition: all 1s;
   position: relative;
   top: -100%;
+  opacity: 0;
 }
 @media (max-width: 1088px) {
   .about .me {
@@ -1010,6 +1017,7 @@ header .welcomeDoor .rightDoor .knob {
 }
 .about .me.imageShown {
   top: 0;
+  opacity: 1;
 }
 .about .aboutContainer {
   display: flex;

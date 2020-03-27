@@ -81,7 +81,7 @@ portfolio.init = function () {
 
             $me.removeClass('imageShown');
             $aboutContainer.removeClass('aboutContainerShown');
-            $about.fadeOut();
+            $about.removeClass('aboutOpened');
 
             $contact.removeClass('contactOpened');
             $contactContainer.removeClass('contactShown');
@@ -104,15 +104,18 @@ portfolio.init = function () {
             // ----------- non project list starts here -------------- //
             const selectedList = $(this).attr('data-selected');
             if (selectedList === '.about') {
-                $about.css('display', 'flex');
 
                 setTimeout(function () {
-                    $me.addClass('imageShown');
+                    $about.addClass('aboutOpened');
 
-                    $aboutContainer.addClass('aboutContainerShown')
-                }, 50);
+                    setTimeout(function() {
+                        $me.addClass('imageShown');
+    
+                        $aboutContainer.addClass('aboutContainerShown')
+                    },200)
+                }, 500);
 
-            } else if (selectedList === '.contact') {
+            } else {
                 setTimeout(function () {
                     $contact.addClass('contactOpened');
                     $contactContainer.addClass('contactShown');
