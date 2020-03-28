@@ -60,14 +60,15 @@ portfolio.init = function () {
             $mapOpener.removeClass('openerShown');
 
             $projectDoor.removeClass('projectDoorOpened');
-
+            
             if (selectedProject) {
                 // --------- push it up first and then once it's not shown, push it down--------//
                 previouslySelectedProject = selectedProject;
+                previouslySelectedProject.removeClass('enlarged');
 
                 setTimeout(function() {
                     previouslySelectedProject.removeClass('selectedProject');
-                }, 600)
+                }, 500)
 
                 // // --------to prevent selectedProject from getting class again in the above code-------- //
                 selectedProject = '';
@@ -137,7 +138,8 @@ portfolio.init = function () {
         if(e.keyCode === 13 || typeof e.keyCode !== 'number') {
             setTimeout(function() {
                 $projectDoor.addClass('projectDoorOpened');
-            }, 600)
+                selectedProject.addClass('enlarged')
+            }, 500)
 
             $cards.attr('tabindex', '-1');
             $projects.attr('tabindex', '-1');
