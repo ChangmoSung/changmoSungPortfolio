@@ -289,19 +289,21 @@ header .treasureMap .project div {
   background-size: 100% 100%;
   width: 12vmax;
   height: 12vmax;
-  padding: 1.6vmax 1.2vmax;
+  padding: 1.25vmax 0.9vmax;
   position: absolute;
-  top: -14.8vmax;
+  top: -12.8vmax;
 }
-header .treasureMap .card span,
-header .treasureMap .project span {
-  position: absolute;
-  top: -2.8vmax;
-  font-size: 2vmax;
-  color: #472509;
-  background: white;
-  border-radius: 0 0 0.5rem 0.5rem;
-  padding: 0.1vmax;
+header .treasureMap .card div .textContainer,
+header .treasureMap .project div .textContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 1.9vmax;
+  text-transform: uppercase;
+  color: white;
+  background: #683b16;
 }
 header .treasureMap .aboutCard {
   top: 36%;
@@ -381,15 +383,15 @@ header .welcomeDoor .rightDoor {
   transform: scale(0);
   transform-origin: 50%;
   transition: all 0.5s;
-  background-image: url(../assets/treasureMap.jpeg);
+  background-image: url(../assets/cabin3.jpg);
   background-size: 100% 100%;
+  z-index: 2;
 }
 .firstProject.selectedProject,
 .secondProject.selectedProject,
 .thirdProject.selectedProject,
 .fourthProject.selectedProject {
   transform: scale(1);
-  z-index: 2;
 }
 .firstProject.selectedProject.enlarged .projectVideo, .firstProject.selectedProject.enlarged .description,
 .secondProject.selectedProject.enlarged .projectVideo,
@@ -416,7 +418,6 @@ header .welcomeDoor .rightDoor {
   width: 100%;
   height: 100%;
   position: absolute;
-  z-index: 2;
 }
 .firstProject .projectDoor.projectDoorOpened .leftProjectDoor,
 .secondProject .projectDoor.projectDoorOpened .leftProjectDoor,
@@ -442,6 +443,7 @@ header .welcomeDoor .rightDoor {
   transition: all 0.5s;
   transform-origin: 0;
   transform: perspective(1000px) rotateY(0);
+  z-index: 2;
 }
 .firstProject .projectDoor .rightProjectDoor,
 .secondProject .projectDoor .rightProjectDoor,
@@ -455,6 +457,7 @@ header .welcomeDoor .rightDoor {
   transition: all 0.5s;
   transform-origin: 100%;
   transform: perspective(1000px) rotateY(0);
+  z-index: 2;
 }
 .firstProject .projectVideo,
 .secondProject .projectVideo,
