@@ -289,7 +289,7 @@ header .treasureMap .project div {
   background-size: 100% 100%;
   width: 12vmax;
   height: 12vmax;
-  padding: 1.25vmax 0.9vmax;
+  padding: 1.15vmax 0.9vmax;
   position: absolute;
   top: -12.8vmax;
 }
@@ -371,19 +371,17 @@ header .welcomeDoor .rightDoor {
 .thirdProject,
 .fourthProject {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  flex-direction: column;
   position: absolute;
   top: 0;
   left: 0;
-  overflow: hidden;
   height: 100vh;
   width: 100%;
   background: white;
   transform: scale(0);
   transform-origin: 50%;
   transition: all 0.5s;
-  background-image: url(../assets/cabin3.jpg);
+  background-image: url(../assets/paper.jpg);
   background-size: 100% 100%;
   z-index: 2;
 }
@@ -401,15 +399,6 @@ header .welcomeDoor .rightDoor {
 .fourthProject.selectedProject.enlarged .projectVideo,
 .fourthProject.selectedProject.enlarged .description {
   transform: scale(1);
-}
-@media (max-width: 1200px) {
-  .firstProject,
-.secondProject,
-.thirdProject,
-.fourthProject {
-    flex-direction: column;
-    justify-content: space-evenly;
-  }
 }
 .firstProject .projectDoor,
 .secondProject .projectDoor,
@@ -459,277 +448,147 @@ header .welcomeDoor .rightDoor {
   transform: perspective(1000px) rotateY(0);
   z-index: 2;
 }
-.firstProject .projectVideo,
-.secondProject .projectVideo,
-.thirdProject .projectVideo,
-.fourthProject .projectVideo {
+.firstProject .contentHeader,
+.secondProject .contentHeader,
+.thirdProject .contentHeader,
+.fourthProject .contentHeader {
+  border-bottom: 3px solid black;
+  text-align: center;
+  text-transform: uppercase;
+}
+.firstProject .contentHeader h2,
+.secondProject .contentHeader h2,
+.thirdProject .contentHeader h2,
+.fourthProject .contentHeader h2 {
+  border-top: 3px solid black;
+  font-size: 3.5vmax;
+  margin: 2rem auto 1rem;
+}
+.firstProject .contentHeader p,
+.secondProject .contentHeader p,
+.thirdProject .contentHeader p,
+.fourthProject .contentHeader p {
+  font-size: 2vmax;
+  margin: 0 0 1rem;
+}
+.firstProject .contentMain,
+.secondProject .contentMain,
+.thirdProject .contentMain,
+.fourthProject .contentMain {
   display: flex;
   flex-direction: column;
+  width: 85%;
+  margin: 0 auto;
+}
+.firstProject .contentMain h3,
+.secondProject .contentMain h3,
+.thirdProject .contentMain h3,
+.fourthProject .contentMain h3 {
+  font-size: 4.5vmax;
+  text-align: center;
+  margin: 1rem auto 2.5rem;
+}
+.firstProject .contentMain .videoDescription,
+.secondProject .contentMain .videoDescription,
+.thirdProject .contentMain .videoDescription,
+.fourthProject .contentMain .videoDescription {
+  display: flex;
   justify-content: space-between;
-  height: 37vmax;
-  width: 48vmax;
-  border-radius: 1rem;
-  background: black;
-  box-shadow: 0 0 1vmax 0.1vmax #606166 inset, 0 0 0.1vmax 0.8vmax #606166;
-  transform: scale(0);
+}
+.firstProject .contentMain .videoDescription .projectVideo,
+.secondProject .contentMain .videoDescription .projectVideo,
+.thirdProject .contentMain .videoDescription .projectVideo,
+.fourthProject .contentMain .videoDescription .projectVideo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 35vmax;
+  width: 60vmax;
   transition: all 0.6s;
 }
 @media (max-width: 1200px) {
-  .firstProject .projectVideo,
-.secondProject .projectVideo,
-.thirdProject .projectVideo,
-.fourthProject .projectVideo {
+  .firstProject .contentMain .videoDescription .projectVideo,
+.secondProject .contentMain .videoDescription .projectVideo,
+.thirdProject .contentMain .videoDescription .projectVideo,
+.fourthProject .contentMain .videoDescription .projectVideo {
     width: 45vmax;
     height: 34vmax;
   }
 }
 @media (max-width: 980px) {
-  .firstProject .projectVideo,
-.secondProject .projectVideo,
-.thirdProject .projectVideo,
-.fourthProject .projectVideo {
+  .firstProject .contentMain .videoDescription .projectVideo,
+.secondProject .contentMain .videoDescription .projectVideo,
+.thirdProject .contentMain .videoDescription .projectVideo,
+.fourthProject .contentMain .videoDescription .projectVideo {
     width: 57vmax;
     height: 44vmax;
   }
 }
 @media (max-width: 790px) {
-  .firstProject .projectVideo,
-.secondProject .projectVideo,
-.thirdProject .projectVideo,
-.fourthProject .projectVideo {
+  .firstProject .contentMain .videoDescription .projectVideo,
+.secondProject .contentMain .videoDescription .projectVideo,
+.thirdProject .contentMain .videoDescription .projectVideo,
+.fourthProject .contentMain .videoDescription .projectVideo {
     width: 65vmax;
     height: 50vmax;
   }
 }
 @media (max-width: 590px) {
-  .firstProject .projectVideo,
-.secondProject .projectVideo,
-.thirdProject .projectVideo,
-.fourthProject .projectVideo {
+  .firstProject .contentMain .videoDescription .projectVideo,
+.secondProject .contentMain .videoDescription .projectVideo,
+.thirdProject .contentMain .videoDescription .projectVideo,
+.fourthProject .contentMain .videoDescription .projectVideo {
     width: 85%;
     height: 47vmax;
   }
 }
-.firstProject .projectVideo .videoContainer,
-.secondProject .projectVideo .videoContainer,
-.thirdProject .projectVideo .videoContainer,
-.fourthProject .projectVideo .videoContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 83%;
+.firstProject .contentMain .videoDescription .projectVideo .videoContainer,
+.secondProject .contentMain .videoDescription .projectVideo .videoContainer,
+.thirdProject .contentMain .videoDescription .projectVideo .videoContainer,
+.fourthProject .contentMain .videoDescription .projectVideo .videoContainer {
+  height: 90%;
 }
-.firstProject .projectVideo .videoContainer .video,
-.secondProject .projectVideo .videoContainer .video,
-.thirdProject .projectVideo .videoContainer .video,
-.fourthProject .projectVideo .videoContainer .video {
-  width: 100%;
-  height: 92%;
-}
-.firstProject .projectVideo .frame,
-.secondProject .projectVideo .frame,
-.thirdProject .projectVideo .frame,
-.fourthProject .projectVideo .frame {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 17%;
-  background: #606166;
-  border-radius: 0 0 1rem 1rem;
-}
-.firstProject .projectVideo .frame .playButton,
-.secondProject .projectVideo .frame .playButton,
-.thirdProject .projectVideo .frame .playButton,
-.fourthProject .projectVideo .frame .playButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.firstProject .contentMain .videoDescription .projectVideo .playButton,
+.secondProject .contentMain .videoDescription .projectVideo .playButton,
+.thirdProject .contentMain .videoDescription .projectVideo .playButton,
+.fourthProject .contentMain .videoDescription .projectVideo .playButton {
   width: 25%;
-  height: 70%;
+  height: 10%;
   background: none;
   box-shadow: inset 0px 0px 0.4vmax 0.2vmax #000;
   cursor: pointer;
 }
-.firstProject .projectVideo .frame .playButton img,
-.secondProject .projectVideo .frame .playButton img,
-.thirdProject .projectVideo .frame .playButton img,
-.fourthProject .projectVideo .frame .playButton img {
+.firstProject .contentMain .videoDescription .projectVideo .playButton img,
+.secondProject .contentMain .videoDescription .projectVideo .playButton img,
+.thirdProject .contentMain .videoDescription .projectVideo .playButton img,
+.fourthProject .contentMain .videoDescription .projectVideo .playButton img {
   width: 4.5vmax;
   height: 3.4vmax;
 }
-.firstProject .projectVideo .frame .appleLogo,
-.secondProject .projectVideo .frame .appleLogo,
-.thirdProject .projectVideo .frame .appleLogo,
-.fourthProject .projectVideo .frame .appleLogo {
-  width: 4.5vmax;
-  height: 3.4vmax;
-}
-.firstProject .projectVideo .frame .githubLink,
-.secondProject .projectVideo .frame .githubLink,
-.thirdProject .projectVideo .frame .githubLink,
-.fourthProject .projectVideo .frame .githubLink {
-  width: 25%;
-  height: 70%;
-  background: none;
-  box-shadow: inset 0px 0px 0.4vmax 0.2vmax #000;
-}
-.firstProject .projectVideo .frame .githubLink a,
-.secondProject .projectVideo .frame .githubLink a,
-.thirdProject .projectVideo .frame .githubLink a,
-.fourthProject .projectVideo .frame .githubLink a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #000;
-  text-decoration: none;
-}
-.firstProject .projectVideo .frame .githubLink a img,
-.secondProject .projectVideo .frame .githubLink a img,
-.thirdProject .projectVideo .frame .githubLink a img,
-.fourthProject .projectVideo .frame .githubLink a img {
-  width: 4.5vmax;
-  height: 3.4vmax;
-}
-.firstProject .description,
-.secondProject .description,
-.thirdProject .description,
-.fourthProject .description {
-  width: 33vmax;
-  height: 38vmax;
+.firstProject .contentMain .videoDescription .description,
+.secondProject .contentMain .videoDescription .description,
+.thirdProject .contentMain .videoDescription .description,
+.fourthProject .contentMain .videoDescription .description {
+  width: 23vmax;
+  height: 28vmax;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 2vmax;
   border-radius: 1rem;
-  transform: scale(0);
   transition: all 0.6s;
 }
-@media (max-width: 1200px) {
-  .firstProject .description,
-.secondProject .description,
-.thirdProject .description,
-.fourthProject .description {
-    width: 70vmax;
-    height: 25vmax;
-    overflow: auto;
-  }
-}
-@media (max-width: 980px) {
-  .firstProject .description,
-.secondProject .description,
-.thirdProject .description,
-.fourthProject .description {
-    height: 28vmax;
-  }
-}
-@media (max-width: 790px) {
-  .firstProject .description,
-.secondProject .description,
-.thirdProject .description,
-.fourthProject .description {
-    width: 65vmax;
-  }
-}
-@media (max-width: 590px) {
-  .firstProject .description,
-.secondProject .description,
-.thirdProject .description,
-.fourthProject .description {
-    width: 86%;
-    height: 35vmax;
-  }
-}
-@media (max-height: 736px) and (max-width: 414px) {
-  .firstProject .description,
-.secondProject .description,
-.thirdProject .description,
-.fourthProject .description {
-    height: 45vmax;
-  }
-}
-.firstProject .description h3,
-.secondProject .description h3,
-.thirdProject .description h3,
-.fourthProject .description h3 {
-  font-size: 2.8vmax;
-  margin: 0;
-}
-@media (max-width: 1200px) {
-  .firstProject .description h3,
-.secondProject .description h3,
-.thirdProject .description h3,
-.fourthProject .description h3 {
-    margin-bottom: 3rem;
-    font-size: 4.2vmax;
-  }
-}
-@media (max-width: 590px) {
-  .firstProject .description h3,
-.secondProject .description h3,
-.thirdProject .description h3,
-.fourthProject .description h3 {
-    margin-bottom: 2rem;
-  }
-}
-@media (max-width: 470px) {
-  .firstProject .description h3,
-.secondProject .description h3,
-.thirdProject .description h3,
-.fourthProject .description h3 {
-    font-size: 3.8vmax;
-  }
-}
-.firstProject .description .aboutProject,
-.secondProject .description .aboutProject,
-.thirdProject .description .aboutProject,
-.fourthProject .description .aboutProject {
+.firstProject .contentMain .videoDescription .description .aboutProject,
+.secondProject .contentMain .videoDescription .description .aboutProject,
+.thirdProject .contentMain .videoDescription .description .aboutProject,
+.fourthProject .contentMain .videoDescription .description .aboutProject {
   font-size: 1.18vmax;
   line-height: 1.8vmax;
 }
-@media (max-width: 1200px) {
-  .firstProject .description .aboutProject,
-.secondProject .description .aboutProject,
-.thirdProject .description .aboutProject,
-.fourthProject .description .aboutProject {
-    width: 85%;
-    font-size: 1.5vmax;
-    line-height: 2.3vmax;
-    margin: 0 0 2.8vmax;
-  }
-}
-@media (max-width: 980px) {
-  .firstProject .description .aboutProject,
-.secondProject .description .aboutProject,
-.thirdProject .description .aboutProject,
-.fourthProject .description .aboutProject {
-    margin: 0 0 2.3vmax;
-    font-size: 1.7vmax;
-    line-height: 2.6vmax;
-  }
-}
-@media (max-width: 590px) {
-  .firstProject .description .aboutProject,
-.secondProject .description .aboutProject,
-.thirdProject .description .aboutProject,
-.fourthProject .description .aboutProject {
-    font-size: 1.5rem;
-    line-height: 2.1rem;
-    margin: 1vmax 0 3vmax;
-  }
-}
-@media (max-width: 470px) {
-  .firstProject .description .aboutProject,
-.secondProject .description .aboutProject,
-.thirdProject .description .aboutProject,
-.fourthProject .description .aboutProject {
-    font-size: 1.4rem;
-    width: 90%;
-  }
-}
-.firstProject .description .skill,
-.secondProject .description .skill,
-.thirdProject .description .skill,
-.fourthProject .description .skill {
+.firstProject .contentMain .videoDescription .description .skill,
+.secondProject .contentMain .videoDescription .description .skill,
+.thirdProject .contentMain .videoDescription .description .skill,
+.fourthProject .contentMain .videoDescription .description .skill {
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -737,44 +596,50 @@ header .welcomeDoor .rightDoor {
   padding: 0;
   margin: 1rem 0 3rem;
 }
-@media (max-width: 1200px) {
-  .firstProject .description .skill,
-.secondProject .description .skill,
-.thirdProject .description .skill,
-.fourthProject .description .skill {
-    order: 2;
-    justify-content: space-evenly;
-  }
-}
-.firstProject .description .skill li,
-.secondProject .description .skill li,
-.thirdProject .description .skill li,
-.fourthProject .description .skill li {
+.firstProject .contentMain .videoDescription .description .skill li,
+.secondProject .contentMain .videoDescription .description .skill li,
+.thirdProject .contentMain .videoDescription .description .skill li,
+.fourthProject .contentMain .videoDescription .description .skill li {
   width: 5vmax;
   height: 5vmax;
 }
-@media (max-width: 1200px) {
-  .firstProject .description .skill li,
-.secondProject .description .skill li,
-.thirdProject .description .skill li,
-.fourthProject .description .skill li {
-    width: 7vmax;
-    height: 7vmax;
-  }
+.firstProject .contentMain .videoDescription .description .links,
+.secondProject .contentMain .videoDescription .description .links,
+.thirdProject .contentMain .videoDescription .description .links,
+.fourthProject .contentMain .videoDescription .description .links {
+  display: flex;
+  justify-content: space-around;
 }
-@media (max-width: 980px) {
-  .firstProject .description .skill li,
-.secondProject .description .skill li,
-.thirdProject .description .skill li,
-.fourthProject .description .skill li {
-    width: 8.5vmax;
-    height: 8.5vmax;
-  }
+.firstProject .contentMain .videoDescription .description .links .githubLink,
+.secondProject .contentMain .videoDescription .description .links .githubLink,
+.thirdProject .contentMain .videoDescription .description .links .githubLink,
+.fourthProject .contentMain .videoDescription .description .links .githubLink {
+  width: 25%;
+  height: 70%;
+  background: none;
+  box-shadow: inset 0px 0px 0.4vmax 0.2vmax #000;
 }
-.firstProject .description .liveLink,
-.secondProject .description .liveLink,
-.thirdProject .description .liveLink,
-.fourthProject .description .liveLink {
+.firstProject .contentMain .videoDescription .description .links .githubLink a,
+.secondProject .contentMain .videoDescription .description .links .githubLink a,
+.thirdProject .contentMain .videoDescription .description .links .githubLink a,
+.fourthProject .contentMain .videoDescription .description .links .githubLink a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  text-decoration: none;
+}
+.firstProject .contentMain .videoDescription .description .links .githubLink a img,
+.secondProject .contentMain .videoDescription .description .links .githubLink a img,
+.thirdProject .contentMain .videoDescription .description .links .githubLink a img,
+.fourthProject .contentMain .videoDescription .description .links .githubLink a img {
+  width: 4.5vmax;
+  height: 3.4vmax;
+}
+.firstProject .contentMain .videoDescription .description .links .liveLink,
+.secondProject .contentMain .videoDescription .description .links .liveLink,
+.thirdProject .contentMain .videoDescription .description .links .liveLink,
+.fourthProject .contentMain .videoDescription .description .links .liveLink {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -784,144 +649,24 @@ header .welcomeDoor .rightDoor {
   font-size: 1.55vmax;
   line-height: 3.1vmax;
 }
-.firstProject .description .liveLink a,
-.secondProject .description .liveLink a,
-.thirdProject .description .liveLink a,
-.fourthProject .description .liveLink a {
+.firstProject .contentMain .videoDescription .description .links .liveLink a,
+.secondProject .contentMain .videoDescription .description .links .liveLink a,
+.thirdProject .contentMain .videoDescription .description .links .liveLink a,
+.fourthProject .contentMain .videoDescription .description .links .liveLink a {
   text-decoration: none;
   width: 100%;
-}
-@media (max-width: 1200px) {
-  .firstProject .description .liveLink a,
-.secondProject .description .liveLink a,
-.thirdProject .description .liveLink a,
-.fourthProject .description .liveLink a {
-    line-height: 4.2vmax;
-  }
-}
-@media (max-width: 1200px) {
-  .firstProject .description .liveLink,
-.secondProject .description .liveLink,
-.thirdProject .description .liveLink,
-.fourthProject .description .liveLink {
-    font-size: 2vmax;
-    width: 20vmax;
-    margin: 0 0 2.9vmax;
-    order: 1;
-  }
-}
-@media (max-width: 590px) {
-  .firstProject .description .liveLink,
-.secondProject .description .liveLink,
-.thirdProject .description .liveLink,
-.fourthProject .description .liveLink {
-    margin: 0 0 2.3vmax;
-  }
-}
-.firstProject .description .descriptionImages,
-.secondProject .description .descriptionImages,
-.thirdProject .description .descriptionImages,
-.fourthProject .description .descriptionImages {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-@media (max-width: 1200px) {
-  .firstProject .description .descriptionImages,
-.secondProject .description .descriptionImages,
-.thirdProject .description .descriptionImages,
-.fourthProject .description .descriptionImages {
-    order: 2;
-    justify-content: space-evenly;
-  }
-}
-.firstProject .description .descriptionImages div,
-.secondProject .description .descriptionImages div,
-.thirdProject .description .descriptionImages div,
-.fourthProject .description .descriptionImages div {
-  width: 8vmax;
-  height: 8vmax;
-}
-@media (max-width: 1200px) {
-  .firstProject .description .descriptionImages div,
-.secondProject .description .descriptionImages div,
-.thirdProject .description .descriptionImages div,
-.fourthProject .description .descriptionImages div {
-    width: 10vmax;
-    height: 10vmax;
-    margin-bottom: 3rem;
-  }
-}
-@media (max-width: 590px) {
-  .firstProject .description .descriptionImages div,
-.secondProject .description .descriptionImages div,
-.thirdProject .description .descriptionImages div,
-.fourthProject .description .descriptionImages div {
-    width: 12vmax;
-    height: 12vmax;
-  }
 }
 
 .firstProject {
   transform-origin: 52% 36%;
 }
-.firstProject .description {
-  background: #fadbd9;
-  color: blue;
-  border: 5px solid blue;
-  box-shadow: 0 0 0.1vmax 0.4vmax blue;
-}
-.firstProject .description .liveLink {
-  background: white;
-  border-radius: 2rem;
-  color: black;
-  box-shadow: 5px 5px blue;
-  position: relative;
-  border: none;
-}
-.firstProject .description .liveLink a {
-  color: black;
-}
-.firstProject .description .liveLink:hover, .firstProject .description .liveLink:focus {
-  box-shadow: 2.5px 2.5px blue;
-  top: 2.5px;
-  left: 2.5px;
-}
 
 .secondProject {
   transform-origin: 78% 38%;
 }
-.secondProject .description {
-  background: linear-gradient(to right, #0072ff, #00c6ff);
-  color: white;
-  box-shadow: 0 0 1vmax 0vmax blue inset, 0 0 0.1vmax 0.4vmax blue;
-}
-.secondProject .description .liveLink {
-  background: linear-gradient(319deg, #6FB1FC, #4364F7, #0052D4);
-  border-radius: 1rem;
-}
-.secondProject .description .liveLink a {
-  color: white;
-}
 
 .thirdProject {
   transform-origin: 72% 77%;
-}
-.thirdProject .description {
-  background: #e3f4f3;
-  color: black;
-}
-.thirdProject .description .liveLink {
-  background: white;
-  transition: all 0.4s;
-  border-radius: 1.2rem;
-  color: black;
-  border: 2px solid black;
-  box-shadow: 0 0 1vmax 0vmax blue inset, 0 0 0.1vmax 0.4vmax blue;
-}
-.thirdProject .description .liveLink:hover {
-  background: #6056f9;
-  color: white;
 }
 
 .about {
@@ -935,7 +680,7 @@ header .welcomeDoor .rightDoor {
   background: #fce8ad;
   background-size: 100% 100%;
   transform: scale(0);
-  transform-origin: 22% 32%;
+  transform-origin: 18% 36%;
   transition: all 0.5s;
 }
 .about.aboutOpened {
@@ -1183,7 +928,7 @@ header .welcomeDoor .rightDoor {
   background-image: url(../assets/treasureMap.jpeg);
   background-size: 100% 100%;
   transform: scale(0);
-  transform-origin: 75% 33%;
+  transform-origin: 34% 65%;
   transition: all 0.5s;
 }
 .contact.contactOpened {
