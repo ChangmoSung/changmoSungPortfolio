@@ -376,8 +376,8 @@ header .welcomeDoor .rightDoor {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100vh;
   width: 100%;
+  min-height: 100vh;
   background: white;
   transform: scale(0);
   transform-origin: 50%;
@@ -455,6 +455,7 @@ header .welcomeDoor .rightDoor {
 .fourthProject .contentHeader {
   text-align: center;
   text-transform: uppercase;
+  margin-top: 2rem;
 }
 .firstProject .contentHeader h2,
 .secondProject .contentHeader h2,
@@ -463,7 +464,7 @@ header .welcomeDoor .rightDoor {
   border-bottom: 3px solid black;
   border-top: 3px solid black;
   font-size: 3.5vmax;
-  margin: 2rem auto 1rem;
+  margin: 0 auto 1rem;
 }
 .firstProject .contentHeader p,
 .secondProject .contentHeader p,
@@ -479,6 +480,7 @@ header .welcomeDoor .rightDoor {
   display: flex;
   flex-direction: column;
   border: 3px solid black;
+  margin-bottom: 5rem;
 }
 .firstProject .contentMain h3,
 .secondProject .contentMain h3,
@@ -495,6 +497,7 @@ header .welcomeDoor .rightDoor {
 .fourthProject .contentMain .videoDescription {
   display: flex;
   justify-content: space-between;
+  padding: 0 2rem 2rem;
 }
 .firstProject .contentMain .videoDescription .projectVideo,
 .secondProject .contentMain .videoDescription .projectVideo,
@@ -504,8 +507,8 @@ header .welcomeDoor .rightDoor {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 31vmax;
-  width: 42.4vmax;
+  height: 31.4vmax;
+  width: 50vmax;
   transition: all 0.6s;
 }
 @media (max-width: 1200px) {
@@ -548,33 +551,15 @@ header .welcomeDoor .rightDoor {
 .secondProject .contentMain .videoDescription .projectVideo .videoContainer,
 .thirdProject .contentMain .videoDescription .projectVideo .videoContainer,
 .fourthProject .contentMain .videoDescription .projectVideo .videoContainer {
-  height: 85%;
-}
-.firstProject .contentMain .videoDescription .projectVideo .playButton,
-.secondProject .contentMain .videoDescription .projectVideo .playButton,
-.thirdProject .contentMain .videoDescription .projectVideo .playButton,
-.fourthProject .contentMain .videoDescription .projectVideo .playButton {
-  width: 25%;
-  height: 13%;
-  text-transform: uppercase;
-  font-size: 1.5vmax;
-  background: none;
-  box-shadow: inset 0px 0px 0.4vmax 0.2vmax #000;
-  cursor: pointer;
-}
-.firstProject .contentMain .videoDescription .projectVideo .playButton img,
-.secondProject .contentMain .videoDescription .projectVideo .playButton img,
-.thirdProject .contentMain .videoDescription .projectVideo .playButton img,
-.fourthProject .contentMain .videoDescription .projectVideo .playButton img {
-  width: 4.5vmax;
-  height: 3.4vmax;
+  height: 100%;
+  width: 100%;
 }
 .firstProject .contentMain .videoDescription .description,
 .secondProject .contentMain .videoDescription .description,
 .thirdProject .contentMain .videoDescription .description,
 .fourthProject .contentMain .videoDescription .description {
-  width: 37vmax;
-  height: 32vmax;
+  width: 30.7vmax;
+  height: 31.4vmax;
   display: flex;
   flex-direction: column;
   transition: all 0.6s;
@@ -590,7 +575,7 @@ header .welcomeDoor .rightDoor {
 .thirdProject .contentMain .videoDescription .description .aboutProject,
 .fourthProject .contentMain .videoDescription .description .aboutProject {
   font-size: 1.18vmax;
-  line-height: 1.8vmax;
+  line-height: 1.6vmax;
 }
 .firstProject .contentMain .videoDescription .description .skill,
 .secondProject .contentMain .videoDescription .description .skill,

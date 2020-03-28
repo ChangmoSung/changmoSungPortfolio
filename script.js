@@ -10,8 +10,9 @@ portfolio.init = function () {
     const $aboutContainer = $('.aboutContainer');
     const $contactContainer = $('.contactFlexContainer');
     const $cards = $('.card');
-    const $projects = $('.project')
-    const $playButton = $('.playButton');
+    const $projects = $('.project');
+    let projectVideo;
+    let video;
     const $githubLink = $('.githubLink');
     const $liveLink = $('.liveLink');
     const $resumeLink = $('.resumeLink span');
@@ -58,23 +59,6 @@ portfolio.init = function () {
         $(this).css('z-index', '-1');
     })
 
-    $playButton.on('click', function () {
-        const project = $(this).attr('data-project');
-        const video = $(`video[data-project=${project}]`);
-        const $button = $(this);
-
-        if (videoPlaying) {
-            video[0].pause();
-            $button.text('play');
-        } else {
-            video[0].play();
-            $button.text('pause');
-        }
-
-        videoPlaying = !videoPlaying;
-    });
-
-
     $mapOpener.on('click keypress', function(e) {
         if (e.keyCode === 13 || typeof e.keyCode !== 'number') {
             $cards.attr('tabindex', '0');
@@ -88,6 +72,7 @@ portfolio.init = function () {
             
             $mapOpener.removeClass('openerShown');
 
+            video[0].pause();
             
             if (selectedProject) {
                 // --------- push it up first and then once it's not shown, push it down--------//
@@ -103,7 +88,6 @@ portfolio.init = function () {
                 // // --------to prevent selectedProject from getting class again in the above code-------- //
                 selectedProject = '';
 
-                $playButton.attr('tabindex', '-1');
 
                 // $liveLink.attr('tabindex', '-1');
                 // $githubLink.attr('tabindex', '-1');
@@ -126,7 +110,6 @@ portfolio.init = function () {
         if (e.keyCode === 13 || typeof e.keyCode !== 'number') {
             $cards.attr('tabindex', '-1');
             $projects.attr('tabindex', '-1');
-            $playButton.attr('tabindex', '-1');
             // $liveLink.attr('tabindex', '-1');
             // $githubLink.attr('tabindex', '-1');
 
@@ -166,7 +149,9 @@ portfolio.init = function () {
     // ------------------------------- //
     $projects.on('click keypress', function(e) {
         if(e.keyCode === 13 || typeof e.keyCode !== 'number') {
-            
+            projectVideo = $(this).attr('data-project');
+            video = $(`video[data-project=${projectVideo}]`);
+            video[0].play();
 
             $cards.attr('tabindex', '-1');
             $projects.attr('tabindex', '-1');
@@ -188,7 +173,6 @@ portfolio.init = function () {
                 selectedProject.addClass('enlarged');
             }, 500)
 
-            $playButton.attr('tabindex', '0');
             // $liveLink.children().attr('tabindex', '0');
             // $githubLink.children().attr('tabindex', '0');
         }
