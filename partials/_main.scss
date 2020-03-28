@@ -8,8 +8,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    height: 100vh;
     width: 100%;
+    min-height: 100vh;
     background: white;
     transform: scale(0);
     transform-origin: 50%;
@@ -74,12 +74,13 @@
     .contentHeader {
         text-align: center;
         text-transform: uppercase;
+        margin-top: 2rem;
 
         h2 {
             border-bottom: 3px solid black;
             border-top: 3px solid black;
             font-size: 3.5vmax;
-            margin: 2rem auto 1rem;
+            margin: 0 auto 1rem;
         }
 
         p {
@@ -91,8 +92,8 @@
     .contentMain {
         display: flex;
         flex-direction: column;
-        
         border: 3px solid black;
+        margin-bottom: 5rem;
 
         h3 {
             font-size: 4.5vmax;
@@ -104,14 +105,15 @@
         .videoDescription {
             display: flex;
             justify-content: space-between;
+            padding: 0 2rem 2rem;
 
             .projectVideo {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
                 align-items: center;
-                height: 31vmax;
-                width: 42.4vmax;
+                height: 31.4vmax;
+                width: 50vmax;
                 // transform: scale(0);
                 transition: all 0.6s;
         
@@ -136,29 +138,14 @@
                 }
         
                 .videoContainer {
-                    height: 85%;
-                }
-        
-                .playButton {
-                    width: 25%;
-                    height: 13%;
-                    text-transform: uppercase;
-                    font-size: 1.5vmax;
-                    background: none;
-
-                    box-shadow: inset 0px 0px 0.4vmax 0.2vmax #000;
-                    cursor: pointer;
-    
-                    img {
-                        width: 4.5vmax;
-                        height: 3.4vmax;
-                    }
+                    height: 100%;
+                    width: 100%;
                 }
             }
         
             .description {
-                width: 37vmax;
-                height: 32vmax;
+                width: 30.7vmax;
+                height: 31.4vmax;
                 display: flex;
                 flex-direction: column;
                 // transform: scale(0);
@@ -170,7 +157,7 @@
 
                 .aboutProject {
                     font-size: 1.18vmax;
-                    line-height: 1.8vmax;
+                    line-height: 1.6vmax;
                 }
         
                 .skill {
