@@ -468,7 +468,7 @@ header .welcomeDoor .rightDoor {
 .secondProject .contentHeader p,
 .thirdProject .contentHeader p,
 .fourthProject .contentHeader p {
-  font-size: 2vmax;
+  font-size: 1.5vmax;
   margin: 0 0 1rem;
 }
 .firstProject .contentMain,
@@ -501,9 +501,10 @@ header .welcomeDoor .rightDoor {
 .fourthProject .contentMain .videoDescription .projectVideo {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  height: 35vmax;
-  width: 60vmax;
+  height: 32vmax;
+  width: 43.8vmax;
   transition: all 0.6s;
 }
 @media (max-width: 1200px) {
@@ -546,7 +547,7 @@ header .welcomeDoor .rightDoor {
 .secondProject .contentMain .videoDescription .projectVideo .videoContainer,
 .thirdProject .contentMain .videoDescription .projectVideo .videoContainer,
 .fourthProject .contentMain .videoDescription .projectVideo .videoContainer {
-  height: 90%;
+  height: 85%;
 }
 .firstProject .contentMain .videoDescription .projectVideo .playButton,
 .secondProject .contentMain .videoDescription .projectVideo .playButton,
@@ -569,14 +570,17 @@ header .welcomeDoor .rightDoor {
 .secondProject .contentMain .videoDescription .description,
 .thirdProject .contentMain .videoDescription .description,
 .fourthProject .contentMain .videoDescription .description {
-  width: 23vmax;
-  height: 28vmax;
+  width: 37vmax;
+  height: 32vmax;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 2vmax;
-  border-radius: 1rem;
   transition: all 0.6s;
+}
+.firstProject .contentMain .videoDescription .description p,
+.secondProject .contentMain .videoDescription .description p,
+.thirdProject .contentMain .videoDescription .description p,
+.fourthProject .contentMain .videoDescription .description p {
+  margin: 0 0 2rem;
 }
 .firstProject .contentMain .videoDescription .description .aboutProject,
 .secondProject .contentMain .videoDescription .description .aboutProject,

@@ -1,6 +1,8 @@
 const portfolio = {};
 
 portfolio.init = function () {
+    const $date = $('.date');
+    const $time = $('.time');
     const $welcomeDoor = $('.welcomeDoor');
     const $projectDoor = $('.projectDoor');
     const $mapOpener = $('.mapOpener');
@@ -23,6 +25,27 @@ portfolio.init = function () {
     const $contact = $('.contact');
     let selectedProject;
     let previouslySelectedProject;
+
+    const currentTime = new Date();
+    let second = currentTime.getSeconds();
+    const minute = currentTime.getMinutes();
+    const hour = currentTime.getHours();
+    const day = currentTime.getDay();
+    const month = currentTime.getMonth();
+    const monthArray = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const year = currentTime.getFullYear();
+    
+    $date.text(`${year}.${monthArray[month]}.${day}`);
+
+    setInterval(() => {
+        second++;
+
+        if(second > 59) {
+            second = 0;
+        }
+
+        $time.text(`${hour}.${minute < 10 ? `0${minute}` : `${minute}`}.${second < 10 ? `0${second}` : `${second}`}`)
+    },1000)
 
     $welcomeDoor.addClass('doorOpened');
     $welcomeDoor.on('transitionend', function() {
