@@ -26,6 +26,9 @@ portfolio.init = function () {
     let selectedProject;
     let previouslySelectedProject;
 
+// ////////////////////////////////////// //
+// --------- current time start --------- //
+// ////////////////////////////////////// //
     const currentTime = new Date();
     let second = currentTime.getSeconds();
     const minute = currentTime.getMinutes();
@@ -44,8 +47,11 @@ portfolio.init = function () {
             second = 0;
         }
 
-        $time.text(`${hour}.${minute < 10 ? `0${minute}` : `${minute}`}.${second < 10 ? `0${second}` : `${second}`}`)
+        $time.text(`${hour}:${minute < 10 ? `0${minute}` : `${minute}`}:${second < 10 ? `0${second}` : `${second}`}`)
     },1000)
+// ////////////////////////////////////// //
+// --------- current time end ----------- //
+// ////////////////////////////////////// //
 
     $welcomeDoor.addClass('doorOpened');
     $welcomeDoor.on('transitionend', function() {
@@ -59,10 +65,10 @@ portfolio.init = function () {
 
         if (videoPlaying) {
             video[0].pause();
-            $button.html('<img src="assets/play.png" alt="play button"></img>');
+            $button.text('play');
         } else {
             video[0].play();
-            $button.html('<img src="assets/pause.png" alt="pause button"></img>');
+            $button.text('pause');
         }
 
         videoPlaying = !videoPlaying;
