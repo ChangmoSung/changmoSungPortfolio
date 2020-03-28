@@ -264,7 +264,7 @@ header {
   width: 100%;
 }
 header .treasureMap {
-  background-image: url(../assets/treasureMap.jpeg);
+  background-image: url(../assets/treasureMap2.jpeg);
   width: 100%;
   height: 100%;
   background-size: 100% 100%;
@@ -279,65 +279,55 @@ header .treasureMap .project {
   justify-content: space-between;
   align-items: center;
   position: absolute;
-  width: 3.5vmax;
-  height: 3.5vmax;
+  width: 7vmax;
+  height: 5vmax;
   cursor: pointer;
 }
-header .treasureMap .card:focus,
-header .treasureMap .project:focus {
-  border: 5px solid blue;
-}
-header .treasureMap .card img,
-header .treasureMap .project img {
+header .treasureMap .card div,
+header .treasureMap .project div {
+  background: url(../assets/treasureMap.jpeg);
+  background-size: 100% 100%;
+  width: 12vmax;
+  height: 12vmax;
+  padding: 1.6vmax 1.2vmax;
   position: absolute;
-  top: -13.9vmax;
-  padding: 0.5vmax;
-  width: 10vmax;
-  height: 10vmax;
-  border-radius: 0.5rem;
-  animation: floating 2.5s ease-in-out infinite;
-  box-shadow: 0 0 0.1vmax 0.2vmax #472509, 0 0 0.5vmax 0.2vmax #472509 inset;
-  background: #472509;
+  top: -14.8vmax;
 }
 header .treasureMap .card span,
 header .treasureMap .project span {
   position: absolute;
-  top: -3.5vmax;
+  top: -2.8vmax;
   font-size: 2vmax;
   color: #472509;
   background: white;
   border-radius: 0 0 0.5rem 0.5rem;
   padding: 0.1vmax;
-  animation: floating 2.5s ease-in-out infinite;
 }
 header .treasureMap .aboutCard {
-  top: 32%;
-  left: 22%;
+  top: 36%;
+  left: 18%;
 }
 header .treasureMap .contactCard {
-  top: 33%;
-  left: 75%;
+  top: 65%;
+  left: 34%;
 }
 header .treasureMap .project1 {
-  top: 63%;
-  left: 31%;
+  top: 36%;
+  left: 52%;
 }
 header .treasureMap .project2 {
-  top: 70%;
-  left: 70%;
+  top: 38%;
+  left: 78%;
 }
 header .treasureMap .project3 {
-  top: 72%;
-  left: 50%;
+  top: 77%;
+  left: 72%;
 }
 header .welcomeDoor {
   position: absolute;
   top: 0;
   width: 100%;
   height: 100%;
-}
-header .welcomeDoor.doorOpened {
-  background: none;
 }
 header .welcomeDoor.doorOpened .leftDoor {
   transform: rotateY(90deg);
@@ -350,45 +340,17 @@ header .welcomeDoor .rightDoor {
   position: absolute;
   height: 100%;
   width: 50%;
-  background: #b6dcfe;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-content: space-evenly;
-  border: 15px solid #4788c7;
   transition: all 0.5s;
-}
-header .welcomeDoor .leftDoor .decoration,
-header .welcomeDoor .rightDoor .decoration {
-  width: 34%;
-  height: 38%;
-  background: white;
-  background: #dff0fe;
-}
-header .welcomeDoor .leftDoor .knob,
-header .welcomeDoor .rightDoor .knob {
-  width: 3vmax;
-  height: 3vmax;
-  background: #4788c7;
-  position: absolute;
-  border-radius: 50%;
-  top: calc(50% - 1.5vmax);
 }
 header .welcomeDoor .leftDoor {
   left: 0;
   transform-origin: 0;
   transform: perspective(500px) rotateY(0);
 }
-header .welcomeDoor .leftDoor .knob {
-  right: 1vmax;
-}
 header .welcomeDoor .rightDoor {
   right: 0;
   transform-origin: 100%;
   transform: perspective(500px) rotateY(0);
-}
-header .welcomeDoor .rightDoor .knob {
-  left: 1vmax;
 }
 
 @keyframes floating {
@@ -416,16 +378,26 @@ header .welcomeDoor .rightDoor .knob {
   height: 100vh;
   width: 100%;
   background: white;
-  z-index: 2;
-  background-size: 100% 100%;
   transform: scale(0);
   transform-origin: 50%;
   transition: all 0.5s;
+  background-image: url(../assets/treasureMap.jpeg);
+  background-size: 100% 100%;
 }
 .firstProject.selectedProject,
 .secondProject.selectedProject,
 .thirdProject.selectedProject,
 .fourthProject.selectedProject {
+  transform: scale(1);
+  z-index: 2;
+}
+.firstProject.selectedProject.enlarged .projectVideo, .firstProject.selectedProject.enlarged .description,
+.secondProject.selectedProject.enlarged .projectVideo,
+.secondProject.selectedProject.enlarged .description,
+.thirdProject.selectedProject.enlarged .projectVideo,
+.thirdProject.selectedProject.enlarged .description,
+.fourthProject.selectedProject.enlarged .projectVideo,
+.fourthProject.selectedProject.enlarged .description {
   transform: scale(1);
 }
 @media (max-width: 1200px) {
@@ -444,6 +416,7 @@ header .welcomeDoor .rightDoor .knob {
   width: 100%;
   height: 100%;
   position: absolute;
+  z-index: 2;
 }
 .firstProject .projectDoor.projectDoorOpened .leftProjectDoor,
 .secondProject .projectDoor.projectDoorOpened .leftProjectDoor,
@@ -495,6 +468,7 @@ header .welcomeDoor .rightDoor .knob {
   border-radius: 1rem;
   background: black;
   box-shadow: 0 0 1vmax 0.1vmax #606166 inset, 0 0 0.1vmax 0.8vmax #606166;
+  transform: scale(0);
   transition: all 0.6s;
 }
 @media (max-width: 1200px) {
@@ -624,6 +598,7 @@ header .welcomeDoor .rightDoor .knob {
   align-items: center;
   padding: 2vmax;
   border-radius: 1rem;
+  transform: scale(0);
   transition: all 0.6s;
 }
 @media (max-width: 1200px) {
@@ -884,6 +859,9 @@ header .welcomeDoor .rightDoor .knob {
   }
 }
 
+.firstProject {
+  transform-origin: 31% 63%;
+}
 .firstProject .description {
   background: #fadbd9;
   color: blue;
@@ -907,6 +885,9 @@ header .welcomeDoor .rightDoor .knob {
   left: 2.5px;
 }
 
+.secondProject {
+  transform-origin: 70% 70%;
+}
 .secondProject .description {
   background: linear-gradient(to right, #0072ff, #00c6ff);
   color: white;
@@ -920,6 +901,9 @@ header .welcomeDoor .rightDoor .knob {
   color: white;
 }
 
+.thirdProject {
+  transform-origin: 50% 72%;
+}
 .thirdProject .description {
   background: #e3f4f3;
   color: black;
@@ -948,7 +932,7 @@ header .welcomeDoor .rightDoor .knob {
   background: #fce8ad;
   background-size: 100% 100%;
   transform: scale(0);
-  transform-origin: 24% 19%;
+  transform-origin: 22% 32%;
   transition: all 0.5s;
 }
 .about.aboutOpened {
@@ -1196,7 +1180,7 @@ header .welcomeDoor .rightDoor .knob {
   background-image: url(../assets/treasureMap.jpeg);
   background-size: 100% 100%;
   transform: scale(0);
-  transform-origin: 77% 20%;
+  transform-origin: 75% 33%;
   transition: all 0.5s;
 }
 .contact.contactOpened {

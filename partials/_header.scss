@@ -3,7 +3,7 @@ header {
     width: 100%;
 
     .treasureMap {
-        background-image: url(../assets/treasureMap.jpeg);
+        background-image: url(../assets/treasureMap2.jpeg);
         width: 100%;
         height: 100%;
         background-size: 100% 100%;
@@ -18,61 +18,54 @@ header {
             justify-content: space-between;
             align-items: center;
             position: absolute;
-            width: 3.5vmax;
-            height: 3.5vmax;
+            width: 7vmax;
+            height: 5vmax;
             cursor: pointer;
 
-            &:focus {
-                border: 5px solid blue;
-            }
-
-            img {
+            div {
+                background: url(../assets/treasureMap.jpeg);
+                background-size: 100% 100%;
+                width: 12vmax;
+                height: 12vmax;
+                padding: 1.6vmax 1.2vmax;
                 position: absolute;
-                top: -13.9vmax;
-                padding: 0.5vmax;
-                width: 10vmax;
-                height: 10vmax;
-                border-radius: 0.5rem;
-                animation: floating 2.5s ease-in-out infinite;
-                box-shadow: 0 0 0.1vmax 0.2vmax rgb(71, 37, 9), 0 0 0.5vmax 0.2vmax rgb(71, 37, 9) inset;
-                background: rgb(71, 37, 9);
+                top: -14.8vmax;
             }
 
             span {
                 position: absolute;
-                top: -3.5vmax;
+                top: -2.8vmax;
                 font-size: 2vmax;
                 color:rgb(71, 37, 9);
                 background: white;
                 border-radius: 0 0 0.5rem 0.5rem;
                 padding: 0.1vmax;
-                animation: floating 2.5s ease-in-out infinite;
             }
         }
 
         .aboutCard {
-            top: 32%;
-            left: 22%;
+            top: 36%;
+            left: 18%;
         }
 
         .contactCard {
-            top: 33%;
-            left: 75%;
+            top: 65%;
+            left: 34%;
         }
 
         .project1 {
-            top: 63%;
-            left: 31%;
+            top: 36%;
+            left: 52%;
         }
 
         .project2 {
-            top: 70%;
-            left: 70%;
+            top: 38%;
+            left: 78%;
         }
 
         .project3 {
-            top: 72%;
-            left: 50%;
+            top: 77%;
+            left: 72%;
         }
     }
 
@@ -81,10 +74,6 @@ header {
         top: 0;
         width: 100%;
         height: 100%;
-
-        &.doorOpened {
-            background: none;
-        }
 
         &.doorOpened .leftDoor {
             transform: rotateY(90deg);
@@ -99,49 +88,19 @@ header {
             position: absolute;
             height: 100%;
             width: 50%;
-            background: rgb(182, 220, 254);
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-            align-content: space-evenly;
-            border: 15px solid rgb(71, 136, 199);
             transition: all 0.5s;
-
-            .decoration {
-                width: 34%;
-                height: 38%;
-                background: white;
-                background: rgb(223, 240, 254);
-            }
-
-            .knob {
-                width: 3vmax;
-                height: 3vmax;
-                background: rgb(71, 136, 199);
-                position: absolute;
-                border-radius: 50%;
-                top: calc(50% - 1.5vmax);
-            }
         }
         
         .leftDoor {
             left: 0;
             transform-origin: 0;
             transform: perspective(500px) rotateY(0);
-
-            .knob {
-                right: 1vmax;
-            }
         }
 
         .rightDoor {
             right: 0;
             transform-origin: 100%;
             transform: perspective(500px) rotateY(0);
-
-            .knob {
-                left: 1vmax;
-            }
         }
     }
 }
