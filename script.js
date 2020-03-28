@@ -36,10 +36,10 @@ portfolio.init = function () {
 
         if (videoPlaying) {
             video[0].pause();
-            $button.html('<img src="assets/play.png" alt=""></img>');
+            $button.html('<img src="assets/play.png" alt="play button"></img>');
         } else {
             video[0].play();
-            $button.html('<img src="assets/pause.png" alt=""></img>');
+            $button.html('<img src="assets/pause.png" alt="pause button"></img>');
         }
 
         videoPlaying = !videoPlaying;
@@ -59,12 +59,13 @@ portfolio.init = function () {
             
             $mapOpener.removeClass('openerShown');
 
-            $projectDoor.removeClass('projectDoorOpened');
             
             if (selectedProject) {
                 // --------- push it up first and then once it's not shown, push it down--------//
                 previouslySelectedProject = selectedProject;
                 previouslySelectedProject.removeClass('enlarged');
+
+                $projectDoor.removeClass('projectDoorOpened');
 
                 setTimeout(function() {
                     previouslySelectedProject.removeClass('selectedProject');
@@ -136,10 +137,7 @@ portfolio.init = function () {
     // ------------------------------- //
     $projects.on('click keypress', function(e) {
         if(e.keyCode === 13 || typeof e.keyCode !== 'number') {
-            setTimeout(function() {
-                $projectDoor.addClass('projectDoorOpened');
-                selectedProject.addClass('enlarged')
-            }, 500)
+            
 
             $cards.attr('tabindex', '-1');
             $projects.attr('tabindex', '-1');
@@ -155,6 +153,11 @@ portfolio.init = function () {
             selectedProject = $(project);
 
             selectedProject.addClass('selectedProject');
+
+            setTimeout(function() {
+                $projectDoor.addClass('projectDoorOpened');
+                selectedProject.addClass('enlarged');
+            }, 500)
 
             $playButton.attr('tabindex', '0');
             // $liveLink.children().attr('tabindex', '0');
