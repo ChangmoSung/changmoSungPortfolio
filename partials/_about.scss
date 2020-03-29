@@ -145,26 +145,41 @@
             align-items: center;
 
             .me {
-                height: 26rem;
-                width: 40rem;
+                height: 32rem;
+                width: 33rem;
                 transition: all 1s;
                 position: relative;
-                top: -100%;
+                transform-origin: 100% 100%;
+                transform: perspective(900px) rotateX(-90deg);
+
+                img {
+                    object-fit: cover;
+                }
     
                 &.imageShown {
-                    top: 0;
+                    transform: rotateX(0)
+                }
+
+                @include mq500 {
+                    height: 27rem;
+                    width: 28rem;
+                }
+
+                @include mq414 {
+                    width: 26rem;
+                    height: 25rem;
                 }
             }
 
             .description {
                 font-size: 2rem;
-                line-height: 2.7rem;
+                line-height: 2.8rem;
                 width: 80%;
                 margin-bottom: 3rem;
                 text-align: center;
 
                 @include mq1280 {
-                    width: 90%;
+                    width: 100%;
                 }
 
                 .emphasis {
@@ -181,11 +196,8 @@
                     }
 
                     @include mq500 {
-                        justify-content: space-between;
-                    }
-
-                    @include mq414 {
                         flex-direction: column;
+                        justify-content: space-between;
                         align-items: center;
                         margin: 3rem auto 0;
                     }
@@ -205,21 +217,22 @@
                             width: 16rem;
                         }
 
-                        @include mq790 {
-                            width: 14rem;
-                        }
-
                         @include mq500 {
-                            width: 12.5rem;
+                            width: 70%;
+                            line-height: 5.5rem;
                         }
 
                         @include mq414 {
                             width: 85%;
                         }
+
+                        @include mq375 {
+                            width: 100%;
+                        }
                     }
 
                     span {
-                        @include mq414 {
+                        @include mq500 {
                             margin-top: 3rem;
                         }
                     }
@@ -232,6 +245,7 @@
                 justify-content: space-evenly;
                 list-style: none;
                 padding: 0;
+                margin: 0;
                 width: 80%;
 
                 @include mq1280 {

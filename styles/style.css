@@ -995,25 +995,41 @@ header .welcomeDoor .rightDoor {
   align-items: center;
 }
 .about .aboutMain .aboutContainer .me {
-  height: 26rem;
-  width: 40rem;
+  height: 32rem;
+  width: 33rem;
   transition: all 1s;
   position: relative;
-  top: -100%;
+  transform-origin: 100% 100%;
+  transform: perspective(900px) rotateX(-90deg);
+}
+.about .aboutMain .aboutContainer .me img {
+  object-fit: cover;
 }
 .about .aboutMain .aboutContainer .me.imageShown {
-  top: 0;
+  transform: rotateX(0);
+}
+@media (max-width: 500px) {
+  .about .aboutMain .aboutContainer .me {
+    height: 27rem;
+    width: 28rem;
+  }
+}
+@media (max-width: 414px) {
+  .about .aboutMain .aboutContainer .me {
+    width: 26rem;
+    height: 25rem;
+  }
 }
 .about .aboutMain .aboutContainer .description {
   font-size: 2rem;
-  line-height: 2.7rem;
+  line-height: 2.8rem;
   width: 80%;
   margin-bottom: 3rem;
   text-align: center;
 }
 @media (max-width: 1280px) {
   .about .aboutMain .aboutContainer .description {
-    width: 90%;
+    width: 100%;
   }
 }
 .about .aboutMain .aboutContainer .description .emphasis {
@@ -1031,12 +1047,8 @@ header .welcomeDoor .rightDoor {
 }
 @media (max-width: 500px) {
   .about .aboutMain .aboutContainer .description .resumeContactButton {
-    justify-content: space-between;
-  }
-}
-@media (max-width: 414px) {
-  .about .aboutMain .aboutContainer .description .resumeContactButton {
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     margin: 3rem auto 0;
   }
@@ -1058,16 +1070,11 @@ header .welcomeDoor .rightDoor {
     width: 16rem;
   }
 }
-@media (max-width: 790px) {
-  .about .aboutMain .aboutContainer .description .resumeContactButton a,
-.about .aboutMain .aboutContainer .description .resumeContactButton span {
-    width: 14rem;
-  }
-}
 @media (max-width: 500px) {
   .about .aboutMain .aboutContainer .description .resumeContactButton a,
 .about .aboutMain .aboutContainer .description .resumeContactButton span {
-    width: 12.5rem;
+    width: 70%;
+    line-height: 5.5rem;
   }
 }
 @media (max-width: 414px) {
@@ -1076,7 +1083,13 @@ header .welcomeDoor .rightDoor {
     width: 85%;
   }
 }
-@media (max-width: 414px) {
+@media (max-width: 375px) {
+  .about .aboutMain .aboutContainer .description .resumeContactButton a,
+.about .aboutMain .aboutContainer .description .resumeContactButton span {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
   .about .aboutMain .aboutContainer .description .resumeContactButton span {
     margin-top: 3rem;
   }
@@ -1087,6 +1100,7 @@ header .welcomeDoor .rightDoor {
   justify-content: space-evenly;
   list-style: none;
   padding: 0;
+  margin: 0;
   width: 80%;
 }
 @media (max-width: 1280px) {
