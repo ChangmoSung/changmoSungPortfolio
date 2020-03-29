@@ -265,11 +265,6 @@ header {
   height: 100vh;
   width: 100%;
 }
-@media (orientation: landscape) {
-  header {
-    height: 100vmax;
-  }
-}
 header .treasureMap {
   background-image: url(../assets/treasureMap2.jpeg);
   width: 100%;
@@ -407,14 +402,6 @@ header .welcomeDoor .rightDoor {
 .fourthProject.selectedProject.enlarged .projectVideo,
 .fourthProject.selectedProject.enlarged .description {
   transform: scale(1);
-}
-@media (orientation: landscape) {
-  .firstProject,
-.secondProject,
-.thirdProject,
-.fourthProject {
-    height: 100vmax;
-  }
 }
 .firstProject .projectDoor,
 .secondProject .projectDoor,
@@ -1166,17 +1153,13 @@ header .welcomeDoor .rightDoor {
   transition: all 0.5s;
   padding-bottom: 5rem;
 }
-@media (orientation: landscape) {
-  .contact {
-    height: 100vmax;
-  }
-}
 .contact.contactOpened {
   transform: scale(1);
 }
 .contact .projectDoor {
   width: 100%;
   height: 100%;
+  z-index: 2;
 }
 .contact .projectDoor.projectDoorOpened .leftProjectDoor {
   transform: rotateY(90deg);
@@ -1259,6 +1242,7 @@ header .welcomeDoor .rightDoor {
   flex-direction: column;
   border: 3px solid black;
   padding: 0 2rem 2rem;
+  position: relative;
 }
 @media (max-width: 1280px) {
   .contact .contactMain {
@@ -1297,11 +1281,16 @@ header .welcomeDoor .rightDoor {
   }
 }
 .contact .contactMain .email {
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   margin: 0 0 2.5rem;
+  position: absolute;
+  right: -18rem;
+  top: calc(100% / 2 - 1.5rem);
+  transform: rotate(-90deg);
 }
 .contact .contactMain .email a {
   color: black;
+  text-decoration: none;
 }
 .contact .contactMain .formContainer {
   display: flex;

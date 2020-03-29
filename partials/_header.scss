@@ -2,10 +2,6 @@ header {
     height: 100vh;
     width: 100%;
 
-    @include landscape {
-        height: 100vmax;
-    }
-
     .treasureMap {
         background-image: url(../assets/treasureMap2.jpeg);
         width: 100%;
