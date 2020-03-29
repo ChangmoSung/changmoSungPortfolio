@@ -9,7 +9,6 @@
     background-image: url(../assets/paper.jpg);
     background-size: 100% 100%;
     transform: scale(0);
-    transform-origin: 34% 65%;
     transition: all 0.5s;
     padding-bottom: 5rem;
 
@@ -25,7 +24,6 @@
         &.projectDoorOpened .leftProjectDoor {
             transform: rotateY(90deg);
         }
-
 
         &.projectDoorOpened .rightProjectDoor {
             transform: rotateY(-90deg);
