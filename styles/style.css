@@ -408,7 +408,6 @@ header .welcomeDoor .rightDoor {
 .fourthProject .projectDoor {
   width: 100%;
   height: 100%;
-  position: absolute;
 }
 .firstProject .projectDoor.projectDoorOpened .leftProjectDoor,
 .secondProject .projectDoor.projectDoorOpened .leftProjectDoor,
@@ -1140,19 +1139,18 @@ header .welcomeDoor .rightDoor {
 
 .contact {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
-  z-index: 2;
+  min-height: 100vh;
   background-image: url(../assets/paper.jpg);
   background-size: 100% 100%;
   transform: scale(0);
   transform-origin: 34% 65%;
   transition: all 0.5s;
+  padding-bottom: 5rem;
 }
 .contact.contactOpened {
   transform: scale(1);
@@ -1160,7 +1158,6 @@ header .welcomeDoor .rightDoor {
 .contact .projectDoor {
   width: 100%;
   height: 100%;
-  position: absolute;
 }
 .contact .projectDoor.projectDoorOpened .leftProjectDoor {
   transform: rotateY(90deg);
@@ -1177,7 +1174,6 @@ header .welcomeDoor .rightDoor {
   transition: all 0.5s;
   transform-origin: 0;
   transform: perspective(1000px) rotateY(0);
-  z-index: 2;
 }
 .contact .projectDoor .rightProjectDoor {
   position: absolute;
@@ -1188,107 +1184,159 @@ header .welcomeDoor .rightDoor {
   transition: all 0.5s;
   transform-origin: 100%;
   transform: perspective(1000px) rotateY(0);
-  z-index: 2;
 }
-.contact .contactFlexContainer {
-  display: flex;
-  align-items: center;
-  position: relative;
-  width: 69.5%;
-  height: 68%;
-  background: linear-gradient(to right, #0072ff, #00c6ff);
-  border-radius: 1rem;
-  transition: all 1s;
+.contact .contactHeader {
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 2rem;
 }
-.contact .contactFlexContainer .contactText {
-  width: 50%;
-  font-size: 2.5rem;
-  line-height: 3.7rem;
-  padding: 0 5%;
-  color: white;
+.contact .contactHeader h2 {
+  border-bottom: 3px solid black;
+  border-top: 3px solid black;
+  font-size: 3.5vmax;
+  margin: 0 auto 1rem;
 }
-@media (max-width: 1200px) {
-  .contact .contactFlexContainer .contactText {
-    font-size: 2.3rem;
-    line-height: 3.1rem;
-    width: 45%;
+@media (max-width: 1280px) {
+  .contact .contactHeader h2 {
+    font-size: 4vmax;
+  }
+}
+@media (max-width: 900px) {
+  .contact .contactHeader h2 {
+    font-size: 4.5vmax;
   }
 }
 @media (max-width: 790px) {
-  .contact .contactFlexContainer .contactText {
-    align-self: flex-end;
-    width: 55%;
-    font-size: 1.9rem;
-    line-height: 2.8rem;
+  .contact .contactHeader h2 {
+    font-size: 4.2rem;
   }
 }
-@media (max-width: 590px) {
-  .contact .contactFlexContainer .contactText {
-    width: 60%;
+@media (max-width: 500px) {
+  .contact .contactHeader h2 {
+    font-size: 3.7rem;
   }
 }
-@media (max-width: 435px) {
-  .contact .contactFlexContainer .contactText {
-    width: 90%;
+.contact .contactHeader p {
+  font-size: 1.5vmax;
+  margin: 0 0 1rem;
+}
+@media (max-width: 1280px) {
+  .contact .contactHeader p {
+    font-size: 1.8vmax;
   }
 }
-.contact .contactFlexContainer form {
+@media (max-width: 900px) {
+  .contact .contactHeader p {
+    font-size: 2.1vmax;
+  }
+}
+@media (max-width: 790px) {
+  .contact .contactHeader p {
+    font-size: 1.8rem;
+  }
+}
+.contact .contactMain {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  border: 3px solid black;
+  padding: 0 2rem 2rem;
+}
+@media (max-width: 1280px) {
+  .contact .contactMain {
+    padding: 0 2rem 2rem;
+  }
+}
+.contact .contactMain h3 {
+  font-size: 4.5vmax;
+  text-align: center;
+  margin: 0 auto;
+  text-transform: uppercase;
+}
+@media (max-width: 1280px) {
+  .contact .contactMain h3 {
+    font-size: 5.5vmax;
+  }
+}
+@media (max-width: 900px) {
+  .contact .contactMain h3 {
+    font-size: 6vmax;
+  }
+}
+@media (max-width: 790px) {
+  .contact .contactMain h3 {
+    font-size: 6.3rem;
+  }
+}
+@media (max-width: 500px) {
+  .contact .contactMain h3 {
+    font-size: 5rem;
+  }
+}
+@media (max-width: 375px) {
+  .contact .contactMain h3 {
+    font-size: 4.8rem;
+  }
+}
+.contact .contactMain .formContainer {
+  display: flex;
+  flex-direction: column;
+}
+.contact .contactMain .formContainer .message {
+  font-size: 2rem;
+  line-height: 2.7rem;
+  margin-bottom: 2.5rem;
+}
+.contact .contactMain .formContainer .message p {
+  margin: 0;
+}
+.contact .contactMain .formContainer form {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  margin: 0 auto;
   width: 50%;
-  padding-right: 5%;
 }
-@media (max-width: 1200px) {
-  .contact .contactFlexContainer form {
-    width: 55%;
+@media (max-width: 1280px) {
+  .contact .contactMain .formContainer form {
+    width: 70%;
+  }
+}
+@media (max-width: 900px) {
+  .contact .contactMain .formContainer form {
+    width: 80%;
   }
 }
 @media (max-width: 790px) {
-  .contact .contactFlexContainer form {
-    width: 85%;
-    padding-right: 0;
+  .contact .contactMain .formContainer form {
+    width: 95%;
   }
 }
-.contact .contactFlexContainer form input {
+.contact .contactMain .formContainer form input {
   width: 100%;
-  height: 4rem;
-  font-size: 1.7rem;
-  margin-bottom: 4rem;
-  border-radius: 1rem;
-}
-@media (max-width: 790px) {
-  .contact .contactFlexContainer form input {
-    margin-bottom: 2.5rem;
-  }
-}
-.contact .contactFlexContainer form textarea {
-  width: 100%;
-  height: 22rem;
-  font-size: 1.7rem;
-  padding-top: 1rem;
-  margin-bottom: 4rem;
-  border-radius: 1rem;
-}
-@media (max-width: 790px) {
-  .contact .contactFlexContainer form textarea {
-    height: 15rem;
-    margin-bottom: 2.5rem;
-  }
-}
-.contact .contactFlexContainer form button {
-  width: 15rem;
-  height: 4.5rem;
-  border-radius: 1rem;
-  background: #26de81;
+  height: 4.3rem;
+  font-size: 2.2rem;
+  margin-bottom: 3rem;
   border: none;
-  font-size: 2.1rem;
-  transition: all 0.4s;
-  color: white;
-  border: 3px solid white;
-  cursor: pointer;
+  background: none;
+  box-shadow: 0 0 0.7rem 0.5rem black;
+  padding: 1rem;
 }
-.contact .contactFlexContainer form button:hover {
-  transform: scale(1.2);
+.contact .contactMain .formContainer form textarea {
+  width: 100%;
+  height: 19rem;
+  font-size: 2.2rem;
+  margin-bottom: 3rem;
+  border: none;
+  background: none;
+  box-shadow: 0 0 0.7rem 0.5rem black;
+  padding: 1rem;
+}
+.contact .contactMain .formContainer form button {
+  text-transform: uppercase;
+  width: 20rem;
+  font-size: 2rem;
+  line-height: 5rem;
+  border: 2px solid black;
+  box-shadow: 0 0 0.7rem 0.5rem black inset;
+  background: none;
 }

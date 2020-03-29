@@ -1,18 +1,17 @@
 .contact {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
-    z-index: 2;
+    min-height: 100vh;
     background-image: url(../assets/paper.jpg);
     background-size: 100% 100%;
     transform: scale(0);
     transform-origin: 34% 65%;
     transition: all 0.5s;
+    padding-bottom: 5rem;
 
     &.contactOpened {
         transform: scale(1);
@@ -21,7 +20,6 @@
     .projectDoor {
         width: 100%;
         height: 100%;
-        position: absolute;
 
         &.projectDoorOpened .leftProjectDoor {
             transform: rotateY(90deg);
@@ -41,7 +39,6 @@
             transition: all 0.5s;
             transform-origin: 0;
             transform: perspective(1000px) rotateY(0);
-            z-index: 2;
         }
 
         .rightProjectDoor {
@@ -53,106 +50,155 @@
             transition: all 0.5s;
             transform-origin: 100%;
             transform: perspective(1000px) rotateY(0);
-            z-index: 2;
         }
     }
 
-    .contactFlexContainer {
-        display: flex;
-        align-items: center;
-        position: relative;
-        width: 69.5%;
-        height: 68%;
-        background: linear-gradient(to right, #0072ff, #00c6ff); 
-        border-radius: 1rem;
-        transition: all 1s;
+    .contactHeader {
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: 2rem;
 
-        .contactText {
-            width: 50%;
-            font-size: 2.5rem;
-            line-height: 3.7rem;
-            padding: 0 5%;
-            color: white;
+        h2 {
+            border-bottom: 3px solid black;
+            border-top: 3px solid black;
+            font-size: 3.5vmax;
+            margin: 0 auto 1rem;
 
-            @include mq1200 {
-                font-size: 2.3rem;
-                line-height: 3.1rem;
-                width: 45%;
+            @include mq1280 {
+                font-size: 4vmax;
+            }
+
+            @include mq900 {
+                font-size: 4.5vmax;
             }
 
             @include mq790 {
-                align-self: flex-end;
-                width: 55%;
-                font-size: 1.9rem;
-                line-height: 2.8rem;
+                font-size: 4.2rem;
             }
 
-            @include mq590 {
-                width: 60%;
-            }
-
-            @include mq435 {
-                width: 90%;
+            @include mq500 {
+                font-size: 3.7rem;
             }
         }
 
-        form {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 50%;
-            padding-right: 5%;
+        p {
+            font-size: 1.5vmax;
+            margin: 0 0 1rem;
 
-            @include mq1200 {
-                width: 55%;
+            @include mq1280 {
+                font-size: 1.8vmax;
+            }
+
+            @include mq900 {
+                font-size: 2.1vmax;
             }
 
             @include mq790 {
-                width: 85%;
-                padding-right: 0;
+                font-size: 1.8rem;
+            }
+        }
+    }
+    
+    .contactMain {
+        display: flex;
+        flex-direction: column;
+        border: 3px solid black;
+        padding: 0 2rem 2rem;
+
+        @include mq1280 {
+            padding: 0 2rem 2rem;
+        }
+
+        h3 {
+            font-size: 4.5vmax;
+            text-align: center;
+            margin: 0 auto;
+            text-transform: uppercase;
+
+            @include mq1280 {
+                font-size: 5.5vmax;
             }
 
-            input {
-                width: 100%;
-                height: 4rem;
-                font-size: 1.7rem;
-                margin-bottom: 4rem;
-                border-radius: 1rem;
+            @include mq900 {
+                font-size: 6vmax;
+            }
 
-                @include mq790 {
-                    margin-bottom: 2.5rem;
+            @include mq790 {
+                font-size: 6.3rem;
+            }
+
+            @include mq500 {
+                font-size: 5rem;
+            }
+
+            @include mq375 {
+                font-size: 4.8rem;
+            }
+        }
+
+        .formContainer {
+            display: flex;
+            flex-direction: column;
+
+            .message {
+                font-size: 2rem;
+                line-height: 2.7rem;
+                margin-bottom: 2.5rem;
+
+                p {
+                    margin: 0;
                 }
             }
-    
-            textarea {
-                width: 100%;
-                height: 22rem;
-                font-size: 1.7rem;
-                padding-top: 1rem;
-                margin-bottom: 4rem;
-                border-radius: 1rem;
+
+            form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 0 auto;
+                width: 50%;
+
+                @include mq1280 {
+                    width: 70%;
+                }
+
+                @include mq900 {
+                    width: 80%;
+                }
 
                 @include mq790 {
-                    height: 15rem;
-                    margin-bottom: 2.5rem;
+                    width: 95%;
                 }
-            }
-    
-            button {
-                width: 15rem;
-                height: 4.5rem;
-                border-radius: 1rem;
-                background: #26de81;
-                border: none;
-                font-size: 2.1rem;
-                transition: all 0.4s;
-                color: white;
-                border: 3px solid white;
-                cursor: pointer;
 
-                &:hover {
-                    transform: scale(1.2);
+                input {
+                    width: 100%;
+                    height: 4.3rem;
+                    font-size: 2.2rem;
+                    margin-bottom: 3rem;
+                    border: none;
+                    background: none;
+                    box-shadow: 0 0 0.7rem 0.5rem black;
+                    padding: 1rem;
+                }
+
+                textarea {
+                    width: 100%;
+                    height: 19rem;
+                    font-size: 2.2rem;
+                    margin-bottom: 3rem;
+                    border: none;
+                    background: none;
+                    box-shadow: 0 0 0.7rem 0.5rem black;
+                    padding: 1rem;
+                }
+
+                button {
+                    text-transform: uppercase;
+                    width: 20rem;
+                    font-size: 2rem;
+                    line-height: 5rem;
+                    border: 2px solid black;
+                    box-shadow: 0 0 0.7rem 0.5rem black inset;
+                    background: none;
                 }
             }
         }

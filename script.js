@@ -13,15 +13,13 @@ portfolio.init = function () {
     const $projects = $('.project');
     let projectVideo;
     let video;
+    const $resumeLink = $('.resumeLink span');
     const $githubLink = $('.githubLink');
     const $liveLink = $('.liveLink');
-    const $resumeLink = $('.resumeLink span');
     const $aboutPageContactLink = $('.aboutPageContactLink');
     const $contactSubmitButton = $('.contactSubmitButton');
     const $formInput = $('form input');
     const $formTextarea = $('form textarea');
-    let videoPlaying = false;
-    const $header = $('header');
     const $about = $('.about');
     const $contact = $('.contact');
     let selectedProject;
@@ -34,7 +32,7 @@ portfolio.init = function () {
     let second = currentTime.getSeconds();
     const minute = currentTime.getMinutes();
     const hour = currentTime.getHours();
-    const day = currentTime.getDay();
+    const day = currentTime.getDate();
     const month = currentTime.getMonth();
     const monthArray = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     const year = currentTime.getFullYear();
