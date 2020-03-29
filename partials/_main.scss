@@ -225,7 +225,7 @@
 
                     @include mq1280 {
                         font-size: 1.6rem;
-                        line-height: 2.3rem;
+                        line-height: 2.4rem;
                     }
                 }
         
@@ -235,11 +235,23 @@
                     justify-content: space-around;
                     list-style: none;
                     padding: 0;
-                    margin: 1rem 0;
-        
-                    li {
-                        width: 8vmax;
-                        height: 8vmax;
+                    margin: 1rem 0 3rem;
+                    font-size: 3.5vmax;
+
+                    @include mq1280 {
+                        font-size: 7rem;
+                    }
+
+                    @include mq790 {
+                        font-size: 6.5rem;
+                    }
+
+                    @include mq500 {
+                        font-size: 6rem;
+                    }
+
+                    @include mq375 {
+                        font-size: 5.5rem;
                     }
                 }
         
@@ -247,39 +259,48 @@
                     display: flex;
                     justify-content: space-around;
 
-                    .githubLink {
-                        width: 25%;
-                        height: 70%;
-                        background: none;
-                        box-shadow: inset 0px 0px 0.4vmax 0.2vmax #000;
-        
-                        a {
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            color: #000;
-                            text-decoration: none;
-        
-                            img {
-                                width: 4.5vmax;
-                                height: 3.4vmax;
-                            }
-                        }
+                    @include mq500 {
+                        justify-content: space-between;
                     }
 
-                    .liveLink {
+                    button {
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        text-decoration: none;
                         text-transform: uppercase;
                         width: 11.5vmax;
                         font-size: 1.55vmax;
                         line-height: 3.1vmax;
+                        border: 2px solid black;
+                        box-shadow: 0 0 0.7rem 0.5rem black inset;
+                        background: none;
+
+                        @include mq1280 {
+                            font-size: 2.5rem;
+                            line-height: 5rem;
+                            width: 18rem;
+                        }
+
+                        @include mq790 {
+                            width: 15rem;
+                            line-height: 4.5rem;
+                            font-size: 2.1rem;
+                        }
+
+                        @include mq414 {
+                            width: 13rem;
+                            font-size: 2rem;
+                            line-height: 4rem;
+                        }
+
+                        @include mq375 {
+                            width: 12rem;
+                        }
             
                         a {
                             text-decoration: none;
                             width: 100%;
+                            color: black;
                         }
                     }
                 }

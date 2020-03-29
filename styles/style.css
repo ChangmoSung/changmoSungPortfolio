@@ -723,7 +723,7 @@ header .welcomeDoor .rightDoor {
 .thirdProject .contentMain .videoDescription .description .aboutProject p,
 .fourthProject .contentMain .videoDescription .description .aboutProject p {
     font-size: 1.6rem;
-    line-height: 2.3rem;
+    line-height: 2.4rem;
   }
 }
 .firstProject .contentMain .videoDescription .description .skill,
@@ -735,14 +735,40 @@ header .welcomeDoor .rightDoor {
   justify-content: space-around;
   list-style: none;
   padding: 0;
-  margin: 1rem 0;
+  margin: 1rem 0 3rem;
+  font-size: 3.5vmax;
 }
-.firstProject .contentMain .videoDescription .description .skill li,
-.secondProject .contentMain .videoDescription .description .skill li,
-.thirdProject .contentMain .videoDescription .description .skill li,
-.fourthProject .contentMain .videoDescription .description .skill li {
-  width: 8vmax;
-  height: 8vmax;
+@media (max-width: 1280px) {
+  .firstProject .contentMain .videoDescription .description .skill,
+.secondProject .contentMain .videoDescription .description .skill,
+.thirdProject .contentMain .videoDescription .description .skill,
+.fourthProject .contentMain .videoDescription .description .skill {
+    font-size: 7rem;
+  }
+}
+@media (max-width: 790px) {
+  .firstProject .contentMain .videoDescription .description .skill,
+.secondProject .contentMain .videoDescription .description .skill,
+.thirdProject .contentMain .videoDescription .description .skill,
+.fourthProject .contentMain .videoDescription .description .skill {
+    font-size: 6.5rem;
+  }
+}
+@media (max-width: 500px) {
+  .firstProject .contentMain .videoDescription .description .skill,
+.secondProject .contentMain .videoDescription .description .skill,
+.thirdProject .contentMain .videoDescription .description .skill,
+.fourthProject .contentMain .videoDescription .description .skill {
+    font-size: 6rem;
+  }
+}
+@media (max-width: 375px) {
+  .firstProject .contentMain .videoDescription .description .skill,
+.secondProject .contentMain .videoDescription .description .skill,
+.thirdProject .contentMain .videoDescription .description .skill,
+.fourthProject .contentMain .videoDescription .description .skill {
+    font-size: 5.5rem;
+  }
 }
 .firstProject .contentMain .videoDescription .description .links,
 .secondProject .contentMain .videoDescription .description .links,
@@ -751,51 +777,74 @@ header .welcomeDoor .rightDoor {
   display: flex;
   justify-content: space-around;
 }
-.firstProject .contentMain .videoDescription .description .links .githubLink,
-.secondProject .contentMain .videoDescription .description .links .githubLink,
-.thirdProject .contentMain .videoDescription .description .links .githubLink,
-.fourthProject .contentMain .videoDescription .description .links .githubLink {
-  width: 25%;
-  height: 70%;
-  background: none;
-  box-shadow: inset 0px 0px 0.4vmax 0.2vmax #000;
+@media (max-width: 500px) {
+  .firstProject .contentMain .videoDescription .description .links,
+.secondProject .contentMain .videoDescription .description .links,
+.thirdProject .contentMain .videoDescription .description .links,
+.fourthProject .contentMain .videoDescription .description .links {
+    justify-content: space-between;
+  }
 }
-.firstProject .contentMain .videoDescription .description .links .githubLink a,
-.secondProject .contentMain .videoDescription .description .links .githubLink a,
-.thirdProject .contentMain .videoDescription .description .links .githubLink a,
-.fourthProject .contentMain .videoDescription .description .links .githubLink a {
+.firstProject .contentMain .videoDescription .description .links button,
+.secondProject .contentMain .videoDescription .description .links button,
+.thirdProject .contentMain .videoDescription .description .links button,
+.fourthProject .contentMain .videoDescription .description .links button {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #000;
-  text-decoration: none;
-}
-.firstProject .contentMain .videoDescription .description .links .githubLink a img,
-.secondProject .contentMain .videoDescription .description .links .githubLink a img,
-.thirdProject .contentMain .videoDescription .description .links .githubLink a img,
-.fourthProject .contentMain .videoDescription .description .links .githubLink a img {
-  width: 4.5vmax;
-  height: 3.4vmax;
-}
-.firstProject .contentMain .videoDescription .description .links .liveLink,
-.secondProject .contentMain .videoDescription .description .links .liveLink,
-.thirdProject .contentMain .videoDescription .description .links .liveLink,
-.fourthProject .contentMain .videoDescription .description .links .liveLink {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
   text-transform: uppercase;
   width: 11.5vmax;
   font-size: 1.55vmax;
   line-height: 3.1vmax;
+  border: 2px solid black;
+  box-shadow: 0 0 0.7rem 0.5rem black inset;
+  background: none;
 }
-.firstProject .contentMain .videoDescription .description .links .liveLink a,
-.secondProject .contentMain .videoDescription .description .links .liveLink a,
-.thirdProject .contentMain .videoDescription .description .links .liveLink a,
-.fourthProject .contentMain .videoDescription .description .links .liveLink a {
+@media (max-width: 1280px) {
+  .firstProject .contentMain .videoDescription .description .links button,
+.secondProject .contentMain .videoDescription .description .links button,
+.thirdProject .contentMain .videoDescription .description .links button,
+.fourthProject .contentMain .videoDescription .description .links button {
+    font-size: 2.5rem;
+    line-height: 5rem;
+    width: 18rem;
+  }
+}
+@media (max-width: 790px) {
+  .firstProject .contentMain .videoDescription .description .links button,
+.secondProject .contentMain .videoDescription .description .links button,
+.thirdProject .contentMain .videoDescription .description .links button,
+.fourthProject .contentMain .videoDescription .description .links button {
+    width: 15rem;
+    line-height: 4.5rem;
+    font-size: 2.1rem;
+  }
+}
+@media (max-width: 414px) {
+  .firstProject .contentMain .videoDescription .description .links button,
+.secondProject .contentMain .videoDescription .description .links button,
+.thirdProject .contentMain .videoDescription .description .links button,
+.fourthProject .contentMain .videoDescription .description .links button {
+    width: 13rem;
+    font-size: 2rem;
+    line-height: 4rem;
+  }
+}
+@media (max-width: 375px) {
+  .firstProject .contentMain .videoDescription .description .links button,
+.secondProject .contentMain .videoDescription .description .links button,
+.thirdProject .contentMain .videoDescription .description .links button,
+.fourthProject .contentMain .videoDescription .description .links button {
+    width: 12rem;
+  }
+}
+.firstProject .contentMain .videoDescription .description .links button a,
+.secondProject .contentMain .videoDescription .description .links button a,
+.thirdProject .contentMain .videoDescription .description .links button a,
+.fourthProject .contentMain .videoDescription .description .links button a {
   text-decoration: none;
   width: 100%;
+  color: black;
 }
 
 .firstProject {
