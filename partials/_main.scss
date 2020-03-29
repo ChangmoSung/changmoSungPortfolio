@@ -27,6 +27,10 @@
         }
     }
 
+    @include landscape {
+        height: 100vmax;
+    }
+
     .projectDoor {
         width: 100%;
         height: 100%;

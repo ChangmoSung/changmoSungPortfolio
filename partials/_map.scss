@@ -14,9 +14,4 @@
     &.openerShown {
         transform: translateY(10vmax);
     }
-
-    &:hover,
-    &:focus {
-        // transform: scale(1.1);
-    }
 }

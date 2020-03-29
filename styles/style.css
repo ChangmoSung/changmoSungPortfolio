@@ -260,9 +260,15 @@ html video {
 .mapOpener.openerShown {
   transform: translateY(10vmax);
 }
+
 header {
   height: 100vh;
   width: 100%;
+}
+@media (orientation: landscape) {
+  header {
+    height: 100vmax;
+  }
 }
 header .treasureMap {
   background-image: url(../assets/treasureMap2.jpeg);
@@ -401,6 +407,14 @@ header .welcomeDoor .rightDoor {
 .fourthProject.selectedProject.enlarged .projectVideo,
 .fourthProject.selectedProject.enlarged .description {
   transform: scale(1);
+}
+@media (orientation: landscape) {
+  .firstProject,
+.secondProject,
+.thirdProject,
+.fourthProject {
+    height: 100vmax;
+  }
 }
 .firstProject .projectDoor,
 .secondProject .projectDoor,
@@ -1152,6 +1166,11 @@ header .welcomeDoor .rightDoor {
   transition: all 0.5s;
   padding-bottom: 5rem;
 }
+@media (orientation: landscape) {
+  .contact {
+    height: 100vmax;
+  }
+}
 .contact.contactOpened {
   transform: scale(1);
 }
@@ -1276,6 +1295,13 @@ header .welcomeDoor .rightDoor {
   .contact .contactMain h3 {
     font-size: 4.8rem;
   }
+}
+.contact .contactMain .email {
+  font-size: 2.5rem;
+  margin: 0 0 2.5rem;
+}
+.contact .contactMain .email a {
+  color: black;
 }
 .contact .contactMain .formContainer {
   display: flex;
