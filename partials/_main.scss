@@ -234,7 +234,35 @@
                     list-style: none;
                     padding: 0;
                     margin: 1rem 0 3rem;
-                    font-size: 3.5vmax;
+                    font-size: 4.2vmax;
+
+                    @include mq1280 {
+                        font-size: 7rem;
+                    }
+
+                    @include mq500 {
+                        font-size: 5rem;
+                    }
+
+                    li {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+
+                        span {
+                            font-size: 1.3vmax;
+                            margin-top: 1rem;
+
+                            @include mq1280 {
+                                font-size: 2rem;
+                            }
+
+                            @include mq500 {
+                                font-size: 1.8rem;
+                            }
+                        }
+                    }
 
                     @include mq1280 {
                         font-size: 7rem;

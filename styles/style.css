@@ -735,7 +735,55 @@ header .welcomeDoor .rightDoor {
   list-style: none;
   padding: 0;
   margin: 1rem 0 3rem;
-  font-size: 3.5vmax;
+  font-size: 4.2vmax;
+}
+@media (max-width: 1280px) {
+  .firstProject .contentMain .videoDescription .description .skill,
+.secondProject .contentMain .videoDescription .description .skill,
+.thirdProject .contentMain .videoDescription .description .skill,
+.fourthProject .contentMain .videoDescription .description .skill {
+    font-size: 7rem;
+  }
+}
+@media (max-width: 500px) {
+  .firstProject .contentMain .videoDescription .description .skill,
+.secondProject .contentMain .videoDescription .description .skill,
+.thirdProject .contentMain .videoDescription .description .skill,
+.fourthProject .contentMain .videoDescription .description .skill {
+    font-size: 5rem;
+  }
+}
+.firstProject .contentMain .videoDescription .description .skill li,
+.secondProject .contentMain .videoDescription .description .skill li,
+.thirdProject .contentMain .videoDescription .description .skill li,
+.fourthProject .contentMain .videoDescription .description .skill li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.firstProject .contentMain .videoDescription .description .skill li span,
+.secondProject .contentMain .videoDescription .description .skill li span,
+.thirdProject .contentMain .videoDescription .description .skill li span,
+.fourthProject .contentMain .videoDescription .description .skill li span {
+  font-size: 1.3vmax;
+  margin-top: 1rem;
+}
+@media (max-width: 1280px) {
+  .firstProject .contentMain .videoDescription .description .skill li span,
+.secondProject .contentMain .videoDescription .description .skill li span,
+.thirdProject .contentMain .videoDescription .description .skill li span,
+.fourthProject .contentMain .videoDescription .description .skill li span {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 500px) {
+  .firstProject .contentMain .videoDescription .description .skill li span,
+.secondProject .contentMain .videoDescription .description .skill li span,
+.thirdProject .contentMain .videoDescription .description .skill li span,
+.fourthProject .contentMain .videoDescription .description .skill li span {
+    font-size: 1.8rem;
+  }
 }
 @media (max-width: 1280px) {
   .firstProject .contentMain .videoDescription .description .skill,
@@ -1024,12 +1072,20 @@ header .welcomeDoor .rightDoor {
   font-size: 2rem;
   line-height: 2.8rem;
   width: 80%;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
   text-align: center;
+}
+.about .aboutMain .aboutContainer .description p {
+  margin: 1rem 0;
 }
 @media (max-width: 1280px) {
   .about .aboutMain .aboutContainer .description {
     width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .about .aboutMain .aboutContainer .description {
+    margin-bottom: 4rem;
   }
 }
 .about .aboutMain .aboutContainer .description .emphasis {
@@ -1101,30 +1157,31 @@ header .welcomeDoor .rightDoor {
   list-style: none;
   padding: 0;
   margin: 0;
-  width: 80%;
+  width: 75%;
 }
 @media (max-width: 1280px) {
   .about .aboutMain .aboutContainer .skillList {
     width: 95%;
   }
 }
+@media (max-width: 790px) {
+  .about .aboutMain .aboutContainer .skillList {
+    width: 100%;
+  }
+}
 .about .aboutMain .aboutContainer .skillList li {
-  width: 20%;
-  font-size: 5rem;
+  width: 25%;
+  font-size: 7rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 3rem;
 }
-@media (max-width: 900px) {
-  .about .aboutMain .aboutContainer .skillList li {
-    width: 25%;
-  }
-}
 @media (max-width: 790px) {
   .about .aboutMain .aboutContainer .skillList li {
     width: 33%;
+    font-zie: 5rem;
   }
 }
 @media (max-width: 500px) {
@@ -1136,9 +1193,9 @@ header .welcomeDoor .rightDoor {
   font-size: 2rem;
   margin-top: 1rem;
 }
-@media (max-width: 414px) {
+@media (max-width: 790px) {
   .about .aboutMain .aboutContainer .skillList li span {
-    margin: 0;
+    font-size: 1.8rem;
   }
 }
 

@@ -175,11 +175,19 @@
                 font-size: 2rem;
                 line-height: 2.8rem;
                 width: 80%;
-                margin-bottom: 3rem;
+                margin-bottom: 5rem;
                 text-align: center;
+
+                p {
+                    margin: 1rem 0;
+                }
 
                 @include mq1280 {
                     width: 100%;
+                }
+
+                @include mq500 {
+                    margin-bottom: 4rem;
                 }
 
                 .emphasis {
@@ -246,27 +254,28 @@
                 list-style: none;
                 padding: 0;
                 margin: 0;
-                width: 80%;
+                width: 75%;
 
                 @include mq1280 {
                     width: 95%;
                 }
 
+                @include mq790 {
+                    width: 100%;
+                }
+
                 li {
-                    width: 20%;
-                    font-size: 5rem;
+                    width: 25%;
+                    font-size: 7rem;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
                     margin-bottom: 3rem;
 
-                    @include mq900 {
-                        width: 25%;
-                    }
-
                     @include mq790 {
                         width: 33%;
+                        font-zie: 5rem;
                     }
 
                     @include mq500 {
@@ -277,8 +286,8 @@
                         font-size: 2rem;
                         margin-top: 1rem;
 
-                        @include mq414 {
-                            margin: 0;
+                        @include mq790 {
+                            font-size: 1.8rem;
                         }
                     }
                 }
