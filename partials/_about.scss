@@ -19,7 +19,6 @@
     .projectDoor {
         width: 100%;
         height: 100%;
-        position: absolute;
 
         &.projectDoorOpened .leftProjectDoor {
             transform: rotateY(90deg);
@@ -79,7 +78,15 @@
             }
 
             @include mq500 {
-                font-size: 3.7rem;
+                font-size: 3.8rem;
+            }
+
+            @include mq414 {
+                font-size: 3.3rem;
+            }
+
+            @include mq375 {
+                font-size: 3rem;
             }
         }
 
@@ -113,29 +120,25 @@
         }
 
         h3 {
-            font-size: 4.5vmax;
+            font-size: 5.7vmax;
             text-align: center;
             margin: 0 auto;
             text-transform: uppercase;
 
             @include mq1280 {
-                font-size: 5.5vmax;
-            }
-
-            @include mq900 {
-                font-size: 6vmax;
+                font-size: 6.8vmax;
             }
 
             @include mq790 {
-                font-size: 6.3rem;
+                font-size: 6.1rem;
             }
 
-            @include mq500 {
-                font-size: 5rem;
+            @include mq414 {
+                font-size: 5.5rem;
             }
 
             @include mq375 {
-                font-size: 4.8rem;
+                font-size: 5rem;
             }
         }
 
@@ -145,22 +148,23 @@
             align-items: center;
 
             .me {
-                height: 32rem;
-                width: 33rem;
+                height: 20vmax;
+                width: 26vmax;
                 transition: all 1s;
                 position: relative;
                 transform-origin: 100% 100%;
                 transform: perspective(900px) rotateX(-90deg);
-
-                img {
-                    object-fit: cover;
-                }
     
                 &.imageShown {
                     transform: rotateX(0)
                 }
 
-                @include mq500 {
+                @include mq1280 {
+                    width: 30vmax;
+                    height: 25.5vmax;
+                }
+
+                @include mq790 {
                     height: 27rem;
                     width: 28rem;
                 }
@@ -175,8 +179,11 @@
                 font-size: 2rem;
                 line-height: 2.8rem;
                 width: 80%;
-                margin-bottom: 5rem;
-                text-align: center;
+                margin: 2rem 0 5rem;
+
+                p:first-child {
+                    text-align: center;
+                }
 
                 p {
                     margin: 1rem 0;
@@ -186,8 +193,8 @@
                     width: 100%;
                 }
 
-                @include mq500 {
-                    margin-bottom: 4rem;
+                @include mq790 {
+                    margin: 0 0 4rem;
                 }
 
                 .emphasis {
@@ -213,6 +220,7 @@
                     a,
                     span {
                         text-transform: uppercase;
+                        text-align: center;
                         width: 18rem;
                         line-height: 5rem;
                         text-decoration: none;

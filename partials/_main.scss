@@ -168,7 +168,6 @@
                 align-items: center;
                 height: 31.4vmax;
                 width: 50vmax;
-                // transform: scale(0);
                 transition: all 0.6s;
 
                 @include mq1280 {
@@ -200,7 +199,6 @@
                 margin-left: 2rem;
                 display: flex;
                 flex-direction: column;
-                // transform: scale(0);
                 transition: all 0.6s;
 
                 @include mq1280 {

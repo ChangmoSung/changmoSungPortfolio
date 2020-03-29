@@ -99,17 +99,17 @@ portfolio.init = function () {
 
     $cards.on('click keypress', function (e) {
         if (e.keyCode === 13 || typeof e.keyCode !== 'number') {
-            // const cardCoords = this.getBoundingClientRect();
-            // const coords = {
-            //     top: cardCoords.top,
-            //     left: cardCoords.left,
-            // }
+            const cardCoords = this.getBoundingClientRect();
+            const coords = {
+                top: cardCoords.top,
+                left: cardCoords.left,
+            }
 
             // ----------- non project list starts here -------------- //
             const selectedList = $(this).attr('data-selected');
             if (selectedList === '.about') {
                 $about.addClass('aboutOpened');
-                // $about.css('transform-origin', `${coords.left}px ${coords.top}px`);
+                $about.css('transform-origin', `${coords.left}px ${coords.top}px`);
 
                 setTimeout(function () {
                     $projectDoor.addClass('projectDoorOpened');
@@ -123,7 +123,7 @@ portfolio.init = function () {
 
             } else {
                 $contact.addClass('contactOpened');
-                // $contact.css('transform-origin', `${coords.left}px ${coords.top}px`);
+                $contact.css('transform-origin', `${coords.left}px ${coords.top}px`);
                 setTimeout(function() {
                     $contactContainer.addClass('contactShown');
 
@@ -140,18 +140,18 @@ portfolio.init = function () {
     // ------------------------------- //
     $projects.on('click keypress', function(e) {
         if(e.keyCode === 13 || typeof e.keyCode !== 'number') {
-            // const videoCoords = this.getBoundingClientRect();
+            const videoCoords = this.getBoundingClientRect();
 
-            // const coords = {
-            //     top: videoCoords.top,
-            //     left: videoCoords.left,
-            // }
+            const coords = {
+                top: videoCoords.top,
+                left: videoCoords.left,
+            }
 
             // -------- current project selected here ------- //
             const project = $(this).attr('data-selected');
             selectedProject = $(project);
 
-            // selectedProject.css('transform-origin', `${coords.left}px ${coords.top}px`);
+            selectedProject.css('transform-origin', `${coords.left}px ${coords.top}px`);
             selectedProject.addClass('selectedProject');
 
             setTimeout(function () {
