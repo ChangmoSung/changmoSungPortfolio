@@ -14,10 +14,6 @@ portfolio.init = function () {
     let projectVideo;
     let video;
     const $resumeLink = $('.resumeLink span');
-    const $githubLink = $('.githubLink');
-    const $liveLink = $('.liveLink');
-    const $aboutPageContactLink = $('.aboutPageContactLink');
-    const $contactSubmitButton = $('.contactSubmitButton');
     const $formInput = $('form input');
     const $formTextarea = $('form textarea');
     const $about = $('.about');
@@ -34,7 +30,7 @@ portfolio.init = function () {
     const hour = currentTime.getHours();
     const day = currentTime.getDate();
     const month = currentTime.getMonth();
-    const monthArray = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const monthArray = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
     const year = currentTime.getFullYear();
     
     $date.text(`${year}.${monthArray[month]}.${day}`);
@@ -64,9 +60,6 @@ portfolio.init = function () {
             $resumeLink.attr('tabindex', '-1');
             $formInput.attr('tabindex', '-1');
             $formTextarea.attr('tabindex', '-1');
-
-            // $aboutPageContactLink.attr('tabindex', '-1');
-            // $contactSubmitButton.attr('tabindex', '-1');
             
             $mapOpener.removeClass('openerShown');
             
@@ -86,9 +79,6 @@ portfolio.init = function () {
 
                 // // --------to prevent selectedProject from getting class again in the above code-------- //
                 selectedProject = '';
-
-                // $liveLink.attr('tabindex', '-1');
-                // $githubLink.attr('tabindex', '-1');
             }
 
             setTimeout(function() {
@@ -109,20 +99,17 @@ portfolio.init = function () {
 
     $cards.on('click keypress', function (e) {
         if (e.keyCode === 13 || typeof e.keyCode !== 'number') {
-            $cards.attr('tabindex', '-1');
-            $projects.attr('tabindex', '-1');
-            // $liveLink.attr('tabindex', '-1');
-            // $githubLink.attr('tabindex', '-1');
-
-            $mapOpener.addClass('openerShown');
+            // const cardCoords = this.getBoundingClientRect();
+            // const coords = {
+            //     top: cardCoords.top,
+            //     left: cardCoords.left,
+            // }
 
             // ----------- non project list starts here -------------- //
             const selectedList = $(this).attr('data-selected');
             if (selectedList === '.about') {
-                $resumeLink.attr('tabindex', '0');
-                // $contactSubmitButton.attr('tabindex', '-1');
-                // $aboutPageContactLink.attr('tabindex', '0');
                 $about.addClass('aboutOpened');
+                // $about.css('transform-origin', `${coords.left}px ${coords.top}px`);
 
                 setTimeout(function () {
                     $projectDoor.addClass('projectDoorOpened');
@@ -135,18 +122,16 @@ portfolio.init = function () {
                 }, 500);
 
             } else {
-                $formInput.attr('tabindex', '0');
-                $formTextarea.attr('tabindex', '0');
-                // $contactSubmitButton.attr('tabindex', '0');
-                // $aboutPageContactLink.attr('tabindex', '-1');
-
                 $contact.addClass('contactOpened');
+                // $contact.css('transform-origin', `${coords.left}px ${coords.top}px`);
                 setTimeout(function() {
                     $contactContainer.addClass('contactShown');
 
                     $projectDoor.addClass('projectDoorOpened');
                 }, 500)
             }
+
+            $mapOpener.addClass('openerShown');
         }
     })
 
@@ -155,32 +140,30 @@ portfolio.init = function () {
     // ------------------------------- //
     $projects.on('click keypress', function(e) {
         if(e.keyCode === 13 || typeof e.keyCode !== 'number') {
-            projectVideo = $(this).attr('data-project');
-            video = $(`video[data-project=${projectVideo}]`);
-            video[0].play();
+            // const videoCoords = this.getBoundingClientRect();
 
-            $cards.attr('tabindex', '-1');
-            $projects.attr('tabindex', '-1');
-            $resumeLink.attr('tabindex', '-1');
-            // $contactSubmitButton.attr('tabindex', '-1');
-            // $aboutPageContactLink.attr('tabindex', '-1');
-
-            $mapOpener.addClass('openerShown');
+            // const coords = {
+            //     top: videoCoords.top,
+            //     left: videoCoords.left,
+            // }
 
             // -------- current project selected here ------- //
-            
             const project = $(this).attr('data-selected');
             selectedProject = $(project);
 
+            // selectedProject.css('transform-origin', `${coords.left}px ${coords.top}px`);
             selectedProject.addClass('selectedProject');
 
-            setTimeout(function() {
+            setTimeout(function () {
                 $projectDoor.addClass('projectDoorOpened');
                 selectedProject.addClass('enlarged');
             }, 500)
 
-            // $liveLink.children().attr('tabindex', '0');
-            // $githubLink.children().attr('tabindex', '0');
+            projectVideo = $(this).attr('data-project');
+            video = $(`video[data-project=${projectVideo}]`);
+            video[0].play();
+
+            $mapOpener.addClass('openerShown');
         }
     })
 }

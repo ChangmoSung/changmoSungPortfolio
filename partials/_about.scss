@@ -1,16 +1,16 @@
 .about {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     position: absolute;
     top: 0;
-    z-index: 2;
-    height: 100vh;
-    background: rgb(252, 232, 173);
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(../assets/paper.jpg);
     background-size: 100% 100%;
     transform: scale(0);
-    transform-origin: 18% 36%;
     transition: all 0.5s;
+    padding-bottom: 5rem;
 
     &.aboutOpened {
         transform: scale(1);
@@ -55,224 +55,217 @@
         }
     }
 
-    .me {
-        height: 26rem;
-        width: 40rem;
-        margin: 6rem auto;
-        transition: all 1s;
-        position: relative;
-        top: -100%;
-        opacity: 0;
+    .aboutHeader {
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: 2rem;
 
-        @include mq1088 {
-            width: 32rem;
-            height: 20rem;
-            margin: 2.5rem auto;
+        h2 {
+            border-bottom: 3px solid black;
+            border-top: 3px solid black;
+            font-size: 3.5vmax;
+            margin: 0 auto 1rem;
+
+            @include mq1280 {
+                font-size: 4vmax;
+            }
+
+            @include mq900 {
+                font-size: 4.5vmax;
+            }
+
+            @include mq790 {
+                font-size: 4.2rem;
+            }
+
+            @include mq500 {
+                font-size: 3.7rem;
+            }
         }
 
-        @include mq790 {
-            width: 27rem;
-            height: 18rem;
-        }
+        p {
+            font-size: 1.5vmax;
+            margin: 0 0 1rem;
 
-        @include mq590 {
-            width: 23rem;
-            height: 15rem;
-        }
+            @include mq1280 {
+                font-size: 1.8vmax;
+            }
 
-        @include mq470 {
-            margin: 1rem auto;
-        }
+            @include mq900 {
+                font-size: 2.1vmax;
+            }
 
-        @include mq414height {
-            width: 20rem;
-            height: 10rem;
-        }
-        
-        img {
-            border-radius: 1rem;
-        }
-
-        &.imageShown {
-            top: 0;
-            opacity: 1;
+            @include mq790 {
+                font-size: 1.8rem;
+            }
         }
     }
 
-    .aboutContainer {
+    .aboutMain {
         display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        height: 40%;
+        flex-direction: column;
+        border: 3px solid black;
+        padding: 0 2rem 2rem;
+        position: relative;
 
-        @include mq1088 {
-            flex-direction: column;
-            justify-content: space-evenly;
-            height: 70%;
-            margin-bottom: 2%;
+        @include mq1280 {
+            padding: 0 2rem 2rem;
         }
 
-        @include mq590 {
-            height: 80%;
-            margin-bottom: 3.5%;
-        }
-
-        &.aboutContainerShown .skillList,
-        &.aboutContainerShown .description {
-            transform: rotateX(0);
-        }
-
-        .skillList {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            width: 45%;
-            height: 100%;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            border-radius: 1rem;
-            background: linear-gradient(to right, #0072ff, #00c6ff); 
-            transition: all 1s;
-            transform-origin: 100% 100%;
-            transform: perspective(1000px) rotateX(90deg);
-            -webkit-transform: perspective(1000px) rotateX(90deg);
-            -moz-transform: perspective(1000px) rotateX(90deg);
-
-            @include mq1088 {
-                order: 1;
-                width: 80%;
-                height: 45%;
-            }
-
-            @include mq790 {
-                width: 90%;
-            }
-
-            @include mq590 {
-                margin-bottom: 3%;
-            }
-
-            li {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                position: relative;
-                color: white;
-                width: 20%;
-                transition: all 1s;
-
-                img {
-                    width: 6vmax;
-                    height: 6vmax;
-                    margin-bottom: 1vmax;
-                }
-
-                span {
-                    font-size:1.6rem;
-
-                    @include mq1088 {
-                        font-size: 1.6rem;
-                    }
-
-                    @include mq790 {
-                        font-size: 1.4rem;
-                    }
-
-                    @include mq590 {
-                        font-size: 1.3rem;
-                    }
-                }
-            }
-        }
-
-        .description {
-            width: 40%;
-            font-size: 1.6rem;
+        h3 {
+            font-size: 4.5vmax;
             text-align: center;
-            line-height: 2.5rem;
-            transition: all 1s;
-            transform-origin: 100% 100%;
-            transform: perspective(1000px) rotateX(90deg);
-            -webkit-transform: perspective(1000px) rotateX(90deg);
-            -moz-transform: perspective(1000px) rotateX(90deg);
+            margin: 0 auto;
+            text-transform: uppercase;
 
-            @include mq1088 {
-                width: 80%;
-                margin-bottom: 3%;
+            @include mq1280 {
+                font-size: 5.5vmax;
+            }
+
+            @include mq900 {
+                font-size: 6vmax;
             }
 
             @include mq790 {
-                width: 90%;
-                line-height: 2.4rem;
-                font-size: 1.45rem;
+                font-size: 6.3rem;
+            }
 
-                p {
-                    margin: 1rem 0;
+            @include mq500 {
+                font-size: 5rem;
+            }
+
+            @include mq375 {
+                font-size: 4.8rem;
+            }
+        }
+
+        .aboutContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .me {
+                height: 26rem;
+                width: 40rem;
+                transition: all 1s;
+                position: relative;
+                top: -100%;
+    
+                &.imageShown {
+                    top: 0;
                 }
             }
 
-            @include mq414height {
-                font-size: 1.3rem;
-                line-height: 2rem;
-                margin: 0 0 2rem;
-            }
+            .description {
+                font-size: 2rem;
+                line-height: 2.7rem;
+                width: 80%;
+                margin-bottom: 3rem;
+                text-align: center;
 
-            p:first-child {
-                margin-top: 0;
-            }
+                @include mq1280 {
+                    width: 90%;
+                }
 
-            span {
-                color: blue;
-            }
+                .emphasis {
+                    color: blue;
+                }
 
-            &.descriptionShown {
-                opacity: 1;
-            }
+                .resumeContactButton {
+                    display: flex;
+                    justify-content: space-evenly;
+                    margin: 5rem auto 0;
 
-            .resumeContactButton {
-                display: flex;
-                justify-content: space-around;
-
-                span {
-                    display: inline-block;
-                    text-decoration: none;
-                    background: linear-gradient(to right, #0072ff, #00c6ff);
-                    border-radius: 1rem;
-                    width: 18rem;
-                    line-height: 4.5rem;
-                    font-size: 2.4rem;
-                    text-transform: uppercase;
-                    color: white;
-                    border: none;
-                    padding: 0;
-                    font-weight: 400;
-                    cursor: pointer;
-    
-                    @include mq1088 {
-                        font-size: 2rem;
-                        line-height: 4rem;
-                        width: 17rem;
-                        margin-top: 1rem;
-                    }
-
-                    @include mq980 {
-                        width: 15rem;
-                    }
-    
                     @include mq790 {
-                        margin: 1.5rem 0 1rem;
-                    }
-    
-                    @include mq590 {
-                        font-size: 1.5rem;
-                        width: 12rem;
-                        line-height: 3.5rem;
+                        justify-content: space-around;
                     }
 
-                    @include mq414height {
-                        font-size: 1.4rem;
+                    @include mq500 {
+                        justify-content: space-between;
+                    }
+
+                    @include mq414 {
+                        flex-direction: column;
+                        align-items: center;
+                        margin: 3rem auto 0;
+                    }
+
+                    a,
+                    span {
+                        text-transform: uppercase;
+                        width: 18rem;
+                        line-height: 5rem;
+                        text-decoration: none;
+                        color: black;
+                        border: 2px solid black;
+                        box-shadow: 0 0 0.7rem 0.5rem black inset;
+                        background: none;
+
+                        @include mq900 {
+                            width: 16rem;
+                        }
+
+                        @include mq790 {
+                            width: 14rem;
+                        }
+
+                        @include mq500 {
+                            width: 12.5rem;
+                        }
+
+                        @include mq414 {
+                            width: 85%;
+                        }
+                    }
+
+                    span {
+                        @include mq414 {
+                            margin-top: 3rem;
+                        }
+                    }
+                }
+            }
+
+            .skillList {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                list-style: none;
+                padding: 0;
+                width: 80%;
+
+                @include mq1280 {
+                    width: 95%;
+                }
+
+                li {
+                    width: 20%;
+                    font-size: 5rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 3rem;
+
+                    @include mq900 {
+                        width: 25%;
+                    }
+
+                    @include mq790 {
+                        width: 33%;
+                    }
+
+                    @include mq500 {
+                        width: 50%;
+                    }
+
+                    span {
+                        font-size: 2rem;
+                        margin-top: 1rem;
+
+                        @include mq414 {
+                            margin: 0;
+                        }
                     }
                 }
             }
