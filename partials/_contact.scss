@@ -8,7 +8,7 @@
     width: 100%;
     height: 100vh;
     z-index: 2;
-    background-image: url(../assets/treasureMap.jpeg);
+    background-image: url(../assets/paper.jpg);
     background-size: 100% 100%;
     transform: scale(0);
     transform-origin: 34% 65%;
@@ -18,76 +18,54 @@
         transform: scale(1);
     }
 
+    .projectDoor {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+
+        &.projectDoorOpened .leftProjectDoor {
+            transform: rotateY(90deg);
+        }
+
+
+        &.projectDoorOpened .rightProjectDoor {
+            transform: rotateY(-90deg);
+        }
+
+        .leftProjectDoor {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 50%;
+            transition: all 0.5s;
+            transform-origin: 0;
+            transform: perspective(1000px) rotateY(0);
+            z-index: 2;
+        }
+
+        .rightProjectDoor {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 50%;
+            transition: all 0.5s;
+            transform-origin: 100%;
+            transform: perspective(1000px) rotateY(0);
+            z-index: 2;
+        }
+    }
+
     .contactFlexContainer {
         display: flex;
         align-items: center;
         position: relative;
-        width: 0;
-        height: 0;
+        width: 69.5%;
+        height: 68%;
         background: linear-gradient(to right, #0072ff, #00c6ff); 
         border-radius: 1rem;
         transition: all 1s;
-        transform: rotateX(120deg);
-
-        @include mq435 {
-            transform: rotateY(120deg);
-        }
-
-        &.contactShown {
-            width: 69.5%;
-            height: 68%;
-            transform: rotateX(0);
-
-            @include mq790 {
-                flex-direction: column;
-                justify-content: space-around;
-                height: 80%;
-                padding-bottom: 5%;
-            }
-
-            @include mq590 {
-                width: 90%;
-            }
-
-            @include mq435 {
-                height: 90%;
-                transform: rotateY(0);
-            }
-        }
-
-        .emailImage {
-            position: absolute;
-            width: 30rem;
-            height: 30rem;
-            top: -13.5rem;
-            left: -10rem;
-
-            @include mq790 {
-                top: -9rem;
-                left: -7rem;
-                width: 27rem;
-                height: 27rem;
-            }
-
-            @include mq590 {
-                width: 20.5rem;
-                height: 20.5rem;
-                left: -3rem;
-            }
-
-            @include mq435 {
-                width: 12rem;
-                height: 12rem;
-                top: -5rem;
-            }
-
-            @include mq375 {
-                width: 9rem;
-                height: 9rem;
-                top: -4.5rem;
-                left: -2rem;
-            }
-        }
 
         .contactText {
             width: 50%;

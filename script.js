@@ -71,15 +71,16 @@ portfolio.init = function () {
             // $contactSubmitButton.attr('tabindex', '-1');
             
             $mapOpener.removeClass('openerShown');
-
-            video[0].pause();
             
+            $projectDoor.removeClass('projectDoorOpened');
+
             if (selectedProject) {
                 // --------- push it up first and then once it's not shown, push it down--------//
+                video[0].pause();
+
                 previouslySelectedProject = selectedProject;
                 previouslySelectedProject.removeClass('enlarged');
 
-                $projectDoor.removeClass('projectDoorOpened');
 
                 setTimeout(function() {
                     previouslySelectedProject.removeClass('selectedProject');
@@ -88,16 +89,18 @@ portfolio.init = function () {
                 // // --------to prevent selectedProject from getting class again in the above code-------- //
                 selectedProject = '';
 
-
                 // $liveLink.attr('tabindex', '-1');
                 // $githubLink.attr('tabindex', '-1');
             }
 
+            setTimeout(function() {
+                $about.removeClass('aboutOpened');
+                $contact.removeClass('contactOpened');
+            },500)
+
             $me.removeClass('imageShown');
             $aboutContainer.removeClass('aboutContainerShown');
-            $about.removeClass('aboutOpened');
 
-            $contact.removeClass('contactOpened');
             $contactContainer.removeClass('contactShown');
         }
     })
@@ -121,9 +124,10 @@ portfolio.init = function () {
                 $resumeLink.attr('tabindex', '0');
                 // $contactSubmitButton.attr('tabindex', '-1');
                 // $aboutPageContactLink.attr('tabindex', '0');
+                $about.addClass('aboutOpened');
 
                 setTimeout(function () {
-                    $about.addClass('aboutOpened');
+                    $projectDoor.addClass('projectDoorOpened');
 
                     setTimeout(function() {
                         $me.addClass('imageShown');
@@ -139,7 +143,11 @@ portfolio.init = function () {
                 // $aboutPageContactLink.attr('tabindex', '-1');
 
                 $contact.addClass('contactOpened');
-                $contactContainer.addClass('contactShown');
+                setTimeout(function() {
+                    $contactContainer.addClass('contactShown');
+
+                    $projectDoor.addClass('projectDoorOpened');
+                }, 500)
             }
         }
     })
