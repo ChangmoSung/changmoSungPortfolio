@@ -332,12 +332,23 @@ header .welcomeDoor {
   top: 0;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 header .welcomeDoor.doorOpened .leftDoor {
   transform: rotateY(90deg);
 }
 header .welcomeDoor.doorOpened .rightDoor {
   transform: rotateY(-90deg);
+}
+header .welcomeDoor.doorHidden .leftDoor {
+  transform: rotateY(0);
+  left: -100%;
+  transition: left 0.8s;
+}
+header .welcomeDoor.doorHidden .rightDoor {
+  transform: rotateY(0);
+  right: -100%;
+  transition: right 0.8s;
 }
 header .welcomeDoor .leftDoor,
 header .welcomeDoor .rightDoor {
@@ -384,7 +395,6 @@ header .welcomeDoor .rightDoor {
   transition: all 0.5s;
   background-image: url(../assets/paper.jpg);
   background-size: 100% 100%;
-  z-index: 2;
   padding-bottom: 5rem;
 }
 .firstProject.selectedProject,
@@ -392,61 +402,6 @@ header .welcomeDoor .rightDoor {
 .thirdProject.selectedProject,
 .fourthProject.selectedProject {
   transform: scale(1);
-}
-.firstProject.selectedProject.enlarged .projectVideo, .firstProject.selectedProject.enlarged .description,
-.secondProject.selectedProject.enlarged .projectVideo,
-.secondProject.selectedProject.enlarged .description,
-.thirdProject.selectedProject.enlarged .projectVideo,
-.thirdProject.selectedProject.enlarged .description,
-.fourthProject.selectedProject.enlarged .projectVideo,
-.fourthProject.selectedProject.enlarged .description {
-  transform: scale(1);
-}
-.firstProject .projectDoor,
-.secondProject .projectDoor,
-.thirdProject .projectDoor,
-.fourthProject .projectDoor {
-  width: 100%;
-  height: 100%;
-}
-.firstProject .projectDoor.projectDoorOpened .leftProjectDoor,
-.secondProject .projectDoor.projectDoorOpened .leftProjectDoor,
-.thirdProject .projectDoor.projectDoorOpened .leftProjectDoor,
-.fourthProject .projectDoor.projectDoorOpened .leftProjectDoor {
-  transform: rotateY(90deg);
-}
-.firstProject .projectDoor.projectDoorOpened .rightProjectDoor,
-.secondProject .projectDoor.projectDoorOpened .rightProjectDoor,
-.thirdProject .projectDoor.projectDoorOpened .rightProjectDoor,
-.fourthProject .projectDoor.projectDoorOpened .rightProjectDoor {
-  transform: rotateY(-90deg);
-}
-.firstProject .projectDoor .leftProjectDoor,
-.secondProject .projectDoor .leftProjectDoor,
-.thirdProject .projectDoor .leftProjectDoor,
-.fourthProject .projectDoor .leftProjectDoor {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 50%;
-  transition: all 0.5s;
-  transform-origin: 0;
-  transform: perspective(1000px) rotateY(0);
-  z-index: 2;
-}
-.firstProject .projectDoor .rightProjectDoor,
-.secondProject .projectDoor .rightProjectDoor,
-.thirdProject .projectDoor .rightProjectDoor,
-.fourthProject .projectDoor .rightProjectDoor {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 100%;
-  width: 50%;
-  transition: all 0.5s;
-  transform-origin: 100%;
-  transform: perspective(1000px) rotateY(0);
   z-index: 2;
 }
 .firstProject .contentHeader,
@@ -1310,6 +1265,7 @@ header .welcomeDoor .rightDoor {
 .contact .contactMain {
   display: flex;
   flex-direction: column;
+  align-items: center;
   border: 3px solid black;
   padding: 0 2rem 2rem;
   position: relative;
@@ -1365,6 +1321,12 @@ header .welcomeDoor .rightDoor {
 .contact .contactMain .formContainer {
   display: flex;
   flex-direction: column;
+  width: 90%;
+}
+@media (max-width: 790px) {
+  .contact .contactMain .formContainer {
+    width: 100%;
+  }
 }
 .contact .contactMain .formContainer .message {
   font-size: 2rem;

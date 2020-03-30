@@ -49,47 +49,37 @@ portfolio.init = function () {
 // ////////////////////////////////////// //
 
     $welcomeDoor.addClass('doorOpened');
-    $welcomeDoor.on('transitionend', function() {
-        $(this).css('z-index', '-1');
-    })
+    setTimeout(function() {
+        $welcomeDoor.css('z-index', '-1').removeClass('doorOpened').addClass('doorHidden');
+    }, 500)
 
     $mapOpener.on('click keypress', function(e) {
-        if (e.keyCode === 13 || typeof e.keyCode !== 'number') {
-            $cards.attr('tabindex', '0');
-            $projects.attr('tabindex', '0');
-            $resumeLink.attr('tabindex', '-1');
-            $formInput.attr('tabindex', '-1');
-            $formTextarea.attr('tabindex', '-1');
-            
+        if (e.keyCode === 13 || typeof e.keyCode !== 'number') { 
+            $welcomeDoor.removeClass('doorOpened');
+            setTimeout(function () {
+                $welcomeDoor.addClass('doorHidden');
+
+                setTimeout(function () {
+                    $welcomeDoor.css('z-index', '-1');
+                }, 500)
+            }, 500)
+
+            $about.removeClass('aboutOpened');
+            $contact.removeClass('contactOpened');
+            $me.removeClass('imageShown');
+
             $mapOpener.removeClass('openerShown');
             
-            $projectDoor.removeClass('projectDoorOpened');
-
             if (selectedProject) {
                 // --------- push it up first and then once it's not shown, push it down--------//
                 video[0].pause();
 
                 previouslySelectedProject = selectedProject;
-                previouslySelectedProject.removeClass('enlarged');
-
-
-                setTimeout(function() {
-                    previouslySelectedProject.removeClass('selectedProject');
-                }, 500)
+                previouslySelectedProject.removeClass('selectedProject');
 
                 // // --------to prevent selectedProject from getting class again in the above code-------- //
                 selectedProject = '';
             }
-
-            setTimeout(function() {
-                $about.removeClass('aboutOpened');
-                $contact.removeClass('contactOpened');
-            },500)
-
-            $me.removeClass('imageShown');
-            $aboutContainer.removeClass('aboutContainerShown');
-
-            $contactContainer.removeClass('contactShown');
         }
     })
 
@@ -105,29 +95,28 @@ portfolio.init = function () {
                 left: cardCoords.left,
             }
 
+            $welcomeDoor.removeClass('doorHidden').css('z-index', '2');
+
             // ----------- non project list starts here -------------- //
             const selectedList = $(this).attr('data-selected');
             if (selectedList === '.about') {
-                $about.addClass('aboutOpened');
                 $about.css('transform-origin', `${coords.left}px ${coords.top}px`);
 
                 setTimeout(function () {
-                    $projectDoor.addClass('projectDoorOpened');
+                    $about.addClass('aboutOpened');
+                    $welcomeDoor.addClass('doorOpened');
 
                     setTimeout(function() {
                         $me.addClass('imageShown');
-    
-                        $aboutContainer.addClass('aboutContainerShown')
-                    },200)
+                    },250)
                 }, 500);
 
             } else {
-                $contact.addClass('contactOpened');
                 $contact.css('transform-origin', `${coords.left}px ${coords.top}px`);
                 setTimeout(function() {
-                    $contactContainer.addClass('contactShown');
+                    $contact.addClass('contactOpened');
 
-                    $projectDoor.addClass('projectDoorOpened');
+                    $welcomeDoor.addClass('doorOpened');
                 }, 500)
             }
 
@@ -152,11 +141,12 @@ portfolio.init = function () {
             selectedProject = $(project);
 
             selectedProject.css('transform-origin', `${coords.left}px ${coords.top}px`);
-            selectedProject.addClass('selectedProject');
 
+            $welcomeDoor.removeClass('doorHidden').css('z-index', '2');
             setTimeout(function () {
-                $projectDoor.addClass('projectDoorOpened');
-                selectedProject.addClass('enlarged');
+                $welcomeDoor.addClass('doorOpened');
+
+                selectedProject.addClass('selectedProject');
             }, 500)
 
             projectVideo = $(this).attr('data-project');

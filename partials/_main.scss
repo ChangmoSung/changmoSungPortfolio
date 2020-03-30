@@ -14,54 +14,11 @@
     transition: all 0.5s;
     background-image: url(../assets/paper.jpg);
     background-size: 100% 100%;
-    z-index: 2;
     padding-bottom: 5rem;
 
     &.selectedProject {
         transform: scale(1);
-
-        &.enlarged .projectVideo,
-        &.enlarged .description {
-            transform: scale(1);
-        }
-    }
-
-    .projectDoor {
-        width: 100%;
-        height: 100%;
-
-        &.projectDoorOpened .leftProjectDoor {
-            transform: rotateY(90deg);
-        }
-
-
-        &.projectDoorOpened .rightProjectDoor {
-            transform: rotateY(-90deg);
-        }
-
-        .leftProjectDoor {
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 50%;
-            transition: all 0.5s;
-            transform-origin: 0;
-            transform: perspective(1000px) rotateY(0);
-            z-index: 2;
-        }
-
-        .rightProjectDoor {
-            position: absolute;
-            right: 0;
-            top: 0;
-            height: 100%;
-            width: 50%;
-            transition: all 0.5s;
-            transform-origin: 100%;
-            transform: perspective(1000px) rotateY(0);
-            z-index: 2;
-        }
+        z-index: 2;
     }
 
     .contentHeader {
@@ -155,11 +112,11 @@
             display: flex;
             padding: 0 2rem 2rem;
 
-               @include mq1280 {
-                    flex-direction: column;
-                    align-items: center;
-                    height: 100%;
-                }
+            @include mq1280 {
+                flex-direction: column;
+                align-items: center;
+                height: 100%;
+            }
 
             .projectVideo {
                 display: flex;
