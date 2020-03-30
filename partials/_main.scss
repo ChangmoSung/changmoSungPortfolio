@@ -252,8 +252,8 @@
                         width: 11.5vmax;
                         font-size: 1.55vmax;
                         line-height: 3.1vmax;
-                        border: 2px solid black;
-                        box-shadow: 0 0 0.7rem 0.5rem black inset;
+                        border: none;
+                        box-shadow: 0 0 0.7rem 0.4rem black;
                         background: none;
 
                         @include mq1280 {

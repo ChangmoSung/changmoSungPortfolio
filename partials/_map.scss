@@ -1,10 +1,10 @@
 .mapOpener {
     position: fixed;
-    top: -10vmax;
+    top: -13vmax;
     right: 0;
     z-index: 3;
-    width: 10vmax;
-    height: 10vmax;
+    width: 13vmax;
+    height: 13vmax;
     transition: all 0.6s;
     cursor: pointer;
     background: none;
@@ -12,6 +12,6 @@
     padding: 0;
 
     &.openerShown {
-        transform: translateY(10vmax);
+        top: 0;
     }
 }

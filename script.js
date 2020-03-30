@@ -4,22 +4,20 @@ portfolio.init = function () {
     const $date = $('.date');
     const $time = $('.time');
     const $welcomeDoor = $('.welcomeDoor');
-    const $projectDoor = $('.projectDoor');
     const $mapOpener = $('.mapOpener');
+    const $map = $('.treasureMap');
     const $me = $('.me');
-    const $aboutContainer = $('.aboutContainer');
-    const $contactContainer = $('.contactFlexContainer');
     const $cards = $('.card');
     const $projects = $('.project');
-    let projectVideo;
-    let video;
-    const $resumeLink = $('.resumeLink span');
-    const $formInput = $('form input');
-    const $formTextarea = $('form textarea');
     const $about = $('.about');
     const $contact = $('.contact');
+    const form = $('form');
+    const input = $('input');
+    const textarea = $('textarea');
     let selectedProject;
     let previouslySelectedProject;
+    let projectVideo;
+    let video;
 
 // ////////////////////////////////////// //
 // --------- current time start --------- //
@@ -58,20 +56,21 @@ portfolio.init = function () {
             $welcomeDoor.removeClass('doorOpened');
             setTimeout(function () {
                 $welcomeDoor.addClass('doorHidden');
+                $map.css('opacity', '1');
 
                 setTimeout(function () {
                     $welcomeDoor.css('z-index', '-1');
                 }, 500)
-            }, 500)
+            }, 600)
 
             $about.removeClass('aboutOpened');
             $contact.removeClass('contactOpened');
             $me.removeClass('imageShown');
 
             $mapOpener.removeClass('openerShown');
+
             
             if (selectedProject) {
-                // --------- push it up first and then once it's not shown, push it down--------//
                 video[0].pause();
 
                 previouslySelectedProject = selectedProject;
@@ -89,19 +88,12 @@ portfolio.init = function () {
 
     $cards.on('click keypress', function (e) {
         if (e.keyCode === 13 || typeof e.keyCode !== 'number') {
-            const cardCoords = this.getBoundingClientRect();
-            const coords = {
-                top: cardCoords.top,
-                left: cardCoords.left,
-            }
-
             $welcomeDoor.removeClass('doorHidden').css('z-index', '2');
+            $map.css('opacity', '0');
 
             // ----------- non project list starts here -------------- //
             const selectedList = $(this).attr('data-selected');
             if (selectedList === '.about') {
-                $about.css('transform-origin', `${coords.left}px ${coords.top}px`);
-
                 setTimeout(function () {
                     $about.addClass('aboutOpened');
                     $welcomeDoor.addClass('doorOpened');
@@ -109,17 +101,22 @@ portfolio.init = function () {
                     setTimeout(function() {
                         $me.addClass('imageShown');
                     },250)
-                }, 500);
+                }, 600);
 
             } else {
-                $contact.css('transform-origin', `${coords.left}px ${coords.top}px`);
+                form.on('submit', function (e) {
+                    e.preventDefault();
+
+                    input.val('');
+                    textarea.val('');
+                });
+
                 setTimeout(function() {
                     $contact.addClass('contactOpened');
 
                     $welcomeDoor.addClass('doorOpened');
-                }, 500)
+                }, 600)
             }
-
             $mapOpener.addClass('openerShown');
         }
     })
@@ -129,31 +126,24 @@ portfolio.init = function () {
     // ------------------------------- //
     $projects.on('click keypress', function(e) {
         if(e.keyCode === 13 || typeof e.keyCode !== 'number') {
-            const videoCoords = this.getBoundingClientRect();
-
-            const coords = {
-                top: videoCoords.top,
-                left: videoCoords.left,
-            }
-
             // -------- current project selected here ------- //
             const project = $(this).attr('data-selected');
             selectedProject = $(project);
-
-            selectedProject.css('transform-origin', `${coords.left}px ${coords.top}px`);
 
             $welcomeDoor.removeClass('doorHidden').css('z-index', '2');
             setTimeout(function () {
                 $welcomeDoor.addClass('doorOpened');
 
                 selectedProject.addClass('selectedProject');
-            }, 500)
+            }, 600)
 
             projectVideo = $(this).attr('data-project');
             video = $(`video[data-project=${projectVideo}]`);
             video[0].play();
 
             $mapOpener.addClass('openerShown');
+
+            $map.css('opacity', '0');
         }
     })
 }

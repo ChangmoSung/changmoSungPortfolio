@@ -246,11 +246,11 @@ html video {
 
 .mapOpener {
   position: fixed;
-  top: -10vmax;
+  top: -13vmax;
   right: 0;
   z-index: 3;
-  width: 10vmax;
-  height: 10vmax;
+  width: 13vmax;
+  height: 13vmax;
   transition: all 0.6s;
   cursor: pointer;
   background: none;
@@ -258,12 +258,13 @@ html video {
   padding: 0;
 }
 .mapOpener.openerShown {
-  transform: translateY(10vmax);
+  top: 0;
 }
 
 header {
   height: 100vh;
   width: 100%;
+  background-image: url(../assets/headerBackground.jpg);
 }
 header .treasureMap {
   background-image: url(../assets/treasureMap.jpeg);
@@ -362,8 +363,8 @@ header .treasureMap .card div {
   top: -5.5vmax;
 }
 header .treasureMap .aboutCard {
-  top: 39%;
-  left: 18%;
+  top: 36%;
+  left: 22%;
 }
 header .treasureMap .contactCard {
   top: 60%;
@@ -378,8 +379,8 @@ header .treasureMap .project2 {
   left: 75%;
 }
 header .treasureMap .project3 {
-  top: 71%;
-  left: 62%;
+  top: 73%;
+  left: 61%;
 }
 header .welcomeDoor {
   position: absolute;
@@ -841,8 +842,8 @@ header .welcomeDoor .rightDoor {
   width: 11.5vmax;
   font-size: 1.55vmax;
   line-height: 3.1vmax;
-  border: 2px solid black;
-  box-shadow: 0 0 0.7rem 0.5rem black inset;
+  border: none;
+  box-shadow: 0 0 0.7rem 0.4rem black;
   background: none;
 }
 @media (max-width: 1280px) {
@@ -905,40 +906,10 @@ header .welcomeDoor .rightDoor {
   transform: scale(0);
   transition: all 0.5s;
   padding-bottom: 5rem;
+  transform-origin: 50% 25%;
 }
 .about.aboutOpened {
   transform: scale(1);
-}
-.about .projectDoor {
-  width: 100%;
-  height: 100%;
-}
-.about .projectDoor.projectDoorOpened .leftProjectDoor {
-  transform: rotateY(90deg);
-}
-.about .projectDoor.projectDoorOpened .rightProjectDoor {
-  transform: rotateY(-90deg);
-}
-.about .projectDoor .leftProjectDoor {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 50%;
-  transition: all 0.5s;
-  transform-origin: 0;
-  transform: perspective(1000px) rotateY(0);
-  z-index: 2;
-}
-.about .projectDoor .rightProjectDoor {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 100%;
-  width: 50%;
-  transition: all 0.5s;
-  transform-origin: 100%;
-  transform: perspective(1000px) rotateY(0);
   z-index: 2;
 }
 .about .aboutHeader {
@@ -1124,7 +1095,7 @@ header .welcomeDoor .rightDoor {
   text-decoration: none;
   color: black;
   border: none;
-  box-shadow: 0 0 0.7rem 0.5rem black;
+  box-shadow: 0 0 0.7rem 0.4rem black;
   background: none;
 }
 @media (max-width: 900px) {
@@ -1218,37 +1189,7 @@ header .welcomeDoor .rightDoor {
 }
 .contact.contactOpened {
   transform: scale(1);
-}
-.contact .projectDoor {
-  width: 100%;
-  height: 100%;
   z-index: 2;
-}
-.contact .projectDoor.projectDoorOpened .leftProjectDoor {
-  transform: rotateY(90deg);
-}
-.contact .projectDoor.projectDoorOpened .rightProjectDoor {
-  transform: rotateY(-90deg);
-}
-.contact .projectDoor .leftProjectDoor {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 50%;
-  transition: all 0.5s;
-  transform-origin: 0;
-  transform: perspective(1000px) rotateY(0);
-}
-.contact .projectDoor .rightProjectDoor {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 100%;
-  width: 50%;
-  transition: all 0.5s;
-  transform-origin: 100%;
-  transform: perspective(1000px) rotateY(0);
 }
 .contact .contactHeader {
   text-align: center;
@@ -1359,7 +1300,7 @@ header .welcomeDoor .rightDoor {
 .contact .contactMain .formContainer {
   display: flex;
   flex-direction: column;
-  width: 75%;
+  width: 80%;
 }
 @media (max-width: 790px) {
   .contact .contactMain .formContainer {
@@ -1403,7 +1344,7 @@ header .welcomeDoor .rightDoor {
   margin-bottom: 3rem;
   border: none;
   background: none;
-  box-shadow: 0 0 0.7rem 0.5rem black;
+  box-shadow: 0 0 0.7rem 0.4rem black;
   padding: 1rem;
 }
 .contact .contactMain .formContainer form textarea {
@@ -1413,7 +1354,7 @@ header .welcomeDoor .rightDoor {
   margin-bottom: 3rem;
   border: none;
   background: none;
-  box-shadow: 0 0 0.7rem 0.5rem black;
+  box-shadow: 0 0 0.7rem 0.4rem black;
   padding: 1rem;
 }
 .contact .contactMain .formContainer form button {
@@ -1422,6 +1363,6 @@ header .welcomeDoor .rightDoor {
   font-size: 2rem;
   line-height: 5rem;
   border: none;
-  box-shadow: 0 0 0.7rem 0.5rem black;
+  box-shadow: 0 0 0.7rem 0.4rem black;
   background: none;
 }
