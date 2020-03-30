@@ -154,7 +154,7 @@
         .formContainer {
             display: flex;
             flex-direction: column;
-            width: 90%;
+            width: 75%;
 
             @include mq790 {
                 width: 100%;
@@ -162,7 +162,7 @@
 
             .message {
                 font-size: 2rem;
-                line-height: 2.7rem;
+                line-height: 2.8rem;
                 margin-bottom: 2.5rem;
 
                 p {
@@ -216,8 +216,8 @@
                     width: 20rem;
                     font-size: 2rem;
                     line-height: 5rem;
-                    border: 2px solid black;
-                    box-shadow: 0 0 0.7rem 0.5rem black inset;
+                    border: none;
+                    box-shadow: 0 0 0.7rem 0.5rem black;
                     background: none;
                 }
             }

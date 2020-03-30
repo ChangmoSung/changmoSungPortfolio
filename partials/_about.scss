@@ -217,16 +217,15 @@
                         margin: 3rem auto 0;
                     }
 
-                    a,
-                    span {
+                    a {
                         text-transform: uppercase;
                         text-align: center;
                         width: 18rem;
                         line-height: 5rem;
                         text-decoration: none;
                         color: black;
-                        border: 2px solid black;
-                        box-shadow: 0 0 0.7rem 0.5rem black inset;
+                        border: none;
+                        box-shadow: 0 0 0.7rem 0.5rem black;
                         background: none;
 
                         @include mq900 {

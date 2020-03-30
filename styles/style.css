@@ -374,8 +374,8 @@ header .treasureMap .project1 {
   left: 48%;
 }
 header .treasureMap .project2 {
-  top: 42%;
-  left: 73%;
+  top: 45%;
+  left: 75%;
 }
 header .treasureMap .project3 {
   top: 71%;
@@ -1116,40 +1116,35 @@ header .welcomeDoor .rightDoor {
     margin: 3rem auto 0;
   }
 }
-.about .aboutMain .aboutContainer .description .resumeContactButton a,
-.about .aboutMain .aboutContainer .description .resumeContactButton span {
+.about .aboutMain .aboutContainer .description .resumeContactButton a {
   text-transform: uppercase;
   text-align: center;
   width: 18rem;
   line-height: 5rem;
   text-decoration: none;
   color: black;
-  border: 2px solid black;
-  box-shadow: 0 0 0.7rem 0.5rem black inset;
+  border: none;
+  box-shadow: 0 0 0.7rem 0.5rem black;
   background: none;
 }
 @media (max-width: 900px) {
-  .about .aboutMain .aboutContainer .description .resumeContactButton a,
-.about .aboutMain .aboutContainer .description .resumeContactButton span {
+  .about .aboutMain .aboutContainer .description .resumeContactButton a {
     width: 16rem;
   }
 }
 @media (max-width: 500px) {
-  .about .aboutMain .aboutContainer .description .resumeContactButton a,
-.about .aboutMain .aboutContainer .description .resumeContactButton span {
+  .about .aboutMain .aboutContainer .description .resumeContactButton a {
     width: 70%;
     line-height: 5.5rem;
   }
 }
 @media (max-width: 414px) {
-  .about .aboutMain .aboutContainer .description .resumeContactButton a,
-.about .aboutMain .aboutContainer .description .resumeContactButton span {
+  .about .aboutMain .aboutContainer .description .resumeContactButton a {
     width: 85%;
   }
 }
 @media (max-width: 375px) {
-  .about .aboutMain .aboutContainer .description .resumeContactButton a,
-.about .aboutMain .aboutContainer .description .resumeContactButton span {
+  .about .aboutMain .aboutContainer .description .resumeContactButton a {
     width: 100%;
   }
 }
@@ -1364,7 +1359,7 @@ header .welcomeDoor .rightDoor {
 .contact .contactMain .formContainer {
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 75%;
 }
 @media (max-width: 790px) {
   .contact .contactMain .formContainer {
@@ -1373,7 +1368,7 @@ header .welcomeDoor .rightDoor {
 }
 .contact .contactMain .formContainer .message {
   font-size: 2rem;
-  line-height: 2.7rem;
+  line-height: 2.8rem;
   margin-bottom: 2.5rem;
 }
 .contact .contactMain .formContainer .message p {
@@ -1426,7 +1421,7 @@ header .welcomeDoor .rightDoor {
   width: 20rem;
   font-size: 2rem;
   line-height: 5rem;
-  border: 2px solid black;
-  box-shadow: 0 0 0.7rem 0.5rem black inset;
+  border: none;
+  box-shadow: 0 0 0.7rem 0.5rem black;
   background: none;
 }
