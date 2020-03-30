@@ -266,11 +266,60 @@ header {
   width: 100%;
 }
 header .treasureMap {
-  background-image: url(../assets/treasureMap2.jpeg);
+  background-image: url(../assets/treasureMap.jpeg);
   width: 100%;
   height: 100%;
   background-size: 100% 100%;
   position: relative;
+}
+@media (max-width: 500px) {
+  header .treasureMap {
+    background-image: url(../assets/treasureMap2.jpeg);
+  }
+}
+header .treasureMap .changmo {
+  background-image: url(../assets/treasureMap.jpeg);
+  background-size: 100% 100%;
+  position: absolute;
+  top: 0;
+  left: calc(100% / 2 - 23.5vmax);
+  width: 47vmax;
+  height: 9vmax;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 1280px) {
+  header .treasureMap .changmo {
+    width: 55.3vmax;
+    height: 12vmax;
+    left: calc(100% / 2 - 27.65vmax);
+  }
+}
+@media (max-width: 900px) {
+  header .treasureMap .changmo {
+    height: 15vmax;
+  }
+}
+@media (max-width: 500px) {
+  header .treasureMap .changmo {
+    width: 100%;
+    left: 0;
+  }
+}
+header .treasureMap .changmo div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #683b16;
+  color: white;
+  margin: 0;
+  width: 85.7%;
+  height: 79.5%;
+  text-align: center;
+}
+header .treasureMap .changmo div h1 {
+  font-size: 5vmax;
 }
 header .treasureMap .card,
 header .treasureMap .project {
@@ -281,8 +330,8 @@ header .treasureMap .project {
   justify-content: space-between;
   align-items: center;
   position: absolute;
-  width: 7vmax;
-  height: 5vmax;
+  width: 4vmax;
+  height: 4vmax;
   cursor: pointer;
 }
 header .treasureMap .card div,
@@ -293,7 +342,7 @@ header .treasureMap .project div {
   height: 12vmax;
   padding: 1.15vmax 0.9vmax;
   position: absolute;
-  top: -12.8vmax;
+  top: -12.4vmax;
 }
 header .treasureMap .card div .textContainer,
 header .treasureMap .project div .textContainer {
@@ -307,25 +356,30 @@ header .treasureMap .project div .textContainer {
   color: white;
   background: #683b16;
 }
+header .treasureMap .card div {
+  height: 5vmax;
+  padding: 0.575vmax 0.8vmax;
+  top: -5.5vmax;
+}
 header .treasureMap .aboutCard {
-  top: 36%;
+  top: 39%;
   left: 18%;
 }
 header .treasureMap .contactCard {
-  top: 65%;
-  left: 34%;
+  top: 60%;
+  left: 31%;
 }
 header .treasureMap .project1 {
-  top: 36%;
-  left: 52%;
+  top: 44%;
+  left: 48%;
 }
 header .treasureMap .project2 {
-  top: 38%;
-  left: 78%;
+  top: 42%;
+  left: 73%;
 }
 header .treasureMap .project3 {
-  top: 77%;
-  left: 72%;
+  top: 71%;
+  left: 62%;
 }
 header .welcomeDoor {
   position: absolute;
@@ -368,17 +422,6 @@ header .welcomeDoor .rightDoor {
   transform: perspective(500px) rotateY(0);
 }
 
-@keyframes floating {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-0.9vmax);
-  }
-  10% {
-    transform: translateY(0);
-  }
-}
 .firstProject,
 .secondProject,
 .thirdProject,

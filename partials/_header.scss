@@ -3,11 +3,73 @@ header {
     width: 100%;
 
     .treasureMap {
-        background-image: url(../assets/treasureMap2.jpeg);
+        background-image: url(../assets/treasureMap.jpeg);
         width: 100%;
         height: 100%;
         background-size: 100% 100%;
         position: relative;
+
+        @include mq500 {
+            background-image: url(../assets/treasureMap2.jpeg);
+        }
+
+        .changmo {
+            background-image: url(../assets/treasureMap.jpeg);
+            background-size: 100% 100%;
+            position: absolute;
+            top: 0;
+            left: calc(100% / 2 - 23.5vmax);
+            width: 47vmax;
+            height: 9vmax;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @include mq1280 {
+                width: 55.3vmax;
+                height: 12vmax;
+                left: calc(100% / 2 - 27.65vmax);
+            }
+
+            @include mq900 {
+                height: 15vmax;
+            }
+
+            @include mq500 {
+                width: 100%;
+                left: 0;
+            }
+
+            div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: rgb(104, 59, 22);
+                color: white;
+                margin: 0;
+                // width: 40.3vmax;
+                // height: 7.3vmax;
+                width: 85.7%;
+                height: 79.5%;
+                text-align: center;
+
+                // @include mq1280 {
+                //     width: 47.4vmax;
+                //     height: 9.7vmax;
+                // }
+
+                // @include mq900 {
+                //     height: 12vmax;
+                // }
+                // @include mq500 {
+                //     width: 86%;
+                // }
+
+                h1 {
+                    font-size: 5vmax;
+                }
+            }
+        }
 
         .card,
         .project {
@@ -18,8 +80,8 @@ header {
             justify-content: space-between;
             align-items: center;
             position: absolute;
-            width: 7vmax;
-            height: 5vmax;
+            width: 4vmax;
+            height: 4vmax;
             cursor: pointer;
 
             div {
@@ -29,7 +91,7 @@ header {
                 height: 12vmax;
                 padding: 1.15vmax 0.9vmax;
                 position: absolute;
-                top: -12.8vmax;
+                top: -12.4vmax;
 
                 .textContainer {
                     display: flex;
@@ -43,31 +105,38 @@ header {
                     background: rgb(104, 59, 22);
                 }
             }
+
+        }
+
+        .card div {
+            height: 5vmax;
+            padding: 0.575vmax 0.8vmax;
+            top: -5.5vmax;
         }
 
         .aboutCard {
-            top: 36%;
+            top: 39%;
             left: 18%;
         }
 
         .contactCard {
-            top: 65%;
-            left: 34%;
+            top: 60%;
+            left: 31%;
         }
 
         .project1 {
-            top: 36%;
-            left: 52%;
+            top: 44%;
+            left: 48%;
         }
 
         .project2 {
-            top: 38%;
-            left: 78%;
+            top: 42%;
+            left: 73%;
         }
 
         .project3 {
-            top: 77%;
-            left: 72%;
+            top: 71%;
+            left: 62%;
         }
     }
 
@@ -117,19 +186,5 @@ header {
             transform-origin: 100%;
             transform: perspective(500px) rotateY(0);
         }
-    }
-}
-
-@keyframes floating {
-    0% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-0.9vmax);
-    }
-
-    10% {
-        transform: translateY(0);
     }
 }
