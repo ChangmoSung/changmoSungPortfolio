@@ -315,8 +315,8 @@ header .treasureMap .changmo div {
   background: #683b16;
   color: white;
   margin: 0;
-  width: 85.7%;
-  height: 79.5%;
+  width: 85.9%;
+  height: 81%;
   text-align: center;
 }
 header .treasureMap .changmo div h1 {
@@ -358,9 +358,9 @@ header .treasureMap .project div .textContainer {
   background: #683b16;
 }
 header .treasureMap .card div {
-  height: 5vmax;
-  padding: 0.575vmax 0.8vmax;
-  top: -5.5vmax;
+  height: 7vmax;
+  padding: 0.65vmax 0.8vmax;
+  top: -7.5vmax;
 }
 header .treasureMap .aboutCard {
   top: 36%;
@@ -391,17 +391,25 @@ header .welcomeDoor {
 }
 header .welcomeDoor.doorOpened .leftDoor {
   transform: rotateY(90deg);
+  -webkit-transform: rotateY(90deg);
+  -moz-transform: rotateY(90deg);
 }
 header .welcomeDoor.doorOpened .rightDoor {
   transform: rotateY(-90deg);
+  -webkit-transform: rotateY(-90deg);
+  -moz-transform: rotateY(-90deg);
 }
 header .welcomeDoor.doorHidden .leftDoor {
   transform: rotateY(0);
+  -webkit-transform: rotateY(0);
+  -moz-transform: rotateY(0);
   left: -100%;
   transition: left 0.8s;
 }
 header .welcomeDoor.doorHidden .rightDoor {
   transform: rotateY(0);
+  -webkit-transform: rotateY(0);
+  -moz-transform: rotateY(0);
   right: -100%;
   transition: right 0.8s;
 }
@@ -415,12 +423,16 @@ header .welcomeDoor .rightDoor {
 header .welcomeDoor .leftDoor {
   left: 0;
   transform-origin: 0;
-  transform: perspective(500px) rotateY(0);
+  transform: perspective(1000px) rotateY(0);
+  -webkit-transform: perspective(1000px) rotateY(0);
+  -moz-transform: perspective(1000px) rotateY(0);
 }
 header .welcomeDoor .rightDoor {
   right: 0;
   transform-origin: 100%;
-  transform: perspective(500px) rotateY(0);
+  transform: perspective(1000px) rotateY(0);
+  -webkit-transform: perspective(1000px) rotateY(0);
+  -moz-transform: perspective(1000px) rotateY(0);
 }
 
 .firstProject,
@@ -629,7 +641,6 @@ header .welcomeDoor .rightDoor {
   align-items: center;
   height: 31.4vmax;
   width: 50vmax;
-  transition: all 0.6s;
 }
 @media (max-width: 1280px) {
   .firstProject .contentMain .videoDescription .projectVideo,
@@ -680,7 +691,6 @@ header .welcomeDoor .rightDoor {
   margin-left: 2rem;
   display: flex;
   flex-direction: column;
-  transition: all 0.6s;
 }
 @media (max-width: 1280px) {
   .firstProject .contentMain .videoDescription .description,
@@ -1021,10 +1031,14 @@ header .welcomeDoor .rightDoor {
   transition: all 1s;
   position: relative;
   transform-origin: 100% 100%;
-  transform: perspective(900px) rotateX(-90deg);
+  transform: perspective(1000px) rotateX(-90deg);
+  -webkit-transform: perspective(1000px) rotateY(-90deg);
+  -moz-transform: perspective(1000px) rotateY(-90deg);
 }
 .about .aboutMain .aboutContainer .me.imageShown {
   transform: rotateX(0);
+  -webkit-transform: rotateY(0);
+  -moz-transform: rotateY(0);
 }
 @media (max-width: 1280px) {
   .about .aboutMain .aboutContainer .me {
@@ -1086,6 +1100,9 @@ header .welcomeDoor .rightDoor {
     align-items: center;
     margin: 3rem auto 0;
   }
+  .about .aboutMain .aboutContainer .description .resumeContactButton a:nth-of-type(2) {
+    margin-top: 4rem;
+  }
 }
 .about .aboutMain .aboutContainer .description .resumeContactButton a {
   text-transform: uppercase;
@@ -1117,11 +1134,6 @@ header .welcomeDoor .rightDoor {
 @media (max-width: 375px) {
   .about .aboutMain .aboutContainer .description .resumeContactButton a {
     width: 100%;
-  }
-}
-@media (max-width: 500px) {
-  .about .aboutMain .aboutContainer .description .resumeContactButton span {
-    margin-top: 3rem;
   }
 }
 .about .aboutMain .aboutContainer .skillList {
@@ -1292,6 +1304,8 @@ header .welcomeDoor .rightDoor {
   right: -18rem;
   top: calc(100% / 2 - 1.5rem);
   transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
 }
 .contact .contactMain .email a {
   color: black;

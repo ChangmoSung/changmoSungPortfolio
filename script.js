@@ -130,16 +130,17 @@ portfolio.init = function () {
             const project = $(this).attr('data-selected');
             selectedProject = $(project);
 
+            projectVideo = $(this).attr('data-project');
+            video = $(`video[data-project=${projectVideo}]`);
+
             $welcomeDoor.removeClass('doorHidden').css('z-index', '2');
             setTimeout(function () {
                 $welcomeDoor.addClass('doorOpened');
 
                 selectedProject.addClass('selectedProject');
-            }, 600)
 
-            projectVideo = $(this).attr('data-project');
-            video = $(`video[data-project=${projectVideo}]`);
-            video[0].play();
+                video[0].play();
+            }, 600)
 
             $mapOpener.addClass('openerShown');
 

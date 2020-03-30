@@ -48,8 +48,8 @@ header {
                 background: rgb(104, 59, 22);
                 color: white;
                 margin: 0;
-                width: 85.7%;
-                height: 79.5%;
+                width: 85.9%;
+                height: 81%;
                 text-align: center;
 
                 h1 {
@@ -96,9 +96,9 @@ header {
         }
 
         .card div {
-            height: 5vmax;
-            padding: 0.575vmax 0.8vmax;
-            top: -5.5vmax;
+            height: 7vmax;
+            padding: 0.65vmax 0.8vmax;
+            top: -7.5vmax;
         }
 
         .aboutCard {
@@ -136,20 +136,28 @@ header {
 
         &.doorOpened .leftDoor {
             transform: rotateY(90deg);
+            -webkit-transform: rotateY(90deg);
+            -moz-transform: rotateY(90deg);
         }
 
         &.doorOpened .rightDoor {
             transform: rotateY(-90deg);
+            -webkit-transform: rotateY(-90deg);
+            -moz-transform: rotateY(-90deg);
         }
 
         &.doorHidden  .leftDoor{
             transform: rotateY(0);
+            -webkit-transform: rotateY(0);
+            -moz-transform: rotateY(0);
             left: -100%;
             transition: left 0.8s;
         }
 
         &.doorHidden .rightDoor {
             transform: rotateY(0);
+            -webkit-transform: rotateY(0);
+            -moz-transform: rotateY(0);
             right: -100%;
             transition: right 0.8s;
         }
@@ -165,13 +173,17 @@ header {
         .leftDoor {
             left: 0;
             transform-origin: 0;
-            transform: perspective(500px) rotateY(0);
+            transform: perspective(1000px) rotateY(0);
+            -webkit-transform: perspective((1000px)) rotateY(0);
+            -moz-transform: perspective(1000px) rotateY(0);
         }
 
         .rightDoor {
             right: 0;
             transform-origin: 100%;
-            transform: perspective(500px) rotateY(0);
+            transform: perspective(1000px) rotateY(0);
+            -webkit-transform: perspective(1000px) rotateY(0);
+            -moz-transform: perspective(1000px) rotateY(0);
         }
     }
 }

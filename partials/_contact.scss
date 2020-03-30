@@ -109,6 +109,8 @@
             right: -18rem;
             top: calc(100% / 2 - 1.5rem);
             transform: rotate(-90deg);
+            -webkit-transform: rotate(-90deg);
+            -moz-transform: rotate(-90deg);
 
             a {
                 color: black;
