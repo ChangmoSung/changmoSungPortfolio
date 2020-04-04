@@ -368,7 +368,7 @@ header .treasureMap .aboutCard {
 }
 header .treasureMap .contactCard {
   top: 60%;
-  left: 31%;
+  left: 25%;
 }
 header .treasureMap .project1 {
   top: 44%;
@@ -380,7 +380,11 @@ header .treasureMap .project2 {
 }
 header .treasureMap .project3 {
   top: 73%;
-  left: 61%;
+  left: 49%;
+}
+header .treasureMap .project4 {
+  top: 75%;
+  left: 75%;
 }
 header .welcomeDoor {
   position: absolute;
